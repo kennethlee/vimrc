@@ -1,0 +1,12 @@
+*
+!/.gitignore.d
+!/.gitignore.d/vim
+!/.vim
+!/.vim/vimrc
+!/.vim/config
+!/.vim/config/functions.vim
+!/.vim/config/gui.vim
+!/.vim/config/ignore.vim
+!/.vim/config/keymap.vim
+!/.vim/config/plugin_config.vim
+!/.vim/config/type_settings.vim
