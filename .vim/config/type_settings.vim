@@ -1,11 +1,11 @@
-" css {{{1
+" css, less, scss {{{1
 
 augroup filetype_css
   autocmd!
   " Folding
   autocmd FileType css setlocal foldenable
-  autocmd FileType css setlocal foldmethod=syntax
-  autocmd FileType css setlocal foldlevel=1
+  autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType css setlocal foldlevel=0
   autocmd FileType css setlocal foldnestmax=6
   autocmd FileType css setlocal foldcolumn=0
   " Tabbing
@@ -123,46 +123,6 @@ augroup filetype_ruby
   " Misc
   autocmd FileType ruby setlocal breakindent
   autocmd FileType ruby setlocal colorcolumn=81
-augroup END
-
-" sass {{{1
-
-augroup filetype_sass
-  autocmd!
-  " Folding
-  autocmd FileType sass setlocal foldenable
-  autocmd FileType sass setlocal foldmethod=syntax
-  autocmd FileType sass setlocal foldlevel=1
-  autocmd FileType sass setlocal foldnestmax=6
-  autocmd FileType sass setlocal foldcolumn=0
-  " Tabbing
-  autocmd FileType sass setlocal softtabstop=2
-  autocmd FileType sass setlocal shiftwidth=2
-  autocmd FileType sass setlocal autoindent
-  autocmd FileType sass setlocal expandtab
-  " Misc
-  autocmd FileType sass setlocal breakindent
-  autocmd FileType sass setlocal colorcolumn=81
-augroup END
-
-" scss {{{1
-
-augroup filetype_scss
-  autocmd!
-  " Folding
-  autocmd FileType scss setlocal foldenable
-  autocmd FileType scss setlocal foldmethod=syntax
-  autocmd FileType scss setlocal foldlevel=1
-  autocmd FileType scss setlocal foldnestmax=6
-  autocmd FileType scss setlocal foldcolumn=0
-  " Tabbing
-  autocmd FileType scss setlocal softtabstop=2
-  autocmd FileType scss setlocal shiftwidth=2
-  autocmd FileType scss setlocal autoindent
-  autocmd FileType scss setlocal expandtab
-  " Misc
-  autocmd FileType scss setlocal breakindent
-  autocmd FileType scss setlocal colorcolumn=81
 augroup END
 
 " vim {{{1
