@@ -1,10 +1,10 @@
-" css, less, scss {{{1
+" css {{{1
 
 augroup filetype_css
   autocmd!
   " Folding
   autocmd FileType css setlocal foldenable
-  autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+  autocmd BufRead,BufNewFile *.css setlocal foldmethod=marker foldmarker={,}
   autocmd FileType css setlocal foldlevel=0
   autocmd FileType css setlocal foldnestmax=6
   autocmd FileType css setlocal foldcolumn=0
@@ -15,7 +15,6 @@ augroup filetype_css
   autocmd FileType css setlocal expandtab
   " Misc
   autocmd FileType css setlocal breakindent
-  autocmd FileType css setlocal colorcolumn=81
 augroup END
 
 " eruby {{{1
@@ -25,7 +24,7 @@ augroup filetype_eruby
   " Folding
   autocmd FileType eruby setlocal foldenable
   autocmd FileType eruby setlocal foldmethod=indent
-  autocmd FileType eruby setlocal foldlevel=1
+  autocmd FileType eruby setlocal foldlevel=0
   autocmd FileType eruby setlocal foldnestmax=6
   autocmd FileType eruby setlocal foldcolumn=0
   " Tabbing
@@ -35,7 +34,6 @@ augroup filetype_eruby
   autocmd FileType eruby setlocal expandtab
   " Misc
   autocmd FileType eruby setlocal breakindent
-  autocmd FileType eruby setlocal colorcolumn=81
 augroup END
 
 " html {{{1
@@ -101,7 +99,6 @@ augroup filetype_markdown
   autocmd BufEnter * if &filetype ==# 'markdown' | setlocal foldmethod=expr | endif
   " Misc
   autocmd FileType markdown setlocal syn=off
-  autocmd FileType markdown setlocal colorcolumn=
   autocmd FileType markdown setlocal breakindent
 augroup END
 
@@ -143,6 +140,25 @@ augroup filetype_vim
   " Misc
   autocmd FileType vim setlocal breakindent
   autocmd FileType vim setlocal colorcolumn=81
+augroup END
+
+" scss {{{1
+
+augroup filetype_scss
+  autocmd!
+  " Folding
+  autocmd FileType scss setlocal foldenable
+  autocmd BufRead,BufNewFile *.scss setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType scss setlocal foldlevel=0
+  autocmd FileType scss setlocal foldnestmax=6
+  autocmd FileType scss setlocal foldcolumn=0
+  " Tabbing
+  autocmd FileType scss setlocal softtabstop=2
+  autocmd FileType scss setlocal shiftwidth=2
+  autocmd FileType scss setlocal autoindent
+  autocmd FileType scss setlocal expandtab
+  " Misc
+  autocmd FileType scss setlocal breakindent
 augroup END
 
 " yaml {{{1
