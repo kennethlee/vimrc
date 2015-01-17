@@ -13,7 +13,7 @@ set fileencodings=utf-8
 
 " vim-plug {{{1
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 " Core
 Plug 'ctrlpvim/ctrlp.vim'
