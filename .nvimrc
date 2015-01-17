@@ -108,7 +108,7 @@ set title t_ti= t_te=
 
 " }}}1
 
-let $VCONF="~/.vim/config/"
+let $VCONF="~/.nvim/config/"
 source $VCONF/plugin_config.vim
 source $VCONF/ignore.vim
 source $VCONF/functions.vim
