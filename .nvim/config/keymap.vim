@@ -113,8 +113,8 @@ noremap <silent><leader>vt :%s/\s\+$//<cr>:let @/=''<cr>
 " Leader-vv = open .vimrc
 nnoremap <silent><leader>vv :e $MYVIMRC<cr>
 
-" Leader-vk = open keybindings.vim
-nnoremap <silent><leader>vo :e ~/.vim/config/<cr>
+" Leader-vo = open nvim config dir
+nnoremap <silent><leader>vo :e ~/.nvim/config/<cr>
 
 " Leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<cr>
