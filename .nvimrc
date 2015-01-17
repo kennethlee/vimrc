@@ -1,7 +1,5 @@
 " Core {{{1
 
-" nocompatible and utf-8 are defaults in neovim; remove after the switch
-set nocompatible
 set nomodeline
 syntax on
 filetype off
