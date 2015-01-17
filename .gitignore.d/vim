@@ -1,8 +1,8 @@
 *
 !/.gitignore.d
 !/.gitignore.d/vim
+!/.nvimrc
 !/.vim
-!/.vim/vimrc
 !/.vim/config
 !/.vim/config/functions.vim
 !/.vim/config/gui.vim
