@@ -33,7 +33,7 @@ let g:netrw_list_hide = '.*\.db,\.dmg,\.doc,\.DS_Store,\.gif,\.jpg,\.numbers,
 
 let g:netrw_bufsettings    = 'noma nomod nu nobl nowrap ro'
 let g:netrw_special_syntax = 1
-let g:netrw_fastbrowse     = 2
+let g:netrw_fastbrowse     = 1
 let g:netrw_dirhistmax     = 0
 let g:netrw_banner         = 0
 
