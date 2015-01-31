@@ -34,6 +34,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
+Plug 'elixir-lang/vim-elixir'
 " Plug 'tpope/vim-haml'
 
 call plug#end()
