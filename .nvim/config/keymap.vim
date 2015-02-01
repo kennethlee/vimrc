@@ -1,4 +1,10 @@
 " General {{{1
+" incsearch.vim {{{2
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 " HLJK {{{2
 
 " Use j and k to move by display lines, not real lines (Normal/Visual mode)

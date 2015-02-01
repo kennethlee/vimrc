@@ -25,12 +25,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" incsearch.vim {{{1
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
 " NETRW {{{1
 
 let g:netrw_hide      = 1
