@@ -17,6 +17,7 @@ call plug#begin('~/.nvim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
+Plug 'haya14busa/incsearch.vim'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'

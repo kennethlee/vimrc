@@ -49,10 +49,11 @@ nnoremap <silent><c-n> :bnext<cr>
 nnoremap <silent><c-p> :bprev<cr>
 
 " Search using normal regex; "very magic"
-nnoremap / /\v
-xnoremap / /\v
-nnoremap ? ?\v
-xnoremap ? ?\v
+" Commented out so that incsearch will work properly.
+" nnoremap / /\v
+" xnoremap / /\v
+" nnoremap ? ?\v
+" xnoremap ? ?\v
 
 " Disable arrow keys.
 map <left> <nop>
