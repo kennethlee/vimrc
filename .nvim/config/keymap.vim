@@ -140,7 +140,10 @@ nnoremap <silent><leader>tp :CtrlP ~/Projects<cr>
 nnoremap <silent><leader>tu :CtrlPBuffer<cr>
 nnoremap <silent><leader>tw :CtrlPMixed<cr>
 
-" (Leader-f_) File Operations {{{2
+" (Leader-f_) FileBeagle, File Operations {{{2
+
+" FileBeagle
+nnoremap <silent><leader>ff :FileBeagle<cr>
 
 " Open files in dir of current file
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
@@ -174,11 +177,5 @@ vmap <enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <leader>ab <Plug>(EasyAlign)
-
-" (Leader-n_) NETRW {{{2
-
-nnoremap <silent><leader>ne :Explore!<cr>
-nnoremap <silent><leader>nf :Hexplore<cr>
-nnoremap <silent><leader>nv :Vexplore!<cr>
 
 " }}}1

@@ -25,16 +25,4 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" NETRW {{{1
-
-let g:netrw_hide      = 1
-let g:netrw_list_hide = '.*\.db,\.dmg,\.doc,\.DS_Store,\.gif,\.jpg,\.numbers,
-    \\.pages,\.pdf,\.png,\.pyc,\.rar,\.so,\.sw*,\.tbz'
-
-let g:netrw_bufsettings    = 'noma nomod nu nobl nowrap ro'
-let g:netrw_special_syntax = 1
-let g:netrw_fastbrowse     = 1
-let g:netrw_dirhistmax     = 0
-let g:netrw_banner         = 0
-
 " }}}1

@@ -15,7 +15,7 @@ call plug#begin('~/.nvim/plugged')
 
 " Core
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-vinegar'
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
 
