@@ -24,7 +24,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'justinmk/vim-sneak'
@@ -32,6 +31,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 
 " Filetypes
+Plug 'scrooloose/syntastic'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'

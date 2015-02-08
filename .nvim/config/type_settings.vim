@@ -17,6 +17,26 @@ augroup filetype_css
   autocmd FileType css setlocal breakindent
 augroup END
 
+" elixir {{{1
+
+augroup filetype_elixir
+  autocmd!
+  " Folding
+  autocmd FileType elixir setlocal foldenable
+  autocmd FileType elixir setlocal foldmethod=syntax
+  autocmd FileType elixir setlocal foldlevel=1
+  autocmd FileType elixir setlocal foldnestmax=6
+  autocmd FileType elixir setlocal foldcolumn=0
+  " Tabbing
+  autocmd FileType elixir setlocal softtabstop=2
+  autocmd FileType elixir setlocal shiftwidth=2
+  autocmd FileType elixir setlocal autoindent
+  autocmd FileType elixir setlocal expandtab
+  " Misc
+  autocmd FileType elixir setlocal breakindent
+  autocmd FileType elixir setlocal colorcolumn=81
+augroup END
+
 " eruby {{{1
 
 augroup filetype_eruby
