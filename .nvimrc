@@ -18,6 +18,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
+Plug 'gelguy/Cmd2.vim'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'
