@@ -1,8 +1,5 @@
 " General {{{1
 
-" Default in Neovim; remove after the switch
-set ttyfast
-
 set t_Co=256
 set cmdheight=2
 set showmode
