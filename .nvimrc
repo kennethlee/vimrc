@@ -19,6 +19,7 @@ Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
 Plug 'gelguy/Cmd2.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'
