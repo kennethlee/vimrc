@@ -15,7 +15,9 @@ call plug#begin('~/.nvim/plugged')
 
 " Core
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jeetsukumaran/vim-filebeagle'
+" Replace filebeagle with dirvish once stable.
+Plug 'justinmk/vim-dirvish'
+" Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
 Plug 'gelguy/Cmd2.vim'
@@ -28,7 +30,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneak'
 " Plug 'mtth/locate.vim'
 " Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 

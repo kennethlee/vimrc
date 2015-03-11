@@ -88,7 +88,7 @@ let g:mapleader=","
 " GB's Leader-Leader to quickly switch to alternate buffer
 nnoremap <leader><leader> <c-^>
 
-" (Leader-c/d) Change & Deletion {{{2
+" (Leader-c_) Change {{{2
 
 " Leader-cd to change working directory to current file.
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -105,6 +105,11 @@ xnoremap <leader>D "_D
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 noremap x "_x
+
+" (Leader-d_) dirvish {{{2
+
+nnoremap - :Dirvish %<cr>
+nnoremap <leader>ff :Dirvish ~/
 
 " (Leader-v_) Vim (General) {{{2
 
@@ -143,7 +148,7 @@ nnoremap <silent><leader>tw :CtrlPMixed<cr>
 " (Leader-f_) FileBeagle, File Operations {{{2
 
 " FileBeagle
-nnoremap <silent><leader>ff :FileBeagle<cr>
+" nnoremap <silent><leader>ff :FileBeagle<cr>
 
 " Open files in dir of current file
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
