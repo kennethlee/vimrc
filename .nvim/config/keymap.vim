@@ -1,30 +1,4 @@
 " General {{{1
-" incsearch.vim {{{2
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" HLJK {{{2
-
-" Use j and k to move by display lines, not real lines (Normal/Visual mode)
-nnoremap j gj
-nnoremap k gk
-xnoremap j gj
-xnoremap k gk
-
-" Ctrl + hjkl for window navigation
-noremap <c-h> <c-w>h
-noremap <c-l> <c-w>l
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-
-" Tab {{{2
-
-" GB's multi-purpose tabs
-inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <silent><s-tab> <c-n>
-
 " Misc. {{{2
 
 " Y yanks to EOL (consistent with D, C, etc).
@@ -79,6 +53,32 @@ map! <mouseup> <nop>
 map! <mousedown> <nop>
 
 " }}}
+" HLJK {{{2
+
+" Use j and k to move by display lines, not real lines (Normal/Visual mode)
+nnoremap j gj
+nnoremap k gk
+xnoremap j gj
+xnoremap k gk
+
+" Ctrl + hjkl for window navigation
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+
+" Tab {{{2
+
+" GB's multi-purpose tabs
+inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <silent><s-tab> <c-n>
+
+" incsearch.vim {{{2
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 " Leader {{{1
 " Core {{{2
 
@@ -110,6 +110,14 @@ noremap x "_x
 
 nnoremap - :Dirvish %<cr>
 nnoremap <leader>ff :Dirvish ~/
+
+" `:!mkdir %/foo` to create a directory.
+
+" Delete a file
+nnoremap <leader>fg :call delete(getline('.'))<cr>
+
+" Delete a range of files
+nnoremap <leader>fd :'<,'>call delete(getline('.'))
 
 " (Leader-v_) Vim (General) {{{2
 
@@ -145,10 +153,7 @@ nnoremap <silent><leader>tp :CtrlP ~/Projects<cr>
 nnoremap <silent><leader>tu :CtrlPBuffer<cr>
 nnoremap <silent><leader>tw :CtrlPMixed<cr>
 
-" (Leader-f_) FileBeagle, File Operations {{{2
-
-" FileBeagle
-" nnoremap <silent><leader>ff :FileBeagle<cr>
+" (Leader-f_) File Operations {{{2
 
 " Open files in dir of current file
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
