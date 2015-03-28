@@ -14,22 +14,24 @@ set fileencodings=utf-8
 call plug#begin('~/.nvim/plugged')
 
 " Core
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
-Plug 'haya14busa/incsearch.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'gelguy/Cmd2.vim'
+Plug 'haya14busa/incsearch.vim'
+
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'gabesoft/vim-ags'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'airblade/vim-gitgutter'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'justinmk/vim-sneak'
 " Plug 'mtth/locate.vim'

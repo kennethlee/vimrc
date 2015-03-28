@@ -217,4 +217,8 @@ vmap <enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <leader>ab <Plug>(EasyAlign)
 
+" vim-rooter {{{2
+
+let g:rooter_disable_map = 1
+
 " }}}1
