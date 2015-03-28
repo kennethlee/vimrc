@@ -61,11 +61,40 @@ nnoremap k gk
 xnoremap j gj
 xnoremap k gk
 
-" Ctrl + hjkl for window navigation
-noremap <c-h> <c-w>h
-noremap <c-l> <c-w>l
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
+" Alt + hjkl for window navigation
+noremap ˙ <c-w>h
+noremap ∆ <c-w>j
+noremap ˚ <c-w>k
+noremap ¬ <c-w>l
+
+" Terminal movement {{{2
+
+" nnoremap ˙ <c-w>h
+" nnoremap ∆ <c-w>j
+" nnoremap ˚ <c-w>k
+" nnoremap ¬ <c-w>l
+
+" vnoremap ˙ <c-n><c-w>h
+" vnoremap ∆ <c-n><c-w>j
+" vnoremap ˚ <c-n><c-w>k
+" vnoremap ¬ <c-n><c-w>l
+
+" inoremap ˙ <c-\><c-n><c-w>h
+" inoremap ∆ <c-\><c-n><c-w>j
+" inoremap ˚ <c-\><c-n><c-w>k
+" inoremap ¬ <c-\><c-n><c-w>l
+
+" cnoremap ˙ <c-\><c-n><c-w>h
+" cnoremap ∆ <c-\><c-n><c-w>j
+" cnoremap ˚ <c-\><c-n><c-w>k
+" cnoremap ¬ <c-\><c-n><c-w>l
+
+if has('nvim')
+  tnoremap ˙ <c-\><c-n><c-w>h
+  tnoremap ∆ <c-\><c-n><c-w>j
+  tnoremap ˚ <c-\><c-n><c-w>k
+  tnoremap ¬ <c-\><c-n><c-w>l
+endif
 
 " Tab {{{2
 
