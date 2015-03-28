@@ -22,6 +22,7 @@ Plug 'gelguy/Cmd2.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'gabesoft/vim-ags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'airblade/vim-gitgutter'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'
@@ -65,8 +66,6 @@ set noswapfile
 
 " Automatically reload file if it has changed outside of vim
 set autoread
-
-autocmd BufNewFile,BufRead *.scss setlocal filetype=scss
 
 "===============================================================================
 " Text Manipulation {{{2
