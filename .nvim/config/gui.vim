@@ -13,11 +13,8 @@ set number
 set numberwidth=6
 
 " Window Behavior
-set winminwidth=15
-set winwidth=80
-set winheight=5
-set winminheight=5
-set winheight=999
+set winminwidth=15 winwidth=90
+set noequalalways winminheight=0 winheight=9999 helpheight=9999
 set splitright splitbelow
 
 " Status Line {{{1
