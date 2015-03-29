@@ -95,6 +95,10 @@ if executable("ag")
     let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 endif
 
+" vim-gitgutter {{{1
+
+highlight clear SignColumn
+
 " Misc. {{{1
 
 " Disable netrw
