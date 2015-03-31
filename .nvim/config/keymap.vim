@@ -137,7 +137,7 @@ noremap x "_x
 
 " (Leader-d_) dirvish {{{2
 
-nnoremap - :Dirvish %<cr>
+nnoremap <silent>- :Dirvish :p:h<cr>
 nnoremap <leader>ff :Dirvish ~/
 
 " `:!mkdir %/foo` to create a directory.
