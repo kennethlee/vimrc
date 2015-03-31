@@ -95,6 +95,17 @@ if executable("ag")
     let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 endif
 
+" fugitive {{{1
+
+" Poor man's vim-rooter: changes cwd to current file's project root
+" Uses fugitive.vim.
+autocmd BufLeave * let b:last_cwd = getcwd()
+autocmd BufEnter * if exists('b:last_cwd')
+                \|   execute 'lcd' b:last_cwd
+                \| else
+                \|   silent! Glcd
+                \| endif
+
 " vim-gitgutter {{{1
 
 highlight clear SignColumn
