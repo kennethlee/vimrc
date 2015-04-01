@@ -132,15 +132,18 @@ nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 noremap x "_x
 
-" (Leader-d_) dirvish {{{2
+" (Leader-f_) dirvish + file operations {{{2
 
 nnoremap <silent>- :Dirvish :p:h<cr>
 nnoremap <leader>ff :Dirvish ~/
 
 " `:!mkdir %/foo` to create a directory.
 
+" Leader-fr = GB's rename current file
+noremap <silent><leader>fm :call RenameFile()<cr>
+
 " Delete a file
-nnoremap <leader>fg :call delete(getline('.'))<cr>
+nnoremap <leader>fr :call delete(getline('.'))<cr>
 
 " Delete a range of files
 nnoremap <leader>fd :'<,'>call delete(getline('.'))
@@ -176,10 +179,9 @@ nnoremap <silent><leader>tp :CtrlP ~/Projects<cr>
 nnoremap <silent><leader>tu :CtrlPBuffer<cr>
 nnoremap <silent><leader>tw :CtrlPMixed<cr>
 
-" (Leader-f_) File Operations {{{2
+" (Leader-t_) fzf {{{2
 
-" Leader-fr = GB's rename current file
-noremap <silent><leader>fr :call RenameFile()<cr>
+" nnoremap <silent><leader>tt :FZF<cr>
 
 " (Leader-r_) Registers {{{2
 
