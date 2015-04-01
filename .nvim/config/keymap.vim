@@ -119,9 +119,6 @@ nnoremap <leader><leader> <c-^>
 
 " (Leader-c_) Change {{{2
 
-" Leader-cd to change working directory to current file.
-nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 " Use Leader key before change/delete command to delete without yanking.
 " Ex: ,dd or 20,dd or ,C or ,cap
 " Also forbid deletion via x from updating registers.
@@ -156,9 +153,6 @@ nnoremap <silent><leader>vm <c-w>\|
 " Leader-vs = toggle spell check
 nnoremap <silent><leader>vs :call SpellToggle()<cr>
 
-" Leader-vt = Steve Losh' trailing whitespace cleaner
-noremap <silent><leader>vt :%s/\s\+$//<cr>:let @/=''<cr>
-
 " Leader-vv = open .vimrc
 nnoremap <silent><leader>vv :e $MYVIMRC<cr>
 
@@ -183,11 +177,6 @@ nnoremap <silent><leader>tu :CtrlPBuffer<cr>
 nnoremap <silent><leader>tw :CtrlPMixed<cr>
 
 " (Leader-f_) File Operations {{{2
-
-" Open files in dir of current file
-cnoremap %% <c-r>=expand('%:h').'/'<cr>
-noremap <leader>fe :edit %%
-noremap <leader>fv :view %%
 
 " Leader-fr = GB's rename current file
 noremap <silent><leader>fr :call RenameFile()<cr>
