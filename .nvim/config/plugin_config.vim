@@ -48,7 +48,7 @@ set wildcharm=<Tab>
 " CtrlP {{{1
 
 " Enable!
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 let g:ctrlp_match_window        = 'bottom,order:ttb,min:50,max:50'
 let g:ctrlp_working_path_mode   = 'ra'
@@ -108,9 +108,13 @@ autocmd BufEnter * if exists('b:last_cwd')
 
 " vim-gitgutter {{{1
 
+let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
 " Misc. {{{1
+
+" rainbow_parentheses.vim is on by default
+autocmd VimEnter * RainbowParentheses
 
 " Disable netrw
 let g:loaded_netrwPlugin = 1
