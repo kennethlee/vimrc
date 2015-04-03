@@ -106,15 +106,20 @@ autocmd BufEnter * if exists('b:last_cwd')
                 \|   silent! Glcd
                 \| endif
 
+" rainbow_parentheses {{{1
+
+" rainbow_parentheses.vim is on by default
+autocmd VimEnter * RainbowParentheses
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
 " vim-gitgutter {{{1
 
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
 " Misc. {{{1
-
-" rainbow_parentheses.vim is on by default
-autocmd VimEnter * RainbowParentheses
 
 " Disable netrw
 let g:loaded_netrwPlugin = 1
