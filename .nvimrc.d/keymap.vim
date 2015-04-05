@@ -160,7 +160,7 @@ nnoremap <silent><leader>vs :call SpellToggle()<cr>
 nnoremap <silent><leader>vv :e $MYVIMRC<cr>
 
 " Leader-vo = open nvim config dir
-nnoremap <silent><leader>vo :e ~/.nvim/config/<cr>
+nnoremap <silent><leader>vo :e ~/.nvimrc.d/<cr>
 
 " Leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<cr>

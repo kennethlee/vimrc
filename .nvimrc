@@ -23,7 +23,6 @@ Plug 'haya14busa/incsearch.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'gabesoft/vim-ags'
 
 " Text-editing
 Plug 'junegunn/vim-easy-align'
@@ -31,8 +30,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'justinmk/vim-sneak'
 " Plug 'mtth/locate.vim'
 " Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 
@@ -112,12 +109,9 @@ set title t_ti= t_te=
 
 " }}}1
 
-let $VCONF="~/.nvim/config/"
-source $VCONF/plugin_config.vim
-source $VCONF/ignore.vim
-source $VCONF/functions.vim
-source $VCONF/type_settings.vim
-source $VCONF/gui.vim
-source $VCONF/keymap.vim
+" Source vim config files
+for f in split(glob('~/.nvimrc.d/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 " End
