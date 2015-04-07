@@ -33,7 +33,7 @@ set stl+=%2*[%n                                 " Buffer number
 set stl+=%{'/'.len(filter(range(1,bufnr('$')),
     \'buflisted(v:val)'))}                      " Total number of open buffers
 set stl+=%H%M%R%W]%*\                           " Flags
-set stl+=%{fugitive#statusline()}%<             " fugitive branch
+set stl+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}%<
 set stl+=%-F\                                   " Filepath
 set stl+=%=[%{&fileformat}:                     " File format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
