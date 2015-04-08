@@ -134,7 +134,7 @@ noremap x "_x
 
 " (Leader-f_) dirvish + file operations {{{2
 
-nnoremap <silent>- :Dirvish :p:h<cr>
+nnoremap <silent>- :Dirvish %:p:h<cr>
 nnoremap <leader>ff :Dirvish ~/
 
 " `:!mkdir %/foo` to create a directory.
@@ -182,6 +182,19 @@ nnoremap <silent><leader>tw :CtrlPMixed<cr>
 " (Leader-t_) fzf {{{2
 
 " nnoremap <silent><leader>tt :FZF<cr>
+" nnoremap <leader>te :FZF ~/
+" nnoremap <silent><leader>tl :FZFLines<cr>
+" nnoremap <silent><leader>tm :FZFMru<cr>
+" nnoremap <silent><leader>tn :FZF ~/Documents/notes<cr>
+" nnoremap <silent><leader>tp :FZF ~/projects<cr>
+
+" " Select buffer
+" nnoremap <silent><leader>tu :call fzf#run({
+" \   'source':  reverse(<sid>buflist()),
+" \   'sink':    function('<sid>bufopen'),
+" \   'options': '+m',
+" \   'down':    len(<sid>buflist()) + 2
+" \ })<CR>
 
 " (Leader-r_) Registers {{{2
 
