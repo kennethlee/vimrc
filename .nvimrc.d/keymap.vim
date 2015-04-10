@@ -62,13 +62,6 @@ xnoremap j gj
 xnoremap k gk
 
 " Alt + hjkl for window navigation
-noremap ˙ <c-w>h
-noremap ∆ <c-w>j
-noremap ˚ <c-w>k
-noremap ¬ <c-w>l
-
-" Terminal movement {{{2
-
 nnoremap ˙ <c-w>h
 nnoremap ∆ <c-w>j
 nnoremap ˚ <c-w>k
@@ -89,6 +82,7 @@ cnoremap ∆ <c-\><c-n><c-w>j
 cnoremap ˚ <c-\><c-n><c-w>k
 cnoremap ¬ <c-\><c-n><c-w>l
 
+" terminal movement
 if has('nvim')
   tnoremap ˙ <c-\><c-n><c-w>h
   tnoremap ∆ <c-\><c-n><c-w>j
@@ -203,7 +197,7 @@ nnoremap <silent><leader>r :registers<cr>
 
 " (Leader-g_) Fugitive {{{2
 
-nnoremap <leader>ga :Git add %<cr>
+nnoremap <leader>ga :Git add %:p:h<cr>
 nnoremap <leader>gb :Git branch 
 nnoremap <leader>go :Git checkout 
 nnoremap <leader>gc :Git commit -m "
