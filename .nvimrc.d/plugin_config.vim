@@ -1,17 +1,4 @@
 " fzf {{{1
-" buffer: select {{{2
-
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
 " buffer: search lines in all open {{{2
 
 function! s:line_handler(l)
