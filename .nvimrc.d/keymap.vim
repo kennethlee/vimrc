@@ -159,36 +159,22 @@ nnoremap <silent><leader>vo :e ~/.nvimrc.d/<cr>
 " Leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<cr>
 
-" (Leader-t_) CtrlP {{{2
-
-" Leader-tt = CtrlP
-let g:ctrlp_map = '<leader>tt'
-let g:ctrlp_cmd = 'CtrlP'
-
-nnoremap <leader>te :CtrlP ~/
-nnoremap <silent><leader>tl :CtrlPLine<cr>
-nnoremap <silent><leader>tm :CtrlPMRU<cr>
-nnoremap <silent><leader>tn :CtrlP ~/Documents/Notes<cr>
-nnoremap <silent><leader>tp :CtrlP ~/Projects<cr>
-nnoremap <silent><leader>tu :CtrlPBuffer<cr>
-nnoremap <silent><leader>tw :CtrlPMixed<cr>
-
 " (Leader-t_) fzf {{{2
 
-" nnoremap <silent><leader>tt :FZF<cr>
-" nnoremap <leader>te :FZF ~/
-" nnoremap <silent><leader>tl :FZFLines<cr>
-" nnoremap <silent><leader>tm :FZFMru<cr>
-" nnoremap <silent><leader>tn :FZF ~/Documents/notes<cr>
-" nnoremap <silent><leader>tp :FZF ~/projects<cr>
+nnoremap <silent><leader>tt :FZF<cr>
+nnoremap <leader>te :FZF ~/
+nnoremap <silent><leader>tl :FZFLines<cr>
+nnoremap <silent><leader>tm :FZFMru<cr>
+nnoremap <silent><leader>tn :FZF ~/Documents/notes<cr>
+nnoremap <silent><leader>tp :FZF ~/projects<cr>
 
-" " Select buffer
-" nnoremap <silent><leader>tu :call fzf#run({
-" \   'source':  reverse(<sid>buflist()),
-" \   'sink':    function('<sid>bufopen'),
-" \   'options': '+m',
-" \   'down':    len(<sid>buflist()) + 2
-" \ })<CR>
+" Select buffer
+nnoremap <silent><leader>tu :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
 
 " (Leader-r_) Registers {{{2
 

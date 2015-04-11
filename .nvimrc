@@ -20,9 +20,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/incsearch.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-
 " Text-editing
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
