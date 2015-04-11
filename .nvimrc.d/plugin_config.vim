@@ -23,6 +23,7 @@ command! FZFLines call fzf#run({
 \   'down':    '60%'
 \})
 
+"===============================================================================
 " commandline: fuzzy completion {{{2
 
 cnoremap <silent> <c-l> <c-\>eGetCompletions()<cr>
@@ -71,6 +72,7 @@ function! GetCompletions()
     endif
 endfunction
 
+"===============================================================================
 " file: mru {{{2
 
 command! FZFMru call fzf#run({
@@ -79,10 +81,11 @@ command! FZFMru call fzf#run({
             \'options' : '-m',
             \})
 
+"===============================================================================
 " fugitive {{{1
 
-" Poor man's vim-rooter: changes cwd to current file's project root
-" Uses fugitive.vim.
+" poor man's vim-rooter: changes cwd to current file's project root
+" uses fugitive.vim.
 autocmd BufLeave * let b:last_cwd = getcwd()
 autocmd BufEnter * if exists('b:last_cwd')
                 \|   execute 'lcd' b:last_cwd
@@ -90,14 +93,17 @@ autocmd BufEnter * if exists('b:last_cwd')
                 \|   silent! Glcd
                 \| endif
 
+"===============================================================================
 " vim-gitgutter {{{1
 
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
-" Misc. {{{1
+"===============================================================================
+" misc. {{{1
 
-" Disable netrw
+" disable netrw
 let g:loaded_netrwPlugin = 1
 
+"===============================================================================
 " }}}1

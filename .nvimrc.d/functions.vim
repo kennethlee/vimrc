@@ -1,7 +1,7 @@
-" Fold Lines {{{1
+" fold lines {{{1
 
-" Better looking folds; right-alignment of line numbers + percentage of file.
-" Taken from https://github.com/NagatoPain/dotfiles/blob/master/.vim/vimrc
+" better looking folds; right-alignment of line numbers + percentage of file.
+" taken from https://github.com/NagatoPain/dotfiles/blob/master/.vim/vimrc
 function! VimFoldText()
   let fs = v:foldstart
 
@@ -30,15 +30,17 @@ endfunction
 
 set foldtext=VimFoldText()
 
-" Global Options {{{2
+"===============================================================================
+" global options {{{2
 
-" Fold options. See ':help fold-options' for more.
+" fold options. See ':help fold-options' for more.
 set foldenable
 set foldlevel=0
 set foldcolumn=0
 set foldnestmax=6
 
-" GB's Rename File {{{1
+"===============================================================================
+" gb's rename fIle {{{1
 
 function! RenameFile()
   let old_name = expand('%')
@@ -51,9 +53,10 @@ function! RenameFile()
   endif
 endfunction
 
-" GB's Tabs {{{1
+"===============================================================================
+" gb's tabs {{{1
 
-" Indent if at the beginning of a line, else, do completion.
+" indent if at the beginning of a line, else, do completion.
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
@@ -63,7 +66,8 @@ function! InsertTabWrapper()
   endif
 endfunction
 
-" Pastetoggle {{{1
+"===============================================================================
+" pastetoggle {{{1
 
 " 'bracketed paste mode': enables the terminal emulator to tell the program
 " connected to the tty when the user pastes text, so that the program won't
@@ -84,9 +88,9 @@ if &term =~ "xterm.*"
   cmap <Esc>[201~ <nop>
 endif
 
-" Steve Losh' Quickfix Window Toggle {{{1
+"===============================================================================
+" steve losh' quickfix window toggle {{{1
 
-" Do I even need/use this?
 let g:quickfix_is_open = 0
 
 function! s:QuickfixToggle()
@@ -101,7 +105,8 @@ function! s:QuickfixToggle()
   endif
 endfunction
 
-" Spell Check Toggle {{{1
+"===============================================================================
+" spell check toggle {{{1
 
 set spelllang=en_us
 function! SpellToggle()
@@ -112,4 +117,5 @@ function! SpellToggle()
   endif
 endfunction
 
+"===============================================================================
 " }}}1

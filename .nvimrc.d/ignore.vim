@@ -9,4 +9,5 @@ set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
 set wildignore+=*.so,*.sw?
 set wildignore+=*.pyc
 
+"===============================================================================
 " }}}1
