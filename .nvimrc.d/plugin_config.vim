@@ -96,6 +96,7 @@ autocmd BufEnter * if exists('b:last_cwd')
 "===============================================================================
 " vim-gitgutter {{{1
 
+let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
