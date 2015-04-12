@@ -4,6 +4,12 @@ set t_Co=256
 set cmdheight=2
 set showmode
 
+" colorscheme
+" necessary for proper color but still overridden by terminal; is this normal?
+set background=dark
+let base16colorspace=256
+colorscheme base16-eighties
+
 " display symbols for tabs, end-of-line, trailing whitespace
 set list
 set listchars=tab:▸\ ,eol:¬,trail:@

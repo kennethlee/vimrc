@@ -20,6 +20,8 @@ Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/incsearch.vim'
+Plug 'kassio/neoterm'
+Plug 'chriskempson/base16-vim'
 
 " text-editing
 Plug 'junegunn/vim-easy-align'
