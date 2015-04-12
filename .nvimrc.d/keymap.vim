@@ -161,6 +161,9 @@ nnoremap <silent><leader>vv :e $MYVIMRC<cr>
 " leader-vo = open nvim config dir
 nnoremap <silent><leader>vo :e ~/.nvimrc.d/<cr>
 
+" leader-vb = open .bashrc
+nnoremap <silent><leader>vb :e ~/.bashrc<cr>
+
 " leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<cr>
 
