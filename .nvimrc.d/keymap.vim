@@ -29,11 +29,10 @@ nnoremap <silent><c-n> :bnext<cr>
 nnoremap <silent><c-p> :bprev<cr>
 
 " search using normal regex; "very magic"
-" Commented out so that incsearch will work properly.
-" nnoremap / /\v
-" xnoremap / /\v
-" nnoremap ? ?\v
-" xnoremap ? ?\v
+nnoremap / /\v
+xnoremap / /\v
+nnoremap ? ?\v
+xnoremap ? ?\v
 
 " disable arrow keys.
 map <left> <nop>
@@ -96,13 +95,6 @@ endif
 " gb's multi-purpose tabs
 inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <silent><s-tab> <c-n>
-
-"===============================================================================
-" incsearch.vim {{{2
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 "===============================================================================
 " leader {{{1

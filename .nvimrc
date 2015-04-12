@@ -19,18 +19,16 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'haya14busa/incsearch.vim'
 Plug 'kassio/neoterm'
 Plug 'chriskempson/base16-vim'
 
 " text-editing
+" Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-" Plug 'mtth/locate.vim'
-" Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 
 " filetypes
 Plug 'scrooloose/syntastic'
