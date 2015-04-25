@@ -27,7 +27,7 @@ set splitright splitbelow
 " status line {{{1
 
 " current line in netrw now yellow highlight/black text
-hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
+" hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
 
 set laststatus=2
 
