@@ -24,9 +24,9 @@ inoremap <silent><f8> <c-r>=strftime("%FT%T%z, %a")<cr>
 nnoremap <silent><cr> :nohlsearch<cr>/<bs>
 nnoremap <silent><esc> :nohlsearch<cr>/<bs>
 
-" C-n/C-p to cycle through buffers (keep below Tabbing section above?)
-nnoremap <silent><c-n> :bnext<cr>
-nnoremap <silent><c-p> :bprev<cr>
+" tab/shift-tab to cycle through buffers
+nnoremap <silent><tab> :bnext<cr>
+nnoremap <silent><s-tab> :bprev<cr>
 
 " search using normal regex; "very magic"
 nnoremap / /\v
