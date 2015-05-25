@@ -19,7 +19,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 Plug 'chriskempson/base16-vim'
 
 " text-editing
