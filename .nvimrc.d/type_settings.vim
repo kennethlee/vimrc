@@ -87,7 +87,7 @@ augroup filetype_javascript
   " folding
   autocmd FileType javascript setlocal foldenable
   autocmd FileType javascript setlocal foldmethod=syntax
-  autocmd FileType javascript setlocal foldlevel=1
+  autocmd FileType javascript setlocal foldlevel=0
   autocmd FileType javascript setlocal foldnestmax=6
   autocmd FileType javascript setlocal foldcolumn=0
   " tabbing
