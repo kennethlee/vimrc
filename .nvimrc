@@ -20,6 +20,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Plug 'kassio/neoterm'
+" Plug 'tpope/vim-dispatch'
 Plug 'chriskempson/base16-vim'
 
 " text-editing
@@ -29,9 +30,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+" Plug 'dyng/ctrlsf.vim'
 
 " filetypes
 Plug 'scrooloose/syntastic'
+Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'

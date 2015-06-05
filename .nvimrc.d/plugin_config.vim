@@ -103,6 +103,9 @@ highlight clear SignColumn
 "===============================================================================
 " misc. {{{1
 
+" emmet-vim
+let g:user_emmet_leader_key='<C-m>'
+
 " disable netrw
 let g:loaded_netrwPlugin = 1
 
