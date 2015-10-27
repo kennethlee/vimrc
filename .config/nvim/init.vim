@@ -12,7 +12,7 @@ set fileencodings=utf-8
 "===============================================================================
 " vim-plug {{{1
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " core
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
