@@ -45,6 +45,18 @@ call plug#end()
 
 "===============================================================================
 " general {{{1
+" ignored {{{2
+
+set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
+set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
+set wildignore+=*.doc,*.numbers,*.pages,*.pdf
+set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
+set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
+set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
+set wildignore+=*.so,*.sw?
+set wildignore+=*.pyc
+
+"===============================================================================
 " file handling {{{2
 
 " enable filetype detection
@@ -105,11 +117,740 @@ set hlsearch
 set title t_ti= t_te=
 
 "===============================================================================
+" filetypes {{{1
+" make these ftplugins once they work properly again.
+" css {{{2
+
+augroup filetype_css
+  autocmd!
+  " folding
+  autocmd FileType css setlocal foldenable
+  autocmd BufRead,BufNewFile *.css setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType css setlocal foldlevel=0
+  autocmd FileType css setlocal foldnestmax=6
+  autocmd FileType css setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType css setlocal softtabstop=2
+  autocmd FileType css setlocal shiftwidth=2
+  autocmd FileType css setlocal autoindent
+  autocmd FileType css setlocal expandtab
+  " misc
+  autocmd FileType css setlocal breakindent
+augroup END
+
+"===============================================================================
+" elixir {{{2
+
+augroup filetype_elixir
+  autocmd!
+  " folding
+  autocmd FileType elixir setlocal foldenable
+  autocmd FileType elixir setlocal foldmethod=syntax
+  autocmd FileType elixir setlocal foldlevel=1
+  autocmd FileType elixir setlocal foldnestmax=6
+  autocmd FileType elixir setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType elixir setlocal softtabstop=2
+  autocmd FileType elixir setlocal shiftwidth=2
+  autocmd FileType elixir setlocal autoindent
+  autocmd FileType elixir setlocal expandtab
+  " misc
+  autocmd FileType elixir setlocal breakindent
+  autocmd FileType elixir setlocal colorcolumn=81
+augroup END
+
+"===============================================================================
+" eruby {{{2
+
+augroup filetype_eruby
+  autocmd!
+  " folding
+  autocmd FileType eruby setlocal foldenable
+  autocmd FileType eruby setlocal foldmethod=indent
+  autocmd FileType eruby setlocal foldlevel=0
+  autocmd FileType eruby setlocal foldnestmax=6
+  autocmd FileType eruby setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType eruby setlocal softtabstop=2
+  autocmd FileType eruby setlocal shiftwidth=2
+  autocmd FileType eruby setlocal autoindent
+  autocmd FileType eruby setlocal expandtab
+  " misc
+  autocmd FileType eruby setlocal breakindent
+augroup END
+
+"===============================================================================
+" html {{{2
+
+augroup filetype_html
+  autocmd!
+  " folding
+  autocmd FileType html setlocal foldenable
+  autocmd FileType html setlocal foldmethod=syntax
+  autocmd FileType html setlocal foldlevel=1
+  autocmd FileType html setlocal foldnestmax=6
+  autocmd FileType html setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType html setlocal softtabstop=2
+  autocmd FileType html setlocal shiftwidth=2
+  autocmd FileType html setlocal autoindent
+  autocmd FileType html setlocal expandtab
+  " misc
+  autocmd FileType html setlocal breakindent
+  autocmd FileType html setlocal colorcolumn=
+augroup END
+
+"===============================================================================
+" javascript {{{2
+
+augroup filetype_javascript
+  autocmd!
+  " folding
+  autocmd FileType javascript setlocal foldenable
+  autocmd FileType javascript setlocal foldmethod=syntax
+  autocmd FileType javascript setlocal foldlevel=0
+  autocmd FileType javascript setlocal foldnestmax=6
+  autocmd FileType javascript setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType javascript setlocal softtabstop=2
+  autocmd FileType javascript setlocal shiftwidth=2
+  autocmd FileType javascript setlocal autoindent
+  autocmd FileType javascript setlocal expandtab
+  " misc
+  autocmd FileType javascript setlocal breakindent
+  autocmd FileType javascript setlocal colorcolumn=81
+augroup END
+
+"===============================================================================
+" markdown {{{2
+
+" folding at '#' headers
+function! MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    return ">" . len(h)
+  endif
+endfunction
+
+augroup filetype_markdown
+  autocmd!
+  " folding
+  autocmd FileType markdown setlocal foldenable
+  autocmd FileType markdown setlocal foldlevel=0
+  autocmd FileType markdown setlocal foldnestmax=6
+  autocmd FileType markdown setlocal foldcolumn=0
+  autocmd BufEnter * if &filetype ==# 'markdown' | setlocal foldexpr=MarkdownLevel() | endif
+  autocmd BufEnter * if &filetype ==# 'markdown' | setlocal foldmethod=expr | endif
+  " misc
+  autocmd FileType markdown setlocal syn=off
+  autocmd FileType markdown setlocal breakindent
+augroup END
+
+"===============================================================================
+" ruby {{{2
+
+augroup filetype_ruby
+  autocmd!
+  " folding
+  autocmd FileType ruby setlocal foldenable
+  autocmd FileType ruby setlocal foldmethod=syntax
+  autocmd FileType ruby setlocal foldlevel=1
+  autocmd FileType ruby setlocal foldnestmax=6
+  autocmd FileType ruby setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType ruby setlocal softtabstop=2
+  autocmd FileType ruby setlocal shiftwidth=2
+  autocmd FileType ruby setlocal autoindent
+  autocmd FileType ruby setlocal expandtab
+  " misc
+  autocmd FileType ruby setlocal breakindent
+  autocmd FileType ruby setlocal colorcolumn=81
+augroup END
+
+"===============================================================================
+" vim {{{2
+
+augroup filetype_vim
+  autocmd!
+  " folding
+  autocmd FileType vim setlocal foldenable
+  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType vim setlocal foldlevel=0
+  autocmd FileType vim setlocal foldnestmax=6
+  autocmd FileType vim setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType vim setlocal softtabstop=2
+  autocmd FileType vim setlocal shiftwidth=2
+  autocmd FileType vim setlocal autoindent
+  autocmd FileType vim setlocal expandtab
+  " misc
+  autocmd FileType vim setlocal breakindent
+  autocmd FileType vim setlocal colorcolumn=81
+augroup END
+
+"===============================================================================
+" scss {{{2
+
+augroup filetype_scss
+  autocmd!
+  " folding
+  autocmd FileType scss setlocal foldenable
+  autocmd BufRead,BufNewFile *.scss setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType scss setlocal foldlevel=0
+  autocmd FileType scss setlocal foldnestmax=6
+  autocmd FileType scss setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType scss setlocal softtabstop=2
+  autocmd FileType scss setlocal shiftwidth=2
+  autocmd FileType scss setlocal autoindent
+  autocmd FileType scss setlocal expandtab
+  " misc
+  autocmd FileType scss setlocal breakindent
+augroup END
+
+"===============================================================================
+" yaml {{{2
+
+augroup filetype_yaml
+  autocmd!
+  " folding
+  autocmd FileType yaml setlocal foldenable
+  autocmd FileType yaml setlocal foldmethod=syntax
+  autocmd FileType yaml setlocal foldlevel=1
+  autocmd FileType yaml setlocal foldnestmax=6
+  autocmd FileType yaml setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType yaml setlocal softtabstop=2
+  autocmd FileType yaml setlocal shiftwidth=2
+  autocmd FileType yaml setlocal autoindent
+  autocmd FileType yaml setlocal expandtab
+  " misc
+  autocmd FileType yaml setlocal breakindent
+  autocmd FileType yaml setlocal colorcolumn=81
+
+  autocmd BufNewFile,BufRead *.yml setfiletype yaml
+augroup END
+
+"===============================================================================
+" ignored {{{2
+
+set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
+set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
+set wildignore+=*.doc,*.numbers,*.pages,*.pdf
+set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
+set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
+set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
+set wildignore+=*.so,*.sw?
+set wildignore+=*.pyc
+
+"===============================================================================
+" plugin config {{{1
+" fzf {{{2
+" buffer: search lines in all open {{{3
+
+function! s:line_handler(l)
+  let keys = split(a:l, ':\t')
+  exec 'buf ' . keys[0]
+  exec keys[1]
+  normal! ^zz
+endfunction
+
+function! s:buffer_lines()
+  let res = []
+  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
+    call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
+  endfor
+  return res
+endfunction
+
+command! FZFLines call fzf#run({
+\   'source':  <sid>buffer_lines(),
+\   'sink':    function('<sid>line_handler'),
+\   'options': '--extended --nth=3..',
+\   'down':    '60%'
+\})
+
+"===============================================================================
+" commandline: fuzzy completion {{{3
+
+cnoremap <silent> <c-l> <c-\>eGetCompletions()<cr>
+"add an extra <cr> at the end of this line to automatically accept the fzf-selected completions.
+
+function! Lister()
+    call extend(g:FZF_Cmd_Completion_Pre_List,split(getcmdline(),'\(\\\zs\)\@<!\& '))
+endfunction
+
+function! CmdLineDirComplete(prefix, options, rawdir)
+    let l:dirprefix = matchstr(a:rawdir,"^.*/")
+    if isdirectory(expand(l:dirprefix))
+        return join(a:prefix + map(fzf#run({
+                    \'options': a:options . ' --select-1  --query=' .
+                    \ a:rawdir[matchend(a:rawdir,"^.*/"):len(a:rawdir)], 
+                    \'dir': expand(l:dirprefix)
+                    \}), 
+                    \'"' . escape(l:dirprefix, " ") . '" . escape(v:val, " ")'))
+    else
+        return join(a:prefix + map(fzf#run({
+                    \'options': a:options . ' --query='. a:rawdir }),
+                    \'escape(v:val, " ")')) 
+        "dropped --select-1 to speed things up on a long query
+endfunction
+
+function! GetCompletions()
+    let g:FZF_Cmd_Completion_Pre_List = []
+    let l:cmdline_list = split(getcmdline(), '\(\\\zs\)\@<!\& ', 1)
+    let l:Prefix = l:cmdline_list[0:-2]
+    execute "silent normal! :" . getcmdline() . "\<c-a>\<c-\>eLister()\<cr>\<c-c>"
+    let l:FZF_Cmd_Completion_List = g:FZF_Cmd_Completion_Pre_List[len(l:Prefix):-1]
+    unlet g:FZF_Cmd_Completion_Pre_List
+    if len(l:Prefix) > 0 && l:Prefix[0] =~
+                \ '^ed\=i\=t\=$\|^spl\=i\=t\=$\|^tabed\=i\=t\=$\|^arged\=i\=t\=$\|^vsp\=l\=i\=t\=$'
+                "single-argument file commands
+        return CmdLineDirComplete(l:Prefix, "",l:cmdline_list[-1])
+    elseif len(l:Prefix) > 0 && l:Prefix[0] =~ 
+                \ '^arg\=s\=$\|^ne\=x\=t\=$\|^sne\=x\=t\=$\|^argad\=d\=$'  
+                "multi-argument file commands
+        return CmdLineDirComplete(l:Prefix, '--multi', l:cmdline_list[-1])
+    else 
+        return join(l:Prefix + fzf#run({
+                    \'source':l:FZF_Cmd_Completion_List, 
+                    \'options': '--select-1 --query='.shellescape(l:cmdline_list[-1])
+                    \})) 
+    endif
+endfunction
+
+"===============================================================================
+" file: mru {{{3
+
+command! FZFMru call fzf#run({
+            \'source': v:oldfiles,
+            \'sink' : 'e ',
+            \'options' : '-m',
+            \})
+
+"===============================================================================
+" fugitive {{{2
+
+" poor man's vim-rooter: changes cwd to current file's project root
+" uses fugitive.vim.
+autocmd BufLeave * let b:last_cwd = getcwd()
+autocmd BufEnter * if exists('b:last_cwd')
+                \|   execute 'lcd' b:last_cwd
+                \| else
+                \|   silent! Glcd
+                \| endif
+
+"===============================================================================
+" vim-gitgutter {{{2
+
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
+highlight clear SignColumn
+
+"===============================================================================
+" syntastic {{{2
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+"===============================================================================
+" misc. {{{2
+
+" disable netrw
+let g:loaded_netrwPlugin = 1
+
+"===============================================================================
+" functions {{{1
+" fold lines {{{2
+
+" better looking folds; right-alignment of line numbers + percentage of file.
+" taken from https://github.com/NagatoPain/dotfiles/blob/master/.vim/vimrc
+function! VimFoldText()
+  let fs = v:foldstart
+
+  while getline(fs) =~ '^\s*$'
+    let fs = nextnonblank(fs + 1)
+  endwhile
+
+  if fs > v:foldend
+    let line = getline(v:foldstart)
+  else
+    let line = getline(fs)
+  endif
+
+  let line = " " . substitute(line, '/\*\|\*/\|{'.'{{\d\=', '', 'g') . " "
+  let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+  let foldSize = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " " . foldSize . " lines "
+  let foldLevelStr = repeat(" + ", v:foldlevel) . "[" . v:foldlevel . "]"
+  let lineCount = line("$")
+  let foldPercentage = "[" . printf("%4.1f", (foldSize*1.0)/lineCount*100)
+      \. "%] "
+  let expansionString = repeat(".", w - strwidth(foldSizeStr) - strwidth(line)
+      \- strwidth(foldLevelStr) - strwidth(foldPercentage))
+  return foldLevelStr . line . expansionString . foldSizeStr. foldPercentage
+endfunction
+
+set foldtext=VimFoldText()
+
+"===============================================================================
+" global options {{{3
+
+" fold options. See ':help fold-options' for more.
+set foldenable
+set foldlevel=0
+set foldcolumn=0
+set foldnestmax=6
+
+"===============================================================================
+" gb's rename fIle {{{2
+
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+
+"===============================================================================
+" gb's tabs {{{2
+
+" indent if at the beginning of a line, else, do completion.
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<Tab>"
+  else
+    return "\<C-p>"
+  endif
+endfunction
+
+"===============================================================================
+" pastetoggle {{{2
+
+" 'bracketed paste mode': enables the terminal emulator to tell the program
+" connected to the tty when the user pastes text, so that the program won't
+" interpret it as editing commands."
+if &term =~ "xterm.*"
+  let &t_ti = &t_ti . "\e[?2004h"
+  let &t_te = "\e[?2004l" . &t_te
+
+  function XTermPasteBegin(ret)
+    set pastetoggle=<Esc>[201~
+    set paste
+    return a:ret
+  endfunction
+
+  map <expr> <Esc>[200~ XTermPasteBegin("i")
+  imap <expr> <Esc>[200~ XTermPasteBegin("")
+  cmap <Esc>[200~ <nop>
+  cmap <Esc>[201~ <nop>
+endif
+
+"===============================================================================
+" steve losh' quickfix window toggle {{{2
+
+let g:quickfix_is_open = 0
+
+function! s:QuickfixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
+
+"===============================================================================
+" spell check toggle {{{2
+
+set spelllang=en_us
+function! SpellToggle()
+  if &spell == 1
+    set nospell
+  else
+    set spell
+  endif
+endfunction
+
+"===============================================================================
+" gui {{{1
+" general {{{2
+
+set t_Co=256
+set cmdheight=2
+set showmode
+
+" colorscheme
+" necessary for proper color but still overridden by terminal; is this normal?
+set background=dark
+let base16colorspace=256
+colorscheme base16-eighties
+
+" display symbols for tabs, end-of-line, trailing whitespace
+set list
+set listchars=tab:▸\ ,eol:¬,trail:@
+
+" absolute line numbers and width to 6 chars.
+set number
+set numberwidth=6
+
+" window behavior
+set winminwidth=15 winwidth=90
+set noequalalways winminheight=0 winheight=9999 helpheight=9999
+set splitright splitbelow
+
+"===============================================================================
+" status line {{{2
+
+" current line in netrw now yellow highlight/black text
+" hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
+
+set laststatus=2
+
+hi default link User1 Identifier                " filename
+hi default link User2 Statement                 " flags
+hi default link User3 Error                     " errors
+
+set stl=
+set stl+=%2*[%n                                 " buffer number
+set stl+=%{'/'.len(filter(range(1,bufnr('$')),
+    \'buflisted(v:val)'))}                      " total number of open buffers
+set stl+=%H%M%R%W]%*\                           " flags
+set stl+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}%<
+set stl+=%-F\                                   " filepath
+set stl+=%=[%{&fileformat}:                     " file format/encoding
+set stl+=%{strwidth(&fenc)?&fenc:&enc}]
+set stl+=%5(%c%)\                               " column number
+
+"===============================================================================
+" hide {{{2
+
+set guioptions=aAce
+set mousehide
+
+"===============================================================================
+" keymap {{{1
+" misc. {{{2
+
+" Y yanks to EOL (consistent with D, C, etc).
+nnoremap Y y$
+
+" y yanks to system clipboard in Visual Mode.
+xnoremap y "*y
+
+" toggle folds with Space
+nnoremap <space> za
+xnoremap <space> zf
+
+" steve losh' quickfix window
+nnoremap <silent><c-q> :call <sid>QuickfixToggle()<cr>
+
+" keep cursor in place after joining lines
+nnoremap J mzJ`z
+
+" F8 to insert ISO 8601 timestamp + day of the week (Insert mode).
+inoremap <silent><f8> <c-r>=strftime("%FT%T%z, %a")<cr>
+
+" hitting CR or ESC clears highlighting from previous search
+nnoremap <silent><cr> :nohlsearch<cr>/<bs>
+nnoremap <silent><esc> :nohlsearch<cr>/<bs>
+
+" tab/shift-tab to cycle through buffers
+nnoremap <silent><tab> :bnext<cr>
+nnoremap <silent><s-tab> :bprev<cr>
+
+" search using normal regex; "very magic"
+nnoremap / /\v
+xnoremap / /\v
+nnoremap ? ?\v
+xnoremap ? ?\v
+
+" disable arrow keys.
+map <left> <nop>
+map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+
+" hide mouse, disable it from triggering Visual mode, page up/down.
+set mousehide mouse=nicr
+map <mouseup> <nop>
+map <mousedown> <nop>
+map! <mouseup> <nop>
+map! <mousedown> <nop>
+
+"===============================================================================
+" hljk {{{2
+
+" use j and k to move by display lines, not real lines (Normal/Visual mode)
+nnoremap j gj
+nnoremap k gk
+xnoremap j gj
+xnoremap k gk
+
+" Alt + hjkl for window navigation
+nnoremap ˙ <c-w>h
+nnoremap ∆ <c-w>j
+nnoremap ˚ <c-w>k
+nnoremap ¬ <c-w>l
+
+vnoremap ˙ <c-n><c-w>h
+vnoremap ∆ <c-n><c-w>j
+vnoremap ˚ <c-n><c-w>k
+vnoremap ¬ <c-n><c-w>l
+
+inoremap ˙ <c-\><c-n><c-w>h
+inoremap ∆ <c-\><c-n><c-w>j
+inoremap ˚ <c-\><c-n><c-w>k
+inoremap ¬ <c-\><c-n><c-w>l
+
+cnoremap ˙ <c-\><c-n><c-w>h
+cnoremap ∆ <c-\><c-n><c-w>j
+cnoremap ˚ <c-\><c-n><c-w>k
+cnoremap ¬ <c-\><c-n><c-w>l
+
+" terminal movement
+if has('nvim')
+  tnoremap ˙ <c-\><c-n><c-w>h
+  tnoremap ∆ <c-\><c-n><c-w>j
+  tnoremap ˚ <c-\><c-n><c-w>k
+  tnoremap ¬ <c-\><c-n><c-w>l
+endif
+
+"===============================================================================
+" tab {{{2
+
+" gb's multi-purpose tabs
+inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <silent><s-tab> <c-n>
+
+"===============================================================================
+" leader core {{{2
+
+" leader = comma
+let g:mapleader=","
+
+" gb's Leader-Leader to quickly switch to alternate buffer
+nnoremap <leader><leader> <c-^>
+
+"===============================================================================
+" (leader-c_) change {{{2
+
+" use leader key before change/delete command to delete without yanking.
+" ex: ,dd or 20,dd or ,C or ,cap
+" also forbid deletion via x from updating registers.
+nnoremap <leader>C "_C
+xnoremap <leader>C "_C
+nnoremap <leader>c "_c
+xnoremap <leader>c "_c
+nnoremap <leader>D "_D
+xnoremap <leader>D "_D
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+noremap x "_x
+
+"===============================================================================
+" (leader-f_) dirvish + file operations {{{2
+
+nnoremap <silent>- :Dirvish %:p:h<cr>
+nnoremap <leader>ff :Dirvish ~/
+
+" `:!mkdir %/foo` to create a directory.
+
+" leader-fr = GB's rename current file
+noremap <silent><leader>fm :call RenameFile()<cr>
+
+" delete a file
+nnoremap <leader>fr :call delete(getline('.'))<cr>
+
+" delete a range of files
+nnoremap <leader>fd :'<,'>call delete(getline('.'))
+
+" (leader-v_) vim (general) {{{2
+
+" leader-vm = maximize width of current window
+nnoremap <silent><leader>vm <c-w>\|
+
+" leader-vs = toggle spell check
+nnoremap <silent><leader>vs :call SpellToggle()<cr>
+
+" leader-vv = open .vimrc
+nnoremap <silent><leader>vv :e $MYVIMRC<cr>
+
+" leader-vb = open .bashrc
+nnoremap <silent><leader>vb :e ~/.bashrc<cr>
+
+" leader-vw = toggle wrap and list characters
+nnoremap <silent><leader>vw :set list!<cr>
+
+"===============================================================================
+" (leader-t_) fzf {{{2
+
+nnoremap <silent><leader>tt :FZF<cr>
+nnoremap <leader>te :FZF ~/
+nnoremap <silent><leader>tl :FZFLines<cr>
+nnoremap <silent><leader>tm :FZFMru<cr>
+nnoremap <silent><leader>tn :FZF ~/Documents/notes<cr>
+nnoremap <silent><leader>tp :FZF ~/projects<cr>
+
+" select buffer
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent><leader>tu :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<cr>
+
+"===============================================================================
+" (leader-r_) registers {{{2
+
+" view registers
+nnoremap <silent><leader>r :registers<cr>
+
+"===============================================================================
+" (leader-g_) fugitive {{{2
+
+nnoremap <leader>ga :Git add %:p:h<cr>
+nnoremap <leader>gb :Git branch 
+nnoremap <leader>go :Git checkout 
+nnoremap <leader>gc :Git commit -m "
+nnoremap <leader>gd :Git diff<cr>
+nnoremap <leader>gh :Git hist<cr>
+nnoremap <leader>gr :Git reset HEAD %<cr>
+nnoremap <leader>gs :Git status<cr>
+nnoremap <leader>gt :Git tag 
+
+"===============================================================================
+" (leader-a_) easyalign {{{2
+
+" start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <enter> <Plug>(EasyAlign)
+
+" start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <leader>ab <Plug>(EasyAlign)
+
+"===============================================================================
 " }}}1
-
-" source vim config files
-for f in split(glob('~/.nvimrc.d/*.vim'), '\n')
-    exe 'source' f
-endfor
-
-" end
