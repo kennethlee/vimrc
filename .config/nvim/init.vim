@@ -1,15 +1,3 @@
-" core {{{1
-
-set nomodeline
-syntax on
-filetype off
-
-" encoding
-set encoding=utf-8
-scriptencoding utf-8
-set fileencodings=utf-8
-
-"===============================================================================
 " vim-plug {{{1
 
 call plug#begin('~/.config/nvim/plugged')
@@ -45,19 +33,15 @@ call plug#end()
 
 "===============================================================================
 " general {{{1
-" ignored {{{2
-
-set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
-set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
-set wildignore+=*.doc,*.numbers,*.pages,*.pdf
-set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
-set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
-set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
-set wildignore+=*.so,*.sw?
-set wildignore+=*.pyc
-
-"===============================================================================
 " file handling {{{2
+
+set nomodeline
+syntax on
+
+" encoding
+set encoding=utf-8
+scriptencoding utf-8
+set fileencodings=utf-8
 
 " enable filetype detection
 filetype plugin indent on
@@ -75,6 +59,18 @@ set noswapfile
 
 " automatically reload file if it has changed outside of vim
 set autoread
+
+"===============================================================================
+" ignored {{{2
+
+set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
+set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
+set wildignore+=*.doc,*.numbers,*.pages,*.pdf
+set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
+set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
+set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
+set wildignore+=*.so,*.sw?
+set wildignore+=*.pyc
 
 "===============================================================================
 " text manipulation {{{2
@@ -118,7 +114,7 @@ set title t_ti= t_te=
 
 "===============================================================================
 " filetypes {{{1
-" make these ftplugins once they work properly again.
+" move to ftplugins once it works properly again.
 " css {{{2
 
 augroup filetype_css
@@ -248,7 +244,7 @@ augroup filetype_markdown
   autocmd FileType markdown setlocal breakindent
 augroup END
 
-"===============================================================================
+""===============================================================================
 " ruby {{{2
 
 augroup filetype_ruby
@@ -332,18 +328,6 @@ augroup filetype_yaml
 
   autocmd BufNewFile,BufRead *.yml setfiletype yaml
 augroup END
-
-"===============================================================================
-" ignored {{{2
-
-set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
-set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
-set wildignore+=*.doc,*.numbers,*.pages,*.pdf
-set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
-set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
-set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
-set wildignore+=*.so,*.sw?
-set wildignore+=*.pyc
 
 "===============================================================================
 " plugin config {{{1
