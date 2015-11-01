@@ -7,9 +7,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'kassio/neoterm'
-" Plug 'tpope/vim-dispatch'
 Plug 'chriskempson/base16-vim'
+Plug 'benekastah/neomake'
+" Plug 'kassio/neoterm'
 
 " text-editing
 " Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
@@ -21,7 +21,6 @@ Plug 'tpope/vim-repeat'
 " Plug 'dyng/ctrlsf.vim'
 
 " filetypes
-Plug 'scrooloose/syntastic'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -427,16 +426,18 @@ autocmd BufEnter * if exists('b:last_cwd')
                 \| endif
 
 "===============================================================================
+" neomake {{{2
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+autocmd! BufWritePost * Neomake
+
+"===============================================================================
 " vim-gitgutter {{{2
 
 let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
-
-"===============================================================================
-" syntastic {{{2
-
-let g:syntastic_javascript_checkers = ['eslint']
 
 "===============================================================================
 " misc. {{{2
@@ -705,13 +706,10 @@ cnoremap ∆ <c-\><c-n><c-w>j
 cnoremap ˚ <c-\><c-n><c-w>k
 cnoremap ¬ <c-\><c-n><c-w>l
 
-" terminal movement
-if has('nvim')
-  tnoremap ˙ <c-\><c-n><c-w>h
-  tnoremap ∆ <c-\><c-n><c-w>j
-  tnoremap ˚ <c-\><c-n><c-w>k
-  tnoremap ¬ <c-\><c-n><c-w>l
-endif
+tnoremap ˙ <c-\><c-n><c-w>h
+tnoremap ∆ <c-\><c-n><c-w>j
+tnoremap ˚ <c-\><c-n><c-w>k
+tnoremap ¬ <c-\><c-n><c-w>l
 
 "===============================================================================
 " tab {{{2
