@@ -8,6 +8,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'benekastah/neomake'
+Plug 'mbbill/undotree'
 " Plug 'kassio/neoterm'
 " Plug 'dyng/ctrlsf.vim'
 " Plug 'janko-m/vim-test'
@@ -408,6 +409,20 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost * Neomake
 
 "===============================================================================
+" undotree {{{2
+
+" if set, let undotree window get focus after being opened, otherwise
+" focus will stay in current window.
+if !exists('g:undotree_SetFocusWhenToggle')
+    let g:undotree_SetFocusWhenToggle = 1
+endif
+
+" Highlight changed text
+if !exists('g:undotree_HighlightChangedText')
+    let g:undotree_HighlightChangedText = 1
+endif
+
+"===============================================================================
 " vim-gitgutter {{{2
 
 let g:gitgutter_eager = 0
@@ -799,6 +814,11 @@ nnoremap <silent><leader>tu :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<cr>
+
+"===============================================================================
+" (leader-n_) undotree {{{2
+
+nnoremap <silent><leader>n :UndotreeToggle<cr>
 
 "===============================================================================
 " (leader-r_) registers {{{2
