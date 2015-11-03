@@ -60,18 +60,6 @@ set noswapfile
 set autoread
 
 "===============================================================================
-" ignored {{{2
-
-set wildignore+=*/Applications/*,*/Movies/*,*/Music/*,*/Pictures/*
-set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.sfv,*.wmv
-set wildignore+=*.doc,*.numbers,*.pages,*.pdf
-set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
-set wildignore+=*/tmp/*,*.db,.DS_Store,*.log
-set wildignore+=*.bmp,*.gif,*.jpeg,*.jpg,*.png
-set wildignore+=*.so,*.sw?
-set wildignore+=*.pyc
-
-"===============================================================================
 " text manipulation {{{2
 
 " gb: fix slow O inserts
