@@ -8,6 +8,10 @@ Plug 'justinmk/vim-dirvish'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'benekastah/neomake'
+Plug 'airblade/vim-rooter'
+" Plug 'kassio/neoterm'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'janko-m/vim-test'
 
 " text-editing
 Plug 'junegunn/vim-easy-align'
@@ -422,6 +426,11 @@ autocmd! BufWritePost * Neomake
 let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
+
+"===============================================================================
+" vim-rooter {{{2
+
+let g:rooter_change_directory_for_non_project_files = 1
 
 "===============================================================================
 " misc. {{{2
