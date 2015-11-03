@@ -8,7 +8,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'benekastah/neomake'
-Plug 'airblade/vim-rooter'
 " Plug 'kassio/neoterm'
 " Plug 'dyng/ctrlsf.vim'
 " Plug 'janko-m/vim-test'
@@ -606,7 +605,7 @@ set mousehide
 "===============================================================================
 " keymap {{{1
 " misc. {{{2
-
+"
 " Y yanks to EOL (consistent with D, C, etc).
 nnoremap Y y$
 
@@ -640,22 +639,16 @@ xnoremap / /\v
 nnoremap ? ?\v
 xnoremap ? ?\v
 
-" disable arrow keys.
-map <left> <nop>
-map <right> <nop>
-map <up> <nop>
-map <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
+"===============================================================================
+" change dir {{{2
 
-" hide mouse, disable it from triggering Visual mode, page up/down.
-set mousehide mouse=nicr
-map <mouseup> <nop>
-map <mousedown> <nop>
-map! <mouseup> <nop>
-map! <mousedown> <nop>
+" change dir across vim session
+nnoremap cD :cd %:p:h<bar>pwd<cr>
+nnoremap cU :cd ..<bar>pwd<cr>
+
+" change dir of curent window
+nnoremap cd :lcd %:p:h<bar>pwd<cr>
+nnoremap cu :lcd ..<bar>pwd<cr>
 
 "===============================================================================
 " hljk {{{2
@@ -698,6 +691,26 @@ tnoremap ¬ <c-\><c-n><c-w>l
 " gb's multi-purpose tabs
 inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <silent><s-tab> <c-n>
+
+"===============================================================================
+" disable {{{2
+"
+" disable arrow keys.
+map <left> <nop>
+map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+
+" hide mouse, disable it from triggering Visual mode, page up/down.
+set mousehide mouse=nicr
+map <mouseup> <nop>
+map <mousedown> <nop>
+map! <mouseup> <nop>
+map! <mousedown> <nop>
 
 "===============================================================================
 " leader core {{{2
