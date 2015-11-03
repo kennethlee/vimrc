@@ -5,20 +5,16 @@ call plug#begin('~/.config/nvim/plugged')
 " core
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'benekastah/neomake'
-" Plug 'kassio/neoterm'
 
 " text-editing
-" Plug 'Valloric/YouCompleteMe' { 'do': './install.sh' }
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-" Plug 'dyng/ctrlsf.vim'
 
 " filetypes
 Plug 'mattn/emmet-vim'
@@ -414,18 +410,6 @@ command! FZFMru call fzf#run({
             \})
 
 "===============================================================================
-" fugitive {{{2
-
-" poor man's vim-rooter: changes cwd to current file's project root
-" uses fugitive.vim.
-autocmd BufLeave * let b:last_cwd = getcwd()
-autocmd BufEnter * if exists('b:last_cwd')
-                \|   execute 'lcd' b:last_cwd
-                \| else
-                \|   silent! Glcd
-                \| endif
-
-"===============================================================================
 " neomake {{{2
 
 let g:neomake_javascript_enabled_makers = ['eslint']
@@ -516,28 +500,28 @@ function! InsertTabWrapper()
 endfunction
 
 "===============================================================================
-" pastetoggle {{{2
+"" pastetoggle {{{2
 
-" 'bracketed paste mode': enables the terminal emulator to tell the program
-" connected to the tty when the user pastes text, so that the program won't
-" interpret it as editing commands."
-if &term =~ "xterm.*"
-  let &t_ti = &t_ti . "\e[?2004h"
-  let &t_te = "\e[?2004l" . &t_te
+"" 'bracketed paste mode': enables the terminal emulator to tell the program
+"" connected to the tty when the user pastes text, so that the program won't
+"" interpret it as editing commands."
+"if &term =~ "xterm.*"
+"  let &t_ti = &t_ti . "\e[?2004h"
+"  let &t_te = "\e[?2004l" . &t_te
 
-  function XTermPasteBegin(ret)
-    set pastetoggle=<Esc>[201~
-    set paste
-    return a:ret
-  endfunction
+"  function XTermPasteBegin(ret)
+"    set pastetoggle=<Esc>[201~
+"    set paste
+"    return a:ret
+"  endfunction
 
-  map <expr> <Esc>[200~ XTermPasteBegin("i")
-  imap <expr> <Esc>[200~ XTermPasteBegin("")
-  cmap <Esc>[200~ <nop>
-  cmap <Esc>[201~ <nop>
-endif
+"  map <expr> <Esc>[200~ XTermPasteBegin("i")
+"  imap <expr> <Esc>[200~ XTermPasteBegin("")
+"  cmap <Esc>[200~ <nop>
+"  cmap <Esc>[201~ <nop>
+"endif
 
-"===============================================================================
+""===============================================================================
 " steve losh' quickfix window toggle {{{2
 
 let g:quickfix_is_open = 0
