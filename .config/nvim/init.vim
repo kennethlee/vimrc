@@ -482,7 +482,7 @@ set foldcolumn=0
 set foldnestmax=6
 
 "===============================================================================
-" gb's rename fIle {{{2
+" gb's rename file {{{2
 
 function! RenameFile()
   let old_name = expand('%')
@@ -509,28 +509,28 @@ function! InsertTabWrapper()
 endfunction
 
 "===============================================================================
-"" pastetoggle {{{2
+" pastetoggle {{{2
 
-"" 'bracketed paste mode': enables the terminal emulator to tell the program
-"" connected to the tty when the user pastes text, so that the program won't
-"" interpret it as editing commands."
-"if &term =~ "xterm.*"
-"  let &t_ti = &t_ti . "\e[?2004h"
-"  let &t_te = "\e[?2004l" . &t_te
+" 'bracketed paste mode': enables the terminal emulator to tell the program
+" connected to the tty when the user pastes text, so that the program won't
+" interpret it as editing commands."
+if &term =~ "xterm.*"
+  let &t_ti = &t_ti . "\e[?2004h"
+  let &t_te = "\e[?2004l" . &t_te
 
-"  function XTermPasteBegin(ret)
-"    set pastetoggle=<Esc>[201~
-"    set paste
-"    return a:ret
-"  endfunction
+  function XTermPasteBegin(ret)
+    set pastetoggle=<Esc>[201~
+    set paste
+    return a:ret
+  endfunction
 
-"  map <expr> <Esc>[200~ XTermPasteBegin("i")
-"  imap <expr> <Esc>[200~ XTermPasteBegin("")
-"  cmap <Esc>[200~ <nop>
-"  cmap <Esc>[201~ <nop>
-"endif
+  map <expr> <Esc>[200~ XTermPasteBegin("i")
+  imap <expr> <Esc>[200~ XTermPasteBegin("")
+  cmap <Esc>[200~ <nop>
+  cmap <Esc>[201~ <nop>
+endif
 
-""===============================================================================
+"===============================================================================
 " steve losh' quickfix window toggle {{{2
 
 let g:quickfix_is_open = 0
@@ -804,19 +804,6 @@ nnoremap <silent><leader>tu :call fzf#run({
 
 " view registers
 nnoremap <silent><leader>r :registers<cr>
-
-"===============================================================================
-" (leader-g_) fugitive {{{2
-
-nnoremap <leader>ga :Git add %:p:h<cr>
-nnoremap <leader>gb :Git branch 
-nnoremap <leader>go :Git checkout 
-nnoremap <leader>gc :Git commit -m "
-nnoremap <leader>gd :Git diff<cr>
-nnoremap <leader>gh :Git hist<cr>
-nnoremap <leader>gr :Git reset HEAD %<cr>
-nnoremap <leader>gs :Git status<cr>
-nnoremap <leader>gt :Git tag 
 
 "===============================================================================
 " (leader-a_) easyalign {{{2
