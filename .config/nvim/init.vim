@@ -295,29 +295,6 @@ augroup filetype_scss
 augroup END
 
 "===============================================================================
-" yaml {{{2
-
-augroup filetype_yaml
-  autocmd!
-  " folding
-  autocmd FileType yaml setlocal foldenable
-  autocmd FileType yaml setlocal foldmethod=syntax
-  autocmd FileType yaml setlocal foldlevel=1
-  autocmd FileType yaml setlocal foldnestmax=6
-  autocmd FileType yaml setlocal foldcolumn=0
-  " tabbing
-  autocmd FileType yaml setlocal softtabstop=2
-  autocmd FileType yaml setlocal shiftwidth=2
-  autocmd FileType yaml setlocal autoindent
-  autocmd FileType yaml setlocal expandtab
-  " misc
-  autocmd FileType yaml setlocal breakindent
-  autocmd FileType yaml setlocal colorcolumn=81
-
-  autocmd BufNewFile,BufRead *.yml setfiletype yaml
-augroup END
-
-"===============================================================================
 " plugin config {{{1
 " fzf {{{2
 " buffer: search lines in all open {{{3
@@ -405,8 +382,6 @@ command! FZFMru call fzf#run({
 "===============================================================================
 " neomake {{{2
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-
 autocmd! BufWritePost * Neomake
 
 "===============================================================================
@@ -415,12 +390,12 @@ autocmd! BufWritePost * Neomake
 " if set, let undotree window get focus after being opened, otherwise
 " focus will stay in current window.
 if !exists('g:undotree_SetFocusWhenToggle')
-    let g:undotree_SetFocusWhenToggle = 1
+  let g:undotree_SetFocusWhenToggle = 1
 endif
 
 " Highlight changed text
 if !exists('g:undotree_HighlightChangedText')
-    let g:undotree_HighlightChangedText = 1
+  let g:undotree_HighlightChangedText = 1
 endif
 
 "===============================================================================
@@ -429,11 +404,6 @@ endif
 let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
-
-"===============================================================================
-" vim-rooter {{{2
-
-let g:rooter_change_directory_for_non_project_files = 1
 
 "===============================================================================
 " misc. {{{2
@@ -534,35 +504,6 @@ if &term =~ "xterm.*"
 endif
 
 "===============================================================================
-" steve losh' quickfix window toggle {{{2
-
-let g:quickfix_is_open = 0
-
-function! s:QuickfixToggle()
-  if g:quickfix_is_open
-    cclose
-    let g:quickfix_is_open = 0
-    execute g:quickfix_return_to_window . "wincmd w"
-  else
-    let g:quickfix_return_to_window = winnr()
-    copen
-    let g:quickfix_is_open = 1
-  endif
-endfunction
-
-"===============================================================================
-" spell check toggle {{{2
-
-set spelllang=en_us
-function! SpellToggle()
-  if &spell == 1
-    set nospell
-  else
-    set spell
-  endif
-endfunction
-
-"===============================================================================
 " gui {{{1
 " general {{{2
 
@@ -631,9 +572,6 @@ xnoremap y "*y
 " toggle folds with Space
 nnoremap <space> za
 xnoremap <space> zf
-
-" steve losh' quickfix window
-nnoremap <silent><c-q> :call <sid>QuickfixToggle()<cr>
 
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
