@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
 " core
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'benekastah/neomake'
@@ -690,6 +691,13 @@ xnoremap <leader>D "_D
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 noremap x "_x
+
+"===============================================================================
+" (leader-g_) fugitive {{{2
+
+nnoremap <leader>ga :Git add %:p<cr><cr>
+nnoremap <leader>gc :Git checkout %<cr>
+nnoremap <leader>gm :Gcommit<cr>
 
 "===============================================================================
 " (leader-f_) dirvish + file operations {{{2
