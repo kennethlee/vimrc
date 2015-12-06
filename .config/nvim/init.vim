@@ -255,6 +255,27 @@ augroup filetype_ruby
 augroup END
 
 "===============================================================================
+" shell {{{2
+
+augroup filetype_sh
+  autocmd!
+  " folding
+  autocmd FileType sh setlocal foldenable
+  autocmd FileType sh setlocal foldmethod=marker
+  autocmd FileType sh setlocal foldlevel=0
+  autocmd FileType sh setlocal foldnestmax=6
+  autocmd FileType sh setlocal foldcolumn=0
+  " tabbing
+  autocmd FileType sh setlocal softtabstop=2
+  autocmd FileType sh setlocal shiftwidth=2
+  autocmd FileType sh setlocal autoindent
+  autocmd FileType sh setlocal expandtab
+  " misc
+  autocmd FileType sh setlocal breakindent
+  autocmd FileType sh setlocal colorcolumn=81
+augroup END
+
+"===============================================================================
 " vim {{{2
 
 augroup filetype_vim
