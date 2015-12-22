@@ -627,13 +627,7 @@ nnoremap cd :lcd %:p:h<bar>pwd<cr>
 nnoremap cu :lcd ..<bar>pwd<cr>
 
 "===============================================================================
-" hljk {{{2
-
-" use j and k to move by display lines, not real lines (Normal/Visual mode)
-nnoremap j gj
-nnoremap k gk
-xnoremap j gj
-xnoremap k gk
+" hjkl {{{2
 
 " Alt + hjkl for window navigation
 nnoremap ˙ <c-w>h
@@ -716,7 +710,7 @@ noremap x "_x
 "===============================================================================
 " (leader-g_) fugitive {{{2
 
-nnoremap <leader>ga :Git add %:p<cr><cr>
+nnoremap <leader>ga :Git add %:p<cr>
 nnoremap <leader>gc :Git checkout %<cr>
 nnoremap <leader>gm :Gcommit<cr>
 
