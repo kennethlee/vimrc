@@ -4,3 +4,16 @@
 !/.config/
 !/.config/nvim/
 !/.config/nvim/init.vim
+!/.config/nvim/after/
+!/.config/nvim/after/ftplugin/
+!/.config/nvim/after/ftplugin/css.vim
+!/.config/nvim/after/ftplugin/elixir.vim
+!/.config/nvim/after/ftplugin/eruby.vim
+!/.config/nvim/after/ftplugin/html.vim
+!/.config/nvim/after/ftplugin/javascript.vim
+!/.config/nvim/after/ftplugin/markdown.vim
+!/.config/nvim/after/ftplugin/ruby.vim
+!/.config/nvim/after/ftplugin/scss.vim
+!/.config/nvim/after/ftplugin/shell.vim
+!/.config/nvim/after/ftplugin/vim.vim
+
