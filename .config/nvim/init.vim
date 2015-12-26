@@ -591,10 +591,6 @@ nnoremap Y y$
 " y yanks to system clipboard in Visual Mode.
 xnoremap y "*y
 
-" toggle folds with Space
-nnoremap <space> za
-xnoremap <space> zf
-
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
 
