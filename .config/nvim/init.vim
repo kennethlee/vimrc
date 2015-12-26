@@ -585,6 +585,9 @@ set mousehide
 " keymap {{{1
 " misc. {{{2
 "
+" jk exits Insert Mode
+inoremap jk <esc>
+
 " Y yanks to EOL (consistent with D, C, etc).
 nnoremap Y y$
 
