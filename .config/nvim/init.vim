@@ -685,8 +685,7 @@ map! <mousedown> <nop>
 "===============================================================================
 " leader core {{{2
 
-" leader = comma
-let g:mapleader=","
+let g:mapleader="\<space>"
 
 " gb's Leader-Leader to quickly switch to alternate buffer
 nnoremap <leader><leader> <c-^>
