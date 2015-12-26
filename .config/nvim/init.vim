@@ -1,39 +1,13 @@
-" vim-plug {{{1
-
-call plug#begin('~/.config/nvim/plugged')
-
-" core
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'benekastah/neomake'
-Plug 'mbbill/undotree'
-Plug 'the-isz/MinYankRing.vim'
-" Plug 'kassio/neoterm'
-" Plug 'dyng/ctrlsf.vim'
-" Plug 'janko-m/vim-test'
-
-" text-editing
-Plug 'junegunn/vim-easy-align'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-
-" filetypes
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-rails'
-Plug 'elixir-lang/vim-elixir'
-" Plug 'tpope/vim-haml'
-
-call plug#end()
-
-"===============================================================================
 " general {{{1
+" first {{{2
+
+" infect!
+execute pathogen#infect()
+call pathogen#helptags()
+
+" fzf
+set rtp+=~/.fzf
+
 " file handling {{{2
 
 set nomodeline
