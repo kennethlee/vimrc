@@ -21,7 +21,7 @@ set fileencodings=utf-8
 " enable filetype detection
 filetype plugin indent on
 
-" hide buffers w/o having to save first.
+" hide buffers w/o having to save first
 set hidden
 set switchbuf=useopen
 
@@ -44,11 +44,10 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 " wrap long lines
 set wrap linebreak
 
-" backspacing wraps.
+" backspacing wraps
 set backspace=indent,eol,start
 
 " default tab settings
-" set cindent
 set softtabstop=2
 set shiftwidth=2
 set autoindent
@@ -63,7 +62,7 @@ set wildmenu wildmode=longest,list,full
 
 " gb: normally, Vim messes with iskeyword when you open a shell file. This can
 " leak out, polluting other file types even after a 'set ft=' change. This
-" variable prevents the iskeyword change so it can't hurt anyone.
+" variable prevents the iskeyword change so it can't hurt anyone
 let g:sh_noisk=1
 
 "===============================================================================
@@ -106,7 +105,7 @@ command! FZFLines call fzf#run({
 " commandline: fuzzy completion {{{3
 
 cnoremap <silent> <c-l> <c-\>eGetCompletions()<cr>
-"add an extra <cr> at the end of this line to automatically accept the fzf-selected completions.
+"add an extra <cr> at the end of this line to automatically accept the fzf-selected completions
 
 function! Lister()
     call extend(g:FZF_Cmd_Completion_Pre_List,split(getcmdline(),'\(\\\zs\)\@<!\& '))
@@ -180,12 +179,12 @@ autocmd! BufWritePost * Neomake
 " undotree {{{2
 
 " if set, let undotree window get focus after being opened, otherwise
-" focus will stay in current window.
+" focus will stay in current window
 if !exists('g:undotree_SetFocusWhenToggle')
   let g:undotree_SetFocusWhenToggle = 1
 endif
 
-" Highlight changed text
+" highlight changed text
 if !exists('g:undotree_HighlightChangedText')
   let g:undotree_HighlightChangedText = 1
 endif
@@ -207,8 +206,7 @@ let g:loaded_netrwPlugin = 1
 " functions {{{1
 " fold lines {{{2
 
-" better looking folds; right-alignment of line numbers + percentage of file.
-" taken from https://github.com/NagatoPain/dotfiles/blob/master/.vim/vimrc
+" better looking folds; right-alignment of line numbers + percentage of file
 function! VimFoldText()
   let fs = v:foldstart
 
@@ -240,7 +238,7 @@ set foldtext=VimFoldText()
 "===============================================================================
 " global options {{{3
 
-" fold options. See ':help fold-options' for more.
+" see ':help fold-options'
 set foldenable
 set foldlevel=0
 set foldcolumn=0
@@ -263,7 +261,7 @@ endfunction
 "===============================================================================
 " gb's tabs {{{2
 
-" indent if at the beginning of a line, else, do completion.
+" indent if at the beginning of a line, else, do completion
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
@@ -304,7 +302,6 @@ set cmdheight=2
 set showmode
 
 " colorscheme
-" necessary for proper color but still overridden by terminal; is this normal?
 set background=dark
 let base16colorspace=256
 colorscheme base16-eighties
@@ -313,7 +310,7 @@ colorscheme base16-eighties
 set list
 set listchars=tab:▸\ ,eol:¬,trail:@
 
-" absolute line numbers and width to 6 chars.
+" absolute line numbers and width to 6 chars
 set number
 set numberwidth=6
 
@@ -355,26 +352,26 @@ set mousehide
 " keymap {{{1
 " misc. {{{2
 "
-" jk exits Insert Mode
+" 'jk' exits Insert Mode
 inoremap jk <esc>
 
-" Y yanks to EOL (consistent with D, C, etc).
+" Y yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
-" y yanks to system clipboard in Visual Mode.
+" y yanks to system clipboard in Visual Mode
 xnoremap y "*y
 
-" toggle folds with Space
+" toggle folds with <space>
 nnoremap zz za
 xnoremap zz zf
 
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
 
-" F8 to insert ISO 8601 timestamp + day of the week (Insert mode).
+" F8 to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><f8> <c-r>=strftime("%FT%T%z, %a")<cr>
 
-" hitting CR or ESC clears highlighting from previous search
+" hitting 'jk', <cr>, or <esc> clears highlighting from previous search
 nnoremap <silent><cr> :nohlsearch<cr>/<bs>
 nnoremap <silent><esc> :nohlsearch<cr>/<bs>
 
@@ -382,7 +379,7 @@ nnoremap <silent><esc> :nohlsearch<cr>/<bs>
 nnoremap <silent><tab> :bnext<cr>
 nnoremap <silent><s-tab> :bprev<cr>
 
-" search using normal regex; "very magic"
+" search using normal regex; 'very magic'
 nnoremap / /\v
 xnoremap / /\v
 nnoremap ? ?\v
@@ -402,7 +399,7 @@ nnoremap cu :lcd ..<bar>pwd<cr>
 "===============================================================================
 " hjkl {{{2
 
-" ctrl-h/j/k/l for window navigation
+" <ctrl>-h/j/k/l for window navigation
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -437,8 +434,8 @@ inoremap <silent><s-tab> <c-n>
 
 "===============================================================================
 " disable {{{2
-"
-" disable arrow keys.
+
+" disable arrow keys
 map <left> <nop>
 map <right> <nop>
 map <up> <nop>
@@ -448,7 +445,7 @@ imap <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
 
-" hide mouse, disable it from triggering Visual mode, page up/down.
+" hide mouse, disable it from triggering Visual Mode, page up/down
 set mousehide mouse=nicr
 map <mouseup> <nop>
 map <mousedown> <nop>
@@ -460,14 +457,14 @@ map! <mousedown> <nop>
 
 let g:mapleader="\<space>"
 
-" gb's Leader-Leader to quickly switch to alternate buffer
+" gb's <leader><leader> to quickly switch to alternate buffer
 nnoremap <leader><leader> <c-^>
 
 "===============================================================================
 " (leader-c_) change {{{2
 
-" use leader key before change/delete command to delete without yanking.
-" also forbid deletion via x from updating registers.
+" use leader key before change/delete command to delete without yanking
+" also forbid deletion via x from updating registers
 nnoremap <leader>C "_C
 xnoremap <leader>C "_C
 nnoremap <leader>c "_c
@@ -493,7 +490,7 @@ nnoremap <leader>ff :Dirvish ~/
 
 " `:!mkdir %/foo` to create a directory.
 
-" leader-fr = GB's rename current file
+" leader-fr = gb's rename current file
 noremap <silent><leader>fm :call RenameFile()<cr>
 
 " (leader-v_) vim (general) {{{2
@@ -506,9 +503,6 @@ nnoremap <silent><leader>vs :call SpellToggle()<cr>
 
 " leader-vv = open .vimrc
 nnoremap <silent><leader>vv :e $MYVIMRC<cr>
-
-" leader-vb = open .bashrc
-nnoremap <silent><leader>vb :e ~/.bashrc<cr>
 
 " leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<cr>
@@ -556,10 +550,10 @@ nnoremap <silent><leader>r :registers<cr>
 "===============================================================================
 " (leader-a_) easyalign {{{2
 
-" start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+" start interactive EasyAlign in visual mode (e.g. vip<enter>)
 vmap <enter> <Plug>(EasyAlign)
 
-" start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+" start interactive EasyAlign for a motion/text object (e.g. <leader>aip)
 nmap <leader>ab <Plug>(EasyAlign)
 
 "===============================================================================
