@@ -2,8 +2,8 @@
 " first {{{2
 
 " infect!
+" run :Helptags command after installs to make the plugin's docs avail. globally
 execute pathogen#infect()
-call pathogen#helptags()
 
 " fzf
 set rtp+=~/.fzf
@@ -452,7 +452,6 @@ nnoremap <leader><leader> <c-^>
 " (leader-c_) change {{{2
 
 " use leader key before change/delete command to delete without yanking.
-" ex: ,dd or 20,dd or ,C or ,cap
 " also forbid deletion via x from updating registers.
 nnoremap <leader>C "_C
 xnoremap <leader>C "_C
@@ -481,12 +480,6 @@ nnoremap <leader>ff :Dirvish ~/
 
 " leader-fr = GB's rename current file
 noremap <silent><leader>fm :call RenameFile()<cr>
-
-" delete a file
-nnoremap <leader>fr :call delete(getline('.'))<cr>
-
-" delete a range of files
-nnoremap <leader>fd :'<,'>call delete(getline('.'))
 
 " (leader-v_) vim (general) {{{2
 
