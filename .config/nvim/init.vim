@@ -387,31 +387,31 @@ nnoremap cu :lcd ..<bar>pwd<cr>
 "===============================================================================
 " hjkl {{{2
 
-" Alt + hjkl for window navigation
-nnoremap ˙ <c-w>h
-nnoremap ∆ <c-w>j
-nnoremap ˚ <c-w>k
-nnoremap ¬ <c-w>l
+" ctrl-h/j/k/l for window navigation
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
-vnoremap ˙ <c-n><c-w>h
-vnoremap ∆ <c-n><c-w>j
-vnoremap ˚ <c-n><c-w>k
-vnoremap ¬ <c-n><c-w>l
+vnoremap <c-h> <c-n><c-w>h
+vnoremap <c-j> <c-n><c-w>j
+vnoremap <c-k> <c-n><c-w>k
+vnoremap <c-l> <c-n><c-w>l
 
-inoremap ˙ <c-\><c-n><c-w>h
-inoremap ∆ <c-\><c-n><c-w>j
-inoremap ˚ <c-\><c-n><c-w>k
-inoremap ¬ <c-\><c-n><c-w>l
+inoremap <c-h> <c-\><c-n><c-w>h
+inoremap <c-j> <c-\><c-n><c-w>j
+inoremap <c-k> <c-\><c-n><c-w>k
+inoremap <c-l> <c-\><c-n><c-w>l
 
-cnoremap ˙ <c-\><c-n><c-w>h
-cnoremap ∆ <c-\><c-n><c-w>j
-cnoremap ˚ <c-\><c-n><c-w>k
-cnoremap ¬ <c-\><c-n><c-w>l
+cnoremap <c-h> <c-\><c-n><c-w>h
+cnoremap <c-j> <c-\><c-n><c-w>j
+cnoremap <c-k> <c-\><c-n><c-w>k
+cnoremap <c-l> <c-\><c-n><c-w>l
 
-tnoremap ˙ <c-\><c-n><c-w>h
-tnoremap ∆ <c-\><c-n><c-w>j
-tnoremap ˚ <c-\><c-n><c-w>k
-tnoremap ¬ <c-\><c-n><c-w>l
+tnoremap <c-h> <c-\><c-n><c-w>h
+tnoremap <c-j> <c-\><c-n><c-w>j
+tnoremap <c-k> <c-\><c-n><c-w>k
+tnoremap <c-l> <c-\><c-n><c-w>l
 
 "===============================================================================
 " tab {{{2
