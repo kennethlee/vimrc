@@ -152,13 +152,20 @@ function! GetCompletions()
 endfunction
 
 "===============================================================================
-" file: mru {{{3
+" file: mru and open buffers {{{3
 
 command! FZFMru call fzf#run({
-            \'source': v:oldfiles,
-            \'sink' : 'e ',
-            \'options' : '-m',
-            \})
+\ 'source':  reverse(s:all_files()),
+\ 'sink':    'edit',
+\ 'options': '-m -x +s',
+\ 'down':    '40%' })
+
+function! s:all_files()
+  return extend(
+  \ filter(copy(v:oldfiles),
+  \        "v:val !~ 'fugitive:\\|NERD_tree\\|^/tmp/\\|.git/'"),
+  \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
+endfunction
 
 "===============================================================================
 " neomake {{{2
