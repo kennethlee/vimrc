@@ -170,6 +170,10 @@ endfunction
 "===============================================================================
 " neomake {{{2
 
+" makers
+let g:neomake_ruby_enabled_makers=['rubocop']
+let g:neomake_javascript_enabled_makers = ['eslint']
+
 autocmd! BufWritePost * Neomake
 
 "===============================================================================
