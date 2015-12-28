@@ -8,6 +8,7 @@ execute pathogen#infect()
 " fzf
 set rtp+=~/.fzf
 
+"===============================================================================
 " file handling {{{2
 
 set nomodeline
@@ -57,22 +58,24 @@ set expandtab
 " punctuation like `.`.
 set nojoinspaces
 
-" tab completion
-set wildmenu wildmode=longest,list,full
-
 " gb: normally, Vim messes with iskeyword when you open a shell file. This can
 " leak out, polluting other file types even after a 'set ft=' change. This
 " variable prevents the iskeyword change so it can't hurt anyone
 let g:sh_noisk=1
 
 "===============================================================================
-" search {{{2
+" search/find {{{2
 
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
 set title t_ti= t_te=
+
+" tab completion
+set wildmenu
+set wildmode=list:full
+set wildignorecase
 
 "===============================================================================
 " plugin config {{{1
