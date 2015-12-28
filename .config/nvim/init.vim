@@ -76,97 +76,6 @@ set title t_ti= t_te=
 
 "===============================================================================
 " plugin config {{{1
-" fzf {{{2
-" buffer: search lines in all open {{{3
-
-function! s:line_handler(l)
-  let keys = split(a:l, ':\t')
-  exec 'buf ' . keys[0]
-  exec keys[1]
-  normal! ^zz
-endfunction
-
-function! s:buffer_lines()
-  let res = []
-  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
-    call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
-  endfor
-  return res
-endfunction
-
-command! FZFLines call fzf#run({
-\   'source':  <sid>buffer_lines(),
-\   'sink':    function('<sid>line_handler'),
-\   'options': '--extended --nth=3..',
-\   'down':    '60%'
-\})
-
-"===============================================================================
-" commandline: fuzzy completion {{{3
-
-cnoremap <silent> <c-l> <c-\>eGetCompletions()<cr>
-"add an extra <cr> at the end of this line to automatically accept the fzf-selected completions
-
-function! Lister()
-    call extend(g:FZF_Cmd_Completion_Pre_List,split(getcmdline(),'\(\\\zs\)\@<!\& '))
-endfunction
-
-function! CmdLineDirComplete(prefix, options, rawdir)
-    let l:dirprefix = matchstr(a:rawdir,"^.*/")
-    if isdirectory(expand(l:dirprefix))
-        return join(a:prefix + map(fzf#run({
-                    \'options': a:options . ' --select-1  --query=' .
-                    \ a:rawdir[matchend(a:rawdir,"^.*/"):len(a:rawdir)], 
-                    \'dir': expand(l:dirprefix)
-                    \}), 
-                    \'"' . escape(l:dirprefix, " ") . '" . escape(v:val, " ")'))
-    else
-        return join(a:prefix + map(fzf#run({
-                    \'options': a:options . ' --query='. a:rawdir }),
-                    \'escape(v:val, " ")')) 
-        "dropped --select-1 to speed things up on a long query
-endfunction
-
-function! GetCompletions()
-    let g:FZF_Cmd_Completion_Pre_List = []
-    let l:cmdline_list = split(getcmdline(), '\(\\\zs\)\@<!\& ', 1)
-    let l:Prefix = l:cmdline_list[0:-2]
-    execute "silent normal! :" . getcmdline() . "\<c-a>\<c-\>eLister()\<cr>\<c-c>"
-    let l:FZF_Cmd_Completion_List = g:FZF_Cmd_Completion_Pre_List[len(l:Prefix):-1]
-    unlet g:FZF_Cmd_Completion_Pre_List
-    if len(l:Prefix) > 0 && l:Prefix[0] =~
-                \ '^ed\=i\=t\=$\|^spl\=i\=t\=$\|^tabed\=i\=t\=$\|^arged\=i\=t\=$\|^vsp\=l\=i\=t\=$'
-                "single-argument file commands
-        return CmdLineDirComplete(l:Prefix, "",l:cmdline_list[-1])
-    elseif len(l:Prefix) > 0 && l:Prefix[0] =~ 
-                \ '^arg\=s\=$\|^ne\=x\=t\=$\|^sne\=x\=t\=$\|^argad\=d\=$'  
-                "multi-argument file commands
-        return CmdLineDirComplete(l:Prefix, '--multi', l:cmdline_list[-1])
-    else 
-        return join(l:Prefix + fzf#run({
-                    \'source':l:FZF_Cmd_Completion_List, 
-                    \'options': '--select-1 --query='.shellescape(l:cmdline_list[-1])
-                    \})) 
-    endif
-endfunction
-
-"===============================================================================
-" file: mru and open buffers {{{3
-
-command! FZFMru call fzf#run({
-\ 'source':  reverse(s:all_files()),
-\ 'sink':    'edit',
-\ 'options': '-m -x +s',
-\ 'down':    '40%' })
-
-function! s:all_files()
-  return extend(
-  \ filter(copy(v:oldfiles),
-  \        "v:val !~ 'fugitive:\\|NERD_tree\\|^/tmp/\\|.git/'"),
-  \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
-endfunction
-
-"===============================================================================
 " neomake {{{2
 
 " makers
@@ -510,31 +419,13 @@ nnoremap <silent><leader>vw :set list!<cr>
 "===============================================================================
 " (leader-t_) fzf {{{2
 
-nnoremap <silent><leader>tt :FZF<cr>
-nnoremap <leader>te :FZF ~/
-nnoremap <silent><leader>tl :FZFLines<cr>
-nnoremap <silent><leader>tm :FZFMru<cr>
-nnoremap <silent><leader>tn :FZF ~/Documents/notes<cr>
-nnoremap <silent><leader>tp :FZF ~/projects<cr>
-
-" select buffer
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent><leader>tu :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<cr>
+nnoremap <silent><leader>tt :Files<cr>
+nnoremap <leader>te :Files ~/
+nnoremap <silent><leader>tk :BLines<cr>
+nnoremap <silent><leader>tl :Lines<cr>
+nnoremap <silent><leader>tu :Buffers<cr>
+nnoremap <silent><leader>tm :History<cr>
+nnoremap <silent><leader>tn :Files ~/Documents/notes<cr>
 
 "===============================================================================
 " (leader-n_) undotree {{{2
