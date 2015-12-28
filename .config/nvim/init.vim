@@ -66,16 +66,19 @@ let g:sh_noisk=1
 "===============================================================================
 " search/find {{{2
 
+" allows for finding of files recursively under pwd using :find/:sfind
+set path=.,**
+
+" tab completion
+set wildmenu
+set wildmode=list:longest,full
+set wildignorecase
+
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
 set title t_ti= t_te=
-
-" tab completion
-set wildmenu
-set wildmode=list:full
-set wildignorecase
 
 "===============================================================================
 " plugin config {{{1
@@ -396,6 +399,12 @@ nnoremap <leader>gm :Gcommit<cr>
 
 "===============================================================================
 " (leader-f_) file ops, dirvish {{{2
+
+" pro-tip: <c-d> while using :find to show the list of files in current dir
+nnoremap <leader>ff :find *
+nnoremap <leader>fv :vert sfind *
+
+"===============================================================================
 
 " leader-fr = gb's rename current file
 noremap <silent><leader>fr :call RenameFile()<cr>
