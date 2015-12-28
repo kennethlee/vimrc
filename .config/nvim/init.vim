@@ -395,16 +395,17 @@ nnoremap <leader>gc :Git checkout %<cr>
 nnoremap <leader>gm :Gcommit<cr>
 
 "===============================================================================
-" (leader-f_) dirvish + file operations {{{2
-
-nnoremap <silent>- :Dirvish %:p:h<cr>
-nnoremap <leader>ff :Dirvish ~/
-
-" `:!mkdir %/foo` to create a directory.
+" (leader-f_) file ops, dirvish {{{2
 
 " leader-fr = gb's rename current file
-noremap <silent><leader>fm :call RenameFile()<cr>
+noremap <silent><leader>fr :call RenameFile()<cr>
 
+"===============================================================================
+
+nnoremap <silent>- :Dirvish %:p:h<cr>
+nnoremap <leader>fd :Dirvish ~/
+
+"===============================================================================
 " (leader-v_) vim (general) {{{2
 
 " leader-vm = maximize width of current window
