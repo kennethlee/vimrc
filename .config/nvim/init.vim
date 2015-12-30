@@ -324,9 +324,8 @@ nnoremap J mzJ`z
 " F8 to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><f8> <c-r>=strftime("%FT%T%z, %a")<cr>
 
-" hitting 'jk', <cr>, or <esc> clears highlighting from previous search
+" hitting <cr> clears highlighting from previous search
 nnoremap <silent><cr> :nohlsearch<cr>/<bs>
-nnoremap <silent><esc> :nohlsearch<cr>/<bs>
 
 " tab/shift-tab to cycle through buffers
 nnoremap <silent><tab> :bnext<cr>
