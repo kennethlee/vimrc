@@ -459,12 +459,6 @@ nnoremap <silent><leader>tn :Files ~/Documents/notes<cr>
 nnoremap <silent><leader>n :UndotreeToggle<cr>
 
 "===============================================================================
-" (leader-r_) registers {{{2
-
-" view registers
-nnoremap <silent><leader>r :registers<cr>
-
-"===============================================================================
 " (leader-a_) easyalign {{{2
 
 " start interactive EasyAlign in visual mode (e.g. vip<enter>)
