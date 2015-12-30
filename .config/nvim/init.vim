@@ -198,28 +198,6 @@ function! InsertTabWrapper()
 endfunction
 
 "===============================================================================
-" pastetoggle {{{2
-
-" 'bracketed paste mode': enables the terminal emulator to tell the program
-" connected to the tty when the user pastes text, so that the program won't
-" interpret it as editing commands."
-if &term =~ "xterm.*"
-  let &t_ti = &t_ti . "\e[?2004h"
-  let &t_te = "\e[?2004l" . &t_te
-
-  function XTermPasteBegin(ret)
-    set pastetoggle=<Esc>[201~
-    set paste
-    return a:ret
-  endfunction
-
-  map <expr> <Esc>[200~ XTermPasteBegin("i")
-  imap <expr> <Esc>[200~ XTermPasteBegin("")
-  cmap <Esc>[200~ <nop>
-  cmap <Esc>[201~ <nop>
-endif
-
-"===============================================================================
 " gui {{{1
 " general {{{2
 
