@@ -257,14 +257,32 @@ hi default link User1 Identifier                " filename
 hi default link User2 Statement                 " flags
 hi default link User3 Error                     " errors
 
-" show current git branch of pwd if it's under version control
+" show git branch of current file if it's under version control
 function! GitBranch()
-  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  " stores current working directory
+  let lastdir = getcwd()
+  " changes temporarily to the directory containing the buffer
+  let bufdir = expand('%:p:h')
+  if bufdir != lastdir
+    lcd `=bufdir`
+  endif
+  " retrieves git branch after changing directory
+  let branch = system("git branch --no-color 2> /dev/null | cut -d' ' -f2")
+  " then changes back
+  if bufdir != lastdir
+    lcd `=lastdir`
+  endif
+
   if branch != ''
     return 'GIT(' . substitute(branch, '\n', '', 'g') . ')'
   endif
   return ''
 endfunction
+
+augroup gitbranch
+  autocmd!
+  autocmd BufRead,BufNewFile * let b:gitbranch=GitBranch()
+augroup END
 
 set stl=
 set stl+=%2*[%n                                 " buffer number
