@@ -78,7 +78,6 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-set title t_ti= t_te=
 
 "===============================================================================
 " wildignore {{{2
@@ -201,6 +200,7 @@ endfunction
 " gui {{{1
 " general {{{2
 
+set title t_ti= t_te=
 set t_Co=256
 set cmdheight=2
 set showmode
