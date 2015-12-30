@@ -450,9 +450,6 @@ nnoremap <leader>fd :Dirvish ~/
 " leader-vm = maximize width of current window
 nnoremap <silent><leader>vm <c-w>\|
 
-" leader-vs = toggle spell check
-nnoremap <silent><leader>vs :call SpellToggle()<cr>
-
 " leader-vv = open .vimrc
 nnoremap <silent><leader>vv :e $MYVIMRC<cr>
 
