@@ -246,7 +246,7 @@ set noequalalways winminheight=0 winheight=9999 helpheight=9999
 set splitright splitbelow
 
 "===============================================================================
-" status line {{{2
+" statusline {{{2
 
 " current line in netrw now yellow highlight/black text
 " hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
@@ -257,12 +257,21 @@ hi default link User1 Identifier                " filename
 hi default link User2 Statement                 " flags
 hi default link User3 Error                     " errors
 
+" show current git branch of pwd if it's under version control
+function! GitBranch()
+  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  if branch != ''
+    return 'GIT(' . substitute(branch, '\n', '', 'g') . ')'
+  endif
+  return ''
+endfunction
+
 set stl=
 set stl+=%2*[%n                                 " buffer number
 set stl+=%{'/'.len(filter(range(1,bufnr('$')),
     \'buflisted(v:val)'))}                      " total number of open buffers
 set stl+=%H%M%R%W]%*\                           " flags
-set stl+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}%<
+set stl+=%{GitBranch()}%<                       " branch of pwd if under vcs
 set stl+=%-F\                                   " filepath
 set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
@@ -400,13 +409,6 @@ xnoremap <leader>D "_D
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 noremap x "_x
-
-"===============================================================================
-" (leader-g_) fugitive {{{2
-
-nnoremap <leader>ga :Git add %:p<cr>
-nnoremap <leader>gc :Git checkout %<cr>
-nnoremap <leader>gm :Gcommit<cr>
 
 "===============================================================================
 " (leader-f_) file ops, dirvish {{{2
