@@ -314,7 +314,7 @@ nnoremap Y y$
 " y yanks to system clipboard in Visual Mode
 xnoremap y "*y
 
-" toggle folds with <space>
+" toggle folds with 'zz'
 nnoremap zz za
 xnoremap zz zf
 
