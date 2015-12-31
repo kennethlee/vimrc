@@ -36,6 +36,12 @@ set noswapfile
 " automatically reload file if it has changed outside of vim
 set autoread
 
+" see ':help fold-options'
+set foldenable
+set foldlevel=0
+set foldcolumn=0
+set foldnestmax=6
+
 "===============================================================================
 " text manipulation {{{2
 
