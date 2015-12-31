@@ -311,7 +311,7 @@ noremap x "_x
 " pro-tip: <C-d> while using :find to show the list of files in current dir
 nnoremap <leader>ff :find *
 nnoremap <leader>fv :vert sfind *
-nnoremap <leader>fn :find ~/Documents/notes/
+nnoremap <leader>fn :find ~/Documents/notes/**/*
 
 " find files recursively under the dir of *current* file
 nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
