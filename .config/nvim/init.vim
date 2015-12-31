@@ -227,17 +227,6 @@ nnoremap ? ?\v
 xnoremap ? ?\v
 
 "===============================================================================
-" change dir {{{2
-
-" change dir across vim session
-nnoremap cD :cd %:p:h<Bar>pwd<CR>
-nnoremap cU :cd ..<Bar>pwd<CR>
-
-" change dir of curent window
-nnoremap cd :lcd %:p:h<Bar>pwd<CR>
-nnoremap cu :lcd ..<Bar>pwd<CR>
-
-"===============================================================================
 " hjkl {{{2
 
 " <C-h/j/k/l> for window navigation
