@@ -41,6 +41,7 @@ set foldenable
 set foldlevel=0
 set foldcolumn=0
 set foldnestmax=6
+set foldtext=custom#VimFoldText()
 
 "===============================================================================
 " text manipulation {{{2
@@ -134,75 +135,6 @@ highlight clear SignColumn
 let g:loaded_netrwPlugin = 1
 
 "===============================================================================
-" functions {{{1
-" fold lines {{{2
-
-" better looking folds; right-alignment of line numbers + percentage of file
-function! VimFoldText()
-  let fs = v:foldstart
-
-  while getline(fs) =~ '^\s*$'
-    let fs = nextnonblank(fs + 1)
-  endwhile
-
-  if fs > v:foldend
-    let line = getline(v:foldstart)
-  else
-    let line = getline(fs)
-  endif
-
-  let line = " " . substitute(line, '/\*\|\*/\|{'.'{{\d\=', '', 'g') . " "
-  let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-  let foldSize = 1 + v:foldend - v:foldstart
-  let foldSizeStr = " " . foldSize . " lines "
-  let foldLevelStr = repeat(" + ", v:foldlevel) . "[" . v:foldlevel . "]"
-  let lineCount = line("$")
-  let foldPercentage = "[" . printf("%4.1f", (foldSize*1.0)/lineCount*100)
-      \. "%] "
-  let expansionString = repeat(".", w - strwidth(foldSizeStr) - strwidth(line)
-      \- strwidth(foldLevelStr) - strwidth(foldPercentage))
-  return foldLevelStr . line . expansionString . foldSizeStr. foldPercentage
-endfunction
-
-set foldtext=VimFoldText()
-
-"===============================================================================
-" global options {{{3
-
-" see ':help fold-options'
-set foldenable
-set foldlevel=0
-set foldcolumn=0
-set foldnestmax=6
-
-"===============================================================================
-" gb's rename file {{{2
-
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-
-"===============================================================================
-" gb's tabs {{{2
-
-" indent if at the beginning of a line, else, do completion
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<Tab>"
-  else
-    return "\<C-p>"
-  endif
-endfunction
-
-"===============================================================================
 " gui {{{1
 " general {{{2
 
@@ -241,39 +173,12 @@ hi default link User1 Identifier                " filename
 hi default link User2 Statement                 " flags
 hi default link User3 Error                     " errors
 
-" show git branch of current file if it's under version control
-function! GitBranch()
-  " stores current working directory
-  let lastdir = getcwd()
-  " changes temporarily to the directory containing the buffer
-  let bufdir = expand('%:p:h')
-  if bufdir != lastdir
-    lcd `=bufdir`
-  endif
-  " retrieves git branch after changing directory
-  let branch = system("git branch --no-color 2> /dev/null | cut -d' ' -f2")
-  " then changes back
-  if bufdir != lastdir
-    lcd `=lastdir`
-  endif
-
-  if branch != ''
-    return 'GIT(' . substitute(branch, '\n', '', 'g') . ')'
-  endif
-  return ''
-endfunction
-
-augroup gitbranch
-  autocmd!
-  autocmd BufRead,BufNewFile * let b:gitbranch=GitBranch()
-augroup END
-
 set stl=
 set stl+=%2*[%n                                 " buffer number
 set stl+=%{'/'.len(filter(range(1,bufnr('$')),
     \'buflisted(v:val)'))}                      " total number of open buffers
 set stl+=%H%M%R%W]%*\                           " flags
-set stl+=%{GitBranch()}%<                       " branch of pwd if under vcs
+set stl+=%{custom#GitBranch()}%<                " branch of pwd if under vcs
 set stl+=%-F\                                   " filepath
 set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
@@ -365,7 +270,7 @@ tnoremap <c-l> <c-\><c-n><c-w>l
 " tab {{{2
 
 " gb's multi-purpose tabs
-inoremap <silent><tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <silent><tab> <c-r>=custom#InsertTabWrapper()<cr>
 inoremap <silent><s-tab> <c-n>
 
 "===============================================================================
@@ -419,14 +324,14 @@ nnoremap <leader>ff :find *
 nnoremap <leader>fv :vert sfind *
 nnoremap <leader>fn :find ~/Documents/notes/
 
-" find files recurcively under the dir of *current* file
+" find files recursively under the dir of *current* file
 nnoremap <leader>F :find <c-r>=expand('%:h').'/*'<cr>
 nnoremap <leader>V :vert sfind <c-r>=expand('%:h').'/*'<cr>
 
 "===============================================================================
 
 " leader-fr = gb's rename current file
-noremap <silent><leader>fr :call RenameFile()<cr>
+noremap <silent><leader>fr :call custom#RenameFile()<cr>
 
 "===============================================================================
 
