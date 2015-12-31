@@ -148,6 +148,9 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-eighties
 
+" wildmenu text and bg color; guifb/guibg is correct in my case? revisit later
+highlight wildmenu guifg=#ffcc66 guibg=#
+
 " display symbols for tabs, end-of-line, trailing whitespace
 set list
 set listchars=tab:▸\ ,eol:¬,trail:@
