@@ -413,6 +413,10 @@ nnoremap <leader>ff :find *
 nnoremap <leader>fv :vert sfind *
 nnoremap <leader>fn :find ~/Documents/notes/
 
+" find files recurcively under the dir of *current* file
+nnoremap <leader>F :find <c-r>=expand('%:h').'/*'<cr>
+nnoremap <leader>V :vert sfind <c-r>=expand('%:h').'/*'<cr>
+
 "===============================================================================
 
 " leader-fr = gb's rename current file
