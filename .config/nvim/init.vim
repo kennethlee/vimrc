@@ -406,11 +406,12 @@ xnoremap <leader>d "_d
 noremap x "_x
 
 "===============================================================================
-" (leader-f_) file ops, dirvish {{{2
+" (leader-f_) file-finding, file ops, dir {{{2
 
 " pro-tip: <c-d> while using :find to show the list of files in current dir
 nnoremap <leader>ff :find *
 nnoremap <leader>fv :vert sfind *
+nnoremap <leader>fn :find ~/Documents/notes/
 
 "===============================================================================
 
