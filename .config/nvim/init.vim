@@ -317,7 +317,7 @@ xnoremap <leader>d "_d
 noremap x "_x
 
 "===============================================================================
-" (leader-f_) file-finding, file ops, dir {{{2
+" (leader-f_, mostly) finding files/buffers, file ops, dir {{{2
 
 " pro-tip: <c-d> while using :find to show the list of files in current dir
 nnoremap <leader>ff :find *
@@ -327,6 +327,9 @@ nnoremap <leader>fn :find ~/Documents/notes/
 " find files recursively under the dir of *current* file
 nnoremap <leader>F :find <c-r>=expand('%:h').'/*'<cr>
 nnoremap <leader>V :vert sfind <c-r>=expand('%:h').'/*'<cr>
+
+" list all open buffers then wait for tab completion or input + tab completion
+nnoremap gb :ls<cr>:b<space>
 
 "===============================================================================
 
