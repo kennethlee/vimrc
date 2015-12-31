@@ -195,7 +195,7 @@ set mousehide
 " misc. {{{2
 "
 " 'jk' exits Insert Mode
-inoremap jk <esc>
+inoremap jk <Esc>
 
 " Y yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
@@ -211,14 +211,14 @@ xnoremap zz zf
 nnoremap J mzJ`z
 
 " F8 to insert ISO 8601 timestamp + day of the week (Insert Mode)
-inoremap <silent><f8> <c-r>=strftime("%FT%T%z, %a")<cr>
+inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 
 " hitting <cr> clears highlighting from previous search
-nnoremap <silent><cr> :nohlsearch<cr>/<bs>
+nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
 " tab/shift-tab to cycle through buffers
-nnoremap <silent><tab> :bnext<cr>
-nnoremap <silent><s-tab> :bprev<cr>
+nnoremap <silent><Tab> :bnext<CR>
+nnoremap <silent><S-Tab> :bprev<CR>
 
 " search using normal regex; 'very magic'
 nnoremap / /\v
@@ -230,68 +230,68 @@ xnoremap ? ?\v
 " change dir {{{2
 
 " change dir across vim session
-nnoremap cD :cd %:p:h<bar>pwd<cr>
-nnoremap cU :cd ..<bar>pwd<cr>
+nnoremap cD :cd %:p:h<Bar>pwd<CR>
+nnoremap cU :cd ..<Bar>pwd<CR>
 
 " change dir of curent window
-nnoremap cd :lcd %:p:h<bar>pwd<cr>
-nnoremap cu :lcd ..<bar>pwd<cr>
+nnoremap cd :lcd %:p:h<Bar>pwd<CR>
+nnoremap cu :lcd ..<Bar>pwd<CR>
 
 "===============================================================================
 " hjkl {{{2
 
-" <ctrl>-h/j/k/l for window navigation
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+" <C-h/j/k/l> for window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-vnoremap <c-h> <c-n><c-w>h
-vnoremap <c-j> <c-n><c-w>j
-vnoremap <c-k> <c-n><c-w>k
-vnoremap <c-l> <c-n><c-w>l
+vnoremap <C-h> <C-n><C-w>h
+vnoremap <C-j> <C-n><C-w>j
+vnoremap <C-k> <C-n><C-w>k
+vnoremap <C-l> <C-n><C-w>l
 
-inoremap <c-h> <c-\><c-n><c-w>h
-inoremap <c-j> <c-\><c-n><c-w>j
-inoremap <c-k> <c-\><c-n><c-w>k
-inoremap <c-l> <c-\><c-n><c-w>l
+inoremap <C-h> <C-\><C-n><C-w>h
+inoremap <C-j> <C-\><C-n><C-w>j
+inoremap <C-k> <C-\><C-n><C-w>k
+inoremap <C-l> <C-\><C-n><C-w>l
 
-cnoremap <c-h> <c-\><c-n><c-w>h
-cnoremap <c-j> <c-\><c-n><c-w>j
-cnoremap <c-k> <c-\><c-n><c-w>k
-cnoremap <c-l> <c-\><c-n><c-w>l
+cnoremap <C-h> <C-\><C-n><C-w>h
+cnoremap <C-j> <C-\><C-n><C-w>j
+cnoremap <C-k> <C-\><C-n><C-w>k
+cnoremap <C-l> <C-\><C-n><C-w>l
 
-tnoremap <c-h> <c-\><c-n><c-w>h
-tnoremap <c-j> <c-\><c-n><c-w>j
-tnoremap <c-k> <c-\><c-n><c-w>k
-tnoremap <c-l> <c-\><c-n><c-w>l
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
 
 "===============================================================================
 " tab {{{2
 
 " gb's multi-purpose tabs
-inoremap <silent><tab> <c-r>=custom#InsertTabWrapper()<cr>
-inoremap <silent><s-tab> <c-n>
+inoremap <silent><Tab> <C-r>=custom#InsertTabWrapper()<CR>
+inoremap <silent><S-Tab> <C-n>
 
 "===============================================================================
 " disable {{{2
 
 " disable arrow keys
-map <left> <nop>
-map <right> <nop>
-map <up> <nop>
-map <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
+map <Left> <NOP>
+map <Right> <NOP>
+map <Up> <NOP>
+map <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
+imap <Up> <NOP>
+imap <Down> <NOP>
 
 " hide mouse, disable it from triggering Visual Mode, page up/down
 set mousehide mouse=nicr
-map <mouseup> <nop>
-map <mousedown> <nop>
-map! <mouseup> <nop>
-map! <mousedown> <nop>
+map <MouseUp> <NOP>
+map <MouseDown> <NOP>
+map! <MouseUp> <NOP>
+map! <MouseDown> <NOP>
 
 "===============================================================================
 " leader core {{{2
@@ -299,7 +299,7 @@ map! <mousedown> <nop>
 let g:mapleader="\<space>"
 
 " gb's <leader><leader> to quickly switch to alternate buffer
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> <C-^>
 
 "===============================================================================
 " (leader-c_) change {{{2
@@ -319,39 +319,39 @@ noremap x "_x
 "===============================================================================
 " (leader-f_, mostly) finding files/buffers, file ops, dir {{{2
 
-" pro-tip: <c-d> while using :find to show the list of files in current dir
+" pro-tip: <C-d> while using :find to show the list of files in current dir
 nnoremap <leader>ff :find *
 nnoremap <leader>fv :vert sfind *
 nnoremap <leader>fn :find ~/Documents/notes/
 
 " find files recursively under the dir of *current* file
-nnoremap <leader>F :find <c-r>=expand('%:h').'/*'<cr>
-nnoremap <leader>V :vert sfind <c-r>=expand('%:h').'/*'<cr>
+nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>V :vert sfind <C-r>=expand('%:h').'/*'<CR>
 
 " list all open buffers then wait for tab completion or input + tab completion
-nnoremap gb :ls<cr>:b<space>
+nnoremap gb :ls<CR>:b<Space>
 
 "===============================================================================
 
 " leader-fr = gb's rename current file
-noremap <silent><leader>fr :call custom#RenameFile()<cr>
+noremap <silent><leader>fr :call custom#RenameFile()<CR>
 
 "===============================================================================
 
-nnoremap <silent>- :Dirvish %:p:h<cr>
+nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
 
 "===============================================================================
 " (leader-v_) vim (general) {{{2
 
 " leader-vm = maximize width of current window
-nnoremap <silent><leader>vm <c-w>\|
+nnoremap <silent><leader>vm <C-w>\|
 
 " leader-vv = open .vimrc
-nnoremap <silent><leader>vv :e $MYVIMRC<cr>
+nnoremap <silent><leader>vv :e $MYVIMRC<CR>
 
 " leader-vw = toggle wrap and list characters
-nnoremap <silent><leader>vw :set list!<cr>
+nnoremap <silent><leader>vw :set list!<CR>
 
 "===============================================================================
 " (leader-t_) fzf {{{2
@@ -367,13 +367,13 @@ nnoremap <silent><leader>tn :Files ~/Documents/notes<cr>
 "===============================================================================
 " (leader-n_) undotree {{{2
 
-nnoremap <silent><leader>n :UndotreeToggle<cr>
+nnoremap <silent><leader>n :UndotreeToggle<CR>
 
 "===============================================================================
 " (leader-a_) easyalign {{{2
 
 " start interactive EasyAlign in visual mode (e.g. vip<enter>)
-vmap <enter> <Plug>(EasyAlign)
+vmap <Enter> <Plug>(EasyAlign)
 
 " start interactive EasyAlign for a motion/text object (e.g. <leader>aip)
 nmap <leader>ab <Plug>(EasyAlign)
