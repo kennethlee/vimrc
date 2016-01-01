@@ -1,5 +1,5 @@
 " general {{{1
-" first {{{2
+" pathogen {{{2
 
 " infect!
 " run :Helptags command after installs to make the plugin's docs avail. globally
@@ -23,24 +23,19 @@ set fileencodings=utf-8
 filetype plugin indent on
 
 " hide buffers w/o having to save first
-set hidden
-set switchbuf=useopen
+set hidden switchbuf=useopen
 
 " limit syntax highlighting to the first 250 columns to reduce sluggishness
 set synmaxcol=250
 
-" disable backup files
-set nobackup
-set noswapfile
+" disable backup and swap files
+set nobackup noswapfile
 
 " automatically reload file if it has changed outside of vim
 set autoread
 
 " see ':help fold-options'
-set foldenable
-set foldlevel=0
-set foldcolumn=0
-set foldnestmax=6
+set foldenable foldlevel=0 foldcolumn=0 foldnestmax=6
 set foldtext=custom#VimFoldText()
 
 "===============================================================================
@@ -56,10 +51,7 @@ set wrap linebreak
 set backspace=indent,eol,start
 
 " default tab settings
-set softtabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
+set softtabstop=2 shiftwidth=2 autoindent expandtab
 
 " gb: insert only one space when joining lines that contain sentence-terminating
 " punctuation like `.`.
@@ -77,14 +69,9 @@ let g:sh_noisk=1
 set path=.,**
 
 " tab completion
-set wildmenu
-set wildmode=list:longest,full
-set wildignorecase
+set wildmenu wildmode=list:longest,full wildignorecase
 
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
+set incsearch ignorecase smartcase hlsearch
 
 "===============================================================================
 " wildignore {{{2
@@ -149,12 +136,10 @@ let base16colorspace=256
 colorscheme base16-eighties
 
 " display symbols for tabs, end-of-line, trailing whitespace
-set list
-set listchars=tab:▸\ ,eol:¬,trail:@
+set list listchars=tab:▸\ ,eol:¬,trail:@
 
 " absolute line numbers and width to 6 chars
-set number
-set numberwidth=6
+set number numberwidth=6
 
 " window behavior
 set winminwidth=15 winwidth=90
