@@ -135,7 +135,7 @@ highlight clear SignColumn
 let g:loaded_netrwPlugin = 1
 
 "===============================================================================
-" gui {{{1
+" visual components {{{1
 " general {{{2
 
 set title t_ti= t_te=
@@ -147,9 +147,6 @@ set showmode
 set background=dark
 let base16colorspace=256
 colorscheme base16-eighties
-
-" wildmenu text and bg color; guifb/guibg is correct in my case? revisit later
-highlight wildmenu guifg=#ffcc66 guibg=#
 
 " display symbols for tabs, end-of-line, trailing whitespace
 set list
@@ -167,14 +164,7 @@ set splitright splitbelow
 "===============================================================================
 " statusline {{{2
 
-" current line in netrw now yellow highlight/black text
-" hi CursorLine cterm=NONE ctermbg=yellow ctermfg=black
-
 set laststatus=2
-
-hi default link User1 Identifier                " filename
-hi default link User2 Statement                 " flags
-hi default link User3 Error                     " errors
 
 set stl=
 set stl+=%2*[%n                                 " buffer number
@@ -187,11 +177,13 @@ set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
 set stl+=%5(%c%)\                               " column number
 
-"===============================================================================
-" hide {{{2
+" statusline text color
+highlight default link User1 Identifier         " filename
+highlight default link User2 Statement          " flags
+highlight default link User3 Error              " errors
 
-set guioptions=aAce
-set mousehide
+" wildmenu text and bg color; guifb/guibg is correct in my case? revisit later
+highlight wildmenu guifg=#ffcc66 guibg=# gui=bold
 
 "===============================================================================
 " keymap {{{1
