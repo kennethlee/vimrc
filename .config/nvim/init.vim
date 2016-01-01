@@ -5,9 +5,6 @@
 " run :Helptags command after installs to make the plugin's docs avail. globally
 execute pathogen#infect()
 
-" fzf
-set rtp+=~/.fzf
-
 "===============================================================================
 " file handling {{{2
 
@@ -321,17 +318,6 @@ nnoremap <silent><leader>vv :e $MYVIMRC<CR>
 
 " leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<CR>
-
-"===============================================================================
-" (leader-t_) fzf {{{2
-
-nnoremap <silent><leader>tt :Files<cr>
-nnoremap <leader>te :Files ~/
-nnoremap <silent><leader>tk :BLines<cr>
-nnoremap <silent><leader>tl :Lines<cr>
-nnoremap <silent><leader>tu :Buffers<cr>
-nnoremap <silent><leader>tm :History<cr>
-nnoremap <silent><leader>tn :Files ~/Documents/notes<cr>
 
 "===============================================================================
 " (leader-n_) undotree {{{2
