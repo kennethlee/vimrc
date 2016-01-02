@@ -128,9 +128,9 @@ set cmdheight=2
 set showmode
 
 " colorscheme
+let g:seoul256_background = 235
+colorscheme seoul256
 set background=dark
-let base16colorspace=256
-colorscheme base16-eighties
 
 " display symbols for tabs, end-of-line, trailing whitespace
 set list listchars=tab:▸\ ,eol:¬,trail:@
