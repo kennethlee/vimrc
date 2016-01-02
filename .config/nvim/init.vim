@@ -149,20 +149,12 @@ set splitright splitbelow
 set laststatus=2
 
 set stl=
-set stl+=%2*[%n                                 " buffer number
-set stl+=%{'/'.len(filter(range(1,bufnr('$')),
-    \'buflisted(v:val)'))}                      " total number of open buffers
-set stl+=%H%M%R%W]%*\                           " flags
+set stl+=%*[%n%H%M%R%W]%*\                      " buffer number + flags
 set stl+=%{custom#GitBranch()}%<                " branch of pwd if under vcs
 set stl+=%-F\                                   " filepath
 set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
 set stl+=%5(%c%)\                               " column number
-
-" statusline text color
-highlight default link User1 Identifier         " filename
-highlight default link User2 Statement          " flags
-highlight default link User3 Error              " errors
 
 " wildmenu text and bg color; guifb/guibg is correct in my case? revisit later
 highlight wildmenu guifg=#ffcc66 guibg=# gui=bold
