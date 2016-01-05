@@ -298,6 +298,7 @@ noremap <silent><leader>fr :call custom#RenameFile()<CR>
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
+cmap <leader>dd call delete(getline('.'))
 
 "===============================================================================
 " (leader-v_) vim (general) {{{2
