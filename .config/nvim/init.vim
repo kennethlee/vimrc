@@ -1,9 +1,12 @@
 " general {{{1
-" pathogen {{{2
+" runtime path {{{2
 
 " infect!
 " run :Helptags command after installs to make the plugin's docs avail. globally
 execute pathogen#infect()
+
+" fzf
+set rtp+=~/.fzf
 
 "===============================================================================
 " file handling {{{2
@@ -139,8 +142,8 @@ set list listchars=tab:▸\ ,eol:¬,trail:@
 set number numberwidth=6
 
 " window behavior
+set noequalalways
 set winminwidth=15 winwidth=90
-set noequalalways winminheight=0 winheight=9999 helpheight=9999
 set splitright splitbelow
 
 "===============================================================================
@@ -299,6 +302,16 @@ noremap <silent><leader>fr :call custom#RenameFile()<CR>
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
 cmap <leader>dd call delete(getline('.'))
+
+"===============================================================================
+" (leader-t_) fzf {{{2
+
+nnoremap <silent><leader>tt :Files<CR>
+nnoremap <leader>te :Files ~/
+nnoremap <silent><leader>tk :BLines<CR>
+nnoremap <silent><leader>tl :Lines<CR>
+nnoremap <silent><leader>tu :Buffers<CR>
+nnoremap <silent><leader>tn :Files ~/Documents/notes<CR>
 
 "===============================================================================
 " (leader-v_) vim (general) {{{2
