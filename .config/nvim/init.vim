@@ -109,6 +109,11 @@ if !exists('g:undotree_HighlightChangedText')
 endif
 
 "===============================================================================
+" vim-json {{{2
+
+let g:vim_json_syntax_conceal = 0
+
+"===============================================================================
 " vim-gitgutter {{{2
 
 let g:gitgutter_eager = 0
