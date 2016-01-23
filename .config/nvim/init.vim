@@ -89,10 +89,15 @@ set wildignore+=*.so,*.sw?
 " neomake {{{2
 
 " makers
-let g:neomake_ruby_enabled_makers=['rubocop']
+let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
+
+"===============================================================================
+" simple-javascript-indenter {{{2
+
+let g:SimpleJsIndenter_BriefMode = 1
 
 "===============================================================================
 " undotree {{{2
