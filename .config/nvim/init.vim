@@ -319,8 +319,8 @@ cmap <leader>dd call delete(getline('.'))
 
 nnoremap <silent><leader>tt :Files<CR>
 nnoremap <leader>te :Files ~/
-nnoremap <silent><leader>tk :BLines<CR>
-nnoremap <silent><leader>tl :Lines<CR>
+nnoremap <silent><leader>tl :BLines<CR>
+nnoremap <silent><leader>tk :Lines<CR>
 nnoremap <silent><leader>tu :Buffers<CR>
 nnoremap <silent><leader>tn :Files ~/Documents/notes<CR>
 
