@@ -95,11 +95,6 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost * Neomake
 
 "===============================================================================
-" simple-javascript-indenter {{{2
-
-let g:SimpleJsIndenter_BriefMode = 1
-
-"===============================================================================
 " undotree {{{2
 
 " if set, let undotree window get focus after being opened, otherwise
