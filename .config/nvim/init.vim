@@ -86,6 +86,14 @@ set wildignore+=*.so,*.sw?
 
 "===============================================================================
 " plugin config {{{1
+" matchtagalways {{{2
+
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'javascript' : 1,
+    \ 'xml' : 1,
+    \}
+
 " neomake {{{2
 
 " makers
@@ -310,6 +318,10 @@ nnoremap <leader>fd :Dirvish ~/
 cmap <leader>dd call delete(getline('.'))
 
 "===============================================================================
+" (leader-j_) matchtagalways {{{2
+
+nnoremap <silent><leader>j :MtaJumpToOtherTag<CR>
+
 " (leader-t_) fzf {{{2
 
 nnoremap <silent><leader>tt :Files<CR>
