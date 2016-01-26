@@ -148,9 +148,9 @@ let g:seoul256_background = 235
 colorscheme seoul256
 set background=dark
 
-" display for end-of-line and red symbols for tabs and trailing whitespace
+" display char for EoL and red chars for tabs and trailing whitespace
 set list listchars=tab:▸\ ,eol:¬,trail:@
-hi SpecialKey ctermfg=196 guifg=#ff0000
+highlight SpecialKey ctermfg=196 guifg=#ff0000
 
 " absolute line numbers and width to 6 chars
 set number numberwidth=6
