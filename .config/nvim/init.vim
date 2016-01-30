@@ -306,12 +306,12 @@ nnoremap <leader>V :vert sfind <C-r>=expand('%:h').'/*'<CR>
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap gb :ls<CR>:b<Space>
 
-"===============================================================================
+
 
 " leader-fr = gb's rename current file
 noremap <silent><leader>fr :call custom#RenameFile()<CR>
 
-"===============================================================================
+
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
@@ -322,6 +322,7 @@ cmap <leader>dd call delete(getline('.'))
 
 nnoremap <silent><leader>j :MtaJumpToOtherTag<CR>
 
+"===============================================================================
 " (leader-t_) fzf {{{2
 
 nnoremap <silent><leader>tt :Files<CR>
