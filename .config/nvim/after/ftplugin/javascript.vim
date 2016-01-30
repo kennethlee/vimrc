@@ -1,8 +1,7 @@
 " folding
-syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+setlocal foldmethod=indent
 setlocal foldenable
-setlocal foldmethod=syntax
-setlocal foldlevel=0
+setlocal foldlevel=1
 setlocal foldnestmax=3
 setlocal foldcolumn=0
 " misc
