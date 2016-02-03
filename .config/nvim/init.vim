@@ -165,11 +165,19 @@ set splitright splitbelow
 set laststatus=2
 
 set stl=
-set stl+=%*[%n%H%M%R%W]%*\                      " buffer number + flags
-set stl+=%#identifier#
-set stl+=%{custom#GitBranch()}%<                " branch of pwd if under vcs
+set stl+=%#error#
+set stl+=%m                                     " 'error' flag for modified buff.
 set stl+=%*
-set stl+=%-F\                                   " filepath
+
+set stl+=%#question#
+set stl+=%h%r%w                                 " help, read-only, preview buff.
+set stl+=%*
+
+set stl+=%#statement#
+set stl+=%{custom#GitBranch()}%<                " show curr. branch if git repo
+set stl+=%*
+
+set stl+=%-F\                                   " absolute filepath
 set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
 set stl+=%5(%c%)\                               " column number
