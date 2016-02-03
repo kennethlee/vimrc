@@ -144,8 +144,7 @@ set cmdheight=2
 set showmode
 
 " colorscheme
-let g:seoul256_background = 235
-colorscheme seoul256
+colorscheme base16-eighties
 set background=dark
 
 " display char for EoL and red chars for tabs and trailing whitespace
