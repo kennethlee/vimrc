@@ -167,7 +167,9 @@ set laststatus=2
 
 set stl=
 set stl+=%*[%n%H%M%R%W]%*\                      " buffer number + flags
+set stl+=%#identifier#
 set stl+=%{custom#GitBranch()}%<                " branch of pwd if under vcs
+set stl+=%*
 set stl+=%-F\                                   " filepath
 set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
