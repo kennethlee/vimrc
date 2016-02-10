@@ -220,6 +220,9 @@ xnoremap ? ?\v
 " <Backspace> to switch to the alternate buffer
 nnoremap <BS> <C-^>
 
+" gV to select last changed block
+nnoremap gV `[v`]
+
 " Cycle through location list
 nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
   \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
