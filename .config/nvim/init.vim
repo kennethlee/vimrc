@@ -217,6 +217,9 @@ xnoremap / /\v
 nnoremap ? ?\v
 xnoremap ? ?\v
 
+" <Backspace> to switch to the alternate buffer
+nnoremap <BS> <C-^>
+
 " Cycle through location list
 nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
   \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
@@ -286,9 +289,6 @@ map! <MouseDown> <NOP>
 " leader core {{{2
 
 let g:mapleader="\<space>"
-
-" gb's <leader><leader> to quickly switch to alternate buffer
-nnoremap <leader><leader> <C-^>
 
 "===============================================================================
 " (leader-c_) change {{{2
