@@ -211,10 +211,6 @@ inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 " hitting <cr> clears highlighting from previous search
 nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
-" tab/shift-tab to cycle through buffers
-nnoremap <silent><Tab> :bnext<CR>
-nnoremap <silent><S-Tab> :bprev<CR>
-
 " search using normal regex; 'very magic'
 nnoremap / /\v
 xnoremap / /\v
