@@ -192,10 +192,10 @@ highlight wildmenu guifg=#ffcc66 guibg=# gui=bold
 " 'jk' exits Insert Mode
 inoremap jk <Esc>
 
-" Y yanks to EoL (consistent with D, C, etc)
+" 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
-" y yanks to system clipboard in Visual Mode
+" 'y' yanks to system clipboard in Visual Mode
 xnoremap y "*y
 
 " toggle folds with 'zz'
@@ -205,10 +205,10 @@ xnoremap zz zf
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
 
-" F8 to insert ISO 8601 timestamp + day of the week (Insert Mode)
+" 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 
-" hitting <cr> clears highlighting from previous search
+" hitting <CR> clears highlighting from previous search
 nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
 " search using normal regex; 'very magic'
@@ -220,20 +220,12 @@ xnoremap ? ?\v
 " <Backspace> to switch to the alternate buffer
 nnoremap <BS> <C-^>
 
-" gV to select last changed block
-nnoremap gV `[v`]
-
-" Cycle through location list
-nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
-  \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
-  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
-
-nnoremap <silent><S-Tab> :try<Bar>:try<Bar>lprev<Bar>catch
-  \ /^Vim\%((\a\+)\)\=:E553/<Bar>llast<Bar>catch/^Vim\%((\a\+)\)\=:E776/
-  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
+" gb's multi-purpose tabs
+inoremap <silent><Tab> <C-r>=custom#InsertTabWrapper()<CR>
+inoremap <silent><S-Tab> <C-n>
 
 "===============================================================================
-" hjkl {{{2
+" navigation {{{2
 
 " <C-h/j/k/l> for window navigation
 nnoremap <C-h> <C-w>h
@@ -261,12 +253,17 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-"===============================================================================
-" tab {{{2
+" 'gV' to select last changed block
+nnoremap gV `[v`]
 
-" gb's multi-purpose tabs
-inoremap <silent><Tab> <C-r>=custom#InsertTabWrapper()<CR>
-inoremap <silent><S-Tab> <C-n>
+" Cycle through location list
+nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
+  \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
+  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
+
+nnoremap <silent><S-Tab> :try<Bar>:try<Bar>lprev<Bar>catch
+  \ /^Vim\%((\a\+)\)\=:E553/<Bar>llast<Bar>catch/^Vim\%((\a\+)\)\=:E776/
+  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
 
 "===============================================================================
 " disable {{{2
