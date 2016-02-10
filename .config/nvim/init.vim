@@ -365,7 +365,7 @@ nnoremap <silent><leader>vw :set list!<CR>
 "===============================================================================
 " (leader-n_) undotree {{{2
 
-nnoremap <silent><leader>n :UndotreeToggle<CR>
+nnoremap <silent><leader>u :UndotreeToggle<CR>
 
 "===============================================================================
 " (leader-a_) easyalign {{{2
