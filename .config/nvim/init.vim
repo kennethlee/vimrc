@@ -139,7 +139,7 @@ let g:loaded_netrwPlugin = 1
 " general {{{2
 
 set title t_ti= t_te=
-set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set cmdheight=2
 set showmode
 
