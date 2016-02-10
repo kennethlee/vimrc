@@ -221,6 +221,15 @@ xnoremap / /\v
 nnoremap ? ?\v
 xnoremap ? ?\v
 
+" Cycle through location list
+ nnoremap <silent><C-n> :try<Bar>:try<Bar>lnext<Bar>catch
+  \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
+  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
+
+ nnoremap <silent><C-p> :try<Bar>:try<Bar>lprev<Bar>catch
+  \ /^Vim\%((\a\+)\)\=:E553/<Bar>llast<Bar>catch/^Vim\%((\a\+)\)\=:E776/
+  \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
+
 "===============================================================================
 " hjkl {{{2
 
