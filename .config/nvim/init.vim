@@ -256,13 +256,6 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
-" <Ctrl-j/k> to jump to next occurrence of line with indent level as current
-nnoremap <silent><C-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)')
-  \ .'\%>' . line('.') . 'l\S', 'e')<CR>
-
-nnoremap <silent><C-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)')
-  \ .'\%<' . line('.') . 'l\S', 'be')<CR>
-
 " Cycle through location list
 nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
   \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
@@ -271,6 +264,10 @@ nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
 nnoremap <silent><S-Tab> :try<Bar>:try<Bar>lprev<Bar>catch
   \ /^Vim\%((\a\+)\)\=:E553/<Bar>llast<Bar>catch/^Vim\%((\a\+)\)\=:E776/
   \ <Bar>endtry<Bar>catch /^Vim\%((\a\+)\)\=:E42/<Bar>endtry<CR>
+
+" vim-indentwise
+map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
+map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 
 "===============================================================================
 " disable {{{2
