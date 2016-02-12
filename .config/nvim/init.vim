@@ -89,10 +89,10 @@ set wildignore+=*.so,*.sw?
 " matchtagalways {{{2
 
 let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'javascript' : 1,
-    \ 'xml' : 1,
-    \}
+  \ 'html' : 1,
+  \ 'javascript' : 1,
+  \ 'xml' : 1,
+  \}
 
 " neomake {{{2
 
@@ -321,15 +321,16 @@ nnoremap <leader>fn :find ~/Documents/notes/**/*
 nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
 nnoremap <leader>V :vert sfind <C-r>=expand('%:h').'/*'<CR>
 
+
+
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap gb :ls<CR>:b<Space>
 
-
+" SL's trailing whitespace cleaner
+noremap <silent><leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " leader-fr = gb's rename current file
 noremap <silent><leader>fr :call custom#RenameFile()<CR>
-
-
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
