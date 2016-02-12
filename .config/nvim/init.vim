@@ -256,6 +256,12 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
+" '[[' and ']]' to jump to next occurrence of line with indent level as current
+nnoremap <silent>[[ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<'
+  \ . line('.') . 'l\S', 'be')<CR>
+nnoremap <silent>]] :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>'
+  \ . line('.') . 'l\S', 'e')<CR>
+
 " Cycle through location list
 nnoremap <silent><Tab> :try<Bar>:try<Bar>lnext<Bar>catch
   \ /^Vim\%((\a\+)\)\=:E553/<Bar>lfirst<Bar>catch/^Vim\%((\a\+)\)\=:E776/
