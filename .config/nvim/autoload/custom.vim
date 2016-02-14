@@ -1,3 +1,18 @@
+" CycleList {{{1
+
+function! CycleList(nextcom, firstcom)
+  try
+    try
+      execute a:nextcom
+    catch /^Vim\%((\a\+)\)\=:E553/
+      execute a:firstcom
+    catch /^Vim\%((\a\+)\)\=:E776/
+    endtry
+  catch /^Vim\%((\a\+)\)\=:E42/
+  endtry
+endfunction
+
+"===============================================================================
 " fold lines {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
