@@ -217,9 +217,6 @@ xnoremap / /\v
 nnoremap ? ?\v
 xnoremap ? ?\v
 
-" <Backspace> to switch to the alternate buffer
-nnoremap <BS> <C-^>
-
 " gb's multi-purpose tabs
 inoremap <silent><Tab> <C-r>=custom#InsertTabWrapper()<CR>
 inoremap <silent><S-Tab> <C-n>
@@ -256,9 +253,16 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
+" <Backspace> to switch to the alternate buffer
+nnoremap <BS> <C-^>
+
+" Cycle through buffers
+nnoremap <silent><Tab> :bnext<CR>
+nnoremap <silent><S-Tab> :bprev<CR>
+
 " Cycle through location list
-nnoremap <silent><Tab> :call CycleList("lnext", "lfirst")<CR>
-nnoremap <silent><S-Tab> :call CycleList("lprev", "llast")<CR>
+nnoremap <silent><C-n> :call CycleList("lnext", "lfirst")<CR>
+nnoremap <silent><C-p> :call CycleList("lprev", "llast")<CR>
 
 " vim-indentwise
 map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
