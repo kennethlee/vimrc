@@ -1,6 +1,6 @@
 " CycleList {{{1
 
-function! CycleList(nextcom, firstcom)
+function! custom#CycleList(nextcom, firstcom)
   try
     try
       execute a:nextcom
