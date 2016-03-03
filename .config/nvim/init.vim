@@ -86,6 +86,12 @@ set wildignore+=*.so,*.sw?
 
 "===============================================================================
 " plugin config {{{1
+" delimitmate {{{2
+
+let delimitMate_matchpairs = "(:),[:],{:}"
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 2
+
 " matchtagalways {{{2
 
 let g:mta_filetypes = {
