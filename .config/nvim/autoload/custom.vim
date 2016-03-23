@@ -36,9 +36,9 @@ function! custom#VimFoldText()
   let foldLevelStr = repeat(" + ", v:foldlevel) . "[" . v:foldlevel . "]"
   let lineCount = line("$")
   let foldPercentage = "[" . printf("%4.1f", (foldSize*1.0)/lineCount*100)
-      \. "%] "
+    \. "%] "
   let expansionString = repeat(".", w - strwidth(foldSizeStr) - strwidth(line)
-      \- strwidth(foldLevelStr) - strwidth(foldPercentage))
+    \- strwidth(foldLevelStr) - strwidth(foldPercentage))
   return foldLevelStr . line . expansionString . foldSizeStr. foldPercentage
 endfunction
 
