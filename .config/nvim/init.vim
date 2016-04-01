@@ -187,6 +187,26 @@ highlight wildmenu guifg=#ffcc66 guibg=# gui=bold
 
 "===============================================================================
 " keymap {{{1
+" disable {{{2
+
+" disable arrow keys
+map <Left> <NOP>
+map <Right> <NOP>
+map <Up> <NOP>
+map <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
+imap <Up> <NOP>
+imap <Down> <NOP>
+
+" hide mouse, disable it from triggering Visual Mode, page up/down
+set mousehide mouse=nicr
+map <MouseUp> <NOP>
+map <MouseDown> <NOP>
+map! <MouseUp> <NOP>
+map! <MouseDown> <NOP>
+
+"===============================================================================
 " misc. {{{2
 "
 " 'jk' exits Insert Mode
@@ -269,24 +289,11 @@ map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
 map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 
 "===============================================================================
-" disable {{{2
+" ultisnips {{{2
 
-" disable arrow keys
-map <Left> <NOP>
-map <Right> <NOP>
-map <Up> <NOP>
-map <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
-imap <Up> <NOP>
-imap <Down> <NOP>
-
-" hide mouse, disable it from triggering Visual Mode, page up/down
-set mousehide mouse=nicr
-map <MouseUp> <NOP>
-map <MouseDown> <NOP>
-map! <MouseUp> <NOP>
-map! <MouseDown> <NOP>
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
+let g:UltiSnipsJumpBackwardTrigger="<C-h>"
 
 "===============================================================================
 " leader core {{{2
