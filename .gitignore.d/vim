@@ -8,6 +8,9 @@
 !/.config/nvim/autoload/
 !/.config/nvim/autoload/custom.vim
 
+!/.config/nvim/my-snippets
+!/.config/nvim/my-snippets/javascript.snippets
+
 !/.config/nvim/indent/
 !/.config/nvim/indent/c.vim
 !/.config/nvim/indent/css.vim

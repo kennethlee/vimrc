@@ -5,8 +5,8 @@
 " run :Helptags command after installs to make the plugin's docs avail. globally
 execute pathogen#infect()
 
-" fzf
 set rtp+=~/.fzf
+set rtp+=~/.config/nvim/my-snippets/
 
 "===============================================================================
 " file handling {{{2
@@ -93,6 +93,13 @@ let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
+
+"===============================================================================
+" ultisnips {{{2
+
+let g:UltiSnipsSnippetsDir='~/.config/nvim/my-snippets/'
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my-snippets']
+let g:UltiSnipsEditSplit='vertical'
 
 "===============================================================================
 " undotree {{{2
