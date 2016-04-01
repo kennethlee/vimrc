@@ -86,14 +86,6 @@ set wildignore+=*.so,*.sw?
 
 "===============================================================================
 " plugin config {{{1
-" matchtagalways {{{2
-
-let g:mta_filetypes = {
-  \ 'html' : 1,
-  \ 'javascript' : 1,
-  \ 'xml' : 1,
-  \}
-
 " neomake {{{2
 
 " makers
@@ -129,9 +121,12 @@ let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
 "===============================================================================
-" misc. {{{2
+" vim's standard plugins {{{2
 
-" disable netrw
+" enable
+runtime macros/matchit.vim
+
+" disable
 let g:loaded_netrwPlugin = 1
 
 "===============================================================================
