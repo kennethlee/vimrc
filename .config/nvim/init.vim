@@ -217,10 +217,6 @@ xnoremap / /\v
 nnoremap ? ?\v
 xnoremap ? ?\v
 
-" gb's multi-purpose tabs
-inoremap <silent><Tab> <C-r>=custom#InsertTabWrapper()<CR>
-inoremap <silent><S-Tab> <C-n>
-
 "===============================================================================
 " navigation {{{2
 

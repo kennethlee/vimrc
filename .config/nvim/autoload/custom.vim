@@ -74,19 +74,6 @@ function! custom#RenameFile()
 endfunction
 
 "===============================================================================
-" gb's tabs {{{1
-
-" indent if at the beginning of a line, else, do completion
-function! custom#InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<Tab>"
-  else
-    return "\<C-p>"
-  endif
-endfunction
-
-"===============================================================================
 " pastetoggle {{{1
 
 " 'bracketed paste mode': prevents clobbering the indentation of text pasted
