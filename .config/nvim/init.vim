@@ -294,8 +294,8 @@ map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 " ultisnips {{{2
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="¬"
-let g:UltiSnipsJumpBackwardTrigger="˙"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 "===============================================================================
 " leader core {{{2
