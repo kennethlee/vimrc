@@ -98,7 +98,7 @@ autocmd! BufWritePost * Neomake
 " ultisnips {{{2
 
 let g:UltiSnipsSnippetsDir='~/.config/nvim/my-snippets/'
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my-snippets']
+let g:UltiSnipsSnippetDirectories=['my-snippets']
 let g:UltiSnipsEditSplit='vertical'
 
 "===============================================================================
