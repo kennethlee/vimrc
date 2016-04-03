@@ -104,24 +104,24 @@ augroup END
 " if set, let undotree window get focus after being opened, otherwise
 " focus will stay in current window
 if !exists('g:undotree_SetFocusWhenToggle')
-  let g:undotree_SetFocusWhenToggle = 1
+  let g:undotree_SetFocusWhenToggle=1
 endif
 
 " highlight changed text
 if !exists('g:undotree_HighlightChangedText')
-  let g:undotree_HighlightChangedText = 1
+  let g:undotree_HighlightChangedText=1
 endif
 
 "===============================================================================
 " vim-json {{{2
 
-let g:vim_json_syntax_conceal = 0
+let g:vim_json_syntax_conceal=0
 
 "===============================================================================
 " vim-gitgutter {{{2
 
-let g:gitgutter_eager = 0
-let g:gitgutter_sign_column_always = 1
+let g:gitgutter_eager=0
+let g:gitgutter_sign_column_always=1
 highlight clear SignColumn
 
 "===============================================================================
@@ -131,7 +131,7 @@ highlight clear SignColumn
 runtime macros/matchit.vim
 
 " disable
-let g:loaded_netrwPlugin = 1
+let g:loaded_netrwPlugin=1
 
 "===============================================================================
 " visual components {{{1
@@ -280,8 +280,8 @@ nnoremap <silent>zj :call custom#NextClosedFold('j')<CR>
 nnoremap <silent>zk :call custom#NextClosedFold('k')<CR>
 
 " Cycle through location list
-nnoremap <silent><C-n> :call custom#CycleList("lnext", "lfirst")<CR>
-nnoremap <silent><C-p> :call custom#CycleList("lprev", "llast")<CR>
+nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
+nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
 
 " vim-indentwise
 map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
@@ -290,9 +290,9 @@ map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 "===============================================================================
 " ultisnips {{{2
 
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:UltiSnipsExpandTrigger='<Tab>'
+let g:UltiSnipsJumpForwardTrigger='<Tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 "===============================================================================
 " leader core {{{2
