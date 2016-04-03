@@ -10,17 +10,20 @@ snippet im
   import ${1} from '${0}';
 endsnippet
 
-snippet cla
+snippet class
 class ${1} {
   ${0}
 }
 endsnippet
 
-snippet clax
+snippet classx
 class ${1} extends ${2} {
   ${0}
 }
 endsnippet
+
+# =============================================================================
+# functions
 
 snippet =>
 (${1}) => {
@@ -33,6 +36,8 @@ snippet af
   ${0}
 }
 endsnippet
+
+# =============================================================================
 
 snippet sym
 const ${1} = Symbol('${0}');

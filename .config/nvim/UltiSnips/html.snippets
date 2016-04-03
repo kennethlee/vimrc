@@ -1,6 +1,7 @@
 
 # =============================================================================
 # Some useful Unicode entities
+
 # Non-Breaking Space
 snippet nbs
 &nbsp;
@@ -121,14 +122,6 @@ snippet chars
 charset="${1:utf-8}"
 endsnippet
 
-snippet data
-data-${1}="${2:$1}"
-endsnippet
-
-snippet for
-for="${1}"
-endsnippet
-
 snippet height
 height="${1}"
 endsnippet
@@ -214,31 +207,6 @@ snippet address
 </address>
 endsnippet
 
-snippet area
-<area shape="${1:rect}" coords="${2}" href="${3}" alt="${0}">
-endsnippet
-
-snippet area+
-<area shape="${1:rect}" coords="${2}" href="${3}" alt="${4}">
-area+
-endsnippet
-
-snippet area:c
-<area shape="circle" coords="${1}" href="${2}" alt="${0}">
-endsnippet
-
-snippet area:d
-<area shape="default" coords="${1}" href="${2}" alt="${0}">
-endsnippet
-
-snippet area:p
-<area shape="poly" coords="${1}" href="${2}" alt="${0}">
-endsnippet
-
-snippet area:r
-<area shape="rect" coords="${1}" href="${2}" alt="${0}">
-endsnippet
-
 snippet article
 <article>
   ${0}
@@ -316,7 +284,7 @@ snippet body
 endsnippet
 
 snippet br
-<br />
+<br>
 endsnippet
 
 snippet button
@@ -379,24 +347,6 @@ snippet colgroup+
 </colgroup>
 endsnippet
 
-snippet command
-<command type="command" label="${1}" icon="${0}">
-endsnippet
-
-snippet command:c
-<command type="checkbox" label="${1}" icon="${0}">
-endsnippet
-
-snippet command:r
-<command type="radio" radiogroup="${1}" label="${2}" icon="${0}">
-endsnippet
-
-snippet datagrid
-<datagrid>
-  ${0}
-</datagrid>
-endsnippet
-
 snippet datalist
 <datalist>
   ${0}
@@ -407,30 +357,6 @@ snippet datatemplate
 <datatemplate>
   ${0}
 </datatemplate>
-endsnippet
-
-snippet dd
-<dd>${0}</dd>
-endsnippet
-
-snippet dd.
-<dd class="${1}">${0}</dd>
-endsnippet
-
-snippet dd#
-<dd id="${1}">${0}</dd>
-endsnippet
-
-snippet del
-<del>${0}</del>
-endsnippet
-
-snippet details
-<details>${0}</details>
-endsnippet
-
-snippet dfn
-<dfn>${0}</dfn>
 endsnippet
 
 snippet dialog
@@ -690,18 +616,6 @@ snippet header#
 </header>
 endsnippet
 
-snippet hgroup
-<hgroup>
-  ${0}
-</hgroup>
-endsnippet
-
-snippet hgroup.
-<hgroup class="${1}>
-  ${0}
-</hgroup>
-endsnippet
-
 snippet hr
 <hr>
 endsnippet
@@ -925,10 +839,6 @@ snippet link:favicon
 <link rel="shortcut icon" href="${1:favicon.ico}" type="image/x-icon">
 endsnippet
 
-snippet link:rss
-<link rel="alternate" href="${1:rss.xml}" title="RSS" type="application/atom+xml">
-endsnippet
-
 snippet link:touch
 <link rel="apple-touch-icon" href="${1:favicon.png}">
 endsnippet
@@ -1043,21 +953,6 @@ snippet object
 </object>
 endsnippet
 
-# Embed QT Movie
-snippet movie
-<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-  <param name="src" value="$1" />
-  <param name="controller" value="$4">
-  <param name="autoplay" value="$5">
-  <embed src="${1:movie.mov}"
-    width="${2:320}" height="${3:240}"
-    controller="${4:true}" autoplay="${5:true}"
-    scale="tofit" cache="true"
-    pluginspage="http://www.apple.com/quicktime/download/">
-</object>
-endsnippet
-
 snippet ol
 <ol>
   ${0}
@@ -1154,23 +1049,7 @@ snippet samp
 endsnippet
 
 snippet script
-<script type="text/javascript" charset="utf-8">
-  ${0}
-</script>
-endsnippet
-
-snippet scripts
 <script src="${0}.js"></script>
-endsnippet
-
-snippet scriptt
-<script type="${1}" id="${2}">
-  ${0}
-</script>
-endsnippet
-
-snippet scriptsrc
-<script src="${0}.js" type="text/javascript" charset="utf-8"></script>
 endsnippet
 
 snippet section

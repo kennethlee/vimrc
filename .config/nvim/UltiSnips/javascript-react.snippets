@@ -1,0 +1,47 @@
+
+# =============================================================================
+# component templates
+
+# class component
+snippet rclass
+import React, { Component } from 'react';
+
+class ${1:ClassName} extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      ${0}
+    );
+  }
+}
+
+export default $1;
+endsnippet
+
+# stateless function
+snippet r=>
+import React from 'react';
+
+const ${1} = (${2}) => {
+  ${0}
+}
+
+export default $1;
+endsnippet
+
+# =============================================================================
+# state
+
+snippet rssv "set state" b
+this.setState({
+  ${1}: ${2},${0}
+});
+endsnippet
+
+snippet rssh "set state" b
+this.setState({ ${1}: ${2} });${0}
+endsnippet
+

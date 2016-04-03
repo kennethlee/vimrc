@@ -6,7 +6,6 @@
 execute pathogen#infect()
 
 set rtp+=~/.fzf
-set rtp+=~/.config/nvim/my-snippets/
 
 "===============================================================================
 " file handling {{{2
@@ -89,17 +88,10 @@ set wildignore+=*.so,*.sw?
 " neomake {{{2
 
 " makers
-let g:neomake_ruby_enabled_makers = ['rubocop']
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_ruby_enabled_makers=['rubocop']
+let g:neomake_javascript_enabled_makers=['eslint']
 
 autocmd! BufWritePost * Neomake
-
-"===============================================================================
-" ultisnips {{{2
-
-let g:UltiSnipsSnippetsDir='~/.config/nvim/my-snippets/'
-let g:UltiSnipsSnippetDirectories=['my-snippets']
-let g:UltiSnipsEditSplit='vertical'
 
 "===============================================================================
 " undotree {{{2
@@ -293,7 +285,7 @@ map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 "===============================================================================
 " ultisnips {{{2
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
