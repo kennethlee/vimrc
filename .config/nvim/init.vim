@@ -88,10 +88,15 @@ set wildignore+=*.so,*.sw?
 " neomake {{{2
 
 " makers
-let g:neomake_ruby_enabled_makers=['rubocop']
 let g:neomake_javascript_enabled_makers=['eslint']
+let g:neomake_ruby_enabled_makers=['rubocop']
 
-autocmd! BufWritePost * Neomake
+augroup NeomakeFiletypes
+  autocmd!
+  autocmd! BufWritePost *.js,*.jsx Neomake
+  autocmd! BufWritePost *.rb Neomake
+  " autocmd! BufWritePost * Neomake
+augroup END
 
 "===============================================================================
 " undotree {{{2
