@@ -138,11 +138,11 @@ let g:loaded_netrwPlugin=1
 " general {{{2
 
 set title t_ti= t_te=
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set cmdheight=2
 set showmode
 
 " colorscheme
+set termguicolors
 colorscheme base16-eighties
 set background=dark
 
