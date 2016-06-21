@@ -211,6 +211,9 @@ map! <MouseDown> <NOP>
 " 'jk' exits Insert Mode
 inoremap jk <Esc>
 
+" map '6' to '^' to avoid having to press shift
+nnoremap 6 ^
+
 " 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
