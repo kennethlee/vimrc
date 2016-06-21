@@ -122,7 +122,13 @@ let g:vim_json_syntax_conceal=0
 
 let g:gitgutter_eager=0
 let g:gitgutter_sign_column_always=1
-highlight clear SignColumn
+" highlight clear SignColumn
+
+"===============================================================================
+" vim-table-mode {{{2
+
+" enable markdown
+" let g:table_mode_corner="|"
 
 "===============================================================================
 " vim's standard plugins {{{2
