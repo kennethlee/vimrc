@@ -1,4 +1,6 @@
 UltiSnipsAddFiletypes javascript-es6
 UltiSnipsAddFiletypes javascript-jsx
 UltiSnipsAddFiletypes javascript-react
+UltiSnipsAddFiletypes javascript-redux
+UltiSnipsAddFiletypes javascript-react-router
 
