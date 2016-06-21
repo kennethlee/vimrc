@@ -29,23 +29,15 @@ endsnippet
 # buttons
 
 snippet button
-<button type=${1:submit}>${0}</button>
+<button type="${1:submit}">${0}</button>
 endsnippet
 
 snippet button.
-<button className=${3:button} type=${2:submit}>${1}</button>${0}
+<button className=${2} type="${1:submit}">${3}</button>${0}
 endsnippet
 
 snippet button#
-<button id=${3} type=${2:submit}>${1}</button>${0}
-endsnippet
-
-snippet button:s
-<button type=submit>${1}</button>${0}
-endsnippet
-
-snippet button:r
-<button type=reset>${1}</button>${0}
+<button id=${2} type="${1:submit}">${3}</button>${0}
 endsnippet
 
 # =============================================================================
