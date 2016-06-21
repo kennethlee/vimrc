@@ -1,8 +1,8 @@
 " folding
 setlocal foldenable
 setlocal foldmethod=indent
-setlocal foldlevel=4
-setlocal foldnestmax=8
+setlocal foldlevel=2
+setlocal foldnestmax=5
 setlocal foldcolumn=0
 " misc
 setlocal breakindent
