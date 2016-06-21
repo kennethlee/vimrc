@@ -271,9 +271,6 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
-" <Backspace> to switch to the alternate buffer
-nnoremap <BS> <C-^>
-
 " Cycle through buffers
 nnoremap <silent><Tab> :bnext<CR>
 nnoremap <silent><S-Tab> :bprev<CR>
@@ -319,6 +316,11 @@ noremap x "_x
 
 "===============================================================================
 " (leader-f_, mostly) finding files/buffers, file ops, dir {{{2
+
+" <leader><leader> to switch to the alternate buffer
+nnoremap <leader><leader> <C-^>
+
+
 
 " pro-tip: <C-d> while using :find to show the list of files in current dir
 nnoremap <leader>ff :find *
