@@ -22,7 +22,7 @@ snippet a#
 endsnippet
 
 snippet a:mail
-<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${0:email me}</a>
+<a href="mailto:${1:joe@example.com}?subject=${2:Feedback}">${3:Email me}</a>${0}
 endsnippet
 
 # =============================================================================
@@ -33,11 +33,11 @@ snippet button
 endsnippet
 
 snippet button.
-<button className=${2} type="${1:submit}">${3}</button>${0}
+<button type="${1:submit}" className=${2}>${3}</button>${0}
 endsnippet
 
 snippet button#
-<button id=${2} type="${1:submit}">${3}</button>${0}
+<button type="${1:submit}" id=${2}>${3}</button>${0}
 endsnippet
 
 # =============================================================================
@@ -104,13 +104,13 @@ snippet form
 endsnippet
 
 snippet form.
-<form className=${1} action={${2}}>
+<form action={${2}} className=${1}>
   ${3}
 </form>${0}
 endsnippet
 
 snippet form#
-<form id=${1} action={${2}}>
+<form action={${2}} id=${1}>
   ${3}
 </form>${0}
 endsnippet
@@ -198,11 +198,11 @@ snippet img
 endsnippet
 
 snippet img.
-<img className=${1} src=${2} alt=${3} />${0}
+<img src=${2} alt=${3} className=${1} />${0}
 endsnippet
 
 snippet img#
-<img id=${1} src=${2} alt=${3} />${0}
+<img src=${2} alt=${3} id=${1} />${0}
 endsnippet
 
 # =============================================================================
@@ -210,35 +210,43 @@ endsnippet
 
 snippet input
 <input
-  value={${2}}
-  onChange={${3}}
-  placeholder=${1}
+  value=${2}
+  onChange=${3}
+  placeholder="${1}"
 />${0}
 endsnippet
 
 snippet input.
 <input
-  value={${4}}
-  onChange={${3}}
-  placeholder=${2}
-  className=${1}
+  value=${4}
+  onChange=${3}
+  placeholder="${1}"
+  className=${2}
 />${0}
 endsnippet
 
-snippet input:text
-<input type="text" name="${1}" id="${2:$1}" value="${3}" />${0}
+snippet input#
+<input
+  value=${4}
+  onChange=${3}
+  placeholder="${1}"
+  className=${2}
+/>${0}
 endsnippet
 
-snippet input:submit
-<input type="submit" name="${1}" id="${2:$1}" value="${3}" />${0}
+# type: submit, text, checkbox, radio
+snippet inputl
+<input type="${1}" name="${2}" value="${3}" />${0}
 endsnippet
 
-snippet input:checkbox
-<input type="checkbox" name="${1}" id="${2:$1}" />${0}
+# type: submit, text, checkbox, radio
+snippet inputl.
+<input type="${1}" name="${2}" value=${4} className="${3:$1}" />${0}
 endsnippet
 
-snippet input:radio
-<input type="radio" name="${1}" id="${2:$1}" />${0}
+# type: submit, text, checkbox, radio
+snippet inputl#
+<input type="${1}" name="${2}" value=${4} id="${3:$1}" />${0}
 endsnippet
 
 # =============================================================================
