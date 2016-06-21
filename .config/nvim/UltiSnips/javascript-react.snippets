@@ -1,35 +1,40 @@
 
 # =============================================================================
-# component templates
+# ES6
+# =============================================================================
+# Component Templates
 
 # class component
 snippet rclass
-import React, { Component } from 'react';
-
 class ${1:ClassName} extends Component {
   constructor(props) {
     super(props);
-  }
+  }${0}
 
   render() {
     return (
-      ${0}
+      ${1}
     );
   }
-}
-
-export default $1;
+}${0}
 endsnippet
 
-# stateless function
-snippet r=>
-import React from 'react';
-
+# stateless fxn
+snippet raf
 const ${1} = (${2}) => {
-  ${0}
-}
+  return (
+    ${3}
+  );
+}${0}
+endsnippet
 
-export default $1;
+# alt trigger for stateless fxn
+snippet r=>
+const ${1} = (${2}) => {
+  return (
+    ${3}
+  );
+}${0}
 endsnippet
 
 # =============================================================================
@@ -37,11 +42,21 @@ endsnippet
 
 snippet rssv "set state" b
 this.setState({
-  ${1}: ${2},${0}
-});
+  ${1}: ${2},${3}
+});${0}
 endsnippet
 
 snippet rssh "set state" b
 this.setState({ ${1}: ${2} });${0}
+endsnippet
+
+# =============================================================================
+# other
+
+# ES6 proptype validation
+snippet ept
+${1:Class name}.propTypes = {
+  ${2:Prop name}: React.PropTypes.${3:string}.isRequired,${4}
+};${0}
 endsnippet
 
