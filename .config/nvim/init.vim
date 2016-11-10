@@ -355,7 +355,7 @@ cmap <leader>dd call delete(getline('.'))
 "===============================================================================
 " (leader-t_) fzf {{{2
 
-nnoremap <silent><leader>tt :Files<CR>
+nnoremap <silent><leader>tr :Files<CR>
 nnoremap <leader>te :Files ~/
 nnoremap <silent><leader>tl :BLines<CR>
 nnoremap <silent><leader>tk :Lines<CR>
