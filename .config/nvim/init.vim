@@ -370,6 +370,8 @@ nnoremap <silent><leader>tl :BLines<CR>
 nnoremap <silent><leader>tk :Lines<CR>
 nnoremap <silent><leader>tu :Buffers<CR>
 nnoremap <silent><leader>tn :Files ~/Documents/notes<CR>
+nnoremap <silent><leader>tj :Files ~/Dropbox/notes<CR>
+nnoremap <silent><leader>ta :Files ~/Dropbox/apps/todo<CR>
 
 "===============================================================================
 " (leader-v_) vim (general) {{{2
