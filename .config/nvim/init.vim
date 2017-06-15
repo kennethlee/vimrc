@@ -242,12 +242,6 @@ inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 " hitting <CR> clears highlighting from previous search
 nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
-" search using normal regex; 'very magic'
-nnoremap / /\v
-xnoremap / /\v
-nnoremap ? ?\v
-xnoremap ? ?\v
-
 "===============================================================================
 " navigation {{{2
 
@@ -295,6 +289,18 @@ nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
 " vim-indentwise
 map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
 map <silent>+ <Plug>(IndentWiseNextEqualIndent)
+
+"===============================================================================
+" search {{{2
+
+" bind 'K' to grep word under cursor
+nnoremap K :grep! "\b<C-r><C-w>\b"<CR>:cw<CR>"
+
+" search using normal regex; 'very magic'
+nnoremap / /\v
+xnoremap / /\v
+nnoremap ? ?\v
+xnoremap ? ?\v
 
 "===============================================================================
 " ultisnips {{{2
