@@ -71,12 +71,11 @@ endsnippet
 # switch
 snippet switch
 switch (${1:expression}) {
-  case '${3:case}':
-    ${4}
+  case ${3:condition}:
+    return ${4:code block}
     break;
-  ${5}
   default:
-  ${2}
+    return ${2:default value};
 }${0}
 endsnippet
 
