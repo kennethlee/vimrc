@@ -88,18 +88,17 @@ set wildignore+=*.so,*.sw?
 
 "===============================================================================
 " plugin config {{{1
-" neomake {{{2
+" ale {{{2
 
-" makers
-let g:neomake_javascript_enabled_makers=['eslint']
-let g:neomake_ruby_enabled_makers=['rubocop']
-
-augroup NeomakeFiletypes
+augroup FiletypeGroup
   autocmd!
-  autocmd! BufWritePost *.js,*.jsx Neomake
-  autocmd! BufWritePost *.rb Neomake
-  " autocmd! BufWritePost * Neomake
+  autocmd! BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
+
+let g:ale_linters = {'jsx': ['eslint']}
+" let g:ale_linter_aliases = {'jsx': 'css'}
+
+let g:ale_sign_warning = '!!'
 
 "===============================================================================
 " undotree {{{2
