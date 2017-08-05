@@ -3,6 +3,7 @@
 
 " infect!
 " run :Helptags command after installs to make the plugin's docs avail. globally
+
 execute pathogen#infect()
 
 set rtp+=~/.fzf
