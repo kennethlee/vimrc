@@ -122,9 +122,10 @@ let g:vim_json_syntax_conceal=0
 "===============================================================================
 " vim-gitgutter {{{2
 
+set signcolumn=yes
 let g:gitgutter_eager=0
-let g:gitgutter_sign_column_always=1
-" highlight clear SignColumn
+let g:gitgutter_async=0
+highlight clear SignColumn
 
 "===============================================================================
 " vim-table-mode {{{2
