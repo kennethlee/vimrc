@@ -129,12 +129,6 @@ let g:gitgutter_async=0
 highlight clear SignColumn
 
 "===============================================================================
-" vim-table-mode {{{2
-
-" enable markdown
-" let g:table_mode_corner="|"
-
-"===============================================================================
 " vim's standard plugins {{{2
 
 " enable
