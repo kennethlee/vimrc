@@ -76,6 +76,15 @@ set wildmenu wildmode=list:longest,full wildignorecase
 
 set incsearch ignorecase smartcase hlsearch
 
+" use ag over grep
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 "===============================================================================
 " wildignore {{{2
 
