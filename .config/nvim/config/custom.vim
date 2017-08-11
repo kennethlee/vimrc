@@ -1,6 +1,6 @@
 " CycleList {{{1
 
-function! custom#CycleList(nextcom, firstcom)
+function! CycleList(nextcom, firstcom)
   try
     try
       execute a:nextcom
@@ -16,7 +16,7 @@ endfunction
 " fold lines {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
-function! custom#VimFoldText()
+function! VimFoldText()
   let fs = v:foldstart
 
   while getline(fs) =~ '^\s*$'
@@ -45,7 +45,7 @@ endfunction
 "===============================================================================
 " NextClosedFold {{{1
 
-function! custom#NextClosedFold(dir)
+function! NextClosedFold(dir)
   let cmd = 'norm!z' . a:dir
   let view = winsaveview()
   let [l0, l, open] = [0, view.lnum, 1]
@@ -62,7 +62,7 @@ endfunction
 "===============================================================================
 " gb's rename file {{{1
 
-function! custom#RenameFile()
+function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
 
@@ -98,7 +98,7 @@ endif
 " statusline: git branch {{{1
 
 " show git branch of current file if it's under version control
-function! custom#GitBranch()
+function! GitBranch()
   " stores cwd
   let lastdir = getcwd()
   " temporarily changes to dir containing the buffer
@@ -121,7 +121,7 @@ endfunction
 
 augroup gitbranch
   autocmd!
-  autocmd BufRead,BufNewFile * let b:gitbranch=custom#GitBranch()
+  autocmd BufRead,BufNewFile * let b:gitbranch=GitBranch()
 augroup END
 
 "===============================================================================

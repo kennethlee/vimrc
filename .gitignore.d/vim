@@ -5,11 +5,14 @@
 !/.config/nvim/
 !/.config/nvim/init.vim
 
+!/.config/nvim/config
+!/.config/nvim/config/custom.vim
+!/.config/nvim/config/keymap.vim
+!/.config/nvim/config/plugin.vim
+!/.config/nvim/config/visual.vim
+
 !/.config/nvim/ftplugin/
 !/.config/nvim/ftplugin/javascript.vim
-
-!/.config/nvim/autoload/
-!/.config/nvim/autoload/custom.vim
 
 !/.config/nvim/UltiSnips/
 !/.config/nvim/UltiSnips/html.snippets
