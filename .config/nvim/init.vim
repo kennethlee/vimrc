@@ -203,9 +203,6 @@ set stl+=%=[%{&fileformat}:                     " file format/encoding
 set stl+=%{strwidth(&fenc)?&fenc:&enc}]
 set stl+=%5(%c%)\                               " column number
 
-" wildmenu text and bg color; guifb/guibg is correct in my case? revisit later
-highlight wildmenu guifg=#ffcc66 guibg=# gui=bold
-
 "===============================================================================
 " keymap {{{1
 " disable {{{2
