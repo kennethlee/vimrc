@@ -35,7 +35,7 @@ set autoread
 
 " see ':help fold-options'
 set foldenable foldlevel=0 foldcolumn=0 foldnestmax=6
-set foldtext=VimFoldText()
+set foldtext=custom#VimFoldText()
 
 "===============================================================================
 " text manipulation {{{1
@@ -98,7 +98,6 @@ set wildignore+=*.so,*.sw?
 "===============================================================================
 " }}}1
 
-source $HOME/.config/nvim/config/custom.vim
 source $HOME/.config/nvim/config/plugin.vim
 source $HOME/.config/nvim/config/visual.vim
 source $HOME/.config/nvim/config/keymap.vim

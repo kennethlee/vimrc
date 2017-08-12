@@ -36,7 +36,7 @@ set stl+=%h%r%w                                 " help, read-only, preview buff.
 set stl+=%*
 
 set stl+=%#statement#
-set stl+=%{GitBranch()}%<                " show curr. branch if git repo
+set stl+=%{custom#GitBranch()}%<                " show curr. branch if git repo
 set stl+=%*
 
 set stl+=%-F\                                   " absolute filepath
