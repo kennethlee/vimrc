@@ -38,7 +38,7 @@ set foldenable foldlevel=0 foldcolumn=0 foldnestmax=6
 set foldtext=custom#VimFoldText()
 
 " jump over folds without opening them
-set foldopen=block
+set foldopen-=block
 
 "===============================================================================
 " text manipulation {{{1
