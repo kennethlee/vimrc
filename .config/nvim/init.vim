@@ -1,9 +1,4 @@
-" runtime path {{{1
-
-" infect!
-" run :Helptags command after installs to make the plugin's docs avail. globally
-
-execute pathogen#infect()
+" paths {{{1
 
 set rtp+=~/.fzf
 
