@@ -642,11 +642,15 @@ snippet img#
 endsnippet
 
 snippet input
-<input type="${1:text/submit/hidden/button/image}" name="${2}">${0}
+<input type="${1:text/submit/hidden/button/image}" name="${2}" placeholder="${3}">${0}
 endsnippet
 
 snippet input.
-<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}">${0}
+<input type="${1:text/submit/hidden/button/image}" name="${2}" class="${3:$2}" placeholder="${4}">${0}
+endsnippet
+
+snippet input#
+<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" placeholder="${4}">${0}
 endsnippet
 
 snippet input:text
