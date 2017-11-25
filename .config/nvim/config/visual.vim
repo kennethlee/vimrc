@@ -11,7 +11,8 @@ set background=dark
 
 " display char for EoL and red chars for tabs and trailing whitespace
 set list listchars=tab:▸\ ,eol:¬,trail:@
-highlight SpecialKey ctermfg=196 guifg=#ff0000
+highlight ExtraWhitespace ctermfg=red guifg=red
+match ExtraWhitespace /\s\+$\|\t/
 
 " absolute line numbers and width to 6 chars
 set number numberwidth=6
