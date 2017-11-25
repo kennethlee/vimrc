@@ -1,10 +1,5 @@
 " ale {{{1
 
-augroup FiletypeGroup
-  autocmd!
-  autocmd! BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-
 let g:ale_linters={'jsx': ['eslint']}
 " let g:ale_linter_aliases = {'jsx': 'css'}
 

@@ -1,8 +1,3 @@
-augroup filetype_javascript
-  autocmd!
-  autocmd BufRead,BufNewFile *.jsx set filetype=javascript
-augroup END
-
 " folding
 setlocal foldenable
 setlocal foldmethod=indent
