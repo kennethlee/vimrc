@@ -1,6 +1,6 @@
 augroup filetype_eruby
   autocmd!
-  au BufRead,BufNewFile *.erb set filetype=eruby
+  autocmd BufRead,BufNewFile *.erb set filetype=eruby
 augroup END
 
 " folding

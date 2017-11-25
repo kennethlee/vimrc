@@ -10,9 +10,9 @@ endfunction
 
 augroup filetype_markdown
   autocmd!
-  au BufRead,BufNewFile *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
-  au BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldexpr=MarkdownLevel()
-  au BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldmethod=expr
+  autocmd BufRead,BufNewFile *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
+  autocmd BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldexpr=MarkdownLevel()
+  autocmd BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldmethod=expr
 augroup END
 
 " folding
