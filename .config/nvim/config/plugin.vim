@@ -1,3 +1,19 @@
+" lazy loading {{{1
+
+augroup packadd_html
+  autocmd!
+  autocmd FileType html packadd html5.vim
+augroup END
+
+augroup packadd_javascript
+  autocmd!
+  autocmd FileType javascript packadd vim-javascript
+  autocmd FileType javascript packadd vim-js-indent
+  autocmd FileType javascript packadd vim-json
+  autocmd FileType javascript packadd vim-jsx
+augroup END
+
+"===============================================================================
 " ale {{{1
 
 let g:ale_linters={'jsx': ['eslint']}
