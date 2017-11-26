@@ -16,12 +16,11 @@ augroup filetype_markdown
 augroup END
 
 " folding
-" setlocal foldenable
+setlocal foldenable
 setlocal foldlevel=0
 setlocal foldnestmax=6
 setlocal foldcolumn=0
 
 " misc
 setlocal syn=off
-setlocal breakindent
 

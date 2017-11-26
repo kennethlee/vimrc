@@ -6,6 +6,5 @@ setlocal foldnestmax=6
 setlocal foldcolumn=0
 
 " misc
-setlocal breakindent
 setlocal colorcolumn=81
 
