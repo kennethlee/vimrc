@@ -40,6 +40,7 @@
 !/.config/nvim/after/ftdetect
 !/.config/nvim/after/ftdetect/eruby.vim
 !/.config/nvim/after/ftdetect/jsx.vim
+!/.config/nvim/after/ftdetect/markdown.vim
 !/.config/nvim/after/ftplugin/
 !/.config/nvim/after/ftplugin/css.vim
 !/.config/nvim/after/ftplugin/elixir.vim
