@@ -43,6 +43,19 @@ function! custom#VimFoldText()
 endfunction
 
 "===============================================================================
+" Markdown folds {{{1
+
+" folding at '#' headers
+function! custom#MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    return ">" . len(h)
+  endif
+endfunction
+
+"===============================================================================
 " NextClosedFold {{{1
 
 function! custom#NextClosedFold(dir)
