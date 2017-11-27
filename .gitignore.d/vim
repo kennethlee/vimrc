@@ -45,6 +45,7 @@
 !/.config/nvim/after/ftplugin/eruby.vim
 !/.config/nvim/after/ftplugin/html.vim
 !/.config/nvim/after/ftplugin/javascript.vim
+!/.config/nvim/after/ftplugin/json.vim
 !/.config/nvim/after/ftplugin/markdown.vim
 !/.config/nvim/after/ftplugin/ruby.vim
 !/.config/nvim/after/ftplugin/scss.vim
