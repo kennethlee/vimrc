@@ -1,3 +1,5 @@
+let b:did_ftplugin=1
+
 " folding at '#' headers
 function! MarkdownLevel()
   let h = matchstr(getline(v:lnum), '^#\+')
