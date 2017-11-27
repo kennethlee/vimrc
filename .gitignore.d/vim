@@ -8,10 +8,10 @@
 !/.config/nvim/autoload
 !/.config/nvim/autoload/custom.vim
 
-!/.config/nvim/config
-!/.config/nvim/config/keymap.vim
-!/.config/nvim/config/plugin.vim
-!/.config/nvim/config/visual.vim
+!/.config/nvim/vimrc
+!/.config/nvim/vimrc/keymap.vim
+!/.config/nvim/vimrc/plugin.vim
+!/.config/nvim/vimrc/visual.vim
 
 !/.config/nvim/ftplugin/
 !/.config/nvim/ftplugin/javascript.vim

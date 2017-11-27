@@ -87,7 +87,7 @@ set wildignore+=*.so,*.sw?
 "===============================================================================
 " }}}1
 
-source $HOME/.config/nvim/config/plugin.vim
-source $HOME/.config/nvim/config/visual.vim
-source $HOME/.config/nvim/config/keymap.vim
+source $HOME/.config/nvim/vimrc/plugin.vim
+source $HOME/.config/nvim/vimrc/visual.vim
+source $HOME/.config/nvim/vimrc/keymap.vim
 
