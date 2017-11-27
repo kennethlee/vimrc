@@ -1,5 +1,6 @@
 " CycleList {{{1
 
+" Cycle through location list
 function! custom#CycleList(nextcom, firstcom)
   try
     try
@@ -13,7 +14,8 @@ function! custom#CycleList(nextcom, firstcom)
 endfunction
 
 "===============================================================================
-" fold lines {{{1
+" folds {{{1
+" fold header {{{2
 
 " better looking folds; right-alignment of line numbers + percentage of file
 function! custom#VimFoldText()
@@ -43,9 +45,9 @@ function! custom#VimFoldText()
 endfunction
 
 "===============================================================================
-" Markdown folds {{{1
+" markdown {{{2
 
-" folding at '#' headers
+" fold at '#'
 function! custom#MarkdownLevel()
   let h = matchstr(getline(v:lnum), '^#\+')
   if empty(h)
@@ -56,8 +58,9 @@ function! custom#MarkdownLevel()
 endfunction
 
 "===============================================================================
-" NextClosedFold {{{1
+" NextClosedFold {{{2
 
+" jump to next closed fold
 function! custom#NextClosedFold(dir)
   let cmd = 'norm!z' . a:dir
   let view = winsaveview()
@@ -117,7 +120,7 @@ augroup gitbranch
 augroup END
 
 "===============================================================================
-" WipeReg. {{{1
+" WipeReg {{{1
 
 " `:WipeReg` to clear registers
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor

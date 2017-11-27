@@ -5,10 +5,8 @@
 !/.config/nvim/
 !/.config/nvim/init.vim
 
-!/.config/nvim/autoload
-!/.config/nvim/autoload/custom.vim
-
 !/.config/nvim/vimrc
+!/.config/nvim/vimrc/custom.vim
 !/.config/nvim/vimrc/display.vim
 !/.config/nvim/vimrc/general.vim
 !/.config/nvim/vimrc/keymap.vim
