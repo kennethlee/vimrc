@@ -14,15 +14,27 @@
 !/.config/nvim/vimrc/keymap.vim
 !/.config/nvim/vimrc/plugin.vim
 
+!/.config/nvim/after/
+!/.config/nvim/after/ftplugin/
+!/.config/nvim/after/ftplugin/css.vim
+!/.config/nvim/after/ftplugin/elixir.vim
+!/.config/nvim/after/ftplugin/eruby.vim
+!/.config/nvim/after/ftplugin/html.vim
+!/.config/nvim/after/ftplugin/javascript.vim
+!/.config/nvim/after/ftplugin/json.vim
+!/.config/nvim/after/ftplugin/markdown.vim
+!/.config/nvim/after/ftplugin/ruby.vim
+!/.config/nvim/after/ftplugin/scss.vim
+!/.config/nvim/after/ftplugin/shell.vim
+!/.config/nvim/after/ftplugin/vim.vim
+
+!/.config/nvim/ftdetect
+!/.config/nvim/ftdetect/eruby.vim
+!/.config/nvim/ftdetect/jsx.vim
+!/.config/nvim/ftdetect/markdown.vim
+
 !/.config/nvim/ftplugin/
 !/.config/nvim/ftplugin/javascript.vim
-
-!/.config/nvim/UltiSnips/
-!/.config/nvim/UltiSnips/html.snippets
-!/.config/nvim/UltiSnips/javascript.snippets
-!/.config/nvim/UltiSnips/javascript-es6.snippets
-!/.config/nvim/UltiSnips/javascript-jsx.snippets
-!/.config/nvim/UltiSnips/javascript-react.snippets
 
 !/.config/nvim/indent/
 !/.config/nvim/indent/c.vim
@@ -37,21 +49,10 @@
 !/.config/nvim/indent/scss.vim
 !/.config/nvim/indent/vim.vim
 
-!/.config/nvim/after/
-!/.config/nvim/after/ftdetect
-!/.config/nvim/after/ftdetect/eruby.vim
-!/.config/nvim/after/ftdetect/jsx.vim
-!/.config/nvim/after/ftdetect/markdown.vim
-!/.config/nvim/after/ftplugin/
-!/.config/nvim/after/ftplugin/css.vim
-!/.config/nvim/after/ftplugin/elixir.vim
-!/.config/nvim/after/ftplugin/eruby.vim
-!/.config/nvim/after/ftplugin/html.vim
-!/.config/nvim/after/ftplugin/javascript.vim
-!/.config/nvim/after/ftplugin/json.vim
-!/.config/nvim/after/ftplugin/markdown.vim
-!/.config/nvim/after/ftplugin/ruby.vim
-!/.config/nvim/after/ftplugin/scss.vim
-!/.config/nvim/after/ftplugin/shell.vim
-!/.config/nvim/after/ftplugin/vim.vim
+!/.config/nvim/UltiSnips/
+!/.config/nvim/UltiSnips/html.snippets
+!/.config/nvim/UltiSnips/javascript.snippets
+!/.config/nvim/UltiSnips/javascript-es6.snippets
+!/.config/nvim/UltiSnips/javascript-jsx.snippets
+!/.config/nvim/UltiSnips/javascript-react.snippets
 
