@@ -9,6 +9,7 @@
 !/.config/nvim/autoload/custom.vim
 
 !/.config/nvim/vimrc
+!/.config/nvim/vimrc/general.vim
 !/.config/nvim/vimrc/keymap.vim
 !/.config/nvim/vimrc/plugin.vim
 !/.config/nvim/vimrc/visual.vim

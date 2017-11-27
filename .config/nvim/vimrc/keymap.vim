@@ -183,7 +183,7 @@ nnoremap <silent><leader>ta :Files ~/Dropbox/apps/todo<CR>
 nnoremap <silent><leader>vm <C-w>\|
 
 " leader-vv = open .vimrc
-nnoremap <silent><leader>vv :e $MYVIMRC<CR>
+nnoremap <silent><leader>vv :e ~/.config/nvim/vimrc<CR>
 
 " leader-vw = toggle wrap and list characters
 nnoremap <silent><leader>vw :set list!<CR>
