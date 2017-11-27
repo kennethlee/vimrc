@@ -10,7 +10,7 @@ endfunction
 
 augroup filetype_markdown
   autocmd!
-  autocmd BufRead,BufNewFile *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
+  autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
   autocmd BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldexpr=MarkdownLevel()
   autocmd BufEnter *.markdown,*.md,*.mdown,*.mkd,*.mkdn setlocal foldmethod=expr
 augroup END
