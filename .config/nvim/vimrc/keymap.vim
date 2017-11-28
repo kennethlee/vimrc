@@ -19,7 +19,7 @@ map! <MouseDown> <NOP>
 
 "===============================================================================
 " misc. {{{1
-"
+
 " 'jk' exits Insert Mode
 inoremap jk <Esc>
 
@@ -94,18 +94,6 @@ map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
 map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 
 "===============================================================================
-" search {{{1
-
-" bind 'K' to grep word under cursor
-nnoremap K :grep! "\b<C-r><C-w>\b"<CR>:cw<CR>"
-
-" search using normal regex; 'very magic'
-nnoremap / /\v
-xnoremap / /\v
-nnoremap ? ?\v
-xnoremap ? ?\v
-
-"===============================================================================
 " ultisnips {{{1
 
 let g:UltiSnipsExpandTrigger='<Tab>'
@@ -138,18 +126,7 @@ noremap x "_x
 " <leader><leader> to switch to the alternate buffer
 nnoremap <leader><leader> <C-^>
 
-
-
-" pro-tip: <C-d> while using :find to show the list of files in current dir
-nnoremap <leader>ff :find *
-nnoremap <leader>fv :vert sfind *
-nnoremap <leader>fn :find ~/Documents/notes/**/*
-
-" find files recursively under the dir of *current* file
-nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
-nnoremap <leader>V :vert sfind <C-r>=expand('%:h').'/*'<CR>
-
-
+"=======================================
 
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap gb :ls<CR>:b<Space>
@@ -162,7 +139,6 @@ noremap <silent><leader>fr :call custom#RenameFile()<CR>
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/
-cmap <leader>dd call delete(getline('.'))
 
 "===============================================================================
 " (leader-t_) fzf {{{1
@@ -184,9 +160,6 @@ nnoremap <silent><leader>vm <C-w>\|
 
 " leader-vv = open .vimrc
 nnoremap <silent><leader>vv :e ~/.config/nvim/vimrc<CR>
-
-" leader-vw = toggle wrap and list characters
-nnoremap <silent><leader>vw :set list!<CR>
 
 "===============================================================================
 " (leader-n_) undotree {{{1
