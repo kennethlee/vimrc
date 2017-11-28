@@ -62,13 +62,10 @@ let g:sh_noisk=1
 "===============================================================================
 " search / find {{{1
 
+set incsearch ignorecase smartcase hlsearch
+
 " incremental substitution
 set inccommand=nosplit
-
-" allows for finding of files recursively under pwd using :find/:sfind
-set path=.,**
-
-set incsearch ignorecase smartcase hlsearch
 
 "===============================================================================
 " completion {{{1
