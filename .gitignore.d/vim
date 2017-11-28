@@ -30,9 +30,6 @@
 !/.config/nvim/ftplugin/scss.vim
 !/.config/nvim/ftplugin/vim.vim
 
-!/.config/nvim/ftplugin/
-!/.config/nvim/ftplugin/javascript.vim
-
 !/.config/nvim/indent/
 !/.config/nvim/indent/c.vim
 !/.config/nvim/indent/css.vim
