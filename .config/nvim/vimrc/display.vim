@@ -27,23 +27,23 @@ set splitright splitbelow
 
 set laststatus=2
 
-set stl=
-set stl+=%#error#
-set stl+=%m                                     " 'error' flag for modified buff.
-set stl+=%*
+set statusline=
+set statusline+=%#error#
+set statusline+=%m                              " 'error' flag for modified buff
+set statusline+=%*
 
-set stl+=%#question#
-set stl+=%h%r%w                                 " help, read-only, preview buff.
-set stl+=%*
+set statusline+=%#question#
+set statusline+=%h%r%w                          " help, read-only, preview buff
+set statusline+=%*
 
-set stl+=%#statement#
-set stl+=%{custom#GitBranch()}%<                " show curr. branch if git repo
-set stl+=%*
+set statusline+=%#statement#
+set statusline+=%{custom#GitBranch()}%<         " show curr. branch if git repo
+set statusline+=%*
 
-set stl+=%-F\                                   " absolute filepath
-set stl+=%=[%{&fileformat}:                     " file format/encoding
-set stl+=%{strwidth(&fenc)?&fenc:&enc}]
-set stl+=%5(%c%)\                               " column number
+set statusline+=%-F\                            " absolute filepath
+set statusline+=%=[%{&fileformat}:              " file format/encoding
+set statusline+=%{strwidth(&fenc)?&fenc:&enc}]
+set statusline+=%5(%c%)\                        " column number
 
 "===============================================================================
 " }}}1
