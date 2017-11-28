@@ -60,18 +60,23 @@ set nojoinspaces
 let g:sh_noisk=1
 
 "===============================================================================
-" search/find {{{1
+" search / find {{{1
 
-" set incremental substitution
+" incremental substitution
 set inccommand=nosplit
 
 " allows for finding of files recursively under pwd using :find/:sfind
 set path=.,**
 
-" tab completion
-set wildmenu wildmode=list:longest,full wildignorecase
-
 set incsearch ignorecase smartcase hlsearch
+
+"===============================================================================
+" completion {{{1
+
+" command mode tab completion
+set wildmenu
+set wildmode=list:longest,full
+set wildignorecase
 
 "===============================================================================
 " wildignore {{{1
