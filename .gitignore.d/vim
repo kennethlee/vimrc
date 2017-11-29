@@ -43,10 +43,3 @@
 !/.config/nvim/indent/scss.vim
 !/.config/nvim/indent/vim.vim
 
-!/.config/nvim/UltiSnips/
-!/.config/nvim/UltiSnips/html.snippets
-!/.config/nvim/UltiSnips/javascript.snippets
-!/.config/nvim/UltiSnips/javascript-es6.snippets
-!/.config/nvim/UltiSnips/javascript-jsx.snippets
-!/.config/nvim/UltiSnips/javascript-react.snippets
-
