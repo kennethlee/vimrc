@@ -31,13 +31,13 @@ let g:ale_lint_delay=1000
 let g:ale_sign_warning='!!'
 
 "===============================================================================
-" closetag {{{1
+" vim-closetag {{{1
 
 " try to close the current tag in the following filetypes:
-let g:closetag_filenames = '*.html,*.xhtml'
+let g:closetag_filenames = '*.html,*.js,*.jsx'
 
 " Make non-closing tags self-closing in the specified files:
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_xhtml_filenames = '*.js,*.jsx'
 
 " integer value [0|1]
 " This will make the list of non-closing tags case sensitive (e.g. `<Link>`
