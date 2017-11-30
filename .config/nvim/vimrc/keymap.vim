@@ -81,10 +81,6 @@ nnoremap gV `[v`]
 nnoremap <silent><C-h> :bprev<CR>
 nnoremap <silent><C-l> :bnext<CR>
 
-" Jump up/down to next closed fold
-nnoremap <silent>zj :call custom#NextClosedFold('j')<CR>
-nnoremap <silent>zk :call custom#NextClosedFold('k')<CR>
-
 " Cycle through location list
 nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
 nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
