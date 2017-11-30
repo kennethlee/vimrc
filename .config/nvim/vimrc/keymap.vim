@@ -78,8 +78,8 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap gV `[v`]
 
 " Cycle through buffers
-nnoremap <silent><Tab> :bnext<CR>
-nnoremap <silent><S-Tab> :bprev<CR>
+nnoremap <silent><C-h> :bprev<CR>
+nnoremap <silent><C-l> :bnext<CR>
 
 " Jump up/down to next closed fold
 nnoremap <silent>zj :call custom#NextClosedFold('j')<CR>
