@@ -153,8 +153,8 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap gV `[v`]
 
 " Cycle through buffers
-nnoremap <silent><C-h> :bprev<CR>
-nnoremap <silent><C-l> :bnext<CR>
+nnoremap <silent><leader>j :bprev<CR>
+nnoremap <silent><leader>k :bnext<CR>
 
 " Cycle through location list
 nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
