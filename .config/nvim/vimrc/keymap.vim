@@ -18,6 +18,81 @@ map! <MouseUp> <NOP>
 map! <MouseDown> <NOP>
 
 "===============================================================================
+" leader core {{{1
+
+let g:mapleader="\<space>"
+
+"===============================================================================
+" (leader-c_) change {{{1
+
+" use leader key before change/delete command to delete without yanking
+" also forbid deletion via x from updating registers
+nnoremap <leader>C "_C
+xnoremap <leader>C "_C
+nnoremap <leader>c "_c
+xnoremap <leader>c "_c
+nnoremap <leader>D "_D
+xnoremap <leader>D "_D
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+noremap x "_x
+
+"===============================================================================
+" (leader-f_, mostly) finding files/buffers, file ops, dir {{{1
+
+" <leader><leader> to switch to the alternate buffer
+nnoremap <leader><leader> <C-^>
+
+"=======================================
+
+" list all open buffers then wait for tab completion or input + tab completion
+nnoremap gb :ls<CR>:b<Space>
+
+" SL's trailing whitespace cleaner
+noremap <silent><leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
+
+" leader-fr = gb's rename current file
+noremap <silent><leader>fr :call custom#RenameFile()<CR>
+
+nnoremap <silent>- :Dirvish %:p:h<CR>
+nnoremap <leader>fd :Dirvish ~/
+
+"===============================================================================
+" (leader-t_) fzf {{{1
+
+nnoremap <silent><leader>tr :Files<CR>
+nnoremap <leader>te :Files ~/
+nnoremap <silent><leader>tl :BLines<CR>
+nnoremap <silent><leader>tk :Lines<CR>
+nnoremap <silent><leader>tu :Buffers<CR>
+nnoremap <silent><leader>tn :Files ~/Documents/notes<CR>
+nnoremap <silent><leader>tj :Files ~/Dropbox/notes<CR>
+nnoremap <silent><leader>ta :Files ~/Dropbox/apps/todo<CR>
+
+"===============================================================================
+" (leader-v_) vim (general) {{{1
+
+" leader-vm = maximize width of current window
+nnoremap <silent><leader>vm <C-w>\|
+
+" leader-vv = open .vimrc
+nnoremap <silent><leader>vv :e ~/.config/nvim/vimrc<CR>
+
+"===============================================================================
+" (leader-n_) undotree {{{1
+
+nnoremap <silent><leader>u :UndotreeToggle<CR>
+
+"===============================================================================
+" (leader-a_) easyalign {{{1
+
+" start interactive EasyAlign in visual mode (e.g. vip<enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" start interactive EasyAlign for a motion/text object (e.g. <leader>aip)
+nmap <leader>ab <Plug>(EasyAlign)
+
+"===============================================================================
 " misc. {{{1
 
 " 'jk' exits Insert Mode
@@ -95,81 +170,6 @@ map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-
-"===============================================================================
-" leader core {{{1
-
-let g:mapleader="\<space>"
-
-"===============================================================================
-" (leader-c_) change {{{1
-
-" use leader key before change/delete command to delete without yanking
-" also forbid deletion via x from updating registers
-nnoremap <leader>C "_C
-xnoremap <leader>C "_C
-nnoremap <leader>c "_c
-xnoremap <leader>c "_c
-nnoremap <leader>D "_D
-xnoremap <leader>D "_D
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-noremap x "_x
-
-"===============================================================================
-" (leader-f_, mostly) finding files/buffers, file ops, dir {{{1
-
-" <leader><leader> to switch to the alternate buffer
-nnoremap <leader><leader> <C-^>
-
-"=======================================
-
-" list all open buffers then wait for tab completion or input + tab completion
-nnoremap gb :ls<CR>:b<Space>
-
-" SL's trailing whitespace cleaner
-noremap <silent><leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
-
-" leader-fr = gb's rename current file
-noremap <silent><leader>fr :call custom#RenameFile()<CR>
-
-nnoremap <silent>- :Dirvish %:p:h<CR>
-nnoremap <leader>fd :Dirvish ~/
-
-"===============================================================================
-" (leader-t_) fzf {{{1
-
-nnoremap <silent><leader>tr :Files<CR>
-nnoremap <leader>te :Files ~/
-nnoremap <silent><leader>tl :BLines<CR>
-nnoremap <silent><leader>tk :Lines<CR>
-nnoremap <silent><leader>tu :Buffers<CR>
-nnoremap <silent><leader>tn :Files ~/Documents/notes<CR>
-nnoremap <silent><leader>tj :Files ~/Dropbox/notes<CR>
-nnoremap <silent><leader>ta :Files ~/Dropbox/apps/todo<CR>
-
-"===============================================================================
-" (leader-v_) vim (general) {{{1
-
-" leader-vm = maximize width of current window
-nnoremap <silent><leader>vm <C-w>\|
-
-" leader-vv = open .vimrc
-nnoremap <silent><leader>vv :e ~/.config/nvim/vimrc<CR>
-
-"===============================================================================
-" (leader-n_) undotree {{{1
-
-nnoremap <silent><leader>u :UndotreeToggle<CR>
-
-"===============================================================================
-" (leader-a_) easyalign {{{1
-
-" start interactive EasyAlign in visual mode (e.g. vip<enter>)
-vmap <Enter> <Plug>(EasyAlign)
-
-" start interactive EasyAlign for a motion/text object (e.g. <leader>aip)
-nmap <leader>ab <Plug>(EasyAlign)
 
 "===============================================================================
 " }}}1
