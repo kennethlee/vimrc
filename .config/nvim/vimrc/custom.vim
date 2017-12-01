@@ -98,7 +98,7 @@ endfunction
 
 augroup gitbranch
   autocmd!
-  autocmd BufRead,BufNewFile * let b:gitbranch=custom#GitBranch()
+  autocmd BufNewFile,BufRead * let b:gitbranch=custom#GitBranch()
 augroup END
 
 "===============================================================================
