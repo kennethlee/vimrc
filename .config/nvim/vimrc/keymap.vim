@@ -20,7 +20,7 @@ map! <MouseDown> <NOP>
 "===============================================================================
 " leader core {{{1
 
-let g:mapleader="\<space>"
+let g:mapleader = "\<space>"
 
 "===============================================================================
 " (leader-c_) change {{{1
@@ -167,9 +167,9 @@ map <silent>+ <Plug>(IndentWiseNextEqualIndent)
 "===============================================================================
 " ultisnips {{{1
 
-let g:UltiSnipsExpandTrigger='<Tab>'
-let g:UltiSnipsJumpForwardTrigger='<Tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 "===============================================================================
 " }}}1

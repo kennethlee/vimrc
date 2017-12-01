@@ -57,7 +57,7 @@ set nojoinspaces
 " gb: normally, Vim messes with iskeyword when you open a shell file. This can
 " leak out, polluting other file types even after a 'set ft=' change. This
 " variable prevents the iskeyword change so it can't hurt anyone
-let g:sh_noisk=1
+let g:sh_noisk = 1
 
 "===============================================================================
 " search / find {{{1
