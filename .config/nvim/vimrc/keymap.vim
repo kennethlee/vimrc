@@ -160,9 +160,11 @@ nnoremap <silent><leader>k :bnext<CR>
 nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
 nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
 
-" vim-indentwise
-map <silent>_ <Plug>(IndentWisePreviousEqualIndent)
-map <silent>+ <Plug>(IndentWiseNextEqualIndent)
+" jump to/from lines with same indentation level
+nnoremap <silent>_ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<'
+  \. line('.') . 'l\S', 'be')<CR>
+nnoremap <silent>+ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>'
+  \. line('.') . 'l\S', 'e')<CR>
 
 "===============================================================================
 " ultisnips {{{1
