@@ -1,6 +1,6 @@
 " CycleList {{{1
 
-" Cycle through location list
+" cycle through location list
 function! custom#CycleList(nextcom, firstcom)
   try
     try

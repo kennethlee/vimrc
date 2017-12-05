@@ -152,11 +152,11 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
-" Cycle through buffers
+" cycle through buffers
 nnoremap <silent><leader>j :bprev<CR>
 nnoremap <silent><leader>k :bnext<CR>
 
-" Cycle through location list
+" cycle through location list
 nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
 nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
 
@@ -179,7 +179,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " inline tag
 inoremap <C-j> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
 
-" block element
+" block tag
 inoremap <C-k> ><Esc>F<lyiwo</<C-r>"><Esc>O
 
 "===============================================================================
