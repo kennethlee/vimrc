@@ -31,23 +31,6 @@ let g:ale_lint_delay = 1000
 let g:ale_sign_warning = '!!'
 
 "===============================================================================
-" vim-closetag {{{1
-
-" try to close the current tag in the following filetypes:
-let g:closetag_filenames = '*.html,*.js,*.jsx'
-
-" Make non-closing tags self-closing in the specified files:
-let g:closetag_xhtml_filenames = '*.js,*.jsx'
-
-" integer value [0|1]
-" This will make the list of non-closing tags case sensitive (e.g. `<Link>`
-" will be closed while `<link>` won't.)
-let g:closetag_emptyTags_caseSensitive = 1
-
-" Add > at current position without closing the current tag, default is ''
-let g:closetag_close_shortcut = '<leader>>'
-
-"===============================================================================
 " undotree {{{1
 
 " if set, let undotree window get focus after being opened, otherwise

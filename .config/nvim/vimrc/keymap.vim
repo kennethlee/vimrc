@@ -172,5 +172,14 @@ let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 "===============================================================================
+" html tag completion {{{1
+
+" inline tag
+inoremap <C-j> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+
+" block element
+inoremap <C-k> ><Esc>F<lyiwo</<C-r>"><Esc>O
+
+"===============================================================================
 " }}}1
 
