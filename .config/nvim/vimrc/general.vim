@@ -39,7 +39,7 @@ set foldopen-=block
 " text manipulation {{{1
 
 " gb: fix slow O inserts
-set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=250 ttimeoutlen=100
 
 " wrap long lines
 set wrap linebreak
