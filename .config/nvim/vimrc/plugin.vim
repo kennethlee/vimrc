@@ -4,13 +4,8 @@ let g:ale_linters = { 'jsx': ['eslint'] }
 " let g:ale_linter_aliases = { 'jsx': 'css' }
 
 " lint only on save
-" let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_text_changed = 'never'
-
-" lint 500ms after entering normal mode
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_delay = 1000
+let g:ale_lint_on_text_changed = 'never'
 
 let g:ale_sign_warning = '!!'
 
