@@ -156,10 +156,6 @@ nnoremap gV `[v`]
 nnoremap <silent><leader>j :bprev<CR>
 nnoremap <silent><leader>k :bnext<CR>
 
-" cycle through location list
-nnoremap <silent><C-n> :call custom#CycleList('lnext', 'lfirst')<CR>
-nnoremap <silent><C-p> :call custom#CycleList('lprev', 'llast')<CR>
-
 " jump to/from lines with same indentation level
 nnoremap <silent>_ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<'
   \. line('.') . 'l\S', 'be')<CR>

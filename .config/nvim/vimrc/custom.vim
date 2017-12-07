@@ -1,19 +1,3 @@
-" CycleList {{{1
-
-" cycle through location list
-function! custom#CycleList(nextcom, firstcom)
-  try
-    try
-      execute a:nextcom
-    catch /^Vim\%((\a\+)\)\=:E553/
-      execute a:firstcom
-    catch /^Vim\%((\a\+)\)\=:E776/
-    endtry
-  catch /^Vim\%((\a\+)\)\=:E42/
-  endtry
-endfunction
-
-"===============================================================================
 " folds {{{1
 " fold header {{{2
 
