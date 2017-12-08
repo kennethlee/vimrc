@@ -2,7 +2,7 @@
 " fold header {{{2
 
 " better looking folds; right-alignment of line numbers + percentage of file
-function! custom#VimFoldText()
+function! custom#VimFoldText() abort
   let fs = v:foldstart
 
   while getline(fs) =~ '^\s*$'
@@ -32,7 +32,7 @@ endfunction
 " markdown {{{2
 
 " fold at '#'
-function! custom#MarkdownLevel()
+function! custom#MarkdownLevel() abort
   let h = matchstr(getline(v:lnum), '^#\+')
   if empty(h)
     return "="
@@ -44,7 +44,7 @@ endfunction
 "===============================================================================
 " gb's rename file {{{1
 
-function! custom#RenameFile()
+function! custom#RenameFile() abort
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
 
@@ -59,7 +59,7 @@ endfunction
 " statusline: git branch {{{1
 
 " show git branch of current file if it's under version control
-function! custom#GitBranch()
+function! custom#GitBranch() abort
   " stores cwd
   let lastdir = getcwd()
   " temporarily changes to dir containing the buffer
