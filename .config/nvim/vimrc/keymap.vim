@@ -134,16 +134,6 @@ vnoremap <C-j> <C-n><C-w>j
 vnoremap <C-k> <C-n><C-w>k
 vnoremap <C-l> <C-n><C-w>l
 
-inoremap <C-h> <C-\><C-n><C-w>h
-inoremap <C-j> <C-\><C-n><C-w>j
-inoremap <C-k> <C-\><C-n><C-w>k
-inoremap <C-l> <C-\><C-n><C-w>l
-
-cnoremap <C-h> <C-\><C-n><C-w>h
-cnoremap <C-j> <C-\><C-n><C-w>j
-cnoremap <C-k> <C-\><C-n><C-w>k
-cnoremap <C-l> <C-\><C-n><C-w>l
-
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
