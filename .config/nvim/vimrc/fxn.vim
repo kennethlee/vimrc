@@ -1,4 +1,4 @@
-" fold header {{{1
+" VimFoldText() {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
 function! fxn#VimFoldText() abort
@@ -28,7 +28,7 @@ function! fxn#VimFoldText() abort
 endfunction
 
 " ==============================================================================
-" statusline: git branch {{{1
+" GitBranch() {{{1
 
 " show git branch of current file if it's under version control
 function! fxn#GitBranch() abort

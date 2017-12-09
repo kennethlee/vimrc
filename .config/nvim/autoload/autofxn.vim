@@ -1,4 +1,4 @@
-" markdown folding {{{1
+" MarkdownLevel() {{{1
 
 " fold at '#'
 function! autofxn#MarkdownLevel() abort
@@ -11,8 +11,9 @@ function! autofxn#MarkdownLevel() abort
 endfunction
 
 "===============================================================================
-" gb's rename file {{{1
+" RenameFile() {{{1
 
+" rename current file
 function! autofxn#RenameFile() abort
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
