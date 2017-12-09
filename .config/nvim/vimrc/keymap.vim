@@ -52,7 +52,7 @@ nnoremap gb :ls<CR>:b<Space>
 noremap <silent><leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " leader-fr = gb's rename current file
-noremap <silent><leader>fr :call custom#RenameFile()<CR>
+noremap <silent><leader>fr :call autofxn#RenameFile()<CR>
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <leader>fd :Dirvish ~/

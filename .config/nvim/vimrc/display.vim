@@ -37,7 +37,7 @@ set statusline+=%h%r%w                          " help, read-only, preview buff
 set statusline+=%*
 
 set statusline+=%#statement#
-set statusline+=%{custom#GitBranch()}%<         " show curr. branch if git repo
+set statusline+=%{fxn#GitBranch()}%<            " show curr. branch if git repo
 set statusline+=%*
 
 set statusline+=%-F\                            " absolute filepath

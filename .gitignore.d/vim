@@ -7,10 +7,11 @@
 
 !/.config/nvim/
 !/.config/nvim/autoload
-!/.config/nvim/autoload/custom.vim
+!/.config/nvim/autoload/autofxn.vim
 
 !/.config/nvim/vimrc
 !/.config/nvim/vimrc/display.vim
+!/.config/nvim/vimrc/fxn.vim
 !/.config/nvim/vimrc/general.vim
 !/.config/nvim/vimrc/keymap.vim
 !/.config/nvim/vimrc/plugin.vim

@@ -1,8 +1,7 @@
-" folds {{{1
-" fold header {{{2
+" fold header {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
-function! custom#VimFoldText() abort
+function! fxn#VimFoldText() abort
   let fs = v:foldstart
 
   while getline(fs) =~ '^\s*$'
@@ -29,37 +28,11 @@ function! custom#VimFoldText() abort
 endfunction
 
 "===============================================================================
-" markdown {{{2
-
-" fold at '#'
-function! custom#MarkdownLevel() abort
-  let h = matchstr(getline(v:lnum), '^#\+')
-  if empty(h)
-    return "="
-  else
-    return ">" . len(h)
-  endif
-endfunction
-
-"===============================================================================
-" gb's rename file {{{1
-
-function! custom#RenameFile() abort
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-
-"===============================================================================
 " statusline: git branch {{{1
 
 " show git branch of current file if it's under version control
-function! custom#GitBranch() abort
+function! fxn#GitBranch() abort
+" function! custom#GitBranch() abort
   " stores cwd
   let lastdir = getcwd()
   " temporarily changes to dir containing the buffer
@@ -82,7 +55,7 @@ endfunction
 
 augroup gitbranch
   autocmd!
-  autocmd BufNewFile,BufRead * let b:gitbranch = custom#GitBranch()
+  autocmd BufNewFile,BufRead * let b:gitbranch = fxn#GitBranch()
 augroup END
 
 "===============================================================================
@@ -97,4 +70,3 @@ autocmd VimEnter * WipeReg
 
 "===============================================================================
 " }}}1
-

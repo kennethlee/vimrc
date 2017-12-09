@@ -30,7 +30,7 @@ set autoread
 
 " see ':help fold-options'
 set foldenable foldlevel=0 foldcolumn=0 foldnestmax=6
-set foldtext=custom#VimFoldText()
+set foldtext=fxn#VimFoldText()
 
 " jump over folds without opening them
 set foldopen-=block
