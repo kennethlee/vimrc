@@ -27,7 +27,7 @@ function! fxn#VimFoldText() abort
   return foldLevelStr . line . expansionString . foldSizeStr. foldPercentage
 endfunction
 
-"===============================================================================
+" ==============================================================================
 " statusline: git branch {{{1
 
 " show git branch of current file if it's under version control
@@ -58,7 +58,7 @@ augroup gitbranch
   autocmd BufNewFile,BufRead * let b:gitbranch = fxn#GitBranch()
 augroup END
 
-"===============================================================================
+" ==============================================================================
 " WipeReg {{{1
 
 " `:WipeReg` to clear registers
@@ -68,5 +68,5 @@ command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), [])
 " call `WipeReg` on startup
 autocmd VimEnter * WipeReg
 
-"===============================================================================
+" ==============================================================================
 " }}}1

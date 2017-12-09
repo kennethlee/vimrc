@@ -22,7 +22,7 @@ set noequalalways
 set winminwidth=15 winwidth=90
 set splitright splitbelow
 
-"===============================================================================
+" ==============================================================================
 " statusline {{{1
 
 set laststatus=2
@@ -45,6 +45,6 @@ set statusline+=%=[%{&fileformat}:              " file format/encoding
 set statusline+=%{strwidth(&fenc)?&fenc:&enc}]
 set statusline+=%5(%c%)\                        " column number
 
-"===============================================================================
+" ==============================================================================
 " }}}1
 

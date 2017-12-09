@@ -2,7 +2,7 @@
 
 set rtp+=~/.fzf
 
-"===============================================================================
+" ==============================================================================
 " file handling {{{1
 
 set nomodeline
@@ -35,7 +35,7 @@ set foldtext=fxn#VimFoldText()
 " jump over folds without opening them
 set foldopen-=block
 
-"===============================================================================
+" ==============================================================================
 " text manipulation {{{1
 
 " gb: fix slow O inserts
@@ -59,7 +59,7 @@ set nojoinspaces
 " variable prevents the iskeyword change so it can't hurt anyone
 let g:sh_noisk = 1
 
-"===============================================================================
+" ==============================================================================
 " search / find {{{1
 
 set incsearch ignorecase smartcase hlsearch
@@ -67,7 +67,7 @@ set incsearch ignorecase smartcase hlsearch
 " incremental substitution
 set inccommand=nosplit
 
-"===============================================================================
+" ==============================================================================
 " completion {{{1
 
 " command mode tab completion
@@ -75,7 +75,7 @@ set wildmenu
 set wildmode=list:longest,full
 set wildignorecase
 
-"===============================================================================
+" ==============================================================================
 " wildignore {{{1
 
 " ignore when using :find
@@ -86,6 +86,6 @@ set wildignore+=*.dmg,*.gz,*.rar,*.tbz,*.zip
 set wildignore+=*/tmp/*,*.db,*DS_Store,*.log
 set wildignore+=*.so,*.sw?
 
-"===============================================================================
+" ==============================================================================
 " }}}1
 
