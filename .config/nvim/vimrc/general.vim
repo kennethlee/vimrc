@@ -6,7 +6,6 @@ set rtp+=~/.fzf
 " file handling {{{1
 
 set nomodeline
-syntax on
 
 " encoding
 set encoding=utf-8

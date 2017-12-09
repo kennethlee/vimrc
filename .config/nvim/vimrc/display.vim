@@ -4,6 +4,8 @@ set title t_ti= t_te=
 set cmdheight=2
 set showmode
 
+syntax on
+
 " colorscheme
 set termguicolors
 colorscheme base16-eighties
