@@ -26,11 +26,6 @@ set list listchars=tab:▸\ ,eol:¬,trail:@
 " absolute line numbers and width to 6 chars
 set number numberwidth=6
 
-" window behavior
-set noequalalways
-set winminwidth=15 winwidth=90
-set splitright splitbelow
-
 " ==============================================================================
 " statusline {{{1
 

@@ -59,6 +59,13 @@ set nojoinspaces
 let g:sh_noisk = 1
 
 " ==============================================================================
+" window behavior {{{1
+
+set noequalalways
+set winminwidth=15 winwidth=90
+set splitright splitbelow
+
+" ==============================================================================
 " search / find {{{1
 
 set incsearch ignorecase smartcase hlsearch
