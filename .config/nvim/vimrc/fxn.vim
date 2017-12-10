@@ -62,7 +62,7 @@ augroup END
 " NextIndent() {{{1
 
 " jump to previous / next line with same level of indentation as current
-function! fxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks)
+function! fxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks) abort
   let line = line('.')
   let column = col('.')
   let lastline = line('$')
