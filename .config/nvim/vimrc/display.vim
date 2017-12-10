@@ -1,10 +1,14 @@
 " general {{{1
 
 set title t_ti= t_te=
+set termguicolors
+
 set cmdheight=2
 set showmode
+set number numberwidth=5
 
 syntax on
+set list listchars=tab:▸\ ,eol:¬,trail:@
 
 " Colorschemes usually reset all highlighting, including your own, when they
 " are sourced. Override the desired highlights in an autocommand that is
@@ -16,15 +20,8 @@ augroup extra_whitespace
 augroup END
 
 " colorscheme
-set termguicolors
 colorscheme base16-eighties
 set background=dark
-
-" display char for EoL and red chars for tabs and trailing whitespace
-set list listchars=tab:▸\ ,eol:¬,trail:@
-
-" absolute line numbers and width to 6 chars
-set number numberwidth=6
 
 " ==============================================================================
 " statusline {{{1
