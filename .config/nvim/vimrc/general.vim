@@ -47,7 +47,7 @@ set wrap linebreak
 set backspace=indent,eol,start
 
 " default tab settings
-set softtabstop=2 shiftwidth=2 autoindent expandtab
+set softtabstop=2 shiftwidth=2 expandtab
 
 " gb: insert only one space when joining lines that contain sentence-terminating
 " punctuation like `.`.
