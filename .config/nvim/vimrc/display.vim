@@ -6,6 +6,15 @@ set showmode
 
 syntax on
 
+" Colorschemes usually reset all highlighting, including your own, when they
+" are sourced. Override the desired highlights in an autocommand that is
+" executed whenever a colorscheme is sourced.
+augroup extra_whitespace
+  autocmd!
+  autocmd ColorScheme * highlight ExtraWhitespace ctermfg=red guifg=red
+  autocmd ColorScheme * match ExtraWhitespace /\s\+$\|\t/
+augroup END
+
 " colorscheme
 set termguicolors
 colorscheme base16-eighties
@@ -13,8 +22,6 @@ set background=dark
 
 " display char for EoL and red chars for tabs and trailing whitespace
 set list listchars=tab:▸\ ,eol:¬,trail:@
-highlight ExtraWhitespace ctermfg=red guifg=red
-match ExtraWhitespace /\s\+$\|\t/
 
 " absolute line numbers and width to 6 chars
 set number numberwidth=6
