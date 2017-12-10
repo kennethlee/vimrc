@@ -84,15 +84,6 @@ nnoremap <silent><leader>vv :e ~/.config/nvim/vimrc<CR>
 nnoremap <silent><leader>u :UndotreeToggle<CR>
 
 " ==============================================================================
-" (leader-a_) easyalign {{{1
-
-" start interactive EasyAlign in visual mode (e.g. vip<enter>)
-vmap <Enter> <Plug>(EasyAlign)
-
-" start interactive EasyAlign for a motion/text object (e.g. <leader>aip)
-nmap <leader>ab <Plug>(EasyAlign)
-
-" ==============================================================================
 " misc. {{{1
 
 " 'jk' exits Insert Mode
