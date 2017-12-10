@@ -147,10 +147,12 @@ nnoremap <silent><leader>j :bprev<CR>
 nnoremap <silent><leader>k :bnext<CR>
 
 " jump to/from lines with same indentation level
-nnoremap <silent>_ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<'
-  \. line('.') . 'l\S', 'be')<CR>
-nnoremap <silent>+ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>'
-  \. line('.') . 'l\S', 'e')<CR>
+nnoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
+nnoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
+vnoremap <silent>_ <Esc>:call fxn#NextIndent(0, 0, 0, 1)<CR>m'gv''
+vnoremap <silent>+ <Esc>:call fxn#NextIndent(0, 1, 0, 1)<CR>m'gv''
+onoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
+onoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
 
 " ==============================================================================
 " ultisnips {{{1
