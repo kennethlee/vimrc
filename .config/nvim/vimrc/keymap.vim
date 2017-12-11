@@ -39,6 +39,9 @@ xnoremap zz zf
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
 
+" 'gV' to select last changed block
+nnoremap gV `[v`]
+
 " 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 
@@ -67,29 +70,13 @@ xnoremap <Leader>d "_d
 noremap x "_x
 
 " ==============================================================================
-" <Leader>f/v/_: general vim {{{1
-" window management
-
-" <Leader><Leader> to switch to the alternate buffer
-nnoremap <Leader><Leader> <C-^>
-
-" list all open buffers then wait for tab completion or input + tab completion
-nnoremap gb :ls<CR>:b<Space>
-
-" toggle quickfix window
-nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
-
-nnoremap <silent>- :Dirvish %:p:h<CR>
-nnoremap <Leader>fd :Dirvish ~/
+" <Leader>f/v: general vim {{{1
 
 " maximize width of current window
 nnoremap <silent><Leader>vm <C-w>\|
 
 " open .vimrc
 nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
-
-" ======================================
-" file utilities
 
 " strip whitespace
 noremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
@@ -123,6 +110,7 @@ nnoremap <silent><Leader>ta :Files ~/Dropbox/apps/todo<CR>
 
 " ==============================================================================
 " navigation {{{1
+" nav: window {{{2
 
 " <C-h/j/k/l> for window navigation
 nnoremap <C-h> <C-w>h
@@ -140,16 +128,36 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-" 'gV' to select last changed block
-nnoremap gV `[v`]
+" ==============================================================================
+" nav: buffer {{{2
+
+" <Leader><Leader> to switch to the alternate buffer
+nnoremap <Leader><Leader> <C-^>
+
+" list all open buffers then wait for tab completion or input + tab completion
+nnoremap <Leader>bb :ls<CR>:b *
+nnoremap <Leader>bs :ls<CR>:sbuffer *
 
 " cycle through buffers
 nnoremap <silent><Leader>h :bprevious<CR>
 nnoremap <silent><Leader>l :bnext<CR>
 
+" ==============================================================================
+" nav: quickfix {{{2
+
+" toggle quickfix window
+nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
+
 " cycle through items in the quickfix list
 nnoremap <silent><Leader>k :cprevious<CR>
 nnoremap <silent><Leader>j :cnext<CR>
+
+" ==============================================================================
+" nav: misc. {{{2
+
+" dirvish
+nnoremap <silent>- :Dirvish %:p:h<CR>
+nnoremap <Leader>fd :Dirvish ~/
 
 " jump to/from lines with same indentation level
 nnoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
