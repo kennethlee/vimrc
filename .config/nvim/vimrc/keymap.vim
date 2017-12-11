@@ -52,7 +52,7 @@ nnoremap <Space> <Nop>
 let g:mapleader = "\<Space>"
 
 " ==============================================================================
-" <Leader>-c: change {{{1
+" <Leader>c: change {{{1
 
 " use leader key before change/delete command to delete without yanking
 " also forbid deletion via x from updating registers
@@ -67,39 +67,47 @@ xnoremap <Leader>d "_d
 noremap x "_x
 
 " ==============================================================================
-" <Leader>-f: file ops {{{1
+" <Leader>f/v/_: general vim {{{1
+" window management
 
 " <Leader><Leader> to switch to the alternate buffer
 nnoremap <Leader><Leader> <C-^>
 
-" ======================================
-
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap gb :ls<CR>:b<Space>
-
-" SL's trailing whitespace cleaner
-noremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
-
-" leader-fr = gb's rename current file
-noremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
 
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <Leader>fd :Dirvish ~/
 
+" maximize width of current window
+nnoremap <silent><Leader>vm <C-w>\|
+
+" open .vimrc
+nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
+
+" ======================================
+" file utilities
+
+" strip whitespace
+noremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
+
+" rename current file
+noremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
+
 " ==============================================================================
-" <Leader>-g: gitgutter {{{1
+" <Leader>g: gitgutter {{{1
 
 nmap <Leader>gs <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterUndoHunk
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
 
 " ==============================================================================
-" <Leader>-n: undotree {{{1
+" <Leader>n: undotree {{{1
 
 nnoremap <silent><Leader>n :UndotreeToggle<CR>
 
 " ==============================================================================
-" <Leader>-t: fzf {{{1
+" <Leader>t: fzf {{{1
 
 nnoremap <silent><Leader>tr :Files<CR>
 nnoremap <Leader>te :Files ~/
@@ -109,15 +117,6 @@ nnoremap <silent><Leader>tu :Buffers<CR>
 nnoremap <silent><Leader>tn :Files ~/Documents/notes<CR>
 nnoremap <silent><Leader>tj :Files ~/Dropbox/notes<CR>
 nnoremap <silent><Leader>ta :Files ~/Dropbox/apps/todo<CR>
-
-" ==============================================================================
-" <Leader>-v: general vim {{{1
-
-" leader-vm = maximize width of current window
-nnoremap <silent><Leader>vm <C-w>\|
-
-" leader-vv = open .vimrc
-nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
