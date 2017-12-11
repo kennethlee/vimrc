@@ -46,13 +46,13 @@ inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
 " ==============================================================================
-" leader core {{{1
+" <Leader> {{{1
 
 nnoremap <Space> <Nop>
 let g:mapleader = "\<Space>"
 
 " ==============================================================================
-" (leader-c_) change {{{1
+" <Leader>-c: change {{{1
 
 " use leader key before change/delete command to delete without yanking
 " also forbid deletion via x from updating registers
@@ -67,7 +67,7 @@ xnoremap <Leader>d "_d
 noremap x "_x
 
 " ==============================================================================
-" (leader-f_, mostly) finding files/buffers, file ops, dir {{{1
+" <Leader>-f: file ops {{{1
 
 " <Leader><Leader> to switch to the alternate buffer
 nnoremap <Leader><Leader> <C-^>
@@ -87,14 +87,19 @@ nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <Leader>fd :Dirvish ~/
 
 " ==============================================================================
-" (leader-g_) gitgutter {{{1
+" <Leader>-g: gitgutter {{{1
 
 nmap <Leader>gs <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterUndoHunk
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
 
 " ==============================================================================
-" (leader-t_) fzf {{{1
+" <Leader>-n: undotree {{{1
+
+nnoremap <silent><Leader>n :UndotreeToggle<CR>
+
+" ==============================================================================
+" <Leader>-t: fzf {{{1
 
 nnoremap <silent><Leader>tr :Files<CR>
 nnoremap <Leader>te :Files ~/
@@ -106,18 +111,13 @@ nnoremap <silent><Leader>tj :Files ~/Dropbox/notes<CR>
 nnoremap <silent><Leader>ta :Files ~/Dropbox/apps/todo<CR>
 
 " ==============================================================================
-" (leader-v_) vim (general) {{{1
+" <Leader>-v: general vim {{{1
 
 " leader-vm = maximize width of current window
 nnoremap <silent><Leader>vm <C-w>\|
 
 " leader-vv = open .vimrc
 nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
-
-" ==============================================================================
-" (leader-n_) undotree {{{1
-
-nnoremap <silent><Leader>n :UndotreeToggle<CR>
 
 " ==============================================================================
 " navigation {{{1
