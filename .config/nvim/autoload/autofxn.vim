@@ -27,6 +27,7 @@ function! autofxn#QuickfixToggle() abort
   endif
 endfunction
 
+" ==============================================================================
 " RenameFile() {{{1
 
 " rename current file
