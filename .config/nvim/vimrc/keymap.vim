@@ -18,6 +18,34 @@ map! <MouseUp> <Nop>
 map! <MouseDown> <Nop>
 
 " ==============================================================================
+" misc. {{{1
+
+" 'jk' exits Insert Mode
+inoremap jk <Esc>
+
+" map '6' to '^' to avoid having to press shift
+nnoremap 6 ^
+
+" 'Y' yanks to EoL (consistent with D, C, etc)
+nnoremap Y y$
+
+" 'y' yanks to system clipboard in Visual Mode
+xnoremap y "*y
+
+" toggle folds with 'zz'
+nnoremap zz za
+xnoremap zz zf
+
+" keep cursor in place after joining lines
+nnoremap J mzJ`z
+
+" 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
+inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
+
+" hitting <CR> clears highlighting from previous search
+nnoremap <silent><CR> :nohlsearch<CR>/<BS>
+
+" ==============================================================================
 " leader core {{{1
 
 nnoremap <Space> <Nop>
@@ -83,34 +111,6 @@ nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
 " (leader-n_) undotree {{{1
 
 nnoremap <silent><Leader>u :UndotreeToggle<CR>
-
-" ==============================================================================
-" misc. {{{1
-
-" 'jk' exits Insert Mode
-inoremap jk <Esc>
-
-" map '6' to '^' to avoid having to press shift
-nnoremap 6 ^
-
-" 'Y' yanks to EoL (consistent with D, C, etc)
-nnoremap Y y$
-
-" 'y' yanks to system clipboard in Visual Mode
-xnoremap y "*y
-
-" toggle folds with 'zz'
-nnoremap zz za
-xnoremap zz zf
-
-" keep cursor in place after joining lines
-nnoremap J mzJ`z
-
-" 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
-inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
-
-" hitting <CR> clears highlighting from previous search
-nnoremap <silent><CR> :nohlsearch<CR>/<BS>
 
 " ==============================================================================
 " navigation {{{1
