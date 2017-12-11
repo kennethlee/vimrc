@@ -87,6 +87,13 @@ nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <Leader>fd :Dirvish ~/
 
 " ==============================================================================
+" (leader-g_) gitgutter {{{1
+
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterUndoHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
+
+" ==============================================================================
 " (leader-t_) fzf {{{1
 
 nnoremap <silent><Leader>tr :Files<CR>
