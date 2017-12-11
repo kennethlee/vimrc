@@ -11,6 +11,22 @@ function! autofxn#MarkdownLevel() abort
 endfunction
 
 " ==============================================================================
+" QuickfixToggle() {{{1
+
+let g:quickfix_is_open = 0
+
+function! autofxn#QuickfixToggle() abort
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
+
 " RenameFile() {{{1
 
 " rename current file

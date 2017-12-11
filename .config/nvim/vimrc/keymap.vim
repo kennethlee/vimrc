@@ -76,6 +76,9 @@ nnoremap <Leader><Leader> <C-^>
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap gb :ls<CR>:b<Space>
 
+" toggle quickfix window
+nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
+
 nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <Leader>fd :Dirvish ~/
 
