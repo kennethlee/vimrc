@@ -1,26 +1,26 @@
 " disable {{{1
 
 " disable arrow keys
-map <Left> <NOP>
-map <Right> <NOP>
-map <Up> <NOP>
-map <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
-imap <Up> <NOP>
-imap <Down> <NOP>
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
 
 " hide mouse, disable it from triggering Visual Mode, page up/down
 set mousehide mouse=nicr
-map <MouseUp> <NOP>
-map <MouseDown> <NOP>
-map! <MouseUp> <NOP>
-map! <MouseDown> <NOP>
+map <MouseUp> <Nop>
+map <MouseDown> <Nop>
+map! <MouseUp> <Nop>
+map! <MouseDown> <Nop>
 
 " ==============================================================================
 " leader core {{{1
 
-nnoremap <Space> <NOP>
+nnoremap <Space> <Nop>
 let g:mapleader = "\<Space>"
 
 " ==============================================================================
