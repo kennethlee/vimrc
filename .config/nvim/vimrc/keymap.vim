@@ -110,7 +110,7 @@ nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
 " ==============================================================================
 " (leader-n_) undotree {{{1
 
-nnoremap <silent><Leader>u :UndotreeToggle<CR>
+nnoremap <silent><Leader>n :UndotreeToggle<CR>
 
 " ==============================================================================
 " navigation {{{1
