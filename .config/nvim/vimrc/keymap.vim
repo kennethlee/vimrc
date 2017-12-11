@@ -142,8 +142,12 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap gV `[v`]
 
 " cycle through buffers
-nnoremap <silent><Leader>j :bprev<CR>
-nnoremap <silent><Leader>k :bnext<CR>
+nnoremap <silent><Leader>h :bprevious<CR>
+nnoremap <silent><Leader>l :bnext<CR>
+
+" cycle through items in the quickfix list
+nnoremap <silent><Leader>k :cprevious<CR>
+nnoremap <silent><Leader>j :cnext<CR>
 
 " jump to/from lines with same indentation level
 nnoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
