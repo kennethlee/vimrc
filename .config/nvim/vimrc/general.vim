@@ -97,6 +97,7 @@ set wildignore+=*.dmg,*.gz,*.rar,*.tar.*,*.tbz,*.zip
 set wildignore+=*/tmp/*,*.db,*DS_Store,*.log
 set wildignore+=*.so,*.sw?
 set wildignore+=*/.git/**/*
+" set wildignore+=*/node_modules/*
 
 " ==============================================================================
 " }}}1
