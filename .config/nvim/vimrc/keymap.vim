@@ -95,16 +95,19 @@ nmap <Leader>gp <Plug>GitGutterPreviewHunk
 nnoremap <silent><Leader>n :UndotreeToggle<CR>
 
 " ==============================================================================
-" <Leader>t: fzf {{{1
+" <Leader>t: find / grep {{{1
 
-nnoremap <silent><Leader>tr :Files<CR>
-nnoremap <Leader>te :Files ~/
-nnoremap <silent><Leader>tl :BLines<CR>
-nnoremap <silent><Leader>tk :Lines<CR>
-nnoremap <silent><Leader>tu :Buffers<CR>
-nnoremap <silent><Leader>tn :Files ~/Documents/notes<CR>
-nnoremap <silent><Leader>tj :Files ~/Dropbox/notes<CR>
-nnoremap <silent><Leader>ta :Files ~/Dropbox/apps/todo<CR>
+nnoremap <Leader>tr :find *
+nnoremap <Leader>te :find ~/*
+nnoremap <Leader>tk :grep!<Space>
+nnoremap <Leader>tn :find ~/Documents/notes/*
+nnoremap <Leader>tj :find ~/Dropbox/notes/*
+nnoremap <Leader>ta :find ~/Dropbox/apps/todo/*
+
+" find files recursively under the directory of the current file
+nnoremap <Leader>F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Leader>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Leader>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 
 " ==============================================================================
 " <Leader>v: general vim {{{1
