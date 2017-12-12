@@ -119,10 +119,10 @@ nnoremap <Leader>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 " <Leader>v: general vim {{{1
 
 " maximize width of current window
-nnoremap <silent><Leader>vm <C-w>\|
+nnoremap <Leader>vm <C-w>\|
 
 " open .vimrc
-nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
+nnoremap <silent><Leader>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
@@ -151,7 +151,7 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap <Leader><Leader> <C-^>
 
 " close an open preview buffer
-nnoremap <Leader>w :pclose<CR>
+nnoremap <silent><Leader>w :pclose<CR>
 
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap <Leader>bb :ls<CR>:b *
