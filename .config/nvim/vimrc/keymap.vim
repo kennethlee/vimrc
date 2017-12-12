@@ -48,8 +48,8 @@ nnoremap gV `[v`]
 " 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 
-" hitting <CR> clears highlighting from previous search
-nnoremap <silent><CR> :nohlsearch<CR>/<BS>
+" clear highlighting from previous search
+nnoremap <silent><Esc> :nohlsearch<CR><Esc>
 
 " ==============================================================================
 " <Leader> {{{1
