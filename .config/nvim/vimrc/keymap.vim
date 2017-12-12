@@ -78,11 +78,15 @@ nnoremap <silent><Leader>vm <C-w>\|
 " open .vimrc
 nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
 
+" run make
+nnoremap <Leader>fm :make! %<CR>
+nnoremap <Leader>fM :make! *.
+
 " strip whitespace
-noremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " rename current file
-noremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
+nnoremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
 
 " ==============================================================================
 " <Leader>g: gitgutter {{{1

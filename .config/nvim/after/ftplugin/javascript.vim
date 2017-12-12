@@ -8,6 +8,13 @@ setlocal foldcolumn=0
 " misc
 setlocal colorcolumn=81
 
+" `:make! %` to lint current buffer
+" `:make! *.js` to lint all javascript files
+if executable('eslint')
+  setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
+  compiler! eslint
+endif
+
 UltiSnipsAddFiletypes javascript-es6
 UltiSnipsAddFiletypes javascript-jsx
 UltiSnipsAddFiletypes javascript-react
