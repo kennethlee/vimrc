@@ -70,13 +70,7 @@ xnoremap <Leader>d "_d
 noremap x "_x
 
 " ==============================================================================
-" <Leader>f/v: general vim {{{1
-
-" maximize width of current window
-nnoremap <silent><Leader>vm <C-w>\|
-
-" open .vimrc
-nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
+" <Leader>f: file ops {{{1
 
 " run make
 nnoremap <Leader>fm :make! %<CR>
@@ -111,6 +105,15 @@ nnoremap <silent><Leader>tu :Buffers<CR>
 nnoremap <silent><Leader>tn :Files ~/Documents/notes<CR>
 nnoremap <silent><Leader>tj :Files ~/Dropbox/notes<CR>
 nnoremap <silent><Leader>ta :Files ~/Dropbox/apps/todo<CR>
+
+" ==============================================================================
+" <Leader>v: general vim {{{1
+
+" maximize width of current window
+nnoremap <silent><Leader>vm <C-w>\|
+
+" open .vimrc
+nnoremap <silent><Leader>vv :e ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
