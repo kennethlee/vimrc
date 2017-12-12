@@ -203,9 +203,10 @@ inoremap <C-k> ><Esc>F<lyiwo</<C-r>"><Esc>O
 nnoremap cN #``cgN
 nnoremap cn *``cgn
 
-" 'cn' on visually-selected text, change, dot repeat
+" 'cN/cn' on visually-selected text, change, dot repeat
 " hit 'N/n' to jump to previous/next occurrence per the usual
 let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+vnoremap <expr> cN g:mc . "``cgN"
 vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
