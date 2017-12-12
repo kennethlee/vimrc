@@ -20,6 +20,9 @@ map! <MouseDown> <Nop>
 " ==============================================================================
 " misc. {{{1
 
+" redo
+nnoremap U <C-r>
+
 " 'jk' exits Insert Mode
 inoremap jk <Esc>
 
