@@ -23,19 +23,19 @@
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
 
-!/.config/nvim/after/
-!/.config/nvim/after/indent/
-!/.config/nvim/after/indent/c.vim
-!/.config/nvim/after/indent/css.vim
-!/.config/nvim/after/indent/elixir.vim
-!/.config/nvim/after/indent/eruby.vim
-!/.config/nvim/after/indent/html.vim
-!/.config/nvim/after/indent/javascript.vim
-!/.config/nvim/after/indent/json.vim
-!/.config/nvim/after/indent/markdown.vim
-!/.config/nvim/after/indent/ruby.vim
-!/.config/nvim/after/indent/scss.vim
-!/.config/nvim/after/indent/vim.vim
+!/.config/nvim/
+!/.config/nvim/indent/
+!/.config/nvim/indent/c.vim
+!/.config/nvim/indent/css.vim
+!/.config/nvim/indent/elixir.vim
+!/.config/nvim/indent/eruby.vim
+!/.config/nvim/indent/html.vim
+!/.config/nvim/indent/javascript.vim
+!/.config/nvim/indent/json.vim
+!/.config/nvim/indent/markdown.vim
+!/.config/nvim/indent/ruby.vim
+!/.config/nvim/indent/scss.vim
+!/.config/nvim/indent/vim.vim
 
 !/.config/nvim/ftdetect
 !/.config/nvim/ftdetect/eruby.vim
