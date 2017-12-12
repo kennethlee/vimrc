@@ -191,5 +191,17 @@ inoremap <C-j> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
 inoremap <C-k> ><Esc>F<lyiwo</<C-r>"><Esc>O
 
 " ==============================================================================
+" turbo-charged dot {{{1
+
+" 'cN/cn' on current word, change, dot repeat, be amazed
+nnoremap cN #``cgN
+nnoremap cn *``cgn
+
+" 'cn' on visually-selected text, change, dot repeat
+" hit 'N/n' to jump to previous/next occurrence per the usual
+let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+vnoremap <expr> cn g:mc . "``cgn"
+
+" ==============================================================================
 " }}}1
 
