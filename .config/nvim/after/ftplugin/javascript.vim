@@ -12,7 +12,12 @@ setlocal colorcolumn=81
 " `:make! *.js` to lint all javascript files
 if executable('eslint')
   setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
-  compiler! eslint
+  setlocal makeprg=eslint\ --format\ compact
+
+  augroup linting_javascript
+    autocmd!
+    " autocmd BufWritePost <buffer> silent make! <afile> | silent redraw!
+  augroup END
 endif
 
 UltiSnipsAddFiletypes javascript-es6
