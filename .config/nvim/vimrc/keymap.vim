@@ -80,7 +80,7 @@ noremap x "_x
 
 " run make
 nnoremap <Leader>fm :make! %<CR>
-nnoremap <Leader>fM :make! *.
+nnoremap <Leader>fM :make! .<CR>
 
 " strip whitespace
 nnoremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
