@@ -150,9 +150,6 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " <Leader><Leader> to switch to the alternate buffer
 nnoremap <Leader><Leader> <C-^>
 
-" close an open preview buffer
-nnoremap <silent><Leader>w :pclose<CR>
-
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap <Leader>bb :ls<CR>:b *
 nnoremap <Leader>bs :ls<CR>:sbuffer *
@@ -170,6 +167,9 @@ nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
 " cycle through items in the quickfix list
 nnoremap <silent><Leader>k :cprevious<CR>
 nnoremap <silent><Leader>j :cnext<CR>
+
+" close an open preview window
+nnoremap <silent><Leader>w :pclose<CR>
 
 " ==============================================================================
 " nav: misc. {{{2
