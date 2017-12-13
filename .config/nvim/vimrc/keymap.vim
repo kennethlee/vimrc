@@ -126,7 +126,7 @@ nnoremap <silent><Leader>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
-" nav: window {{{2
+" nav: splits {{{2
 
 " <C-h/j/k/l> for window navigation
 nnoremap <C-h> <C-w>h
@@ -162,7 +162,7 @@ nnoremap <silent><Leader>h :bprevious<CR>
 nnoremap <silent><Leader>l :bnext<CR>
 
 " ==============================================================================
-" nav: quickfix {{{2
+" nav: windows {{{2
 
 " toggle quickfix window
 nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
