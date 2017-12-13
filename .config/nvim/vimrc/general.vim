@@ -66,12 +66,6 @@ set noequalalways
 set winminwidth=15 winwidth=90
 set splitright splitbelow
 
-" make the quickfix window open after any grep invocation
-augroup window_grep
-  autocmd!
-  autocmd QuickFixCmdPost *grep* cwindow
-augroup END
-
 " ==============================================================================
 " search / find {{{1
 
