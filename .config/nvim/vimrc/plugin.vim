@@ -1,8 +1,3 @@
-" vim-json {{{1
-
-let g:vim_json_syntax_conceal = 0
-
-" ==============================================================================
 " vim's standard plugins {{{1
 
 " enable
