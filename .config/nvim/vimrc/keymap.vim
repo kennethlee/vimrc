@@ -55,62 +55,61 @@ nnoremap <CR> :
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
 
 " ==============================================================================
-" <Leader> {{{1
+" <Space> {{{1
 
 nnoremap <Space> <Nop>
-let g:mapleader = "\<Space>"
 
 " ==============================================================================
-" <Leader>c: change {{{1
+" <Space>c: change {{{1
 
-" use leader key before change/delete command to delete without yanking
+" use space key before change/delete command to delete without yanking
 " also forbid deletion via x from updating registers
-nnoremap <Leader>C "_C
-xnoremap <Leader>C "_C
-nnoremap <Leader>c "_c
-xnoremap <Leader>c "_c
-nnoremap <Leader>D "_D
-xnoremap <Leader>D "_D
-nnoremap <Leader>d "_d
-xnoremap <Leader>d "_d
+nnoremap <Space>C "_C
+xnoremap <Space>C "_C
+nnoremap <Space>c "_c
+xnoremap <Space>c "_c
+nnoremap <Space>D "_D
+xnoremap <Space>D "_D
+nnoremap <Space>d "_d
+xnoremap <Space>d "_d
 noremap x "_x
 
 " ==============================================================================
-" <Leader>f: file ops {{{1
+" <Space>f: file ops {{{1
 
 " run make
-nnoremap <Leader>fm :make! %<CR>
-nnoremap <Leader>fM :make! .<CR>
+nnoremap <Space>fm :make! %<CR>
+nnoremap <Space>fM :make! .<CR>
 
 " strip whitespace
-nnoremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " rename current file
-nnoremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
+nnoremap <silent><Space>fr :call autofxn#RenameFile()<CR>
 
 " ==============================================================================
-" <Leader>t: find / grep {{{1
+" <Space>t: find / grep {{{1
 
-nnoremap <Leader>tr :find *
-nnoremap <Leader>te :find ~/*
-nnoremap <Leader>tk :grep!<Space>
-nnoremap <Leader>tn :find ~/Documents/notes/*
-nnoremap <Leader>tj :find ~/Dropbox/notes/*
-nnoremap <Leader>ta :find ~/Dropbox/apps/todo/*
+nnoremap <Space>tr :find *
+nnoremap <Space>te :find ~/*
+nnoremap <Space>tk :grep!<Space>
+nnoremap <Space>tn :find ~/Documents/notes/*
+nnoremap <Space>tj :find ~/Dropbox/notes/*
+nnoremap <Space>ta :find ~/Dropbox/apps/todo/*
 
 " find files recursively under the directory of the current file
-nnoremap <Leader>F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap <Leader>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap <Leader>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Space>F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Space>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Space>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 
 " ==============================================================================
-" <Leader>v: general vim {{{1
+" <Space>v: general vim {{{1
 
 " maximize width of current window
-nnoremap <Leader>vm <C-w>\|
+nnoremap <Space>vm <C-w>\|
 
 " open .vimrc
-nnoremap <silent><Leader>vv :edit ~/.config/nvim/vimrc<CR>
+nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
@@ -135,36 +134,36 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " ==============================================================================
 " nav: buffer {{{2
 
-" <Leader><Leader> to switch to the alternate buffer
-nnoremap <Leader><Leader> <C-^>
+" <Space><Space> to switch to the alternate buffer
+nnoremap <Space><Space> <C-^>
 
 " list all open buffers then wait for tab completion or input + tab completion
-nnoremap <Leader>bb :ls<CR>:b *
-nnoremap <Leader>bs :ls<CR>:sbuffer *
+nnoremap <Space>bb :ls<CR>:b *
+nnoremap <Space>bs :ls<CR>:sbuffer *
 
 " cycle through buffers
-nnoremap <silent><Leader>h :bprevious<CR>
-nnoremap <silent><Leader>l :bnext<CR>
+nnoremap <silent><Space>h :bprevious<CR>
+nnoremap <silent><Space>l :bnext<CR>
 
 " ==============================================================================
 " nav: windows {{{2
 
 " toggle quickfix window
-nnoremap <silent><Leader>q :call autofxn#QuickfixToggle()<CR>
+nnoremap <silent><Space>q :call autofxn#QuickfixToggle()<CR>
 
 " cycle through items in the quickfix list
-nnoremap <silent><Leader>k :cprevious<CR>
-nnoremap <silent><Leader>j :cnext<CR>
+nnoremap <silent><Space>k :cprevious<CR>
+nnoremap <silent><Space>j :cnext<CR>
 
 " close an open preview window
-nnoremap <silent><Leader>w :pclose<CR>
+nnoremap <silent><Space>w :pclose<CR>
 
 " ==============================================================================
 " nav: misc. {{{2
 
 " dirvish
 nnoremap <silent>- :Dirvish %:p:h<CR>
-nnoremap <Leader>fd :Dirvish ~/
+nnoremap <Space>fd :Dirvish ~/
 
 " jump to/from lines with same indentation level
 nnoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
