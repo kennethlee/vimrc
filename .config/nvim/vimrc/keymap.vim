@@ -96,11 +96,6 @@ nmap <Leader>gu <Plug>GitGutterUndoHunk
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
 
 " ==============================================================================
-" <Leader>n: undotree {{{1
-
-nnoremap <silent><Leader>n :UndotreeToggle<CR>
-
-" ==============================================================================
 " <Leader>t: find / grep {{{1
 
 nnoremap <Leader>tr :find *

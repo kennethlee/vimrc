@@ -1,17 +1,3 @@
-" undotree {{{1
-
-" if set, let undotree window get focus after being opened, otherwise
-" focus will stay in current window
-if !exists('g:undotree_SetFocusWhenToggle')
-  let g:undotree_SetFocusWhenToggle = 1
-endif
-
-" highlight changed text
-if !exists('g:undotree_HighlightChangedText')
-  let g:undotree_HighlightChangedText = 1
-endif
-
-" ==============================================================================
 " vim-json {{{1
 
 let g:vim_json_syntax_conceal = 0
