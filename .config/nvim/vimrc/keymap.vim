@@ -142,8 +142,8 @@ nnoremap <Space>bb :ls<CR>:b *
 nnoremap <Space>bs :ls<CR>:sbuffer *
 
 " cycle through buffers
-nnoremap <silent><Space>h :bprevious<CR>
-nnoremap <silent><Space>l :bnext<CR>
+nnoremap <silent><M-h> :bprevious<CR>
+nnoremap <silent><M-l> :bnext<CR>
 
 " ==============================================================================
 " nav: windows {{{2
@@ -152,8 +152,8 @@ nnoremap <silent><Space>l :bnext<CR>
 nnoremap <silent><Space>q :call autofxn#QuickfixToggle()<CR>
 
 " cycle through items in the quickfix list
-nnoremap <silent><Space>k :cprevious<CR>
-nnoremap <silent><Space>j :cnext<CR>
+nnoremap <silent><M-k> :cprevious<CR>
+nnoremap <silent><M-j> :cnext<CR>
 
 " close an open preview window
 nnoremap <silent><Space>w :pclose<CR>
