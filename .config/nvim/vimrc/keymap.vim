@@ -89,13 +89,6 @@ nnoremap <silent><Leader>ft :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap <silent><Leader>fr :call autofxn#RenameFile()<CR>
 
 " ==============================================================================
-" <Leader>g: gitgutter {{{1
-
-nmap <Leader>gs <Plug>GitGutterStageHunk
-nmap <Leader>gu <Plug>GitGutterUndoHunk
-nmap <Leader>gp <Plug>GitGutterPreviewHunk
-
-" ==============================================================================
 " <Leader>t: find / grep {{{1
 
 nnoremap <Leader>tr :find *

@@ -3,14 +3,6 @@
 let g:vim_json_syntax_conceal = 0
 
 " ==============================================================================
-" vim-gitgutter {{{1
-
-set signcolumn=yes
-let g:gitgutter_eager = 0
-let g:gitgutter_async = 0
-highlight clear SignColumn
-
-" ==============================================================================
 " vim's standard plugins {{{1
 
 " enable
