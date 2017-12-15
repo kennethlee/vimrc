@@ -32,9 +32,6 @@ nnoremap 6 ^
 " 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
-" 'y' yanks to system clipboard in Visual Mode
-xnoremap y "*y
-
 " toggle folds with 'zz'
 nnoremap zz za
 xnoremap zz zf

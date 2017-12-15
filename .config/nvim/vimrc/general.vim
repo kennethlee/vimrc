@@ -37,6 +37,8 @@ set foldopen-=block
 " ==============================================================================
 " text manipulation {{{1
 
+set clipboard+=unnamedplus
+
 " gb: fix slow O inserts
 set timeout timeoutlen=500 ttimeoutlen=100
 
