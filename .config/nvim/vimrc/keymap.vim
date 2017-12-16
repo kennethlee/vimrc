@@ -1,5 +1,7 @@
 " disable {{{1
 
+nnoremap <Space> <Nop>
+
 " disable arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
@@ -52,12 +54,41 @@ nnoremap <CR> :
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
 
 " ==============================================================================
-" <Space> {{{1
+" html tag completion {{{1
 
-nnoremap <Space> <Nop>
+" inline tag
+inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+
+" block tag
+inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
 
 " ==============================================================================
-" <Space>c: change {{{1
+" auto-closing brackets {{{1
+
+inoremap (<CR> (<CR>)<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {; {<CR>};<Esc>O
+inoremap {, {<CR>},<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [; [<CR>];<Esc>O
+inoremap [, [<CR>],<Esc>O
+
+" ==============================================================================
+" turbo-charged dot {{{1
+
+" 'cN/cn' on current word, change, dot repeat, be amazed
+nnoremap cN #``cgN
+nnoremap cn *``cgn
+
+" 'cN/cn' on visually-selected text, change, dot repeat
+" hit 'N/n' to jump to previous/next occurrence per the usual
+let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+vnoremap <expr> cN g:mc . "``cgN"
+vnoremap <expr> cn g:mc . "``cgn"
+
+" ==============================================================================
+" <Space> {{{1
+" <Space>c: change {{{2
 
 " use space key before change/delete command to delete without yanking
 " also forbid deletion via x from updating registers
@@ -72,7 +103,7 @@ xnoremap <Space>d "_d
 noremap x "_x
 
 " ==============================================================================
-" <Space>f: file ops {{{1
+" <Space>f: file ops {{{2
 
 " run make
 nnoremap <Space>fm :make! %<CR>
@@ -85,7 +116,7 @@ nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap <silent><Space>fr :call autofxn#RenameFile()<CR>
 
 " ==============================================================================
-" <Space>t: find / grep {{{1
+" <Space>t: find / grep {{{2
 
 nnoremap <Space>tr :find *
 nnoremap <Space>te :find ~/*
@@ -100,46 +131,13 @@ nnoremap <Space>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 nnoremap <Space>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 
 " ==============================================================================
-" <Space>v: general vim {{{1
+" <Space>v: general vim {{{2
 
 " maximize width of current window
 nnoremap <Space>vm <C-w>\|
 
 " open .vimrc
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
-
-" ==============================================================================
-" auto-closing brackets {{{1
-
-inoremap (<CR> (<CR>)<Esc>O
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {; {<CR>};<Esc>O
-inoremap {, {<CR>},<Esc>O
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [; [<CR>];<Esc>O
-inoremap [, [<CR>],<Esc>O
-
-" ==============================================================================
-" html tag completion {{{1
-
-" inline tag
-inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
-
-" block tag
-inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
-
-" ==============================================================================
-" turbo-charged dot {{{1
-
-" 'cN/cn' on current word, change, dot repeat, be amazed
-nnoremap cN #``cgN
-nnoremap cn *``cgn
-
-" 'cN/cn' on visually-selected text, change, dot repeat
-" hit 'N/n' to jump to previous/next occurrence per the usual
-let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
-vnoremap <expr> cN g:mc . "``cgN"
-vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
 " navigation {{{1
