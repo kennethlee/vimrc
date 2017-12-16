@@ -109,6 +109,35 @@ nnoremap <Space>vm <C-w>\|
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
+" ultisnips {{{1
+
+" let g:UltiSnipsExpandTrigger = '<Tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+" ==============================================================================
+" html tag completion {{{1
+
+" inline tag
+inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+
+" block tag
+inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
+
+" ==============================================================================
+" turbo-charged dot {{{1
+
+" 'cN/cn' on current word, change, dot repeat, be amazed
+nnoremap cN #``cgN
+nnoremap cn *``cgn
+
+" 'cN/cn' on visually-selected text, change, dot repeat
+" hit 'N/n' to jump to previous/next occurrence per the usual
+let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+vnoremap <expr> cN g:mc . "``cgN"
+vnoremap <expr> cn g:mc . "``cgn"
+
+" ==============================================================================
 " navigation {{{1
 " nav: splits {{{2
 
@@ -169,35 +198,6 @@ vnoremap <silent>_ <Esc>:call fxn#NextIndent(0, 0, 0, 1)<CR>m'gv''
 vnoremap <silent>+ <Esc>:call fxn#NextIndent(0, 1, 0, 1)<CR>m'gv''
 onoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
 onoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
-
-" ==============================================================================
-" ultisnips {{{1
-
-" let g:UltiSnipsExpandTrigger = '<Tab>'
-" let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" ==============================================================================
-" html tag completion {{{1
-
-" inline tag
-inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
-
-" block tag
-inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
-
-" ==============================================================================
-" turbo-charged dot {{{1
-
-" 'cN/cn' on current word, change, dot repeat, be amazed
-nnoremap cN #``cgN
-nnoremap cn *``cgn
-
-" 'cN/cn' on visually-selected text, change, dot repeat
-" hit 'N/n' to jump to previous/next occurrence per the usual
-let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
-vnoremap <expr> cN g:mc . "``cgN"
-vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
 " }}}1
