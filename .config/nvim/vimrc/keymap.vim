@@ -109,6 +109,17 @@ nnoremap <Space>vm <C-w>\|
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
+" auto-closing brackets {{{1
+
+inoremap (<CR> (<CR>)<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {; {<CR>};<Esc>O
+inoremap {, {<CR>},<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [; [<CR>];<Esc>O
+inoremap [, [<CR>],<Esc>O
+
+" ==============================================================================
 " html tag completion {{{1
 
 " inline tag
