@@ -173,18 +173,18 @@ onoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
 " ==============================================================================
 " ultisnips {{{1
 
-let g:UltiSnipsExpandTrigger = '<Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" let g:UltiSnipsExpandTrigger = '<Tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 " ==============================================================================
 " html tag completion {{{1
 
 " inline tag
-inoremap <C-j> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
 
 " block tag
-inoremap <C-k> ><Esc>F<lyiwo</<C-r>"><Esc>O
+inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
 
 " ==============================================================================
 " turbo-charged dot {{{1
