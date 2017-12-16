@@ -109,13 +109,6 @@ nnoremap <Space>vm <C-w>\|
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
-" ultisnips {{{1
-
-" let g:UltiSnipsExpandTrigger = '<Tab>'
-" let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" ==============================================================================
 " html tag completion {{{1
 
 " inline tag
