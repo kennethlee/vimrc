@@ -28,6 +28,7 @@ set background=dark
 
 set laststatus=2
 
+" left
 set statusline=
 set statusline+=%#error#
 set statusline+=%m                              " 'error' flag for modified buff
@@ -40,8 +41,9 @@ set statusline+=%*
 set statusline+=%#statement#
 set statusline+=%{fxn#GitBranch()}%<            " show curr. branch if git repo
 set statusline+=%*
-
 set statusline+=%-F\                            " absolute filepath
+
+" right
 set statusline+=%=[%{&fileformat}:              " file format/encoding
 set statusline+=%{strwidth(&fenc)?&fenc:&enc}]
 set statusline+=%5(%c%)\                        " column number
