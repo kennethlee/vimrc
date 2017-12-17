@@ -118,17 +118,11 @@ nnoremap <silent><Space>fr :call autofxn#RenameFile()<CR>
 " ==============================================================================
 " <Space>t: find / grep {{{2
 
-nnoremap <Space>tr :find *
-nnoremap <Space>te :find ~/*
+nnoremap <silent><Space>tr :Files<CR>
+nnoremap <Space>te :Files ~/
 nnoremap <Space>tk :grep!<Space>
-nnoremap <Space>tn :find ~/Documents/notes/*
-nnoremap <Space>tj :find ~/Dropbox/notes/*
-nnoremap <Space>ta :find ~/Dropbox/apps/todo/*
-
-" find files recursively under the directory of the current file
-nnoremap <Space>F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap <Space>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap <Space>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <silent><Space>tn :Files ~/Documents/notes<CR>
+nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
 
 " ==============================================================================
 " <Space>v: general vim {{{2
