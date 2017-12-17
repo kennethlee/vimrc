@@ -35,7 +35,7 @@ set statusline+=%m                              " 'error' flag for modified buff
 set statusline+=%*
 
 set statusline+=%#question#
-set statusline+=%h%r%w                          " help, read-only, preview buff
+set statusline+=%r%h%w                          " help, read-only, preview buff
 set statusline+=%*
 
 set statusline+=%#statement#
