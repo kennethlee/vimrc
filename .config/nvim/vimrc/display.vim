@@ -31,11 +31,14 @@ set laststatus=2
 " left
 set statusline=
 set statusline+=%#error#
-set statusline+=%{&modified?'[+]':''}           " flag for modified buf
+set statusline+=%{&modified?'[+]':''}           " flag: modified buf
 set statusline+=%*
 
 set statusline+=%#question#
-set statusline+=%r%h%w                          " read-only, help, preview buf
+set statusline+=%r                              " flag: read-only
+set statusline+=%h                              " flag: help
+set statusline+=%q                              " flag: quickfix list
+set statusline+=%w                              " flag: preview buf
 set statusline+=%*
 
 set statusline+=%#statement#
