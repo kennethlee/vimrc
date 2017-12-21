@@ -47,10 +47,10 @@ set statusline+=%*
 set statusline+=%-F\                                  " absolute filepath
 
 " right
-set statusline+=%=[%{&fileformat}:                    " file format/encoding
-" set statusline+=%{strwidth(&fenc)?&fenc:&enc}]        " char encoding
-set statusline+=%{strwidth(&fenc)?&fenc:&enc}:        " char encoding
-set statusline+=%{&filetype!=#''?&filetype:'none'}]   " filetype
+set statusline+=%=[
+set statusline+=%{&fileformat}                        " file format/encoding
+set statusline+=\ %{strwidth(&fenc)?&fenc:&enc}       " char encoding
+set statusline+=]
 set statusline+=%5(%c%)\                              " column number
 
 " ==============================================================================
