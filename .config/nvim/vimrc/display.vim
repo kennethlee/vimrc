@@ -31,25 +31,27 @@ set laststatus=2
 " left
 set statusline=
 set statusline+=%#error#
-set statusline+=%{&modified?'[+]':''}           " flag: modified buf
+set statusline+=%{&modified?'[+]':''}                 " flag: modified buf
 set statusline+=%*
 
 set statusline+=%#question#
-set statusline+=%r                              " flag: read-only
-set statusline+=%h                              " flag: help
-set statusline+=%q                              " flag: quickfix list
-set statusline+=%w                              " flag: preview buf
+set statusline+=%r                                    " flag: read-only
+set statusline+=%h                                    " flag: help
+set statusline+=%q                                    " flag: quickfix list
+set statusline+=%w                                    " flag: preview buf
 set statusline+=%*
 
 set statusline+=%#statement#
-set statusline+=%{fxn#GitBranch()}%<            " show curr. branch if git repo
+set statusline+=%{fxn#GitBranch()}%<                  " show curr. branch
 set statusline+=%*
-set statusline+=%-F\                            " absolute filepath
+set statusline+=%-F\                                  " absolute filepath
 
 " right
-set statusline+=%=[%{&fileformat}:              " file format/encoding
-set statusline+=%{strwidth(&fenc)?&fenc:&enc}]
-set statusline+=%5(%c%)\                        " column number
+set statusline+=%=[%{&fileformat}:                    " file format/encoding
+" set statusline+=%{strwidth(&fenc)?&fenc:&enc}]        " char encoding
+set statusline+=%{strwidth(&fenc)?&fenc:&enc}:        " char encoding
+set statusline+=%{&filetype!=#''?&filetype:'none'}]   " filetype
+set statusline+=%5(%c%)\                              " column number
 
 " ==============================================================================
 " }}}1
