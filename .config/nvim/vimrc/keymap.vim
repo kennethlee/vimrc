@@ -156,6 +156,9 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " ==============================================================================
 " nav: buffer {{{2
 
+" close buffer without losing the split
+nnoremap <silent><Space>bd :bprevious<CR>:bdelete #<CR>
+
 " <Space><Space> to switch to the alternate buffer
 nnoremap <Space><Space> <C-^>
 
