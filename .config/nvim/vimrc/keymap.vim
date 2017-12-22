@@ -116,11 +116,12 @@ nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap <silent><Space>fr :call autofxn#RenameFile()<CR>
 
 " ==============================================================================
-" <Space>t: find / grep {{{2
+" <Space>t: find {{{2
 
 nnoremap <silent><Space>tr :Files<CR>
 nnoremap <Space>te :Files ~/
-nnoremap <Space>tk :grep!<Space>
+nnoremap <silent><Space>tl :BLines<CR>
+nnoremap <silent><Space>tk :Lines<CR>
 nnoremap <silent><Space>tn :Files ~/Documents/notes<CR>
 nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
 
