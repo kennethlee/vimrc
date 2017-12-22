@@ -10,7 +10,7 @@ let $FZF_DEFAULT_OPTS .= ' --no-height'
 highlight MatchParen ctermbg=gray guibg=gray
 
 " enable
-runtime macros/matchit.vim
+let loaded_matchit = 0
 
 " disable
 let g:loaded_netrwPlugin = 1
