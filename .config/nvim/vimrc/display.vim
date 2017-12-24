@@ -47,11 +47,20 @@ set statusline+=%*
 set statusline+=%-F\                                  " absolute filepath
 
 " right
-set statusline+=%=[
-set statusline+=%{&fileformat}                        " file format/encoding
-set statusline+=\ %{strwidth(&fenc)?&fenc:&enc}       " char encoding
-set statusline+=]
-set statusline+=%5(%c%)\                              " column number
+set statusline+=%=
+set statusline+=%{strlen(&ft)?'['.&ft.']':''}         " show filetype
+
+" display warning if file encoding != utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+" display warning if fileformat != unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+set statusline+=%6(%c%)\                              " column number
 
 " ==============================================================================
 " }}}1
