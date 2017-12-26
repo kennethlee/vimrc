@@ -63,6 +63,12 @@ inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
 inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
 
 " ==============================================================================
+" smarter tab {{{1
+
+inoremap <silent><expr> <Tab> autofxn#InsertTabWrapper()
+inoremap <silent><S-Tab> <C-n>
+
+" ==============================================================================
 " auto-closing brackets {{{1
 
 inoremap (<CR> (<CR>)<Esc>O
