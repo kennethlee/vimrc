@@ -64,7 +64,8 @@ let g:sh_noisk = 1
 " window behavior {{{1
 
 set noequalalways
-set winminwidth=15 winwidth=90
+set winwidth=90
+set winminwidth=40
 set splitright splitbelow
 
 " ==============================================================================
