@@ -27,6 +27,7 @@ nnoremap U <C-r>
 
 " 'jk' exits Insert Mode
 inoremap jk <Esc>
+tnoremap jk <C-\><C-n>
 
 " map '6' to '^' to avoid having to press shift
 nnoremap 6 ^
