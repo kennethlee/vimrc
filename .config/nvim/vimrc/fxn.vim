@@ -48,7 +48,7 @@ function! fxn#GitBranch() abort
     endif
 
     if branch != ''
-      return 'GIT(' . substitute(branch, '\n', '', 'g') . ')'
+      return '  GIT(' . substitute(branch, '\n', '', 'g') . ') '
     endif
     return ''
   else
