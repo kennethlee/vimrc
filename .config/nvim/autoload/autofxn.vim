@@ -32,6 +32,18 @@ augroup gitbranch
 augroup END
 
 " ==============================================================================
+" InsertTabWrapper() {{{1
+
+function! autofxn#InsertTabWrapper() abort
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<Tab>"
+  else
+    return "\<C-p>"
+  endif
+endfunction
+
+" ==============================================================================
 " MarkdownLevel() {{{1
 
 " fold at '#'
@@ -130,18 +142,6 @@ function! autofxn#VimFoldText() abort
   let expansionString = repeat(".", w - strwidth(foldSizeStr) - strwidth(line)
     \- strwidth(foldLevelStr) - strwidth(foldPercentage))
   return foldLevelStr . line . expansionString . foldSizeStr. foldPercentage
-endfunction
-
-" ==============================================================================
-" InsertTabWrapper() {{{1
-
-function! autofxn#InsertTabWrapper() abort
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<Tab>"
-  else
-    return "\<C-p>"
-  endif
 endfunction
 
 " ==============================================================================
