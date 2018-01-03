@@ -88,14 +88,5 @@ function! fxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks) abort
 endfunction
 
 " ==============================================================================
-" WipeReg {{{1
-
-" `:WipeReg` to clear registers
-command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), [])
-  \| endfor
-
-" call `WipeReg` on startup
-autocmd VimEnter * WipeReg
-
-" ==============================================================================
 " }}}1
+

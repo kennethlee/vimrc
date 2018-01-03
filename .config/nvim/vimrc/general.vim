@@ -82,6 +82,16 @@ if executable('rg')
 endif
 
 " ==============================================================================
+" registers {{{1
+
+" `:WipeReg` to clear registers
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), [])
+  \| endfor
+
+" call `WipeReg` on startup
+autocmd VimEnter * WipeReg
+
+" ==============================================================================
 " completion {{{1
 
 " command mode tab completion
