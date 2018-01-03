@@ -66,7 +66,7 @@ inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
 " ==============================================================================
 " smarter tab {{{1
 
-inoremap <silent><expr> <Tab> autofxn#InsertTabWrapper()
+inoremap <silent><expr> <Tab> fxn#InsertTabWrapper()
 inoremap <silent><S-Tab> <C-n>
 
 " ==============================================================================
@@ -120,7 +120,7 @@ nnoremap <Space>fM :make! .<CR>
 nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " rename current file
-nnoremap <silent><Space>fr :call autofxn#RenameFile()<CR>
+nnoremap <silent><Space>fr :call fxn#RenameFile()<CR>
 
 " ==============================================================================
 " <Space>t: find {{{2
@@ -182,7 +182,7 @@ nnoremap <silent><M-l> :bnext<CR>
 " nav: windows {{{2
 
 " toggle quickfix window
-nnoremap <silent><Space>q :call autofxn#QuickfixToggle()<CR>
+nnoremap <silent><Space>q :call fxn#QuickfixToggle()<CR>
 
 " cycle through items in the quickfix list
 nnoremap <silent><M-k> :cprevious<CR>
@@ -199,12 +199,12 @@ nnoremap <silent>- :Dirvish %:p:h<CR>
 nnoremap <Space>fd :Dirvish ~/
 
 " jump to/from lines with same indentation level
-nnoremap <silent>_ :call autofxn#NextIndent(0, 0, 0, 1)<CR>
-nnoremap <silent>+ :call autofxn#NextIndent(0, 1, 0, 1)<CR>
-vnoremap <silent>_ <Esc>:call autofxn#NextIndent(0, 0, 0, 1)<CR>m'gv''
-vnoremap <silent>+ <Esc>:call autofxn#NextIndent(0, 1, 0, 1)<CR>m'gv''
-onoremap <silent>_ :call autofxn#NextIndent(0, 0, 0, 1)<CR>
-onoremap <silent>+ :call autofxn#NextIndent(0, 1, 0, 1)<CR>
+nnoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
+nnoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
+vnoremap <silent>_ <Esc>:call fxn#NextIndent(0, 0, 0, 1)<CR>m'gv''
+vnoremap <silent>+ <Esc>:call fxn#NextIndent(0, 1, 0, 1)<CR>m'gv''
+onoremap <silent>_ :call fxn#NextIndent(0, 0, 0, 1)<CR>
+onoremap <silent>+ :call fxn#NextIndent(0, 1, 0, 1)<CR>
 
 " ==============================================================================
 " }}}1

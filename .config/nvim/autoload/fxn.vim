@@ -1,7 +1,7 @@
 " GitBranch() {{{1
 
 " show git branch of current file if it's under version control
-function! autofxn#GitBranch() abort
+function! fxn#GitBranch() abort
   if &buftype != 'terminal'
     " stores cwd
     let lastdir = getcwd()
@@ -28,13 +28,13 @@ endfunction
 
 augroup gitbranch
   autocmd!
-  autocmd BufNewFile,BufRead * let b:gitbranch = autofxn#GitBranch()
+  autocmd BufNewFile,BufRead * let b:gitbranch = fxn#GitBranch()
 augroup END
 
 " ==============================================================================
 " InsertTabWrapper() {{{1
 
-function! autofxn#InsertTabWrapper() abort
+function! fxn#InsertTabWrapper() abort
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
     return "\<Tab>"
@@ -47,7 +47,7 @@ endfunction
 " MarkdownLevel() {{{1
 
 " fold at '#'
-function! autofxn#MarkdownLevel() abort
+function! fxn#MarkdownLevel() abort
   let h = matchstr(getline(v:lnum), '^#\+')
   if empty(h)
     return "="
@@ -60,7 +60,7 @@ endfunction
 " NextIndent() {{{1
 
 " jump to previous / next line with same level of indentation as current
-function! autofxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks) abort
+function! fxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks) abort
   let line = line('.')
   let column = col('.')
   let lastline = line('$')
@@ -87,7 +87,7 @@ endfunction
 
 let g:quickfix_is_open = 0
 
-function! autofxn#QuickfixToggle() abort
+function! fxn#QuickfixToggle() abort
   if g:quickfix_is_open
     cclose
     let g:quickfix_is_open = 0
@@ -103,7 +103,7 @@ endfunction
 " RenameFile() {{{1
 
 " rename current file
-function! autofxn#RenameFile() abort
+function! fxn#RenameFile() abort
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
 
@@ -118,7 +118,7 @@ endfunction
 " VimFoldText() {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
-function! autofxn#VimFoldText() abort
+function! fxn#VimFoldText() abort
   let fs = v:foldstart
 
   while getline(fs) =~ '^\s*$'

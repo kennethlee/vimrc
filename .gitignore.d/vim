@@ -7,7 +7,7 @@
 
 !/.config/nvim/
 !/.config/nvim/autoload
-!/.config/nvim/autoload/autofxn.vim
+!/.config/nvim/autoload/fxn.vim
 
 !/.config/nvim/after/
 !/.config/nvim/after/ftplugin/
