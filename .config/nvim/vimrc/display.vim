@@ -43,7 +43,9 @@ set statusline+=%*
 set statusline+=%#statement#
 set statusline+=%{fxn#GitBranch()}%<                  " show curr. branch
 set statusline+=%*
-set statusline+=%-F\                                  " absolute filepath
+
+" center
+set statusline+=\ %-F\                                " absolute filepath
 
 " right
 set statusline+=%=
