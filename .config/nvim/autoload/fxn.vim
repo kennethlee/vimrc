@@ -2,7 +2,7 @@
 
 " show git branch of current file if it's under version control
 function! fxn#GitBranch() abort
-  if &buftype != 'terminal'
+  if &buftype != 'terminal' && &filetype != 'diff'
     " stores cwd
     let lastdir = getcwd()
     " temporarily changes to dir containing the buffer
