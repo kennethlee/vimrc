@@ -34,14 +34,14 @@ set statusline+=%#error#
 set statusline+=%{&modified?'[+]':''}                 " flag: modified buf
 set statusline+=%*
 
+set statusline+=%#statement#
+set statusline+=%{fxn#GitBranch()}%<                  " show curr. branch
+set statusline+=%*
+
 set statusline+=%#question#
 set statusline+=%r                                    " flag: read-only
 set statusline+=%h                                    " flag: help
 set statusline+=%w                                    " flag: preview buf
-set statusline+=%*
-
-set statusline+=%#statement#
-set statusline+=%{fxn#GitBranch()}%<                  " show curr. branch
 set statusline+=%*
 
 " center
