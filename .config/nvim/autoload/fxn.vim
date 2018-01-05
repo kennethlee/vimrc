@@ -2,7 +2,9 @@
 
 " show git branch of current file if it's under version control
 function! fxn#GitBranch() abort
-  if &buftype != 'terminal' && &buftype != 'nofile'
+  if &buftype == 'terminal' || &buftype == 'nofile'
+    return ''
+  else
     " stores cwd
     let lastdir = getcwd()
     " temporarily changes to dir containing the buffer
@@ -20,8 +22,6 @@ function! fxn#GitBranch() abort
     if branch != ''
       return '[Git(' . substitute(branch, '\n', '', 'g') . ')]'
     endif
-    return ''
-  else
     return ''
   end
 endfunction
