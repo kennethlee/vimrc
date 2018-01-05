@@ -28,7 +28,11 @@ set nobackup noswapfile
 set autoread
 
 " see ':help fold-options'
-set foldenable foldlevel=0 foldcolumn=0 foldnestmax=6
+set foldenable
+set foldmethod=indent
+set foldlevel=0
+set foldnestmax=6
+set foldcolumn=0
 set foldtext=fxn#VimFoldText()
 
 " jump over folds without opening them
