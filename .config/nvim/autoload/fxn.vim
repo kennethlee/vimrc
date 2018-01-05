@@ -2,7 +2,7 @@
 
 " show git branch of current file if it's under version control
 function! fxn#GitBranch() abort
-  if &buftype == 'terminal' || &buftype == 'nofile'
+  if &buftype == 'terminal' || &buftype == 'nofile' || &filetype == 'qf'
     return ''
   else
     " stores cwd
