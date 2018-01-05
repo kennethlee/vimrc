@@ -49,7 +49,7 @@ set statusline+=\ %-F\                                " absolute filepath
 
 " right
 set statusline+=%=
-set statusline+=%{strlen(&ft)?'['.&ft.']':''}         " show filetype
+set statusline+=%y                                    " show filetype
 
 " display warning if file encoding != utf-8
 set statusline+=%#warningmsg#
