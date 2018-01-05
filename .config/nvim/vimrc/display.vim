@@ -35,7 +35,7 @@ set statusline+=%{&modified?'[+]':''}                 " flag: modified buf
 set statusline+=%*
 
 set statusline+=%#statement#
-set statusline+=%{fxn#GitBranch()}%<                  " show curr. branch
+set statusline+=%{fxn#StatuslineGitBranch()}%<        " show curr. branch
 set statusline+=%*
 
 set statusline+=%#question#
