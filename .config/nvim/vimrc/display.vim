@@ -10,13 +10,11 @@ set number numberwidth=5
 syntax on
 set list listchars=tab:▸\ ,eol:¬,trail:@
 
-" Colorschemes usually reset all highlighting, including your own, when they
-" are sourced. Override the desired highlights in an autocommand that is
-" executed whenever a colorscheme is sourced.
-augroup extra_whitespace
+augroup highlight_whitespace
   autocmd!
-  autocmd ColorScheme * highlight ExtraWhitespace ctermfg=red guifg=red
-  autocmd ColorScheme * match ExtraWhitespace /\s\+$\|\t/
+  autocmd WinEnter,BufEnter * call clearmatches()
+    \| call matchadd('ErrorMsg', '\t', 100)
+    \| call matchadd('ErrorMsg', '\s\+$', 100)
 augroup END
 
 " colorscheme
