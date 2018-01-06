@@ -109,9 +109,34 @@ function! fxn#StatuslineGitBranch() abort
   end
 endfunction
 
-augroup gitbranch
+augroup git_branch
   autocmd!
   autocmd BufNewFile,BufRead * let b:gitbranch = fxn#StatuslineGitBranch()
+augroup END
+
+" ==============================================================================
+" StatuslineTabWarning() {{{1
+
+function! fxn#StatuslineTabWarning() abort
+  if !exists("b:statusline_tab_warning")
+    let tabs = search('^\t', 'nw') != 0
+    let spaces = search('^ ', 'nw') != 0
+
+    if tabs && spaces
+      let b:statusline_tab_warning =  '[mixed-indenting]'
+    elseif (spaces && !&expandtab) || (tabs && &expandtab)
+      let b:statusline_tab_warning = '[expandtab]'
+    else
+      let b:statusline_tab_warning = ''
+    endif
+  endif
+
+  return b:statusline_tab_warning
+endfunction
+
+augroup tab_warning
+  autocmd!
+  autocmd BufWritePost * unlet! b:statusline_tab_warning
 augroup END
 
 " ==============================================================================

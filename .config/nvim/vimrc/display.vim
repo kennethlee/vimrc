@@ -49,6 +49,10 @@ set statusline+=\ %-F\                                " absolute filepath
 set statusline+=%=
 set statusline+=%y                                    " show filetype
 
+set statusline+=%#warningmsg#
+set statusline+=%{fxn#StatuslineTabWarning()}         " incorrect indent warning
+set statusline+=%*
+
 " display warning if file encoding != utf-8
 set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
