@@ -10,11 +10,13 @@ set number numberwidth=5
 syntax on
 set list listchars=tab:▸\ ,eol:¬,trail:@
 
+highlight link UnwantedWhitespace WarningMsg
+
 augroup highlight_whitespace
   autocmd!
   autocmd WinEnter,BufEnter * call clearmatches()
-    \| call matchadd('ErrorMsg', '\t', 100)
-    \| call matchadd('ErrorMsg', '\s\+$', 100)
+    \| call matchadd('UnwantedWhitespace', '\s\+$', 100)
+    \| call matchadd('UnwantedWhitespace', '\t', 100)
 augroup END
 
 " colorscheme
