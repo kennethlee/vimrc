@@ -44,7 +44,9 @@ set foldopen-=block
 set clipboard+=unnamedplus
 
 " gb: fix slow O inserts
-set timeout timeoutlen=500 ttimeoutlen=100
+set timeout
+set timeoutlen=500
+set ttimeoutlen=100
 
 " wrap long lines
 set wrap linebreak
@@ -53,7 +55,10 @@ set wrap linebreak
 set backspace=indent,eol,start
 
 " default tab settings
-set softtabstop=2 shiftwidth=2 expandtab
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " gb: insert only one space when joining lines that contain sentence-terminating
 " punctuation like `.`.
@@ -75,7 +80,10 @@ set splitright splitbelow
 " ==============================================================================
 " search / find {{{1
 
-set incsearch ignorecase smartcase hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 
 " incremental substitution
 set inccommand=nosplit
@@ -89,7 +97,8 @@ endif
 " registers {{{1
 
 " `:WipeReg` to clear registers
-command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), [])
+command! WipeReg for i in range(34,122)
+  \| silent! call setreg(nr2char(i), [])
   \| endfor
 
 " call `WipeReg` on quit
