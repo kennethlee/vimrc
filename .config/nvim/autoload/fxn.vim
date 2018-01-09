@@ -134,9 +134,30 @@ function! fxn#StatuslineTabWarning() abort
   return b:statusline_tab_warning
 endfunction
 
-augroup tab_warning
+augroup warning_tab
   autocmd!
   autocmd BufWritePost * unlet! b:statusline_tab_warning
+augroup END
+
+" ==============================================================================
+" StatuslineTrailingSpaceWarning() {{{1
+
+"return '[\s]' if trailing white space is detected
+function! fxn#StatuslineTrailingSpaceWarning() abort
+  if !exists("b:statusline_trailing_space_warning")
+    if search('\s\+$', 'nw') != 0
+      let b:statusline_trailing_space_warning = '[\s]'
+    else
+      let b:statusline_trailing_space_warning = ''
+    endif
+  endif
+  return b:statusline_trailing_space_warning
+endfunction
+
+"recalculate the trailing whitespace warning when idle, and after saving
+augroup warning_trailing
+  autocmd!
+  autocmd CursorHold,BufWritePost * unlet! b:statusline_trailing_space_warning
 augroup END
 
 " ==============================================================================
