@@ -113,18 +113,5 @@ set wildmode=list:longest,full
 set wildignorecase
 
 " ==============================================================================
-" wildignore {{{1
-
-" ignore when using :find
-set wildignore+=*.avi,*.m3u,*.mp3,*.mp4,*.mpg,*.wmv
-set wildignore+=*.bmp,*.gif,*.ico,*.jpeg,*.jpg,*.png
-set wildignore+=*.doc,*.numbers,*.pages,*.pdf
-set wildignore+=*.dmg,*.gz,*.rar,*.tar.*,*.tbz,*.zip
-set wildignore+=*/tmp/*,*.db,*DS_Store,*.log
-set wildignore+=*.so,*.sw?
-set wildignore+=*/.git/**/*
-" set wildignore+=*/node_modules/*
-
-" ==============================================================================
 " }}}1
 
