@@ -42,40 +42,6 @@ function! fxn#RenameFile() abort
 endfunction
 
 " ==============================================================================
-" StatuslineGitBranch() {{{1
-
-" show git branch of current file if it's under version control
-function! fxn#StatuslineGitBranch() abort
-  if &buftype == 'terminal' || &buftype == 'nofile' || &filetype == 'qf'
-    return ''
-  else
-    " stores cwd
-    let lastdir = getcwd()
-    " temporarily changes to dir containing the buffer
-    let bufdir = expand('%:p:h')
-    if bufdir != lastdir
-      lcd `=bufdir`
-    endif
-    " retrieves git branch after changing dir...
-    let branch = system("git branch --no-color 2> /dev/null | cut -d' ' -f2")
-    " then changes back
-    if bufdir != lastdir
-      lcd `=lastdir`
-    endif
-
-    if branch != ''
-      return '[Git(' . substitute(branch, '\n', '', 'g') . ')]'
-    endif
-    return ''
-  end
-endfunction
-
-augroup git_branch
-  autocmd!
-  autocmd BufNewFile,BufRead * let b:gitbranch = fxn#StatuslineGitBranch()
-augroup END
-
-" ==============================================================================
 " StatuslineWarningWhiteSpace() {{{1
 
 function! fxn#StatuslineWarningWhitespace() abort
