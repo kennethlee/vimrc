@@ -23,32 +23,6 @@ function! fxn#MarkdownLevel() abort
 endfunction
 
 " ==============================================================================
-" NextIndent() {{{1
-
-" jump to previous / next line with same level of indentation as current
-function! fxn#NextIndent(exclusive, fwd, lowerlevel, skipblanks) abort
-  let line = line('.')
-  let column = col('.')
-  let lastline = line('$')
-  let indent = indent(line)
-  let stepvalue = a:fwd ? 1 : -1
-  while (line > 0 && line <= lastline)
-    let line = line + stepvalue
-    if ( ! a:lowerlevel && indent(line) == indent ||
-          \ a:lowerlevel && indent(line) < indent)
-      if (! a:skipblanks || strlen(getline(line)) > 0)
-        if (a:exclusive)
-          let line = line - stepvalue
-        endif
-        exe line
-        exe "normal " column . "|"
-        return
-      endif
-    endif
-  endwhile
-endfunction
-
-" ==============================================================================
 " QuickfixToggle() {{{1
 
 let g:quickfix_is_open = 0
