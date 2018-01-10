@@ -70,17 +70,6 @@ inoremap <silent><expr> <Tab> fxn#InsertTabWrapper()
 inoremap <silent><S-Tab> <C-n>
 
 " ==============================================================================
-" auto-closing brackets {{{1
-
-inoremap (<CR> (<CR>)<Esc>O
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {; {<CR>};<Esc>O
-inoremap {, {<CR>},<Esc>O
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [; [<CR>];<Esc>O
-inoremap [, [<CR>],<Esc>O
-
-" ==============================================================================
 " turbo-charged dot {{{1
 
 " 'cN/cn' on current word, change, dot repeat, be amazed
