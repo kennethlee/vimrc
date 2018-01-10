@@ -51,11 +51,7 @@ set statusline+=%=
 set statusline+=%y                                    " show filetype
 
 set statusline+=%#warningmsg#
-set statusline+=%{fxn#StatuslineTabWarning()}         " incorrect indent warning
-set statusline+=%*
-
-set statusline+=%#warningmsg#
-set statusline+=%{fxn#StatuslineTrailingSpaceWarning()}
+set statusline+=%{fxn#StatuslineWarningWhitespace()}
 set statusline+=%*
 
 " display warning if file encoding != utf-8

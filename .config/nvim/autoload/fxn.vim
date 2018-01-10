@@ -76,52 +76,32 @@ augroup git_branch
 augroup END
 
 " ==============================================================================
-" StatuslineTabWarning() {{{1
+" StatuslineWarningWhiteSpace() {{{1
 
-function! fxn#StatuslineTabWarning() abort
-  if !exists("b:statusline_tab_warning")
-    let tabs = search('^\t', 'nw') != 0
-    let spaces = search('^ ', 'nw') != 0
+function! fxn#StatuslineWarningWhitespace() abort
+  if !exists("b:statusline_warning_whitespace")
+    let tabs = search('\t', 'nw') != 0
+    let spaces = search(' \+$', 'nw') != 0
 
-    if tabs && spaces
-      let b:statusline_tab_warning =  '[mixed-indenting]'
-    elseif (spaces && !&expandtab) || (tabs && &expandtab)
-      let b:statusline_tab_warning = '[expandtab]'
+    if (tabs && spaces)
+      let b:statusline_warning_whitespace = '[\t \s]'
+    elseif tabs
+      let b:statusline_warning_whitespace = '[\t]'
+    elseif spaces
+      let b:statusline_warning_whitespace = '[\s]'
     else
-      let b:statusline_tab_warning = ''
+      let b:statusline_warning_whitespace = ''
     endif
   endif
 
-  return b:statusline_tab_warning
+  return b:statusline_warning_whitespace
 endfunction
 
-augroup warning_tab
+augroup warning_whitespace
   autocmd!
-  autocmd BufWritePost * unlet! b:statusline_tab_warning
+  autocmd BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
 augroup END
 
-" ==============================================================================
-" StatuslineTrailingSpaceWarning() {{{1
-
-"return '[\s]' if trailing white space is detected
-function! fxn#StatuslineTrailingSpaceWarning() abort
-  if !exists("b:statusline_trailing_space_warning")
-    if search('\s\+$', 'nw') != 0
-      let b:statusline_trailing_space_warning = '[\s]'
-    else
-      let b:statusline_trailing_space_warning = ''
-    endif
-  endif
-  return b:statusline_trailing_space_warning
-endfunction
-
-"recalculate the trailing whitespace warning when idle, and after saving
-augroup warning_trailing
-  autocmd!
-  autocmd CursorHold,BufWritePost * unlet! b:statusline_trailing_space_warning
-augroup END
-
-" ==============================================================================
 " VimFoldText() {{{1
 
 " better looking folds; right-alignment of line numbers + percentage of file
