@@ -162,6 +162,7 @@ nnoremap <Space><Space> <C-^>
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap <Space>bb :ls<CR>:b *
 nnoremap <Space>bs :ls<CR>:sbuffer *
+nnoremap <Space>bv :ls<CR>:vert sbuffer *
 
 " cycle through buffers
 nnoremap <silent><M-h> :bprevious<CR>
