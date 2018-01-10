@@ -10,19 +10,6 @@ function! fxn#InsertTabWrapper() abort
 endfunction
 
 " ==============================================================================
-" MarkdownLevel() {{{1
-
-" fold at '#'
-function! fxn#MarkdownLevel() abort
-  let h = matchstr(getline(v:lnum), '^#\+')
-  if empty(h)
-    return "="
-  else
-    return ">" . len(h)
-  endif
-endfunction
-
-" ==============================================================================
 " QuickfixToggle() {{{1
 
 let g:quickfix_is_open = 0
