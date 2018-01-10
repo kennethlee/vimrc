@@ -47,10 +47,10 @@ endfunction
 function! fxn#StatuslineWarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
     let tabs = search('\t', 'nw') != 0
-    let spaces = search(' \+$', 'nw') != 0
+    let spaces = search(' \+$\| \+\ze\t', 'nw') != 0
 
     if (tabs && spaces)
-      let b:statusline_warning_whitespace = '[\t \s]'
+      let b:statusline_warning_whitespace = '[\t\|\s]'
     elseif tabs
       let b:statusline_warning_whitespace = '[\t]'
     elseif spaces
