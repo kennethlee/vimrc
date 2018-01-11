@@ -11,7 +11,7 @@ let $FZF_DEFAULT_OPTS .= ' --no-height'
 highlight! link MatchParen IncSearch
 
 " enable
-let loaded_matchit = 0
+runtime macros/matchit.vim
 
 " disable
 let g:loaded_netrwPlugin = 1
