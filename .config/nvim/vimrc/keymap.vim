@@ -170,12 +170,5 @@ nnoremap <silent><M-j> :cnext<CR>
 nnoremap <silent><Space>w :pclose<CR>
 
 " ==============================================================================
-" nav: misc. {{{2
-
-" dirvish
-nnoremap <silent>- :Dirvish %:p:h<CR>
-nnoremap <Space>fd :Dirvish ~/
-
-" ==============================================================================
 " }}}1
 
