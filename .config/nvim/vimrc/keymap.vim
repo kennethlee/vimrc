@@ -45,6 +45,9 @@ nnoremap J mzJ`z
 " 'gV' to select last changed block
 nnoremap gV `[v`]
 
+" forbid deletion via x from updating registers
+noremap x "_x
+
 " 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 
@@ -84,21 +87,6 @@ vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
 " <Space> {{{1
-" <Space>c: change {{{2
-
-" use space key before change/delete command to delete without yanking
-" also forbid deletion via x from updating registers
-nnoremap <Space>C "_C
-xnoremap <Space>C "_C
-nnoremap <Space>c "_c
-xnoremap <Space>c "_c
-nnoremap <Space>D "_D
-xnoremap <Space>D "_D
-nnoremap <Space>d "_d
-xnoremap <Space>d "_d
-noremap x "_x
-
-" ==============================================================================
 " <Space>f: file ops {{{2
 
 " run make
