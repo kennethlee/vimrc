@@ -1,7 +1,7 @@
 " folding
 setlocal foldenable
-setlocal foldmethod=marker foldmarker={,}
+setlocal foldmethod=indent
 setlocal foldlevel=0
-setlocal foldnestmax=6
+setlocal foldnestmax=4
 setlocal foldcolumn=0
 
