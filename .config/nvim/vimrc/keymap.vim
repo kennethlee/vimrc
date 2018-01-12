@@ -1,26 +1,8 @@
-" disable {{{1
+" misc. {{{1
 
 nnoremap <Space> <Nop>
 
-" disable arrow keys
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-imap <Left> <Nop>
-imap <Right> <Nop>
-imap <Up> <Nop>
-imap <Down> <Nop>
-
-" hide mouse, disable it from triggering Visual Mode, page up/down
 set mousehide mouse=nicr
-map <MouseUp> <Nop>
-map <MouseDown> <Nop>
-map! <MouseUp> <Nop>
-map! <MouseDown> <Nop>
-
-" ==============================================================================
-" misc. {{{1
 
 " redo
 nnoremap U <C-r>
