@@ -8,7 +8,7 @@ let $FZF_DEFAULT_OPTS .= ' --no-height'
 " vim's standard plugins {{{1
 
 " pi_paren
-highlight! link MatchParen IncSearch
+" highlight! link MatchParen IncSearch
 
 " enable
 runtime macros/matchit.vim
