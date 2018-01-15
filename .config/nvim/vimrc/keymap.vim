@@ -94,9 +94,6 @@ nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
 " ==============================================================================
 " <Space>v: general vim {{{2
 
-" " maximize width of current window
-" nnoremap <Space>vm <C-w>\|
-
 " open .vimrc
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
