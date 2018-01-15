@@ -71,9 +71,6 @@ vnoremap <expr> cn g:mc . "``cgn"
 " <Space> {{{1
 " <Space>f: file ops {{{2
 
-" strip whitespace
-nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
-
 " rename current file
 nnoremap <silent><Space>fr :call fxn#RenameFile()<CR>
 
