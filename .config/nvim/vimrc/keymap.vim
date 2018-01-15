@@ -94,33 +94,14 @@ nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
 " ==============================================================================
 " <Space>v: general vim {{{2
 
-" maximize width of current window
-nnoremap <Space>vm <C-w>\|
+" " maximize width of current window
+" nnoremap <Space>vm <C-w>\|
 
 " open .vimrc
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " ==============================================================================
 " navigation {{{1
-" nav: splits {{{2
-
-" <C-h/j/k/l> for window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-vnoremap <C-h> <C-n><C-w>h
-vnoremap <C-j> <C-n><C-w>j
-vnoremap <C-k> <C-n><C-w>k
-vnoremap <C-l> <C-n><C-w>l
-
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-
-" ==============================================================================
 " nav: buffer {{{2
 
 " close buffer without losing the split
