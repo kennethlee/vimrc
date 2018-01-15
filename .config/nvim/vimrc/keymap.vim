@@ -71,10 +71,6 @@ vnoremap <expr> cn g:mc . "``cgn"
 " <Space> {{{1
 " <Space>f: file ops {{{2
 
-" run make
-nnoremap <Space>fm :make! %<CR>
-nnoremap <Space>fM :make! .<CR>
-
 " strip whitespace
 nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
