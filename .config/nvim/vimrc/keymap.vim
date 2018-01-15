@@ -113,7 +113,7 @@ nnoremap <silent><M-l> :bnext<CR>
 " nav: windows {{{2
 
 " toggle quickfix window
-nnoremap <silent><Space>q :call fxn#QuickfixToggle()<CR>
+nnoremap <silent><Space>q :call fxn#ToggleQuickfix()<CR>
 
 " cycle through items in the quickfix list
 nnoremap <silent><M-k> :cprevious<CR>

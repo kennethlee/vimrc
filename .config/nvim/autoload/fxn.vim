@@ -10,19 +10,30 @@ function! fxn#InsertTabWrapper() abort
 endfunction
 
 " ==============================================================================
-" QuickfixToggle() {{{1
+" ToggleQuickfix() {{{1
 
-let g:quickfix_is_open = 0
+function! GetBufferList() abort
+  redir =>buflist
+  silent! ls
+  redir END
+  return buflist
+endfunction
 
-function! fxn#QuickfixToggle() abort
-  if g:quickfix_is_open
+function! BufferIsOpen(bufname) abort
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      return 1
+    endif
+  endfor
+  return 0
+endfunction
+
+function! fxn#ToggleQuickfix() abort
+  if BufferIsOpen("Quickfix List")
     cclose
-    let g:quickfix_is_open = 0
-    execute g:quickfix_return_to_window . "wincmd w"
   else
-    let g:quickfix_return_to_window = winnr()
     copen
-    let g:quickfix_is_open = 1
   endif
 endfunction
 
