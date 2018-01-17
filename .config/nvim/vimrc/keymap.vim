@@ -11,9 +11,6 @@ nnoremap U <C-r>
 inoremap jk <Esc>
 tnoremap jk <C-\><C-n>
 
-" map '6' to '^' to avoid having to press shift
-nnoremap 6 ^
-
 " 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
@@ -24,17 +21,11 @@ xnoremap zz zf
 " keep cursor in place after joining lines
 nnoremap J mzJ`z
 
-" 'gV' to select last changed block
-nnoremap gV `[v`]
-
 " forbid deletion via x from updating registers
 noremap x "_x
 
 " 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
 inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
-
-" so natural
-nnoremap <CR> :
 
 " clear highlighting from previous search
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
@@ -79,8 +70,6 @@ nnoremap <silent><Space>fr :call fxn#RenameFile()<CR>
 
 nnoremap <silent><Space>tr :Files<CR>
 nnoremap <Space>te :Files ~/
-nnoremap <silent><Space>tl :BLines<CR>
-nnoremap <silent><Space>tk :Lines<CR>
 nnoremap <silent><Space>tn :Files ~/Documents/notes<CR>
 nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
 
