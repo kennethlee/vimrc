@@ -19,9 +19,7 @@ augroup highlight_whitespace
     \| call matchadd('UnwantedWhitespace', '\t', 100)
 augroup END
 
-" colorscheme
 colorscheme base16-eighties
-set background=dark
 
 " ==============================================================================
 " statusline {{{1
