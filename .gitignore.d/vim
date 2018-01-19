@@ -24,7 +24,14 @@
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
 
-!/.config/nvim/
+!/.config/nvim/colors
+!/.config/nvim/colors/acme.vim
+
+!/.config/nvim/ftdetect
+!/.config/nvim/ftdetect/eruby.vim
+!/.config/nvim/ftdetect/jsx.vim
+!/.config/nvim/ftdetect/markdown.vim
+
 !/.config/nvim/indent/
 !/.config/nvim/indent/c.vim
 !/.config/nvim/indent/css.vim
@@ -37,11 +44,6 @@
 !/.config/nvim/indent/ruby.vim
 !/.config/nvim/indent/scss.vim
 !/.config/nvim/indent/vim.vim
-
-!/.config/nvim/ftdetect
-!/.config/nvim/ftdetect/eruby.vim
-!/.config/nvim/ftdetect/jsx.vim
-!/.config/nvim/ftdetect/markdown.vim
 
 !/.config/nvim/vimrc
 !/.config/nvim/vimrc/display.vim
