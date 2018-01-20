@@ -27,13 +27,8 @@ set nobackup noswapfile
 " automatically reload file if it has changed outside of vim
 set autoread
 
-" see ':help fold-options'
-set foldenable
-set foldmethod=indent
-set foldlevel=0
-set foldnestmax=6
-set foldcolumn=0
-set foldtext=fxn#VimFoldText()
+set foldmethod=manual
+set nofoldenable
 
 " jump over folds without opening them
 set foldopen-=block

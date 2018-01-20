@@ -1,10 +1,3 @@
-" folding
-setlocal foldenable
-setlocal foldmethod=indent
-setlocal foldlevel=0
-setlocal foldnestmax=2
-setlocal foldcolumn=0
-
 " misc
 setlocal colorcolumn=81
 
