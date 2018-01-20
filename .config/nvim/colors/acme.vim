@@ -3,17 +3,17 @@ highlight clear
 " for cterm, 'black' might get overwritten by the terminal emulator, so we use
 " 232 (#080808), which is close enough.
 
-highlight! Normal term=NONE cterm=NONE ctermfg=black ctermbg=230 gui=NONE guifg=#000000 guibg=#ffffd7
-highlight! NonText term=NONE cterm=NONE ctermfg=136 ctermbg=NONE gui=NONE guifg=#af8700 guibg=NONE
+highlight! Normal guibg=#ffffd7 guifg=#000000 gui=NONE ctermbg=230 ctermfg=black cterm=NONE
+highlight! NonText guibg=NONE guifg=#af8700 gui=NONE ctermbg=NONE ctermfg=136 cterm=NONE
 highlight! StatusLine guibg=#aeeeee guifg=#000000 gui=NONE ctermbg=159 ctermfg=232 cterm=NONE
 highlight! StatusLineNC guibg=#eaffff guifg=#000000 gui=NONE ctermbg=194 ctermfg=232 cterm=NONE
 highlight! WildMenu guibg=#000000 guifg=#eaffff gui=NONE ctermbg=black ctermfg=159 cterm=NONE
 highlight! VertSplit guibg=#ffffea guifg=#000000 gui=NONE ctermbg=159 ctermfg=232 cterm=NONE
-highlight! Folded guibg=#cccc7c guifg=fg gui=italic ctermbg=187 ctermfg=fg cterm=italic
-highlight! FoldColumn guibg=#fcfcce guifg=fg ctermbg=229 ctermfg=fg
+highlight! Folded guibg=NONE guifg=#585858 gui=italic ctermbg=NONE ctermfg=240 cterm=italic
+highlight! FoldColumn guibg=#fcfcce guifg=fg gui=NONE ctermbg=229 ctermfg=fg cterm=NONE
 highlight! Conceal guibg=bg guifg=fg gui=NONE ctermbg=bg ctermfg=fg cterm=NONE
-highlight! LineNr guibg=bg guifg=#505050 gui=italic ctermbg=bg ctermfg=239 cterm=italic
-highlight! Visual term=NONE cterm=NONE ctermfg=fg ctermbg=222 gui=NONE guifg=NONE guibg=#ffd787
+highlight! LineNr guibg=bg guifg=#505050 gui=NONE ctermbg=bg ctermfg=239 cterm=NONE
+highlight! Visual guibg=#ffd787 guifg=NONE gui=NONE ctermbg=222 ctermfg=fg cterm=NONE
 
 highlight! Statement guibg=bg guifg=fg gui=italic ctermbg=bg ctermfg=fg cterm=italic
 highlight! Identifier guibg=bg guifg=fg gui=bold ctermbg=bg ctermfg=fg cterm=bold
