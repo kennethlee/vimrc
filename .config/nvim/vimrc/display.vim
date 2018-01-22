@@ -29,36 +29,29 @@ set laststatus=2
 " left
 set statusline=
 set statusline+=%#error#
-set statusline+=%{&modified?'[+]':''}                 " flag: modified buf
+set statusline+=%{&modified?'[+]':''}                           " modified buf
 set statusline+=%*
 
 set statusline+=%#question#
-set statusline+=%r                                    " flag: read-only
-set statusline+=%w                                    " flag: preview buf
+set statusline+=%r                                              " read-only
+set statusline+=%w                                              " preview buf
 set statusline+=%*
 
 " center
-set statusline+=\ %-F\                                " absolute filepath
+set statusline+=\ %-F\                                          " absolute path
 
 " right
 set statusline+=%=
-set statusline+=%y                                    " show filetype
+set statusline+=%y                                              " filetype
 
 set statusline+=%#warningmsg#
-set statusline+=%{fxn#StatuslineWarningWhitespace()}
+set statusline+=%{fxn#StatuslineWarningWhitespace()}            " whitespace
+set statusline+=%{&expandtab?'':'[noet]'}                       " noexpandtab
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''} " file encoding
+set statusline+=%{&fileformat!='unix'?'['.&fileformat.']':''}   " file format
 set statusline+=%*
 
-" display warning if file encoding != utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-" display warning if fileformat != unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-set statusline+=%6(%c%)\                              " column number
+set statusline+=%6(%c%)\                                        " column number
 
 " ==============================================================================
 " }}}1
