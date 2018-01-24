@@ -97,7 +97,7 @@ command! WipeReg for i in range(34,122)
   \| endfor
 
 " call `WipeReg` on quit
-autocmd VimLeavePre * WipeReg
+autocmd VimEnter * WipeReg
 
 " ==============================================================================
 " completion {{{1
