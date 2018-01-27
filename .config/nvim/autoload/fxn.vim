@@ -10,34 +10,6 @@ function! fxn#InsertTabWrapper() abort
 endfunction
 
 " ==============================================================================
-" ToggleQuickfix() {{{1
-
-function! GetBufferList() abort
-  redir =>buflist
-  silent! ls
-  redir END
-  return buflist
-endfunction
-
-function! BufferIsOpen(bufname) abort
-  let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-    if bufwinnr(bufnum) != -1
-      return 1
-    endif
-  endfor
-  return 0
-endfunction
-
-function! fxn#ToggleQuickfix() abort
-  if BufferIsOpen("Quickfix List")
-    cclose
-  else
-    copen
-  endif
-endfunction
-
-" ==============================================================================
 " NvimTerminalToggle() {{{1
 
 let s:nvim_terminal_window = -1
@@ -86,6 +58,34 @@ function! fxn#NvimTerminalToggle() abort
     call NvimTerminalClose()
   else
     call NvimTerminalOpen()
+  endif
+endfunction
+
+" ==============================================================================
+" QuickfixToggle() {{{1
+
+function! GetBufferList() abort
+  redir =>buflist
+  silent! ls
+  redir END
+  return buflist
+endfunction
+
+function! BufferIsOpen(bufname) abort
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      return 1
+    endif
+  endfor
+  return 0
+endfunction
+
+function! fxn#QuickfixToggle() abort
+  if BufferIsOpen("Quickfix List")
+    cclose
+  else
+    copen
   endif
 endfunction
 
