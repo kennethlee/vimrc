@@ -108,8 +108,9 @@ nnoremap <silent><Space>q :call fxn#ToggleQuickfix()<CR>
 nnoremap <silent><M-k> :cprevious<CR>
 nnoremap <silent><M-j> :cnext<CR>
 
-" close an open preview window
-nnoremap <silent><Space>w :pclose<CR>
+" toggle term window
+nnoremap <silent><Space>w :call fxn#NvimTerminalToggle()<CR>
+tnoremap <silent><Space>w <C-\><C-n>:call fxn#NvimTerminalToggle()<CR>
 
 " ==============================================================================
 " }}}1

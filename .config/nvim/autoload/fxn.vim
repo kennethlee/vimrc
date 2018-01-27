@@ -38,6 +38,58 @@ function! fxn#ToggleQuickfix() abort
 endfunction
 
 " ==============================================================================
+" NvimTerminalToggle() {{{1
+
+let s:nvim_terminal_window = -1
+let s:nvim_terminal_buffer = -1
+let s:nvim_terminal_job_id = -1
+
+function! NvimTerminalOpen() abort
+  " check if buffer exists, if not create a window and a buffer
+  if !bufexists(s:nvim_terminal_buffer)
+    " creates a window call nvim_terminal
+    new nvim_terminal
+    " moves to the window below the current one
+    wincmd L
+    let s:nvim_terminal_job_id = termopen($SHELL, { 'detach': 1 })
+
+     " change the name of the buffer to "Terminal 1"
+     silent file Terminal\ 1
+     " gets the id of the terminal window
+     let s:nvim_terminal_window = win_getid()
+     let s:nvim_terminal_buffer = bufnr('%')
+
+    " the buffer of the terminal won't appear in the list of the buffers
+    " when calling :buffers command
+    set nobuflisted
+  else
+    if !win_gotoid(s:nvim_terminal_window)
+      sp
+      " moves to the window below the current one
+      wincmd L
+      buffer Terminal\ 1
+      " gets the id of the terminal window
+      let s:nvim_terminal_window = win_getid()
+    endif
+  endif
+endfunction
+
+function! NvimTerminalClose() abort
+  if win_gotoid(s:nvim_terminal_window)
+    " close the current window
+    hide
+  endif
+endfunction
+
+function! fxn#NvimTerminalToggle() abort
+  if win_gotoid(s:nvim_terminal_window)
+    call NvimTerminalClose()
+  else
+    call NvimTerminalOpen()
+  endif
+endfunction
+
+" ==============================================================================
 " RenameFile() {{{1
 
 " rename current file
@@ -79,6 +131,7 @@ augroup warning_whitespace
   autocmd BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
 augroup END
 
+" ==============================================================================
 " VimFoldText() {{{1
 
 function! fxn#VimFoldText() abort
