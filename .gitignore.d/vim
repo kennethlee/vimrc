@@ -24,6 +24,10 @@
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
 
+!/.config/nvim/after/syntax
+!/.config/nvim/after/syntax/html.vim
+!/.config/nvim/after/syntax/javascript.vim
+
 !/.config/nvim/colors
 !/.config/nvim/colors/acme.vim
 
