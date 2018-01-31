@@ -13,6 +13,7 @@
 " blue          #5fafff    75
 " magenta       #d7afff   183
 " cyan          #5fafaf    73
+" white         #949494   246
 
 " bright
 " black         #6c6c6c   242 (Comment fg, Folded fg, FoldColumn fg, LineNr, NonText fg, StatusLineNC fg)
@@ -22,6 +23,7 @@
 " blue          #5fd7ff    81
 " magenta       #d7d7ff   242
 " cyan          #afd7d7   152 (StatusLine bg)
+" white         #949494   246
 
 " ======================================================================================================================
 " highlight groups {{{1
