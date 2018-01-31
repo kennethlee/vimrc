@@ -25,11 +25,11 @@ function! NvimTerminalOpen() abort
     wincmd L
     let s:nvim_terminal_job_id = termopen($SHELL, { 'detach': 1 })
 
-     " change the name of the buffer to "Terminal 1"
-     silent file Terminal\ 1
-     " gets the id of the terminal window
-     let s:nvim_terminal_window = win_getid()
-     let s:nvim_terminal_buffer = bufnr('%')
+    " change the name of the buffer to "Terminal 1"
+    silent file Terminal\ 1
+    " gets the id of the terminal window
+    let s:nvim_terminal_window = win_getid()
+    let s:nvim_terminal_buffer = bufnr('%')
 
     " the buffer of the terminal won't appear in the list of the buffers
     " when calling :buffers command
