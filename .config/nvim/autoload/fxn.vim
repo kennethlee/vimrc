@@ -61,6 +61,11 @@ function! fxn#NvimTerminalToggle() abort
   endif
 endfunction
 
+augroup settings_terminal
+  autocmd!
+  autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
+
 " ==============================================================================
 " QuickfixToggle() {{{1
 
