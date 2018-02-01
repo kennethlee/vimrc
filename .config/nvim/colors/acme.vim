@@ -13,17 +13,17 @@
 " blue          #5fafff    75
 " magenta       #d7afff   183
 " cyan          #5fafaf    73
-" white         #949494   246
+" white         #949494   246 (NonText fg)
 
 " bright
-" black         #6c6c6c   242 (Comment fg, Folded fg, FoldColumn fg, LineNr, NonText fg, StatusLineNC fg)
+" black         #6c6c6c   242 (Folded fg, FoldColumn fg, LineNr, NonText fg, StatusLineNC fg)
 " red           #ffd787   222 (CursorColumn bg, Visual)
 " green         #d7ffaf   193 (StatusLineNC bg)
 " yellow (sys)  #ffff00    11 (WildMenu bg)
 " blue          #5fd7ff    81
 " magenta       #d7d7ff   242
 " cyan          #afd7d7   152 (StatusLine bg)
-" white         #949494   246
+" white         #949494   246 (NonText fg)
 
 " ======================================================================================================================
 " highlight groups {{{1
@@ -31,13 +31,13 @@
 highlight clear
 
 highlight! Normal       guibg=#ffffaf   guifg=#080808   gui=none        ctermbg=229     ctermfg=232     cterm=none
-highlight! NonText      guibg=none      guifg=#6c6c6c   gui=none        ctermbg=none    ctermfg=242     cterm=none
+highlight! NonText      guibg=none      guifg=#949494   gui=none        ctermbg=none    ctermfg=246     cterm=none
 highlight! Conceal      guibg=none      guifg=fg        gui=none        ctermbg=none    ctermfg=fg      cterm=none
 highlight! StatusLine   guibg=#afd7d7   guifg=fg        gui=none        ctermbg=152     ctermfg=fg      cterm=none
 highlight! StatusLineNC guibg=#d7ffaf   guifg=#6c6c6c   gui=none        ctermbg=193     ctermfg=242     cterm=none
 highlight! LineNr       guibg=none      guifg=#6c6c6c   gui=none        ctermbg=none    ctermfg=242     cterm=none
 highlight! VertSplit    guibg=none      guifg=fg        gui=bold        ctermbg=none    ctermfg=fg      cterm=bold
-highlight! Visual       guibg=#ffd787   guifg=none      gui=none        ctermbg=222     ctermfg=fg      cterm=none
+highlight! Visual       guibg=#ffd787   guifg=#080808   gui=none        ctermbg=222     ctermfg=232     cterm=none
 highlight! WildMenu     guibg=#ffd787   guifg=fg        gui=bold        ctermbg=222     ctermfg=fg      cterm=bold
 highlight! Directory    guibg=none      guifg=fg        gui=bold        ctermbg=none    ctermfg=fg      cterm=bold
 highlight! Folded       guibg=none      guifg=#6c6c6c   gui=italic      ctermbg=none    ctermfg=242     cterm=italic
