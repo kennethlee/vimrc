@@ -9,7 +9,7 @@
 " black         #080808   232
 " red           #ff5f87   204
 " green         #87d787   114
-" yellow (acme) #ffffaf   229
+" yellow        #d7d787   186
 " blue          #5fafff    75
 " magenta       #d7afff   183
 " cyan          #5fafaf    73
@@ -19,7 +19,7 @@
 " black         #6c6c6c   242
 " red           #ffd787   222
 " green         #d7ffaf   193
-" yellow        #d7d787   186
+" yellow (acme) #ffffaf   229
 " blue          #5fd7ff    81
 " magenta       #d7d7ff   242
 " cyan          #afd7d7   152
@@ -43,7 +43,7 @@ hi Directory    guibg=none      guifg=fg        gui=bold        ctermbg=none  ct
 hi Folded       guibg=none      guifg=#6c6c6c   gui=italic      ctermbg=none  ctermfg=242   cterm=italic      " bg: none,      fg: l. black
 hi FoldColumn   guibg=none      guifg=#6c6c6c   gui=none        ctermbg=none  ctermfg=242   cterm=none        " bg: none,      fg: l. black
 hi ColorColumn  guibg=#ffd787   guifg=none      gui=none        ctermbg=222   ctermfg=none  cterm=none        " bg: l. red,    fg: none
-hi CursorLine   guibg=#949494   guifg=fg        gui=none        ctermbg=246   ctermfg=fg    cterm=none        " bg: white,     fg: none
+hi CursorLine   guibg=#d7d787   guifg=fg        gui=none        ctermbg=186   ctermfg=fg    cterm=none        " bg: white,     fg: none
 hi Error        guibg=#ff5f87   guifg=fg        gui=none        ctermbg=204   ctermfg=fg    cterm=none        " bg: red,       fg: fg
 hi WarningMsg   guibg=none      guifg=#ff5f87   gui=none        ctermbg=none  ctermfg=204   cterm=none        " bg: none,      fg: red
 hi SpecialKey   guibg=none      guifg=fg        gui=none        ctermbg=none  ctermfg=fg    cterm=none        " bg: none,      fg: fg
