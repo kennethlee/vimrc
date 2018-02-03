@@ -59,6 +59,14 @@ vnoremap <expr> cN g:mc . "``cgN"
 vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
+" indent object {{{1
+
+onoremap <silent>ai :call fxn#IndTxtObj(0)<CR>
+onoremap <silent>ii :call fxn#IndTxtObj(1)<CR>
+vnoremap <silent>ai :call fxn#IndTxtObj(0)<CR><Esc>gv
+vnoremap <silent>ii :call fxn#IndTxtObj(1)<CR><Esc>gv
+
+" ==============================================================================
 " <Space> {{{1
 " <Space>f: file ops {{{2
 
