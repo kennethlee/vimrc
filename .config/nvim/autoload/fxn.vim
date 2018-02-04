@@ -10,7 +10,7 @@ function! fxn#IndTxtObj(inner) abort
   endif
   let p = line(".") - 1
   let nextblank = getline(p) =~ "^\\s*$"
-  while p > 0 && (nextblank || indent(p) >= i )
+  while p > 0 && (nextblank || indent(p) >= i)
     -
     let p = line(".") - 1
     let nextblank = getline(p) =~ "^\\s*$"
@@ -22,7 +22,7 @@ function! fxn#IndTxtObj(inner) abort
   call cursor(curline, 0)
   let p = line(".") + 1
   let nextblank = getline(p) =~ "^\\s*$"
-  while p <= lastline && (nextblank || indent(p) >= i )
+  while p <= lastline && (nextblank || indent(p) >= i)
     +
     let p = line(".") + 1
     let nextblank = getline(p) =~ "^\\s*$"
@@ -60,13 +60,11 @@ function! NvimTerminalOpen() abort
     " moves to the window below the current one
     wincmd L
     let s:nvim_terminal_job_id = termopen($SHELL, { 'detach': 1 })
-
     " change the name of the buffer to "Terminal 1"
     silent file Terminal\ 1
     " gets the id of the terminal window
     let s:nvim_terminal_window = win_getid()
     let s:nvim_terminal_buffer = bufnr('%')
-
     " the buffer of the terminal won't appear in the list of the buffers
     " when calling :buffers command
     set nobuflisted
@@ -137,7 +135,6 @@ endfunction
 function! fxn#RenameFile() abort
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
-
   if new_name != '' && new_name != old_name
     exec ':saveas ' . new_name
     exec ':silent !rm ' . old_name
@@ -152,7 +149,6 @@ function! fxn#StatuslineWarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
     let tabs = search('\t', 'nw') != 0
     let spaces = search(' \+$\| \+\ze\t', 'nw') != 0
-
     if (tabs && spaces)
       let b:statusline_warning_whitespace = '[\t\|\s]'
     elseif tabs
@@ -163,7 +159,6 @@ function! fxn#StatuslineWarningWhitespace() abort
       let b:statusline_warning_whitespace = ''
     endif
   endif
-
   return b:statusline_warning_whitespace
 endfunction
 
