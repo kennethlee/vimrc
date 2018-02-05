@@ -94,8 +94,8 @@ nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 " close buffer without losing the split
 nnoremap <silent><Space>bd :bprevious<CR>:bdelete #<CR>
 
-" <Space><Space> to switch to the alternate buffer
-nnoremap <Space><Space> <C-^>
+" switch to the alternate buffer
+nnoremap <BS> <C-^>
 
 " list all open buffers then wait for tab completion or input + tab completion
 nnoremap <Space>bb :ls<CR>:b *
