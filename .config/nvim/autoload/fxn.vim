@@ -52,7 +52,7 @@ let s:nvim_terminal_window = -1
 let s:nvim_terminal_buffer = -1
 let s:nvim_terminal_job_id = -1
 
-function! NvimTerminalOpen() abort
+function! s:NvimTerminalOpen() abort
   " check if buffer exists, if not create a window and a buffer
   if !bufexists(s:nvim_terminal_buffer)
     " creates a window call nvim_terminal
@@ -80,7 +80,7 @@ function! NvimTerminalOpen() abort
   endif
 endfunction
 
-function! NvimTerminalClose() abort
+function! s:NvimTerminalClose() abort
   if win_gotoid(s:nvim_terminal_window)
     " close the current window
     hide
@@ -89,9 +89,9 @@ endfunction
 
 function! fxn#NvimTerminalToggle() abort
   if win_gotoid(s:nvim_terminal_window)
-    call NvimTerminalClose()
+    call s:NvimTerminalClose()
   else
-    call NvimTerminalOpen()
+    call s:NvimTerminalOpen()
   endif
 endfunction
 
@@ -103,15 +103,15 @@ augroup END
 " ==============================================================================
 " QuickfixToggle() {{{1
 
-function! GetBufferList() abort
+function! s:GetBufferList() abort
   redir =>buflist
   silent! ls
   redir END
   return buflist
 endfunction
 
-function! BufferIsOpen(bufname) abort
-  let buflist = GetBufferList()
+function! s:BufferIsOpen(bufname) abort
+  let buflist = s:GetBufferList()
   for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
       return 1
@@ -121,7 +121,7 @@ function! BufferIsOpen(bufname) abort
 endfunction
 
 function! fxn#QuickfixToggle() abort
-  if BufferIsOpen("Quickfix List")
+  if s:BufferIsOpen("Quickfix List")
     cclose
   else
     copen
