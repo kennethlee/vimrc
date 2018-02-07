@@ -12,6 +12,7 @@ set list listchars=tab:▸\ ,eol:¬,trail:@
 
 highlight link UnwantedWhitespace WarningMsg
 
+" this augroup must be kept here, *above* the setting of colorscheme
 augroup highlight_whitespace
   autocmd!
   autocmd WinEnter,BufEnter * call clearmatches()

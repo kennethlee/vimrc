@@ -95,11 +95,6 @@ function! fxn#NvimTerminalToggle() abort
   endif
 endfunction
 
-augroup settings_terminal
-  autocmd!
-  autocmd TermOpen * setlocal nonumber norelativenumber
-augroup END
-
 " ==============================================================================
 " QuickfixToggle() {{{1
 
@@ -161,11 +156,6 @@ function! fxn#StatuslineWarningWhitespace() abort
   endif
   return b:statusline_warning_whitespace
 endfunction
-
-augroup warning_whitespace
-  autocmd!
-  autocmd BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
-augroup END
 
 " ==============================================================================
 " VimFoldText() {{{1
