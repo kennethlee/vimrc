@@ -130,9 +130,7 @@ function! fxn#LocationListToggle() abort
     try
       lopen
     catch /E776/
-      echohl WarningMsg
-      echo "Location List is Empty."
-      echohl None
+      echo "Location List is empty."
       return
     endtry
   endif

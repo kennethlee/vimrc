@@ -102,20 +102,24 @@ nnoremap <Space>bb :ls<CR>:b *
 nnoremap <Space>bs :ls<CR>:sbuffer *
 nnoremap <Space>bv :ls<CR>:vert sbuffer *
 
+" cycle through items in the quickfix list
+nnoremap <silent><C-k> :cprevious<CR>
+nnoremap <silent><C-j> :cnext<CR>
+
+" cycle through items in the location list
+nnoremap <silent><M-k> :lprevious<CR>
+nnoremap <silent><M-j> :lnext<CR>
+
 " cycle through buffers
-nnoremap <silent><M-h> :bprevious<CR>
-nnoremap <silent><M-l> :bnext<CR>
+nnoremap <silent><C-h> :bprevious<CR>
+nnoremap <silent><C-l> :bnext<CR>
 
 " ==============================================================================
 " nav: windows {{{2
 
-" toggle quickfix window
+" toggle quickfix list / location list windows
 nnoremap <silent><Space>q :call fxn#QuickfixToggle()<CR>
 nnoremap <silent><Space>l :call fxn#LocationListToggle()<CR>
-
-" cycle through items in the quickfix list
-nnoremap <silent><M-k> :cprevious<CR>
-nnoremap <silent><M-j> :cnext<CR>
 
 " toggle term window
 nnoremap <silent><Space>w :call fxn#NvimTerminalToggle()<CR>
