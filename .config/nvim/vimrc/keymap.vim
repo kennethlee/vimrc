@@ -111,6 +111,7 @@ nnoremap <silent><M-l> :bnext<CR>
 
 " toggle quickfix window
 nnoremap <silent><Space>q :call fxn#QuickfixToggle()<CR>
+nnoremap <silent><Space>l :call fxn#LocationListToggle()<CR>
 
 " cycle through items in the quickfix list
 nnoremap <silent><M-k> :cprevious<CR>

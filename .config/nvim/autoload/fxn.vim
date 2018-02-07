@@ -96,7 +96,7 @@ function! fxn#NvimTerminalToggle() abort
 endfunction
 
 " ==============================================================================
-" QuickfixToggle() {{{1
+" LocationListToggle(), QuickfixToggle() {{{1
 
 function! s:GetBufferList() abort
   redir =>buflist
@@ -120,6 +120,21 @@ function! fxn#QuickfixToggle() abort
     cclose
   else
     copen
+  endif
+endfunction
+
+function! fxn#LocationListToggle() abort
+  if s:BufferIsOpen("Location List")
+    lclose
+  else
+    try
+      lopen
+    catch /E776/
+      echohl WarningMsg
+      echo "Location List is Empty."
+      echohl None
+      return
+    endtry
   endif
 endfunction
 
