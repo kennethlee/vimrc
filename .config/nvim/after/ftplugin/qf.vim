@@ -1,3 +1,4 @@
+" statusline
 setlocal statusline=%#question#
 setlocal statusline+=%t
 setlocal statusline+=%*

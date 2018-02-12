@@ -1,4 +1,4 @@
-" IndTxtObj() {{{1
+" IndTxtObj {{{1
 
 function! fxn#IndTxtObj(inner) abort
   let curline = line(".")
@@ -34,7 +34,7 @@ function! fxn#IndTxtObj(inner) abort
 endfunction
 
 " ==============================================================================
-" InsertTabWrapper() {{{1
+" InsertTabWrapper {{{1
 
 function! fxn#InsertTabWrapper() abort
   let col = col('.') - 1
@@ -46,7 +46,7 @@ function! fxn#InsertTabWrapper() abort
 endfunction
 
 " ==============================================================================
-" NvimTerminalToggle() {{{1
+" NvimTerminalToggle {{{1
 
 let s:nvim_terminal_window = -1
 let s:nvim_terminal_buffer = -1
@@ -96,7 +96,7 @@ function! fxn#NvimTerminalToggle() abort
 endfunction
 
 " ==============================================================================
-" LocationListToggle(), QuickfixToggle() {{{1
+" LocationListToggle, QuickfixToggle {{{1
 
 function! s:GetBufferList() abort
   redir =>buflist
@@ -137,9 +137,8 @@ function! fxn#LocationListToggle() abort
 endfunction
 
 " ==============================================================================
-" RenameFile() {{{1
+" RenameFile {{{1
 
-" rename current file
 function! fxn#RenameFile() abort
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
@@ -151,7 +150,7 @@ function! fxn#RenameFile() abort
 endfunction
 
 " ==============================================================================
-" StatuslineWarningWhitespace() {{{1
+" StatuslineWarningWhitespace {{{1
 
 function! fxn#StatuslineWarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
@@ -171,7 +170,7 @@ function! fxn#StatuslineWarningWhitespace() abort
 endfunction
 
 " ==============================================================================
-" VimFoldText() {{{1
+" VimFoldText {{{1
 
 function! fxn#VimFoldText() abort
   let end_chars = repeat(' ', winwidth(0))
