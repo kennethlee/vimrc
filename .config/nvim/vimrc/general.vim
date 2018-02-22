@@ -72,6 +72,8 @@ set winwidth=90
 set winminwidth=40
 set splitright splitbelow
 
+set cmdwinheight=20
+
 " ==============================================================================
 " search / find {{{1
 

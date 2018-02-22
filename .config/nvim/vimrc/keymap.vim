@@ -30,6 +30,13 @@ inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
 
 " ==============================================================================
+" ChangeReg {{{1
+
+" quickly / easily change contents of a macro
+" ex: chq to edit register q
+nnoremap ch :call fxn#ChangeReg()<CR>
+
+" ==============================================================================
 " html tag completion {{{1
 
 " inline tag
