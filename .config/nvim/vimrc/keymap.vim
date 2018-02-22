@@ -69,8 +69,11 @@ vnoremap <silent>ii :call fxn#IndTxtObj(1)<CR><Esc>gv
 " <Space> {{{1
 " <Space>f: file ops {{{2
 
-" rename current file
+nnoremap <silent><Space>fc :call fxn#RemoveFancyCharacters()<CR>
+
 nnoremap <silent><Space>fr :call fxn#RenameFile()<CR>
+
+nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
 " ==============================================================================
 " <Space>t: find {{{2

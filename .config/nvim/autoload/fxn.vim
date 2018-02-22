@@ -70,6 +70,23 @@ function! fxn#NvimTerminalToggle() abort
 endfunction
 
 " ==============================================================================
+" RemoveFancyCharacters {{{1
+
+function! fxn#RemoveFancyCharacters() abort
+  let typo = {}
+  let typo["“"] = '"'
+  let typo["”"] = '"'
+  let typo["‘"] = "'"
+  let typo["’"] = "'"
+  let typo["–"] = '--'
+  let typo["—"] = '---'
+  let typo["…"] = '...'
+  :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/ge'
+endfunction
+
+command! RemoveFancyCharacters :call fxn#RemoveFancyCharacters()
+
+" ==============================================================================
 " RenameFile {{{1
 
 function! fxn#RenameFile() abort
