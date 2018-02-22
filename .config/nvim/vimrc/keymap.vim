@@ -7,9 +7,8 @@ set mousehide mouse=nicr
 " redo
 nnoremap U <C-r>
 
-" 'jk' exits Insert Mode
-inoremap jk <Esc>
-tnoremap jk <C-\><C-n>
+" <C-[> exits Insert Mode
+tnoremap <C-[> <C-\><C-n>
 
 " 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
