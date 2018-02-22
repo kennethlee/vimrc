@@ -118,10 +118,8 @@ nnoremap <silent><C-l> :bnext<CR>
 " nav: windows {{{2
 
 " toggle quickfix list / location list windows
-" nnoremap <silent><Space>q :call fxn#QuickfixToggle()<CR>
-" nnoremap <silent><Space>l :call fxn#LocationListToggle()<CR>
-nmap <Space>q <Plug>qf_qf_toggle
-nmap <Space>l <Plug>qf_loc_toggle
+nmap <silent><Space>q <Plug>qf_qf_toggle
+nmap <silent><Space>l <Plug>qf_loc_toggle
 
 " toggle term window
 nnoremap <silent><Space>w :call fxn#NvimTerminalToggle()<CR>

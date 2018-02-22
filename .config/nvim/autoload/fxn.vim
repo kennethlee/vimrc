@@ -96,47 +96,6 @@ function! fxn#NvimTerminalToggle() abort
 endfunction
 
 " ==============================================================================
-" LocationListToggle, QuickfixToggle {{{1
-
-" function! s:GetBufferList() abort
-"   redir =>buflist
-"   silent! ls
-"   redir END
-"   return buflist
-" endfunction
-
-" function! s:BufferIsOpen(bufname) abort
-"   let buflist = s:GetBufferList()
-"   for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-"     if bufwinnr(bufnum) != -1
-"       return 1
-"     endif
-"   endfor
-"   return 0
-" endfunction
-
-" function! fxn#QuickfixToggle() abort
-"   if s:BufferIsOpen("Quickfix List")
-"     cclose
-"   else
-"     copen
-"   endif
-" endfunction
-
-" function! fxn#LocationListToggle() abort
-"   if s:BufferIsOpen("Location List")
-"     lclose
-"   else
-"     try
-"       lopen
-"     catch /E776/
-"       echo "Location List is empty."
-"       return
-"     endtry
-"   endif
-" endfunction
-
-" ==============================================================================
 " RenameFile {{{1
 
 function! fxn#RenameFile() abort
