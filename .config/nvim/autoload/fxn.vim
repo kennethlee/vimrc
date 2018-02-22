@@ -48,50 +48,24 @@ endfunction
 " ==============================================================================
 " NvimTerminalToggle {{{1
 
-let s:nvim_terminal_window = -1
-let s:nvim_terminal_buffer = -1
-let s:nvim_terminal_job_id = -1
-
-function! s:NvimTerminalOpen() abort
-  " check if buffer exists, if not create a window and a buffer
-  if !bufexists(s:nvim_terminal_buffer)
-    " creates a window call nvim_terminal
-    new nvim_terminal
-    " moves to the window below the current one
-    wincmd L
-    let s:nvim_terminal_job_id = termopen($SHELL, { 'detach': 1 })
-    " change the name of the buffer to "Terminal 1"
-    silent file Terminal\ 1
-    " gets the id of the terminal window
-    let s:nvim_terminal_window = win_getid()
-    let s:nvim_terminal_buffer = bufnr('%')
-    " the buffer of the terminal won't appear in the list of the buffers
-    " when calling :buffers command
-    set nobuflisted
-  else
-    if !win_gotoid(s:nvim_terminal_window)
-      sp
-      " moves to the window below the current one
-      wincmd L
-      buffer Terminal\ 1
-      " gets the id of the terminal window
-      let s:nvim_terminal_window = win_getid()
-    endif
-  endif
-endfunction
-
-function! s:NvimTerminalClose() abort
-  if win_gotoid(s:nvim_terminal_window)
-    " close the current window
-    hide
-  endif
-endfunction
+let s:term_buf = 0
+let s:term_win = 0
 
 function! fxn#NvimTerminalToggle() abort
-  if win_gotoid(s:nvim_terminal_window)
-    call s:NvimTerminalClose()
+  if win_gotoid(s:term_win)
+    hide
   else
-    call s:NvimTerminalOpen()
+    botright new
+    exec "resize " . &lines / 2
+    setlocal nobuflisted
+    try
+      exec "buffer " . s:term_buf
+    catch
+      call termopen($SHELL, {"detach": 0})
+      let s:term_buf = bufnr("")
+    endtry
+    startinsert!
+    let s:term_win = win_getid()
   endif
 endfunction
 
