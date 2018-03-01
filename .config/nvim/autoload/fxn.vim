@@ -108,26 +108,6 @@ function! fxn#RenameFile() abort
 endfunction
 
 " ==============================================================================
-" StatuslineWarningWhitespace {{{1
-
-function! fxn#StatuslineWarningWhitespace() abort
-  if !exists("b:statusline_warning_whitespace")
-    let tabs = search('\t', 'nw') != 0
-    let spaces = search(' \+$\| \+\ze\t', 'nw') != 0
-    if (tabs && spaces)
-      let b:statusline_warning_whitespace = '[\t\|\s]'
-    elseif tabs
-      let b:statusline_warning_whitespace = '[\t]'
-    elseif spaces
-      let b:statusline_warning_whitespace = '[\s]'
-    else
-      let b:statusline_warning_whitespace = ''
-    endif
-  endif
-  return b:statusline_warning_whitespace
-endfunction
-
-" ==============================================================================
 " VimFoldText {{{1
 
 function! fxn#VimFoldText() abort
