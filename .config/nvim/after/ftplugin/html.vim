@@ -1,7 +1,7 @@
 " folding
 setlocal foldenable
 setlocal foldmethod=indent
-setlocal foldtext=fxn#VimFoldText()
+setlocal foldtext=fold#HeaderText()
 setlocal foldlevel=2
 setlocal foldnestmax=5
 setlocal foldcolumn=1

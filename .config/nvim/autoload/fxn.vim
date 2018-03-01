@@ -84,13 +84,5 @@ function! fxn#RenameFile() abort
 endfunction
 
 " ==============================================================================
-" VimFoldText {{{1
-
-function! fxn#VimFoldText() abort
-  let end_chars = repeat(' ', winwidth(0))
-  return getline(v:foldstart).end_chars
-endfunction
-
-" ==============================================================================
 " }}}1
 
