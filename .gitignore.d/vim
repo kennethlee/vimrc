@@ -9,6 +9,7 @@
 !/.config/nvim/autoload
 !/.config/nvim/autoload/fxn.vim
 !/.config/nvim/autoload/stl.vim
+!/.config/nvim/autoload/win.vim
 
 !/.config/nvim/after/
 !/.config/nvim/after/ftplugin/
