@@ -82,10 +82,10 @@ nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 " ==============================================================================
 " <Space>t: find {{{2
 
-nnoremap <silent><Space>tr :Files<CR>
-nnoremap <Space>te :Files ~/
-nnoremap <silent><Space>tn :Files ~/Documents/notes<CR>
-nnoremap <silent><Space>tj :Files ~/Dropbox/notes<CR>
+nnoremap <silent><Space>tr :FZF<CR>
+nnoremap <Space>te :FZF ~/
+nnoremap <silent><Space>tn :FZF ~/Documents/notes<CR>
+nnoremap <silent><Space>tj :FZF ~/Dropbox/notes<CR>
 
 " ==============================================================================
 " <Space>v: general vim {{{2
