@@ -9,7 +9,9 @@ function! stl#BufModified() abort
 endfunction
 
 " ==============================================================================
-function!stl#ExpandTab() abort
+" ExpandTab {{{1
+
+function! stl#ExpandTab() abort
   if &expandtab
     return ''
   else
