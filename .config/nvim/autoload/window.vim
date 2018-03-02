@@ -3,7 +3,7 @@
 let s:term_buf = 0
 let s:term_win = 0
 
-function! win#TerminalToggle() abort
+function! window#TerminalToggle() abort
   if win_gotoid(s:term_win)
     hide
   else
