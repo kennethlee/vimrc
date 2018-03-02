@@ -9,6 +9,7 @@
 !/.config/nvim/autoload
 !/.config/nvim/autoload/fold.vim
 !/.config/nvim/autoload/fxn.vim
+!/.config/nvim/autoload/macro.vim
 !/.config/nvim/autoload/stl.vim
 !/.config/nvim/autoload/win.vim
 

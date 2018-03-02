@@ -1,11 +1,3 @@
-" ChangeReg {{{1
-
-function! fxn#ChangeReg() abort
-  let x = nr2char(getchar())
-  call feedkeys("q:ilet @" . x . " = \<C-r>\<C-r>=string(@" . x . ")\<CR>\<Esc>0f'", 'n')
-endfunction
-
-" ==============================================================================
 " IndTxtObj {{{1
 
 function! fxn#IndTxtObj(inner) abort
