@@ -7,6 +7,7 @@
 
 !/.config/nvim/
 !/.config/nvim/autoload
+!/.config/nvim/autoload/file.vim
 !/.config/nvim/autoload/fold.vim
 !/.config/nvim/autoload/fxn.vim
 !/.config/nvim/autoload/macro.vim

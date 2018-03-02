@@ -73,9 +73,9 @@ vnoremap <silent>ii :call textobj#IndentedBlock(1)<CR><Esc>gv
 " <Space> {{{1
 " <Space>f: file ops {{{2
 
-nnoremap <silent><Space>fc :call fxn#RemoveFancyCharacters()<CR>
+nnoremap <Space>fc :call file#RemoveFancyCharacters()<CR>
 
-nnoremap <silent><Space>fr :call fxn#RenameFile()<CR>
+nnoremap <silent><Space>fr :call file#RenameFile()<CR>
 
 nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
 
