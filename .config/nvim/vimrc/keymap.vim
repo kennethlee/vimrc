@@ -45,7 +45,7 @@ inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
 " ==============================================================================
 " smarter tab {{{1
 
-inoremap <silent><expr> <Tab> fxn#InsertTabWrapper()
+inoremap <silent><expr> <Tab> key#InsertTabWrapper()
 inoremap <silent><S-Tab> <C-n>
 
 " ==============================================================================
