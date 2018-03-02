@@ -1,6 +1,6 @@
 " BufModified {{{1
 
-function! stl#BufModified() abort
+function! statusline#BufModified() abort
   if &modified
     return '[+]'
   else
@@ -11,7 +11,7 @@ endfunction
 " ==============================================================================
 " ExpandTab {{{1
 
-function! stl#ExpandTab() abort
+function! statusline#ExpandTab() abort
   if &expandtab
     return ''
   else
@@ -22,7 +22,7 @@ endfunction
 " ==============================================================================
 " FileEncoding {{{1
 
-function! stl#FileEncoding() abort
+function! statusline#FileEncoding() abort
   if &fileencoding != 'utf-8' && &fileencoding != ''
     return '['.&fileencoding.']'
   else
@@ -33,7 +33,7 @@ endfunction
 " ==============================================================================
 " FileFormat {{{1
 
-function! stl#FileFormat() abort
+function! statusline#FileFormat() abort
   if &fileformat != 'unix'
     return '['.&fileformat.']'
   else
@@ -45,7 +45,7 @@ endfunction
 " ==============================================================================
 " WarningWhitespace {{{1
 
-function! stl#WarningWhitespace() abort
+function! statusline#WarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
     let tabs = search('\t', 'nw') != 0
     let spaces = search(' \+$\| \+\ze\t', 'nw') != 0

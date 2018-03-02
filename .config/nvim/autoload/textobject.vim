@@ -1,6 +1,6 @@
 " IndentedBlock {{{1
 
-function! textobj#IndentedBlock(inner) abort
+function! textobject#IndentedBlock(inner) abort
   let curline = line(".")
   let lastline = line("$")
   let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)

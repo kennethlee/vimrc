@@ -30,7 +30,7 @@ set laststatus=2
 " left
 set statusline=
 set statusline+=%#error#
-set statusline+=%{stl#BufModified()}
+set statusline+=%{statusline#BufModified()}
 set statusline+=%*
 
 set statusline+=%#question#
@@ -46,10 +46,10 @@ set statusline+=%=
 set statusline+=%y                                  " filetype
 
 set statusline+=%#warningmsg#
-set statusline+=%{stl#WarningWhitespace()}
-set statusline+=%{stl#ExpandTab()}
-set statusline+=%{stl#FileEncoding()}
-set statusline+=%{stl#FileFormat()}
+set statusline+=%{statusline#WarningWhitespace()}
+set statusline+=%{statusline#ExpandTab()}
+set statusline+=%{statusline#FileEncoding()}
+set statusline+=%{statusline#FileFormat()}
 set statusline+=%*
 
 set statusline+=%6(%c%)\                            " column number
