@@ -64,10 +64,10 @@ vnoremap <expr> cn g:mc . "``cgn"
 " ==============================================================================
 " indent object {{{1
 
-onoremap <silent>ai :call fxn#IndTxtObj(0)<CR>
-onoremap <silent>ii :call fxn#IndTxtObj(1)<CR>
-vnoremap <silent>ai :call fxn#IndTxtObj(0)<CR><Esc>gv
-vnoremap <silent>ii :call fxn#IndTxtObj(1)<CR><Esc>gv
+onoremap <silent>ai :call textobj#IndentedBlock(0)<CR>
+onoremap <silent>ii :call textobj#IndentedBlock(1)<CR>
+vnoremap <silent>ai :call textobj#IndentedBlock(0)<CR><Esc>gv
+vnoremap <silent>ii :call textobj#IndentedBlock(1)<CR><Esc>gv
 
 " ==============================================================================
 " <Space> {{{1
