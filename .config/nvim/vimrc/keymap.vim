@@ -128,7 +128,7 @@ nmap <silent><Space>q <Plug>qf_qf_toggle
 nmap <silent><Space>l <Plug>qf_loc_toggle
 
 " toggle term window
-nnoremap <silent><Space>w :call window#TerminalToggle()<CR>
+nnoremap <silent><Space>w :call window#TerminalToggle()<CR><C-\><C-n>
 tnoremap <silent><Space>w <C-\><C-n>:call window#TerminalToggle()<CR>
 
 " ==============================================================================
