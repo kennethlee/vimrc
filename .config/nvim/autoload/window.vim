@@ -9,7 +9,7 @@ function! window#TerminalToggle() abort
   else
     botright new
     exec "resize " . &lines / 2
-    setlocal nobuflisted
+    set nobuflisted
     try
       exec "buffer " . s:term_buf
     catch

@@ -15,7 +15,7 @@ highlight link UnwantedWhitespace WarningMsg
 " this augroup must be kept here, *above* the setting of colorscheme
 augroup highlight_whitespace
   autocmd!
-  autocmd WinEnter,BufEnter * call clearmatches()
+  autocmd BufEnter,WinEnter * call clearmatches()
     \| call matchadd('UnwantedWhitespace', '\s\+$', 100)
     \| call matchadd('UnwantedWhitespace', '\t', 100)
 augroup END
