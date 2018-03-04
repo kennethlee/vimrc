@@ -9,14 +9,13 @@ function! window#TerminalToggle() abort
   else
     botright new
     exec "resize " . &lines / 2
-    set nobuflisted
+    set nobuflisted bufhidden=wipe
     try
       exec "buffer " . s:term_buf
     catch
       call termopen($SHELL, {"detach": 0})
       let s:term_buf = bufnr("")
     endtry
-    startinsert!
     let s:term_win = win_getid()
   endif
 endfunction
