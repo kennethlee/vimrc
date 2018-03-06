@@ -12,10 +12,16 @@ setlocal nobuflisted bufhidden=wipe
 " qf window is 1/2 height of current window
 let &l:winheight = &lines / 2
 
-" open qf window in full-width split
-augroup window_width_quickfix
+augroup settings_quickfix
   autocmd!
+  autocmd BufEnter <buffer> if get(g:, 'qf_auto_quit', 1) | if winnr('$') < 2 | q | endif | endif
+  " open qf window in full-width split
   autocmd BufWinEnter <buffer> wincmd J
+  autocmd BufWinEnter <buffer> if get(g:, 'qf_auto_quit', 1) | call qf#ReuseTitle() | endif
+  " automatically close corresponding loclist when quitting a window
+  if exists('##QuitPre')
+    autocmd QuitPre * if &filetype != 'qf' | silent! lclose | endif
+  endif
 augroup END
 
 " ==============================================================================
