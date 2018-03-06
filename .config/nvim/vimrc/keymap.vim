@@ -123,9 +123,9 @@ nnoremap <silent><C-l> :bnext<CR>
 " ==============================================================================
 " nav: windows {{{2
 
-" toggle quickfix list / location list windows
-nmap <silent><Space>q <Plug>qf_qf_toggle
-nmap <silent><Space>l <Plug>qf_loc_toggle
+" toggle quickfix / location list windows
+nnoremap <silent><Space>q :<C-U>call qf#QuickfixToggle()<CR>
+nnoremap <silent><Space>l :<C-U>call qf#LocListToggle()<CR>
 
 " toggle term window
 nnoremap <silent><Space>w :call window#TerminalToggle()<CR>

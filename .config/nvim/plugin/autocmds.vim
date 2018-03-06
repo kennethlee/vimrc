@@ -1,4 +1,4 @@
-" statusline
+" statusline {{{1
 
 " for `fxn#StatuslineWarningWhitespace()`
 augroup warning_whitespace
@@ -7,7 +7,7 @@ augroup warning_whitespace
 augroup END
 
 " ==============================================================================
-" terminal
+" terminal {{{1
 
 augroup settings_terminal
   autocmd!
@@ -15,4 +15,5 @@ augroup settings_terminal
 augroup END
 
 " ==============================================================================
+" }}}1
 

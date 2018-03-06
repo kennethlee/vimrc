@@ -5,16 +5,6 @@
 !/.config/nvim/
 !/.config/nvim/init.vim
 
-!/.config/nvim/
-!/.config/nvim/autoload
-!/.config/nvim/autoload/file.vim
-!/.config/nvim/autoload/fold.vim
-!/.config/nvim/autoload/key.vim
-!/.config/nvim/autoload/macro.vim
-!/.config/nvim/autoload/statusline.vim
-!/.config/nvim/autoload/textobject.vim
-!/.config/nvim/autoload/window.vim
-
 !/.config/nvim/after/
 !/.config/nvim/after/ftplugin/
 !/.config/nvim/after/ftplugin/c.vim
@@ -33,6 +23,17 @@
 !/.config/nvim/after/syntax
 !/.config/nvim/after/syntax/html.vim
 !/.config/nvim/after/syntax/javascript.vim
+
+!/.config/nvim/
+!/.config/nvim/autoload
+!/.config/nvim/autoload/file.vim
+!/.config/nvim/autoload/fold.vim
+!/.config/nvim/autoload/key.vim
+!/.config/nvim/autoload/macro.vim
+!/.config/nvim/autoload/qf.vim
+!/.config/nvim/autoload/statusline.vim
+!/.config/nvim/autoload/textobject.vim
+!/.config/nvim/autoload/window.vim
 
 !/.config/nvim/colors
 !/.config/nvim/colors/acme.vim
