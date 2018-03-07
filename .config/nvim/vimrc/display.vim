@@ -12,13 +12,10 @@ set list listchars=tab:▸\ ,eol:¬,trail:@
 
 highlight link UnwantedWhitespace WarningMsg
 
-" this augroup must be kept here, *above* the setting of colorscheme
-augroup highlight_whitespace
-  autocmd!
-  autocmd BufEnter,WinEnter * call clearmatches()
-    \| call matchadd('UnwantedWhitespace', '\s\+$', 100)
-    \| call matchadd('UnwantedWhitespace', '\t', 100)
-augroup END
+" this must be kept here, *above* the setting of colorscheme
+autocmd settings_highlight BufEnter,WinEnter * call clearmatches()
+  \| call matchadd('UnwantedWhitespace', '\s\+$', 100)
+  \| call matchadd('UnwantedWhitespace', '\t', 100)
 
 colorscheme acme
 

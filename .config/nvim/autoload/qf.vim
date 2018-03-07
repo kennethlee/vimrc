@@ -7,7 +7,8 @@ endfunction
 
 function! qf#QuickfixToggle() abort
   let l:callback = "v:val.quickfix == 1 && v:val.loclist == 0"
-  execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "cwindow"
+  " botright cwindow sets the qf window to be full-width
+  execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "botright cwindow"
 endfunction
 
 " ==============================================================================
@@ -191,7 +192,6 @@ function! qf#RestoreList() abort
       if len(lists) > 0
         let w:quickfix_title = strpart(getwinvar(winnr("#"), "qf_location_titles")[0], 1)
         call setloclist(0, getwinvar(winnr("#"), "qf_location_lists")[0], "r", w:quickfix_title)
-
       else
         echo "No filter applied. Nothing to restore."
       endif
