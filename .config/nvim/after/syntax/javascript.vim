@@ -32,3 +32,5 @@ syntax match    javaScriptArrowFunction       /\<\K\k*\ze\s*=>/   skipwhite skip
 syntax match    javaScriptArrowFunction       /([^()]*)\ze\s*=>/  skipwhite skipempty nextgroup=javaScriptArrowFunction extend
 highlight link  javaScriptArrowFunction       Function
 
+" ==============================================================================
+

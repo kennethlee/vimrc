@@ -1,6 +1,7 @@
 let b:did_ftplugin = 1
 
-" folding
+" fold {{{1
+
 setlocal foldenable
 setlocal foldmethod=expr
 setlocal foldtext=fold#HeaderText()
@@ -8,9 +9,6 @@ setlocal foldexpr=MarkdownLevel()
 setlocal foldlevel=0
 setlocal foldnestmax=6
 setlocal foldcolumn=1
-
-" misc
-setlocal syn=off
 
 function! MarkdownLevel() abort
   let currentline = getline(v:lnum)
@@ -20,4 +18,12 @@ function! MarkdownLevel() abort
   endif
   return '='
 endfunction
+
+" ==============================================================================
+" misc {{{1
+
+setlocal syn=off
+
+" ==============================================================================
+" }}}1
 
