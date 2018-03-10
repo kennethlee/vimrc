@@ -16,6 +16,7 @@ command! -buffer -bar Restore call qf#RestoreList()
 " ==============================================================================
 " window {{{1
 
+" for :Keep, :Reject, :Restore
 autocmd settings_quickfix BufEnter <buffer> if get(g:, 'qf_auto_quit', 1) | if winnr('$') < 2 | q | endif | endif
 autocmd settings_quickfix BufWinEnter <buffer> if get(g:, 'qf_auto_quit', 1) | call qf#ReuseTitle() | endif
 

@@ -7,6 +7,9 @@ set mousehide mouse=nicr
 " redo
 nnoremap U <C-r>
 
+" quit all open buffers, splits
+nnoremap Q :qall<CR>
+
 " 'Y' yanks to EoL (consistent with D, C, etc)
 nnoremap Y y$
 
@@ -62,7 +65,7 @@ vnoremap <expr> cN g:mc . "``cgN"
 vnoremap <expr> cn g:mc . "``cgn"
 
 " ==============================================================================
-" indent object {{{1
+" text objects {{{1
 
 onoremap <silent>ai :call textobject#IndentedBlock(0)<CR>
 onoremap <silent>ii :call textobject#IndentedBlock(1)<CR>
@@ -77,7 +80,8 @@ nnoremap <Space>fc :call file#RemoveFancyCharacters()<CR>
 
 nnoremap <silent><Space>fr :call file#RenameFile()<CR>
 
-nnoremap <silent><Space>ft :%s/\s\+$//<CR>:let @/=''<CR>
+" remove trailing spaces (tabs + spaces)
+nnoremap <silent><Space>ft :%s/\s\+$//e<CR>:let @/=''<CR>
 
 " ==============================================================================
 " <Space>t: find {{{2
@@ -98,34 +102,34 @@ nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 " nav: buffer {{{2
 
 " close buffer without losing the split
-nnoremap <silent><Space>bd :bprevious<CR>:bdelete #<CR>
+nnoremap <silent><Space>bd :lclose\|bprevious\|bdelete<Space>#<CR>
 
 " switch to the alternate buffer
 nnoremap <BS> <C-^>
 
 " list all open buffers then wait for tab completion or input + tab completion
-nnoremap <Space>bb :ls<CR>:b *
-nnoremap <Space>bs :ls<CR>:sbuffer *
-nnoremap <Space>bv :ls<CR>:vert sbuffer *
+nnoremap <Space>bb :ls<CR>:buffer<Space>*
+nnoremap <Space>bs :ls<CR>:sbuffer<Space>*
+nnoremap <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
 
-" cycle through items in the quickfix list
+" cycle through buffers
+nnoremap <silent><C-h> :lclose\|bprevious<CR>
+nnoremap <silent><C-l> :lclose\|bnext<CR>
+
+" scroll through items in the quickfix list
 nnoremap <silent><C-k> :cprevious<CR>
 nnoremap <silent><C-j> :cnext<CR>
 
-" cycle through items in the location list
+" scroll through items in the location list
 nnoremap <silent><M-k> :lprevious<CR>
 nnoremap <silent><M-j> :lnext<CR>
-
-" cycle through buffers
-nnoremap <silent><C-h> :bprevious<CR>
-nnoremap <silent><C-l> :bnext<CR>
 
 " ==============================================================================
 " nav: windows {{{2
 
 " toggle quickfix / location list windows
-nnoremap <silent><Space>q :<C-U>call qf#QuickfixToggle()<CR>
-nnoremap <silent><Space>l :<C-U>call qf#LocListToggle()<CR>
+nnoremap <silent><Space>q :<C-u>call qf#QuickfixToggle()<CR>
+nnoremap <silent><Space>l :<C-u>call qf#LocListToggle()<CR>
 
 " toggle term window
 nnoremap <silent><Space>w :call window#TerminalToggle()<CR>

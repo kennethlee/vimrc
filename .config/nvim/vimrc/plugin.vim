@@ -1,6 +1,6 @@
 " vim's standard plugins {{{1
 
-" pi_paren
+" " pi_paren
 " highlight! link MatchParen IncSearch
 
 " enable
