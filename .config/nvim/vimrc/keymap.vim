@@ -102,7 +102,8 @@ nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 " nav: buffer {{{2
 
 " close buffer without losing the split
-nnoremap <silent><Space>bd :lclose\|bprevious\|bdelete<Space>#<CR>
+" nnoremap <silent><Space>bd :lclose\|bprevious\|bdelete<Space>#<CR>
+nnoremap <silent><Space>bd :Lclear<CR>:bprevious\|bdelete<Space>#<CR>
 
 " switch to the alternate buffer
 nnoremap <BS> <C-^>

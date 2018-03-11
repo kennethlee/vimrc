@@ -12,6 +12,8 @@ setlocal nobuflisted bufhidden=wipe
 command! -buffer -nargs=? Keep call qf#FilterList(<q-args>, 0)
 command! -buffer -nargs=? Reject call qf#FilterList(<q-args>, 1)
 command! -buffer -bar Restore call qf#RestoreList()
+command! Lclear call qf#LocListClear()
+command! Cclear call qf#QuickfixClear()
 
 " ==============================================================================
 " window {{{1

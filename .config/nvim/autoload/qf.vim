@@ -12,7 +12,7 @@ function! qf#QuickfixToggle() abort
 endfunction
 
 " ==============================================================================
-" :Keep, :Reject, :Restore {{{1
+" :Keep, :Reject, :Restore, :Clear {{{1
 " helpers {{{2
 " s:ResetLists {{{3
 
@@ -230,6 +230,19 @@ function! qf#ReuseTitle() abort
       endif
     endif
   endif
+endfunction
+
+" ==============================================================================
+" Clear {{{2
+
+function! qf#LocListClear() abort
+  call setloclist(winnr(), [])
+  lclose
+endfunction
+
+function! qf#QuickfixClear() abort
+  call setqflist([])
+  cclose
 endfunction
 
 " ==============================================================================
