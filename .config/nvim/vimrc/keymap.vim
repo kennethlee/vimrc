@@ -114,8 +114,10 @@ nnoremap <Space>bs :ls<CR>:sbuffer<Space>*
 nnoremap <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
 
 " cycle through buffers
-nnoremap <silent><C-h> :lclose\|bprevious<CR>
-nnoremap <silent><C-l> :lclose\|bnext<CR>
+" nnoremap <silent><C-h> :lclose\|bprevious<CR>
+" nnoremap <silent><C-l> :lclose\|bnext<CR>
+nnoremap <silent><C-h> :Lclear<CR>:bprevious<CR>
+nnoremap <silent><C-l> :Lclear<CR>:bnext<CR>
 
 " scroll through items in the quickfix list
 nnoremap <silent><C-k> :cprevious<CR>
