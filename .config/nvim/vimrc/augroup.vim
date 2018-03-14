@@ -25,6 +25,15 @@ augroup vimrc_quickfix
 augroup END
 
 " ==============================================================================
+" startup {{{1
+
+augroup vimrc_startup
+  autocmd!
+  autocmd vimrc_startup VimEnter * WipeMarks
+  autocmd vimrc_startup VimEnter * WipeReg
+augroup END
+
+" ==============================================================================
 " statusline {{{1
 
 augroup vimrc_statusline
