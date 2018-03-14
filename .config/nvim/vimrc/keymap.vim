@@ -103,7 +103,7 @@ nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 " close buffer without losing the split
 " nnoremap <silent><Space>bd :lclose\|bprevious\|bdelete<Space>#<CR>
-nnoremap <silent><Space>bd :Lclear<CR>:bprevious\|bdelete<Space>#<CR>
+nnoremap <silent><Space>bd :call setloclist(winnr(), [])<CR>:lclose<CR>:bprevious<CR>:bdelete<Space>#<CR>
 
 " switch to the alternate buffer
 nnoremap <BS> <C-^>
@@ -116,8 +116,8 @@ nnoremap <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
 " cycle through buffers
 " nnoremap <silent><C-h> :lclose\|bprevious<CR>
 " nnoremap <silent><C-l> :lclose\|bnext<CR>
-nnoremap <silent><C-h> :Lclear<CR>:bprevious<CR>
-nnoremap <silent><C-l> :Lclear<CR>:bnext<CR>
+nnoremap <silent><C-h> :call setloclist(winnr(), [])<CR>:lclose<CR>:bprevious<CR>
+nnoremap <silent><C-l> :call setloclist(winnr(), [])<CR>:lclose<CR>:bnext<CR>
 
 " scroll through items in the quickfix list
 nnoremap <silent><C-k> :cprevious<CR>
@@ -137,6 +137,9 @@ nnoremap <silent><Space>l :<C-u>call qf#LocListToggle()<CR>
 " toggle term window
 nnoremap <silent><Space>w :call window#TerminalToggle()<CR>
 tnoremap <silent><Space>w <C-\><C-n>:call window#TerminalToggle()<CR>
+
+nnoremap <silent><Space>m :marks<CR>
+nnoremap <silent><Space>r :registers<CR>
 
 " ==============================================================================
 " }}}1
