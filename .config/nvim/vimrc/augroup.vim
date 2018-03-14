@@ -1,43 +1,44 @@
-" filetype {{{1
-" javascript {{{2
-
-" augroup filetype_javascript
-"   autocmd!
-"   " lint on save
-"   autocmd filetype_javascript BufWritePost <buffer> silent make! <afile> | silent redraw!
-" augroup END
-
-" ==============================================================================
 " highlight {{{1
 
-augroup settings_highlight
+augroup vimrc_highlight
   autocmd!
+augroup END
+
+" ==============================================================================
+" lint {{{1
+
+augroup vimrc_lint
+  autocmd!
+  " automatically open loclist/qf after executing quickfix commands and there
+  " are valid errors
+  autocmd vimrc_lint QuickFixCmdPost [^l]* botright cwindow
+  autocmd vimrc_lint QuickFixCmdPost l* lwindow
 augroup END
 
 " ==============================================================================
 " quickfix {{{1
 
-augroup settings_quickfix
+augroup vimrc_quickfix
   autocmd!
   " automatically close corresponding loclist when quitting its parent window
-  autocmd settings_quickfix QuitPre * if &filetype != 'qf' | silent! lclose | endif
+  autocmd vimrc_quickfix QuitPre * if &filetype != 'qf' | silent! lclose | endif
 augroup END
 
 " ==============================================================================
 " statusline {{{1
 
-augroup settings_statusline
+augroup vimrc_statusline
   autocmd!
   " for `fxn#StatuslineWarningWhitespace()`
-  autocmd settings_statusline BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
+  autocmd vimrc_statusline BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
 augroup END
 
 " ==============================================================================
 " terminal {{{1
 
-augroup settings_terminal
+augroup vimrc_terminal
   autocmd!
-  autocmd settings_terminal TermOpen * setlocal nonumber norelativenumber
+  autocmd vimrc_terminal TermOpen * setlocal nonumber norelativenumber
 augroup END
 
 " ==============================================================================

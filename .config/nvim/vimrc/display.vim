@@ -13,7 +13,7 @@ set list listchars=tab:▸\ ,eol:¬,trail:@
 highlight link UnwantedWhitespace WarningMsg
 
 " this must be kept here, *above* the setting of colorscheme
-autocmd settings_highlight BufEnter,WinEnter * call clearmatches()
+autocmd vimrc_highlight BufEnter,WinEnter * call clearmatches()
   \| call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \| call matchadd('UnwantedWhitespace', '\t', 100)
 
