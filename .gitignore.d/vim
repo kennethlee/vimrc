@@ -23,6 +23,7 @@
 !/.config/nvim/after/syntax
 !/.config/nvim/after/syntax/html.vim
 !/.config/nvim/after/syntax/javascript.vim
+!/.config/nvim/after/syntax/markdown.vim
 
 !/.config/nvim/
 !/.config/nvim/autoload
