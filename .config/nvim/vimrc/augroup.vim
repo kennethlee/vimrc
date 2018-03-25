@@ -1,3 +1,10 @@
+" fold {{{1
+
+augroup vimrc_fold
+  autocmd!
+augroup END
+
+" ==============================================================================
 " highlight {{{1
 
 augroup vimrc_highlight
