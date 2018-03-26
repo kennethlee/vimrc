@@ -1,89 +1,61 @@
-" paths {{{1
+" settings {{{1
 
-set runtimepath+=~/.fzf
-
-" ==============================================================================
-" file handling {{{1
-
-set nomodeline
-
-" encoding
 set encoding=utf-8
 scriptencoding utf-8
 set fileencodings=utf-8
 
-" enable filetype detection
-filetype plugin indent on
-
-" hide buffers w/o having to save first
-set hidden switchbuf=useopen
-
-" limit syntax highlighting to the first 250 columns to reduce sluggishness
-set synmaxcol=250
-
-" disable backup and swap files
-set nobackup noswapfile
-
-" automatically reload file if it has changed outside of vim
-set autoread
-
-set foldmethod=manual
-set nofoldenable
-
-" jump over folds without opening them
-set foldopen-=block
-
-" ==============================================================================
-" text manipulation {{{1
-
+set nomodeline
 set clipboard+=unnamedplus
+filetype plugin indent on
+syntax on
+set runtimepath+=~/.fzf
 
-" gb: fix slow O inserts
+set autoread
+set backspace=indent,eol,start
+set cmdheight=2
+set cmdwinheight=20
+set expandtab
+set foldmethod=manual
+set foldopen-=block
+set hidden
+set hlsearch
+set ignorecase
+set inccommand=nosplit
+set incsearch
+set laststatus=2
+set linebreak
+set list
+set listchars=tab:▸\ ,eol:¬,trail:@
+set nobackup
+set noequalalways
+set nofoldenable
+set nojoinspaces
+set noswapfile
+set number
+set shiftwidth=2
+set showmode
+set smartcase
+set softtabstop=2
+set splitbelow
+set splitright
+set switchbuf=useopen
+set synmaxcol=250
+set tabstop=2
+set termguicolors
 set timeout
 set timeoutlen=500
+set title t_ti= t_te=
 set ttimeoutlen=100
-
-" wrap long lines
-set wrap linebreak
-
-" backspacing wraps
-set backspace=indent,eol,start
-
-" default tab settings
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-
-" gb: insert only one space when joining lines that contain sentence-terminating
-" punctuation like `.`.
-set nojoinspaces
+set wildignorecase
+set wildmenu
+set wildmode=list:longest,full
+set winwidth=90 winminwidth=40
+set wrap
 
 " gb: normally, Vim messes with iskeyword when you open a shell file. This can
 " leak out, polluting other file types even after a 'set ft=' change. This
 " variable prevents the iskeyword change so it can't hurt anyone
 let g:sh_noisk = 1
-
-" ==============================================================================
-" window behavior {{{1
-
-set noequalalways
-set winwidth=90
-set winminwidth=40
-set splitright splitbelow
-
-set cmdwinheight=20
-
-" ==============================================================================
-" search / find {{{1
-
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
-
-" incremental substitution
-set inccommand=nosplit
 
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --no-heading
@@ -91,7 +63,7 @@ if executable('rg')
 endif
 
 " ==============================================================================
-" wipe {{{1
+" commands {{{1
 
 " `:WipeMarks` to clear marks
 command! WipeMarks delmarks! | delmarks A-Z0-9
@@ -100,14 +72,6 @@ command! WipeMarks delmarks! | delmarks A-Z0-9
 command! WipeReg for i in range(34,122)
   \| silent! call setreg(nr2char(i), [])
   \| endfor
-
-" ==============================================================================
-" completion {{{1
-
-" command mode tab completion
-set wildmenu
-set wildmode=list:longest,full
-set wildignorecase
 
 " ==============================================================================
 " }}}1

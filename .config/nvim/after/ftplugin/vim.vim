@@ -1,5 +1,3 @@
-" fold {{{1
-
 setlocal foldenable
 setlocal foldlevel=0
 setlocal foldnestmax=3
@@ -12,11 +10,5 @@ endfunction
 
 autocmd vimrc_fold BufWinEnter <buffer> call s:SetFoldMethodMarker()
 
-" ==============================================================================
-" misc {{{1
-
 setlocal colorcolumn=81
-
-" ==============================================================================
-" }}}1
 

@@ -1,145 +1,89 @@
-" misc. {{{1
-
-nnoremap <Space> <Nop>
+" general {{{1
 
 set mousehide mouse=nicr
 
-" redo
-nnoremap U <C-r>
-
-" quit all open buffers, splits
-nnoremap Q :qall<CR>
-
-" 'Y' yanks to EoL (consistent with D, C, etc)
-nnoremap Y y$
-
-" toggle folds with 'zz'
+" keep cursor in place after joining lines
+nnoremap J  mzJ`z
+nnoremap Q  :qall<CR>
+nnoremap U  <C-r>
+noremap  x  "_x
+nnoremap Y  y$
 nnoremap zz za
 xnoremap zz zf
 
-" keep cursor in place after joining lines
-nnoremap J mzJ`z
-
-" forbid deletion via x from updating registers
-noremap x "_x
-
-" 'F8' to insert ISO 8601 timestamp + day of the week (Insert Mode)
-inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
-
-" clear highlighting from previous search
-nnoremap <silent><Esc> :nohlsearch<CR><Esc>
-
-" ==============================================================================
-" ChangeRegister {{{1
-
-" quickly / easily change contents of a macro
-" ex: chq to edit register q
-nnoremap ch :call macro#ChangeRegister()<CR>
-
-" ==============================================================================
-" html tag completion {{{1
-
-" inline tag
-inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
-
-" block tag
-inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
-
-" ==============================================================================
-" smarter tab {{{1
-
-inoremap <silent><expr> <Tab> key#InsertTabWrapper()
-inoremap <silent><S-Tab> <C-n>
-
-" ==============================================================================
-" turbo-charged dot {{{1
-
-" 'cN/cn' on current word, change, dot repeat, be amazed
-nnoremap cN #``cgN
-nnoremap cn *``cgn
-
-" 'cN/cn' on visually-selected text, change, dot repeat
-" hit 'N/n' to jump to previous/next occurrence per the usual
-let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
-vnoremap <expr> cN g:mc . "``cgN"
-vnoremap <expr> cn g:mc . "``cgn"
-
-" ==============================================================================
-" text objects {{{1
-
+" indent text object
 onoremap <silent>ai :call textobject#IndentedBlock(0)<CR>
 onoremap <silent>ii :call textobject#IndentedBlock(1)<CR>
 vnoremap <silent>ai :call textobject#IndentedBlock(0)<CR><Esc>gv
 vnoremap <silent>ii :call textobject#IndentedBlock(1)<CR><Esc>gv
 
+" change contents of a macro, ex: chq to edit register q
+nnoremap ch :call macro#ChangeRegister()<CR>
+
+" turbo-charged dot: 'cN/cn' on current word, change, dot repeat, be amazed
+" on visually-selected text; N/n for prev/next occurrence per the usual.
+nnoremap        cN #``cgN
+nnoremap        cn *``cgn
+let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+vnoremap <expr> cN g:mc . "``cgN"
+vnoremap <expr> cn g:mc . "``cgn"
+
+" html tag completion
+inoremap <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+inoremap <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
+
+" clear highlighting from previous search
+nnoremap <silent><Esc> :nohlsearch<CR><Esc>
+
+" 'F8' to insert ISO 8601 timestamp + day of the week
+inoremap <silent><F8> <C-r>=strftime("%FT%T%z, %a")<CR>
+
+" tab
+inoremap <silent><expr><Tab> key#InsertTabWrapper()
+inoremap <silent>      <S-Tab> <C-n>
+
 " ==============================================================================
 " <Space> {{{1
-" <Space>f: file ops {{{2
 
-nnoremap <Space>fc :call file#RemoveFancyCharacters()<CR>
+nnoremap         <Space> <Nop>
 
+nnoremap         <Space>bb :ls<CR>:buffer<Space>*
+nnoremap         <Space>bs :ls<CR>:sbuffer<Space>*
+nnoremap         <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
+nnoremap <silent><Space>bd :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<Bar>bdelete<Space>#<CR>
+
+nnoremap         <Space>fc :call file#RemoveFancyCharacters()<CR>
 nnoremap <silent><Space>fr :call file#RenameFile()<CR>
-
 " remove trailing spaces (tabs + spaces)
 nnoremap <silent><Space>ft :%s/\s\+$//e<CR>:let @/=''<CR>
-
-" ==============================================================================
-" <Space>t: find {{{2
+nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
 nnoremap <silent><Space>tr :FZF<CR>
-nnoremap <Space>te :FZF ~/
+nnoremap         <Space>te :FZF ~/
 nnoremap <silent><Space>tn :FZF ~/Documents/notes<CR>
 nnoremap <silent><Space>tj :FZF ~/Dropbox/notes<CR>
 
-" ==============================================================================
-" <Space>v: general vim {{{2
+nnoremap <silent><Space>m :marks<CR>
+nnoremap <silent><Space>r :registers<CR>
 
-" open .vimrc
-nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
-
-" ==============================================================================
-" navigation {{{1
-" nav: buffer {{{2
-
-" close buffer without losing the split
-" nnoremap <silent><Space>bd :lclose\|bprevious\|bdelete<Space>#<CR>
-nnoremap <silent><Space>bd :call setloclist(winnr(), [])<CR>:lclose<CR>:bprevious<CR>:bdelete<Space>#<CR>
-
-" switch to the alternate buffer
-nnoremap <BS> <C-^>
-
-" list all open buffers then wait for tab completion or input + tab completion
-nnoremap <Space>bb :ls<CR>:buffer<Space>*
-nnoremap <Space>bs :ls<CR>:sbuffer<Space>*
-nnoremap <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
-
-" cycle through buffers
-" nnoremap <silent><C-h> :lclose\|bprevious<CR>
-" nnoremap <silent><C-l> :lclose\|bnext<CR>
-nnoremap <silent><C-h> :call setloclist(winnr(), [])<CR>:lclose<CR>:bprevious<CR>
-nnoremap <silent><C-l> :call setloclist(winnr(), [])<CR>:lclose<CR>:bnext<CR>
-
-" scroll through items in the quickfix list
-nnoremap <silent><C-k> :cprevious<CR>
-nnoremap <silent><C-j> :cnext<CR>
-
-" scroll through items in the location list
-nnoremap <silent><M-k> :lprevious<CR>
-nnoremap <silent><M-j> :lnext<CR>
-
-" ==============================================================================
-" nav: windows {{{2
-
-" toggle quickfix / location list windows
 nnoremap <silent><Space>q :<C-u>call qf#QuickfixToggle()<CR>
 nnoremap <silent><Space>l :<C-u>call qf#LocListToggle()<CR>
-
-" toggle term window
 nnoremap <silent><Space>w :call window#TerminalToggle()<CR>
 tnoremap <silent><Space>w <C-\><C-n>:call window#TerminalToggle()<CR>
 
-nnoremap <silent><Space>m :marks<CR>
-nnoremap <silent><Space>r :registers<CR>
+" ==============================================================================
+" navigation {{{1
+
+nnoremap <BS> <C-^>
+
+nnoremap <silent><C-h> :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<CR>
+nnoremap <silent><C-l> :call setloclist(winnr(), [])<CR>:lclose<Bar>bnext<CR>
+
+nnoremap <silent><C-k> :cprevious<CR>
+nnoremap <silent><C-j> :cnext<CR>
+
+nnoremap <silent><M-k> :lprevious<CR>
+nnoremap <silent><M-j> :lnext<CR>
 
 " ==============================================================================
 " }}}1

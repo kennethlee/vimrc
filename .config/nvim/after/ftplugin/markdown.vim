@@ -1,7 +1,5 @@
 let b:did_ftplugin = 1
 
-" fold {{{1
-
 setlocal foldenable
 setlocal foldlevel=0
 setlocal foldnestmax=6
@@ -18,12 +16,9 @@ endfunction
 
 function! s:SetFoldMethodExpr() abort
   setlocal foldmethod=expr
-  setlocal foldtext=fold#HeaderText()
   setlocal foldexpr=MarkdownLevel()
+  setlocal foldtext=fold#HeaderText()
 endfunction
 
 autocmd vimrc_fold BufWinEnter <buffer> call s:SetFoldMethodExpr()
-
-" ==============================================================================
-" }}}1
 

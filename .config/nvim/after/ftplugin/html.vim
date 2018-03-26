@@ -1,5 +1,3 @@
-" fold {{{1
-
 setlocal foldenable
 setlocal foldlevel=2
 setlocal foldnestmax=5
@@ -11,7 +9,4 @@ function! s:SetFoldMethodIndent() abort
 endfunction
 
 autocmd vimrc_fold BufWinEnter <buffer> call s:SetFoldMethodIndent()
-
-" ==============================================================================
-" }}}1
 
