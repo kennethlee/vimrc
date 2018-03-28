@@ -17,6 +17,7 @@ set cmdwinheight=20
 set expandtab
 set foldmethod=manual
 set foldopen-=block
+set foldtext=fold#HeaderText()
 set hidden
 set hlsearch
 set ignorecase
