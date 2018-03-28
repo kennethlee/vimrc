@@ -22,8 +22,8 @@ augroup END
 
 augroup vimrc_startup
   autocmd!
-  autocmd vimrc_startup VimEnter * WipeMarks
-  autocmd vimrc_startup VimEnter * WipeReg
+  autocmd vimrc_startup VimEnter * Wmarks
+  autocmd vimrc_startup VimEnter * Wreg
 augroup END
 
 augroup vimrc_statusline
