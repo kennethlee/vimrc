@@ -1,4 +1,4 @@
-" settings {{{1
+" options {{{1
 
 set encoding=utf-8
 scriptencoding utf-8
@@ -40,7 +40,7 @@ set softtabstop=2
 set splitbelow
 set splitright
 set switchbuf=useopen
-set synmaxcol=250
+set synmaxcol=150
 set tabstop=2
 set termguicolors
 set timeout
@@ -66,11 +66,11 @@ endif
 " ==============================================================================
 " commands {{{1
 
-" `:WipeMarks` to clear marks
-command! WipeMarks delmarks! | delmarks A-Z0-9
+" clear marks
+command! Wmarks delmarks! | delmarks A-Z0-9
 
-" `:WipeReg` to clear registers
-command! WipeReg for i in range(34,122)
+" clear registers
+command! Wreg for i in range(34,122)
   \| silent! call setreg(nr2char(i), [])
   \| endfor
 
