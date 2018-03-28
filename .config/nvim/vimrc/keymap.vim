@@ -2,14 +2,10 @@
 
 set mousehide mouse=nicr
 
-" keep cursor in place after joining lines
 nnoremap J  mzJ`z
-nnoremap Q  :qall<CR>
 nnoremap U  <C-r>
 noremap  x  "_x
 nnoremap Y  y$
-nnoremap zz za
-xnoremap zz zf
 
 " indent text object
 onoremap <silent>ai :call textobject#IndentedBlock(0)<CR>
@@ -45,7 +41,7 @@ inoremap <silent>      <S-Tab> <C-n>
 " ==============================================================================
 " <Space> {{{1
 
-nnoremap         <Space> <Nop>
+nnoremap         <Space>   <Nop>
 
 nnoremap         <Space>bb :ls<CR>:buffer<Space>*
 nnoremap         <Space>bs :ls<CR>:sbuffer<Space>*
@@ -54,7 +50,6 @@ nnoremap <silent><Space>bd :call setloclist(winnr(), [])<CR>:lclose<Bar>bpreviou
 
 nnoremap         <Space>fc :call file#RemoveFancyCharacters()<CR>
 nnoremap <silent><Space>fr :call file#RenameFile()<CR>
-" remove trailing spaces (tabs + spaces)
 nnoremap <silent><Space>ft :%s/\s\+$//e<CR>:let @/=''<CR>
 nnoremap <silent><Space>vv :edit ~/.config/nvim/vimrc<CR>
 
@@ -63,13 +58,10 @@ nnoremap         <Space>te :FZF ~/
 nnoremap <silent><Space>tn :FZF ~/Documents/notes<CR>
 nnoremap <silent><Space>tj :FZF ~/Dropbox/notes<CR>
 
-nnoremap <silent><Space>m :marks<CR>
-nnoremap <silent><Space>r :registers<CR>
-
-nnoremap <silent><Space>q :<C-u>call qf#QuickfixToggle()<CR>
-nnoremap <silent><Space>l :<C-u>call qf#LocListToggle()<CR>
-nnoremap <silent><Space>w :call window#TerminalToggle()<CR>
-tnoremap <silent><Space>w <C-\><C-n>:call window#TerminalToggle()<CR>
+nnoremap <silent><Space>q  :<C-u>call qf#QuickfixToggle()<CR>
+nnoremap <silent><Space>l  :<C-u>call qf#LocListToggle()<CR>
+nnoremap <silent><Space>w  :call window#TerminalToggle()<CR>
+tnoremap <silent><Space>w  <C-\><C-n>:call window#TerminalToggle()<CR>
 
 " ==============================================================================
 " navigation {{{1
