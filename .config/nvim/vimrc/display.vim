@@ -30,5 +30,5 @@ set statusline+=%{statusline#ExpandTab()}
 set statusline+=%{statusline#FileEncoding()}
 set statusline+=%{statusline#FileFormat()}
 set statusline+=%*
-set statusline+=%6(%c%)\                            " column number
+set statusline+=%14.(%l,%c%V%)%4p                   " line,col percent
 
