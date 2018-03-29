@@ -17,6 +17,7 @@ set statusline+=%#question#
 set statusline+=%r                                  " read-only
 set statusline+=%w                                  " preview buf
 set statusline+=%*
+set statusline+=%<                                  " truncation point
 
 " center
 set statusline+=\ %-F\                              " absolute path
