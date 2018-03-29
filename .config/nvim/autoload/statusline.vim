@@ -39,7 +39,6 @@ function! statusline#FileFormat() abort
   else
     return ''
   endif
-  endif
 endfunction
 
 " ==============================================================================
