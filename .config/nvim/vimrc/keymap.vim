@@ -6,6 +6,7 @@ nnoremap J  mzJ`z
 nnoremap U  <C-r>
 noremap  x  "_x
 nnoremap Y  y$
+nnoremap zz za
 
 " indent text object
 onoremap <silent>ai :call textobject#IndentedBlock(0)<CR>

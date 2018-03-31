@@ -1,2 +1,4 @@
-setlocal colorcolumn=81
+if &filetype ==# 'elixir'
+  setlocal colorcolumn=81
+endif
 

@@ -1,6 +1,8 @@
-autocmd vimrc_fold BufNewFile,BufRead,BufWinEnter <buffer>
-  \ setlocal foldmethod=indent
-setlocal foldcolumn=1
-setlocal foldlevel=2
-setlocal foldnestmax=5
+if &filetype ==# 'html'
+  autocmd vimrc_fold BufNewFile,BufRead,BufWinEnter <buffer>
+    \   setlocal foldcolumn=1
+    \|  setlocal foldmethod=indent
+    \|  setlocal foldnestmax=5
+  setlocal foldlevel=2
+endif
 

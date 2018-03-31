@@ -67,12 +67,15 @@ endif
 " commands {{{1
 
 " clear marks
-command! Wmarks delmarks! | delmarks A-Z0-9
+command! Wmarks
+  \   delmarks!
+  \|  delmarks A-Z0-9
 
 " clear registers
-command! Wreg for i in range(34,122)
-  \| silent! call setreg(nr2char(i), [])
-  \| endfor
+command! Wreg
+  \   for i in range(34,122)
+  \|    silent! call setreg(nr2char(i), [])
+  \|  endfor
 
 " ==============================================================================
 " }}}1

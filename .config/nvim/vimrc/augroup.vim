@@ -17,7 +17,10 @@ augroup END
 augroup vimrc_quickfix
   autocmd!
   " automatically close corresponding loclist when quitting its parent window
-  autocmd vimrc_quickfix QuitPre * if &filetype != 'qf' | silent! lclose | endif
+  autocmd vimrc_quickfix QuitPre *
+    \   if &filetype != 'qf'
+    \|    silent! lclose
+    \|  endif
 augroup END
 
 augroup vimrc_startup
@@ -34,6 +37,8 @@ augroup END
 
 augroup vimrc_terminal
   autocmd!
-  autocmd vimrc_terminal TermOpen * setlocal nonumber norelativenumber
+  autocmd vimrc_terminal TermOpen *
+    \   setlocal nonumber
+    \|  setlocal norelativenumber
 augroup END
 
