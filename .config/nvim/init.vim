@@ -10,12 +10,32 @@ filetype plugin indent on
 syntax on
 set runtimepath+=~/.fzf
 
+" gb: normally, Vim messes with iskeyword when you open a shell file. This can
+" leak out, polluting other file types even after a 'set ft=' change. This
+" variable prevents the iskeyword change so it can't hurt anyone
+let g:sh_noisk = 1
+
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" " pi_paren
+" highlight! link MatchParen IncSearch
+
+" enable (nvim: matchit is on by default)
+runtime macros/matchit.vim
+
+" disable
+let g:loaded_netrwPlugin = 1
+
 set autoread
 set backspace=indent,eol,start
 set cmdheight=2
 set cmdwinheight=20
 set expandtab
 set foldmethod=manual
+set foldnestmax=5
 set foldopen-=block
 set foldtext=fold#HeaderText()
 set hidden
@@ -52,25 +72,6 @@ set wildmenu
 set wildmode=list:longest,full
 set winwidth=90 winminwidth=40
 set wrap
-
-" gb: normally, Vim messes with iskeyword when you open a shell file. This can
-" leak out, polluting other file types even after a 'set ft=' change. This
-" variable prevents the iskeyword change so it can't hurt anyone
-let g:sh_noisk = 1
-
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
-" " pi_paren
-" highlight! link MatchParen IncSearch
-
-" enable (nvim: matchit is on by default)
-runtime macros/matchit.vim
-
-" disable
-let g:loaded_netrwPlugin = 1
 
 " ==============================================================================
 " commands {{{1
@@ -184,70 +185,60 @@ nnoremap Y  y$
 nnoremap zz za
 
 " indent text object
-onoremap <silent> ai    :call textobject#IndentedBlock(0)<CR>
-onoremap <silent> ii    :call textobject#IndentedBlock(1)<CR>
-vnoremap <silent> ai    :call textobject#IndentedBlock(0)<CR><Esc>gv
-vnoremap <silent> ii    :call textobject#IndentedBlock(1)<CR><Esc>gv
+onoremap <silent> ai            :call textobject#IndentedBlock(0)<CR>
+onoremap <silent> ii            :call textobject#IndentedBlock(1)<CR>
+vnoremap <silent> ai            :call textobject#IndentedBlock(0)<CR><Esc>gv
+vnoremap <silent> ii            :call textobject#IndentedBlock(1)<CR><Esc>gv
 
 " change contents of a macro, ex: chq to edit register q
-nnoremap          ch    :call macro#ChangeRegister()<CR>
+nnoremap          ch            :call macro#ChangeRegister()<CR>
 
 " turbo-charged dot: 'cN/cn' on current word, change, dot repeat, be amazed
 " on visually-selected text; N/n for prev/next occurrence per the usual.
 let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
-nnoremap          cN    #``cgN
-nnoremap          cn    *``cgn
-vnoremap <expr>   cN    g:mc . "``cgN"
-vnoremap <expr>   cn    g:mc . "``cgn"
+nnoremap          cN            #``cgN
+nnoremap          cn            *``cgn
+vnoremap <expr>   cN            g:mc . "``cgN"
+vnoremap <expr>   cn            g:mc . "``cgn"
 
-nnoremap          <BS>  <C-^>
-
-nnoremap <silent> <C-h> :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<CR>
-nnoremap <silent> <C-l> :call setloclist(winnr(), [])<CR>:lclose<Bar>bnext<CR>
-
-nnoremap <silent> <C-k> :cprevious<CR>
-nnoremap <silent> <C-j> :cnext<CR>
-
-" html tag completion
-inoremap          <C-l> ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
-inoremap          <C-j> ><Esc>F<lyiwo</<C-r>"><Esc>O
-
-" clear highlighting from previous search
-nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
-
-" 'F8' to insert ISO 8601 timestamp + day of the week
-inoremap <silent> <F8> <C-r>=strftime("%FT%T%z, %a")<CR>
-
-nnoremap <silent> <M-k> :lprevious<CR>
-nnoremap <silent> <M-j> :lnext<CR>
-
+nnoremap          <BS>          <C-^>
+nnoremap <silent> <C-h>         :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<CR>
+nnoremap <silent> <C-l>         :call setloclist(winnr(), [])<CR>:lclose<Bar>bnext<CR>
+nnoremap <silent> <C-k>         :cprevious<CR>
+nnoremap <silent> <C-j>         :cnext<CR>
+nnoremap <silent> <M-k>         :lprevious<CR>
+nnoremap <silent> <M-j>         :lnext<CR>
+inoremap          <C-l>         ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
+inoremap          <C-j>         ><Esc>F<lyiwo</<C-r>"><Esc>O
+nnoremap <silent> <Esc>         :nohlsearch<CR><Esc>
+inoremap <silent> <F8>          <C-r>=strftime("%FT%T%z, %a")<CR>
 inoremap <silent> <expr><Tab>   key#InsertTabWrapper()
-inoremap <silent>       <S-Tab> <C-n>
+inoremap <silent> <S-Tab>       <C-n>
 
 " ==============================================================================
 " keymap: <Space> {{{1
 
-nnoremap          <Space>   <Nop>
+nnoremap          <Space>       <Nop>
 
-nnoremap          <Space>bb :ls<CR>:buffer<Space>*
-nnoremap          <Space>bs :ls<CR>:sbuffer<Space>*
-nnoremap          <Space>bv :ls<CR>:vertical<Space>sbuffer<Space>*
-nnoremap <silent> <Space>bd :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<Bar>bdelete<Space>#<CR>
+nnoremap          <Space>bb     :ls<CR>:buffer<Space>*
+nnoremap          <Space>bs     :ls<CR>:sbuffer<Space>*
+nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
+nnoremap <silent> <Space>bd     :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<Bar>bdelete<Space>#<CR>
 
-nnoremap          <Space>fc :call file#RemoveFancyCharacters()<CR>
-nnoremap <silent> <Space>fr :call file#RenameFile()<CR>
-nnoremap <silent> <Space>ft :%s/\s\+$//e<CR>:let @/=''<CR>
-nnoremap <silent> <Space>vv :edit $MYVIMRC<CR>
+nnoremap          <Space>fc     :call file#RemoveFancyCharacters()<CR>
+nnoremap <silent> <Space>fr     :call file#RenameFile()<CR>
+nnoremap <silent> <Space>ft     :%s/\s\+$//e<CR>:let @/=''<CR>
+nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
 
-nnoremap <silent> <Space>tr :FZF<CR>
-nnoremap          <Space>te :FZF ~/
-nnoremap <silent> <Space>tn :FZF ~/Documents/notes<CR>
-nnoremap <silent> <Space>tj :FZF ~/Dropbox/notes<CR>
+nnoremap <silent> <Space>tr     :FZF<CR>
+nnoremap          <Space>te     :FZF ~/
+nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
+nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
 
-nnoremap <silent> <Space>q  :<C-u>call qf#QuickfixToggle()<CR>
-nnoremap <silent> <Space>l  :<C-u>call qf#LocListToggle()<CR>
-nnoremap <silent> <Space>w  :call window#TerminalToggle()<CR>
-tnoremap <silent> <Space>w  <C-\><C-n>:call window#TerminalToggle()<CR>
+nnoremap <silent> <Space>q      :<C-u>call qf#QuickfixToggle()<CR>
+nnoremap <silent> <Space>l      :<C-u>call qf#LocListToggle()<CR>
+nnoremap <silent> <Space>w      :call window#TerminalToggle()<CR>
+tnoremap <silent> <Space>w      <C-\><C-n>:call window#TerminalToggle()<CR>
 
 " ==============================================================================
 " }}}1
