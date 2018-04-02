@@ -57,10 +57,3 @@
 !/.config/nvim/indent/scss.vim
 !/.config/nvim/indent/vim.vim
 
-!/.config/nvim/vimrc
-!/.config/nvim/vimrc/augroup.vim
-!/.config/nvim/vimrc/display.vim
-!/.config/nvim/vimrc/keymap.vim
-!/.config/nvim/vimrc/plugin.vim
-!/.config/nvim/vimrc/settings.vim
-
