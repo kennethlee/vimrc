@@ -184,12 +184,6 @@ noremap  x  "_x
 nnoremap Y  y$
 nnoremap zz za
 
-" indent text object
-onoremap <silent> ai            :call textobject#IndentedBlock(0)<CR>
-onoremap <silent> ii            :call textobject#IndentedBlock(1)<CR>
-vnoremap <silent> ai            :call textobject#IndentedBlock(0)<CR><Esc>gv
-vnoremap <silent> ii            :call textobject#IndentedBlock(1)<CR><Esc>gv
-
 " change contents of a macro, ex: chq to edit register q
 nnoremap          ch            :call macro#ChangeRegister()<CR>
 

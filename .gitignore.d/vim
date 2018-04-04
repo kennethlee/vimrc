@@ -33,7 +33,6 @@
 !/.config/nvim/autoload/macro.vim
 !/.config/nvim/autoload/qf.vim
 !/.config/nvim/autoload/statusline.vim
-!/.config/nvim/autoload/textobject.vim
 !/.config/nvim/autoload/window.vim
 
 !/.config/nvim/colors
