@@ -179,6 +179,7 @@ set statusline+=%14.(%l,%c%V%)%4p                   " line,col percent
 set mousehide mouse=nicr
 
 nnoremap J  mzJ`z
+inoremap jk <Esc>
 nnoremap U  <C-r>
 noremap  x  "_x
 nnoremap Y  y$
