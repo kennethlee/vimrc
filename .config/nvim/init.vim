@@ -229,6 +229,7 @@ nnoremap <silent> <Space>tr     :FZF<CR>
 nnoremap          <Space>te     :FZF ~/
 nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
+nnoremap <silent> <Space>to     :FZF ~/Dropbox/todo<CR>
 
 nnoremap <silent> <Space>q      :<C-u>call qf#QuickfixToggle()<CR>
 nnoremap <silent> <Space>l      :<C-u>call qf#LocListToggle()<CR>
