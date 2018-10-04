@@ -21,8 +21,6 @@
 !/.config/nvim/after/ftplugin/vim.vim
 
 !/.config/nvim/after/syntax
-!/.config/nvim/after/syntax/html.vim
-!/.config/nvim/after/syntax/javascript.vim
 !/.config/nvim/after/syntax/markdown.vim
 
 !/.config/nvim/
@@ -34,9 +32,6 @@
 !/.config/nvim/autoload/qf.vim
 !/.config/nvim/autoload/statusline.vim
 !/.config/nvim/autoload/window.vim
-
-!/.config/nvim/colors
-!/.config/nvim/colors/acme.vim
 
 !/.config/nvim/ftdetect
 !/.config/nvim/ftdetect/eruby.vim
