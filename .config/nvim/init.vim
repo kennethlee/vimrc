@@ -145,7 +145,7 @@ autocmd vimrc_highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-colorscheme acme
+colorscheme base16-eighties
 
 " statusline
 " left
