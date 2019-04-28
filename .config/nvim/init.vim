@@ -193,8 +193,8 @@ nnoremap          ch            :call macro#ChangeRegister()<CR>
 let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
 nnoremap          cN            #``cgN
 nnoremap          cn            *``cgn
-vnoremap <expr>   cN            g:mc . "``cgN"
-vnoremap <expr>   cn            g:mc . "``cgn"
+xnoremap <expr>   cN            g:mc . "``cgN"
+xnoremap <expr>   cn            g:mc . "``cgn"
 
 nnoremap          <BS>          <C-^>
 nnoremap <silent> <C-h>         :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<CR>
