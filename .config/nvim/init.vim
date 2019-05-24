@@ -52,6 +52,7 @@ set noequalalways
 set nofoldenable
 set nojoinspaces
 set noswapfile
+set nowrap
 set number
 set shiftwidth=2
 set showmode
@@ -71,7 +72,6 @@ set wildignorecase
 set wildmenu
 set wildmode=list:longest,full
 set winwidth=90 winminwidth=40
-set wrap
 
 " ==============================================================================
 " commands {{{1
@@ -223,6 +223,7 @@ nnoremap <silent> <Space>bd     :call setloclist(winnr(), [])<CR>:lclose<Bar>bpr
 nnoremap          <Space>fc     :call file#RemoveFancyCharacters()<CR>
 nnoremap <silent> <Space>fr     :call file#RenameFile()<CR>
 nnoremap <silent> <Space>ft     :%s/\s\+$//e<CR>:let @/=''<CR>
+nnoremap <silent> <Space>fw     :set wrap!<CR>
 nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
 
 nnoremap <silent> <Space>tr     :FZF<CR>
