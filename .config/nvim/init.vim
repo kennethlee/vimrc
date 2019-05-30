@@ -23,8 +23,10 @@ endif
 " " pi_paren
 " highlight! link MatchParen IncSearch
 
-" enable (nvim: matchit is on by default)
+" enable
+" note for nvim: matchit is on by default
 runtime macros/matchit.vim
+packadd cfilter
 
 " disable
 let g:loaded_netrwPlugin = 1
