@@ -100,16 +100,13 @@ augroup vimrc_highlight
   autocmd!
 augroup END
 
-augroup vimrc_lint
+augroup vimrc_quickfix
   autocmd!
   " automatically open loclist/qf after executing quickfix commands and there
   " are valid errors
-  autocmd vimrc_lint QuickFixCmdPost [^l]* botright cwindow
-  autocmd vimrc_lint QuickFixCmdPost l* lwindow
-augroup END
+  autocmd vimrc_quickfix QuickFixCmdPost [^l]* botright cwindow
+  autocmd vimrc_quickfix QuickFixCmdPost l* lwindow
 
-augroup vimrc_quickfix
-  autocmd!
   " automatically close corresponding loclist when quitting its parent window
   autocmd vimrc_quickfix QuitPre *
     \   if &filetype != 'qf'
