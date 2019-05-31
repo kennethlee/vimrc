@@ -87,13 +87,17 @@ command! Wreg
   \|  endfor
 
 " ==============================================================================
-" augroup {{{1
+" augroups {{{1
 
 augroup vimrc_fold
   autocmd!
 augroup END
 
 augroup vimrc_highlight
+  autocmd!
+augroup END
+
+augroup vimrc_lint
   autocmd!
 augroup END
 
