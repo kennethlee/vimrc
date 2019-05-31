@@ -20,9 +20,6 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
-" " pi_paren
-" highlight! link MatchParen IncSearch
-
 " enable
 " note for nvim: matchit is on by default
 runtime macros/matchit.vim
