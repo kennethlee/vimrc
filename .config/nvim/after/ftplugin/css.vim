@@ -3,5 +3,9 @@ if &filetype ==# 'css'
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=4
+
+  if executable('prettier')
+    setlocal formatprg=prettier\ --stdin-filepath\ %
+  endif
 endif
 

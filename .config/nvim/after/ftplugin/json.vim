@@ -4,5 +4,9 @@ if &filetype ==# 'json'
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=4
   setlocal foldlevel=1
+
+  if executable('prettier')
+    setlocal formatprg=prettier\ --stdin-filepath\ %
+  endif
 endif
 
