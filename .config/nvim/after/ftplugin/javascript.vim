@@ -9,6 +9,7 @@ if &filetype ==# 'javascript'
 
   if executable('prettier')
     setlocal formatprg=prettier\ --stdin-filepath\ %\ --trailing-comma\ all
+    " autocmd vimrc_lint BufWritePre <buffer> :normal gggqG
   endif
 
   setlocal colorcolumn=81

@@ -7,6 +7,7 @@ if &filetype ==# 'json'
 
   if executable('prettier')
     setlocal formatprg=prettier\ --stdin-filepath\ %
+    " autocmd vimrc_lint BufWritePre <buffer> :normal gggqG
   endif
 endif
 
