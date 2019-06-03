@@ -4,9 +4,5 @@ if &filetype ==# 'html'
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=5
   setlocal foldlevel=2
-
-  if executable('prettier')
-    setlocal formatprg=prettier\ --stdin-filepath\ %
-  endif
 endif
 
