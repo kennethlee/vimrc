@@ -3,3 +3,9 @@ if &filetype ==# 'qf'
   setlocal nobuflisted
 endif
 
+" automatically close corresponding loclist when quitting its parent window
+autocmd user_quickfix QuitPre *
+  \   if &filetype != 'qf'
+  \|    silent! lclose
+  \|  endif
+

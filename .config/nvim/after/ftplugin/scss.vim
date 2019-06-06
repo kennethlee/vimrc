@@ -1,5 +1,5 @@
 if &filetype ==# 'scss'
-  autocmd vimrc_fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd user_fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=4

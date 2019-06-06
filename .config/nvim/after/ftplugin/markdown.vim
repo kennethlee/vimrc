@@ -8,7 +8,7 @@ if &filetype ==# 'markdown'
     return '='
   endfunction
 
-  autocmd vimrc_fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd user_fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldexpr=MarkdownLevel()
     \|  setlocal foldmethod=expr

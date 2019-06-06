@@ -82,47 +82,42 @@ command! Wreg
 " ==============================================================================
 " augroups {{{1
 
-augroup vimrc_fold
+augroup user_fold
   autocmd!
 augroup END
 
-augroup vimrc_highlight
+augroup user_highlight
   autocmd!
 augroup END
 
-augroup vimrc_lint
+augroup user_lint
   autocmd!
 augroup END
 
-augroup vimrc_quickfix
+augroup user_quickfix
   autocmd!
-  " automatically open loclist/qf after executing quickfix commands and there
-  " are valid errors
-  autocmd vimrc_quickfix QuickFixCmdPost [^l]* botright cwindow
-  autocmd vimrc_quickfix QuickFixCmdPost l* lwindow
-
-  " automatically close corresponding loclist when quitting its parent window
-  autocmd vimrc_quickfix QuitPre *
-    \   if &filetype != 'qf'
-    \|    silent! lclose
-    \|  endif
+  " automatically open loclist / quickfix window if there are valid errors
+  " after executing quickfix commands
+  autocmd user_quickfix QuickFixCmdPost [^l]* botright cwindow
+  autocmd user_quickfix QuickFixCmdPost l* lwindow
 augroup END
 
-augroup vimrc_startup
+augroup user_startup
   autocmd!
-  autocmd vimrc_startup VimEnter * Wmarks
-  autocmd vimrc_startup VimEnter * Wreg
+  autocmd user_startup VimEnter * Wmarks
+  autocmd user_startup VimEnter * Wreg
 augroup END
 
-augroup vimrc_statusline
+augroup user_statusline
   autocmd!
   " for `fxn#StatuslineWarningWhitespace()`
-  autocmd vimrc_statusline BufWritePost,CursorHold * unlet! b:statusline_warning_whitespace
+  autocmd user_statusline BufWritePost,CursorHold *
+    \   unlet! b:statusline_warning_whitespace
 augroup END
 
-augroup vimrc_terminal
+augroup user_terminal
   autocmd!
-  autocmd vimrc_terminal TermOpen *
+  autocmd user_terminal TermOpen *
     \   setlocal nonumber
     \|  setlocal norelativenumber
 augroup END
@@ -133,7 +128,7 @@ augroup END
 " properly highlight tabs / trailing whitespace
 highlight link UnwantedWhitespace WarningMsg
 " this must be kept here, **above** the setting of colorscheme
-autocmd vimrc_highlight BufEnter,WinEnter *
+autocmd user_highlight BufEnter,WinEnter *
   \   call clearmatches()
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
