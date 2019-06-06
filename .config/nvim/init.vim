@@ -51,7 +51,6 @@ set noequalalways
 set nofoldenable
 set nojoinspaces
 set noswapfile
-set nowrap
 set number
 set shiftwidth=2
 set showmode
@@ -71,6 +70,7 @@ set wildignorecase
 set wildmenu
 set wildmode=list:longest,full
 set winwidth=90 winminwidth=40
+set wrap
 
 " ==============================================================================
 " commands {{{1
