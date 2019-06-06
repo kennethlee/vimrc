@@ -1,9 +1,6 @@
 " options {{{1
 
-set encoding=utf-8
 scriptencoding utf-8
-set fileencodings=utf-8
-
 set nomodeline
 set clipboard+=unnamedplus
 filetype plugin indent on
@@ -43,7 +40,6 @@ set ignorecase
 set inccommand=nosplit
 set incsearch
 set keywordprg=:DD
-set laststatus=2
 set linebreak
 set list
 set listchars=tab:▸\ ,eol:¬,trail:@
@@ -62,11 +58,7 @@ set splitright
 set switchbuf=useopen
 set synmaxcol=150
 set tabstop=2
-set termguicolors
-set timeout
-set timeoutlen=500
 set title t_ti= t_te=
-set ttimeoutlen=100
 set wildignorecase
 set wildmenu
 set wildmode=list:longest,full
