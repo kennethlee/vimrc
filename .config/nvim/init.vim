@@ -42,6 +42,7 @@ set hlsearch
 set ignorecase
 set inccommand=nosplit
 set incsearch
+set keywordprg=:DD
 set laststatus=2
 set linebreak
 set list
