@@ -1,18 +1,9 @@
 let b:did_indent = 1
 
-" indent {{{1
-
+setlocal autoindent
+setlocal breakindent
 setlocal expandtab
-setlocal tabstop=2
 setlocal shiftwidth=2
 setlocal softtabstop=2
-setlocal autoindent
-
-" ==============================================================================
-" misc {{{1
-
-setlocal breakindent
-
-" ==============================================================================
-" }}}1
+setlocal tabstop=2
 
