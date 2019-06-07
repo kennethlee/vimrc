@@ -1,9 +1,9 @@
 if &filetype ==# 'markdown'
   function! MarkdownLevel() abort
-    let currentline = getline(v:lnum)
-    if match(currentline, '^#\{1,6}\s') >= 0
-      let header_level = strlen(substitute(currentline, '^\(#\{1,6}\).*', '\1', ''))
-      return '>' . header_level
+    let l:currentline = getline(v:lnum)
+    if match(l:currentline, '^#\{1,6}\s') >= 0
+      let l:header_level = strlen(substitute(l:currentline, '^\(#\{1,6}\).*', '\1', ''))
+      return '>' . l:header_level
     endif
     return '='
   endfunction
