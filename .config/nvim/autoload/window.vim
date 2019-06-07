@@ -25,10 +25,10 @@ function! window#TerminalToggle() abort
     hide
   else
     botright new
-    exec "resize " . &lines / 2
+    execute "resize " . &lines / 2
     setlocal nobuflisted bufhidden=wipe
     try
-      exec "buffer " . s:term_buf
+      execute "buffer " . s:term_buf
     catch
       call termopen($SHELL, {"detach": 0})
       let s:term_buf = bufnr("")
