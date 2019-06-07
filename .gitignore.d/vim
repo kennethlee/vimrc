@@ -29,7 +29,6 @@
 !/.config/nvim/autoload/fold.vim
 !/.config/nvim/autoload/key.vim
 !/.config/nvim/autoload/macro.vim
-!/.config/nvim/autoload/qf.vim
 !/.config/nvim/autoload/statusline.vim
 !/.config/nvim/autoload/window.vim
 
