@@ -1,6 +1,8 @@
 " options {{{1
 
+set encoding=utf-8
 scriptencoding utf-8
+set fileencoding=utf-8
 set nomodeline
 set clipboard+=unnamedplus
 filetype plugin indent on
@@ -58,6 +60,7 @@ set splitright
 set switchbuf=useopen
 set synmaxcol=150
 set tabstop=2
+set termguicolors
 set title t_ti= t_te=
 set wildignorecase
 set wildmenu
