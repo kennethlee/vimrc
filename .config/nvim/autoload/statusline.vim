@@ -46,13 +46,13 @@ endfunction
 
 function! statusline#WarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
-    let tabs = search('\t', 'nw') != 0
-    let spaces = search(' \+$\| \+\ze\t', 'nw') != 0
-    if (tabs && spaces)
+    let b:tabs = search('\t', 'nw') != 0
+    let b:spaces = search(' \+$\| \+\ze\t', 'nw') != 0
+    if (b:tabs && b:spaces)
       let b:statusline_warning_whitespace = '[\t\|\s]'
-    elseif tabs
+    elseif b:tabs
       let b:statusline_warning_whitespace = '[\t]'
-    elseif spaces
+    elseif b:spaces
       let b:statusline_warning_whitespace = '[\s]'
     else
       let b:statusline_warning_whitespace = ''

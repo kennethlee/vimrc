@@ -1,8 +1,8 @@
 " InsertTabWrapper {{{1
 
 function! key#InsertTabWrapper() abort
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
+  let l:col = col('.') - 1
+  if !l:col || getline('.')[l:col - 1] !~ '\k'
     return "\<Tab>"
   else
     return "\<C-p>"
