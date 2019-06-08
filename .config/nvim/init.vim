@@ -71,6 +71,12 @@ set wrap
 " ==============================================================================
 " commands {{{1
 
+command! Bdelete
+  \   call setloclist(winnr(), [])
+  \|  lclose
+  \|  bprevious
+  \|  bdelete #
+
 command! Bnext
   \   call setloclist(winnr(), [])
   \|  lclose
@@ -223,7 +229,7 @@ nnoremap          <Space>       <Nop>
 nnoremap          <Space>bb     :ls<CR>:buffer<Space>*
 nnoremap          <Space>bs     :ls<CR>:sbuffer<Space>*
 nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
-nnoremap <silent> <Space>bd     :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<Bar>bdelete<Space>#<CR>
+nnoremap <silent> <Space>bd     :Bdelete<CR>
 
 nnoremap          <Space>fc     :call file#RemoveFancyCharacters()<CR>
 nnoremap <silent> <Space>fr     :call file#RenameFile()<CR>
