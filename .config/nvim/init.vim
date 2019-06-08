@@ -123,6 +123,10 @@ augroup user_terminal
   autocmd user_terminal TermOpen *
     \   setlocal nonumber
     \|  setlocal norelativenumber
+
+  autocmd user_terminal TermOpen *
+    \   nnoremap <buffer> <C-h> <Nop>
+    \|  nnoremap <buffer> <C-l> <Nop>
 augroup END
 
 " ==============================================================================
