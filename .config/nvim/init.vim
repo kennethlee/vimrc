@@ -71,6 +71,16 @@ set wrap
 " ==============================================================================
 " commands {{{1
 
+command! Bnext
+  \   call setloclist(winnr(), [])
+  \|  lclose
+  \|  bnext
+
+command! Bprevious
+  \   call setloclist(winnr(), [])
+  \|  lclose
+  \|  bprevious
+
 " clear marks
 command! Wmarks
   \   delmarks!
@@ -78,8 +88,8 @@ command! Wmarks
 
 " clear registers
 command! Wreg
-  \   for i in range(34,122)
-  \|    silent! call setreg(nr2char(i), [])
+  \   for s:i in range(34,122)
+  \|    silent! call setreg(nr2char(s:i), [])
   \|  endfor
 
 " ==============================================================================
@@ -192,8 +202,8 @@ xnoremap <expr>   cN            g:mc . "``cgN"
 xnoremap <expr>   cn            g:mc . "``cgn"
 
 nnoremap          <BS>          <C-^>
-nnoremap <silent> <C-h>         :call setloclist(winnr(), [])<CR>:lclose<Bar>bprevious<CR>
-nnoremap <silent> <C-l>         :call setloclist(winnr(), [])<CR>:lclose<Bar>bnext<CR>
+nnoremap <silent> <C-h>         :Bprevious<CR>
+nnoremap <silent> <C-l>         :Bnext<CR>
 nnoremap <silent> <C-k>         :cprevious<CR>
 nnoremap <silent> <C-j>         :cnext<CR>
 nnoremap <silent> <M-k>         :lprevious<CR>
