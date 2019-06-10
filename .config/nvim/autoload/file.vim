@@ -20,7 +20,7 @@ command! RemoveFancyCharacters :call file#RemoveFancyCharacters()
 function! file#RenameFile() abort
   let l:old_name = expand('%')
   let l:new_name = input('New file name: ', expand('%'), 'file')
-  if l:new_name != '' && l:new_name != l:old_name
+  if l:new_name !=# '' && l:new_name !=# l:old_name
     execute ':saveas ' . l:new_name
     execute ':silent !rm ' . l:old_name
     redraw!

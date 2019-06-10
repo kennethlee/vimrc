@@ -9,7 +9,7 @@ endif
 
 " automatically close corresponding loclist when quitting its parent window
 autocmd user_quickfix QuitPre *
-  \   if &filetype != 'qf'
+  \   if &filetype !=# 'qf'
   \|    silent! lclose
   \|  endif
 

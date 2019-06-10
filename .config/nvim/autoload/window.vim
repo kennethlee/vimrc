@@ -1,17 +1,17 @@
 " LocListToggle {{{1
 
 function! window#LocListToggle() abort
-  let l:callback = "v:val.quickfix == 1 && v:val.loclist == 1"
-  execute len(filter(getwininfo(), l:callback)) == 1 ? "lclose" : "lwindow"
+  let l:callback = "v:val.quickfix ==# 1 && v:val.loclist ==# 1"
+  execute len(filter(getwininfo(), l:callback)) ==# 1 ? "lclose" : "lwindow"
 endfunction
 
 " ==============================================================================
 " QuickfixToggle {{{1
 
 function! window#QuickfixToggle() abort
-  let l:callback = "v:val.quickfix == 1 && v:val.loclist == 0"
+  let l:callback = "v:val.quickfix ==# 1 && v:val.loclist ==# 0"
   " botright cwindow sets the qf window to be full-width
-  execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "botright cwindow"
+  execute len(filter(getwininfo(), l:callback)) ==# 1 ? "cclose" : "botright cwindow"
 endfunction
 
 " ==============================================================================

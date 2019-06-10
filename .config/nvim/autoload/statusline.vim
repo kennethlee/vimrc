@@ -23,7 +23,7 @@ endfunction
 " FileEncoding {{{1
 
 function! statusline#FileEncoding() abort
-  if &fileencoding != 'utf-8' && &fileencoding != ''
+  if &fileencoding !=# 'utf-8' && &fileencoding !=# ''
     return '['.&fileencoding.']'
   else
     return ''
@@ -34,7 +34,7 @@ endfunction
 " FileFormat {{{1
 
 function! statusline#FileFormat() abort
-  if &fileformat != 'unix'
+  if &fileformat !=# 'unix'
     return '['.&fileformat.']'
   else
     return ''
@@ -46,8 +46,8 @@ endfunction
 
 function! statusline#WarningWhitespace() abort
   if !exists("b:statusline_warning_whitespace")
-    let b:tabs = search('\t', 'nw') != 0
-    let b:spaces = search(' \+$\| \+\ze\t', 'nw') != 0
+    let b:tabs = search('\t', 'nw') !=# 0
+    let b:spaces = search(' \+$\| \+\ze\t', 'nw') !=# 0
     if (b:tabs && b:spaces)
       let b:statusline_warning_whitespace = '[\t\|\s]'
     elseif b:tabs
