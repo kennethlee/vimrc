@@ -72,18 +72,18 @@ set wrap
 " commands {{{1
 
 command! Bdelete
-  \   call setloclist(winnr(), [])
+  \   lexpr []
   \|  lclose
   \|  bprevious
   \|  bdelete #
 
 command! Bnext
-  \   call setloclist(winnr(), [])
+  \   lexpr []
   \|  lclose
   \|  bnext
 
 command! Bprevious
-  \   call setloclist(winnr(), [])
+  \   lexpr []
   \|  lclose
   \|  bprevious
 
