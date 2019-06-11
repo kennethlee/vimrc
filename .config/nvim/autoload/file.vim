@@ -12,8 +12,6 @@ function! file#RemoveFancyCharacters() abort
   execute ":%s/".join(keys(l:typo), '\|').'/\=l:typo[submatch(0)]/ge'
 endfunction
 
-command! RemoveFancyCharacters :call file#RemoveFancyCharacters()
-
 " ==============================================================================
 " RenameFile {{{1
 

@@ -71,29 +71,17 @@ set wrap
 " ==============================================================================
 " commands {{{1
 
-command! Bdelete
-  \   lexpr []
-  \|  lclose
-  \|  bprevious
-  \|  bdelete #
-
-command! Bnext
-  \   lexpr []
-  \|  lclose
-  \|  bnext
-
-command! Bprevious
-  \   lexpr []
-  \|  lclose
-  \|  bprevious
-
-" clear marks
-command! Wmarks
-  \   delmarks!
-  \|  delmarks A-Z0-9
-
-" clear registers
-command! Wreg
+command! Bdelete                lexpr [] | lclose | bprevious | bdelete #
+command! Bnext                  lexpr [] | lclose | bnext
+command! Bprevious              lexpr [] | lclose | bprevious
+command! ChangeRegister         call macro#ChangeRegister()
+command! RemoveFancyCharacters  call file#RemoveFancyCharacters()
+command! RenameFile             call file#RenameFile()
+command! ToggleLocationList     call window#ToggleLocationList()
+command! ToggleQuickfixList     call window#ToggleQuickfixList()
+command! ToggleTerminal         call window#ToggleTerminal()
+command! WipeMarks              delmarks! | delmarks A-Z0-9
+command! WipeRegisters
   \   for s:i in range(34,122)
   \|    silent! call setreg(nr2char(s:i), [])
   \|  endfor
@@ -123,8 +111,8 @@ augroup END
 
 augroup user_startup
   autocmd!
-  autocmd user_startup VimEnter * Wmarks
-  autocmd user_startup VimEnter * Wreg
+  autocmd user_startup VimEnter * WipeMarks
+  autocmd user_startup VimEnter * WipeRegisters
 augroup END
 
 augroup user_statusline
@@ -197,7 +185,7 @@ nnoremap Y  y$
 nnoremap zz za
 
 " change contents of a macro, ex: chq to edit register q
-nnoremap          ch            :call macro#ChangeRegister()<CR>
+nnoremap          ch            :ChangeRegister<CR>
 
 " turbo-charged dot: 'cN/cn' on current word, change, dot repeat, be amazed
 " on visually-selected text; N/n for prev/next occurrence per the usual.
@@ -231,8 +219,8 @@ nnoremap          <Space>bs     :ls<CR>:sbuffer<Space>*
 nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
 nnoremap <silent> <Space>bd     :Bdelete<CR>
 
-nnoremap          <Space>fc     :call file#RemoveFancyCharacters()<CR>
-nnoremap <silent> <Space>fr     :call file#RenameFile()<CR>
+nnoremap          <Space>fc     :RemoveFancyCharacters<CR>
+nnoremap <silent> <Space>fr     :RenameFile<CR>
 nnoremap <silent> <Space>ft     :%s/\s\+$//e<CR>:let @/=''<CR>
 nnoremap <silent> <Space>fw     :set wrap!<CR>
 nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
@@ -243,10 +231,10 @@ nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
 nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 
-nnoremap <silent> <Space>q      :<C-u>call window#ToggleQuickfix()<CR>
-nnoremap <silent> <Space>l      :<C-u>call window#ToggleLocationList()<CR>
-nnoremap <silent> <Space>w      :call window#ToggleTerminal()<CR>
-tnoremap <silent> <Space>w      <C-\><C-n>:call window#ToggleTerminal()<CR>
+nnoremap <silent> <Space>q      :ToggleQuickfixList<CR>
+nnoremap <silent> <Space>l      :ToggleLocationList<CR>
+nnoremap <silent> <Space>w      :ToggleTerminal<CR>
+tnoremap <silent> <Space>w      <C-\><C-n>:ToggleTerminal<CR>
 
 " ==============================================================================
 " }}}1
