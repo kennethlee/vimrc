@@ -1,26 +1,17 @@
-" LocListToggle {{{1
+" ToggleLocationList {{{1
 
-function! window#LocListToggle() abort
+function! window#ToggleLocationList() abort
   let l:callback = "v:val.quickfix ==# 1 && v:val.loclist ==# 1"
   execute len(filter(getwininfo(), l:callback)) ==# 1 ? "lclose" : "lwindow"
 endfunction
 
 " ==============================================================================
-" QuickfixToggle {{{1
-
-function! window#QuickfixToggle() abort
-  let l:callback = "v:val.quickfix ==# 1 && v:val.loclist ==# 0"
-  " botright cwindow sets the qf window to be full-width
-  execute len(filter(getwininfo(), l:callback)) ==# 1 ? "cclose" : "botright cwindow"
-endfunction
-
-" ==============================================================================
-" TerminalToggle {{{1
+" ToggleTerminal {{{1
 
 let s:term_buf = 0
 let s:term_win = 0
 
-function! window#TerminalToggle() abort
+function! window#ToggleTerminal() abort
   if win_gotoid(s:term_win)
     hide
   else
@@ -35,6 +26,15 @@ function! window#TerminalToggle() abort
     endtry
     let s:term_win = win_getid()
   endif
+endfunction
+
+" ==============================================================================
+" ToggleQuickfixList {{{1
+
+function! window#ToggleQuickfixList() abort
+  let l:callback = "v:val.quickfix ==# 1 && v:val.loclist ==# 0"
+  " botright cwindow sets the qf window to be full-width
+  execute len(filter(getwininfo(), l:callback)) ==# 1 ? "cclose" : "botright cwindow"
 endfunction
 
 " ==============================================================================

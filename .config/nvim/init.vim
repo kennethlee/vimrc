@@ -243,10 +243,10 @@ nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
 nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 
-nnoremap <silent> <Space>q      :<C-u>call window#QuickfixToggle()<CR>
-nnoremap <silent> <Space>l      :<C-u>call window#LocListToggle()<CR>
-nnoremap <silent> <Space>w      :call window#TerminalToggle()<CR>
-tnoremap <silent> <Space>w      <C-\><C-n>:call window#TerminalToggle()<CR>
+nnoremap <silent> <Space>q      :<C-u>call window#ToggleQuickfix()<CR>
+nnoremap <silent> <Space>l      :<C-u>call window#ToggleLocationList()<CR>
+nnoremap <silent> <Space>w      :call window#ToggleTerminal()<CR>
+tnoremap <silent> <Space>w      <C-\><C-n>:call window#ToggleTerminal()<CR>
 
 " ==============================================================================
 " }}}1
