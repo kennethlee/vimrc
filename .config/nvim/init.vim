@@ -184,6 +184,13 @@ noremap  x  "_x
 nnoremap Y  y$
 nnoremap zz za
 
+nnoremap <silent> _             :call textobject#NextIndent(0, 0, 0, 1)<CR>
+onoremap <silent> _             :call textobject#NextIndent(0, 0, 0, 1)<CR>
+vnoremap <silent> _             <Esc>:call textobject#NextIndent(0, 0, 0, 1)<CR>m'gv''
+nnoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
+onoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
+vnoremap <silent> +             <Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''
+
 " change contents of a macro, ex: chq to edit register q
 nnoremap          ch            :ChangeRegister<CR>
 
