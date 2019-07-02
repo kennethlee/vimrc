@@ -36,6 +36,7 @@
 !/.config/nvim/ftdetect
 !/.config/nvim/ftdetect/eruby.vim
 !/.config/nvim/ftdetect/jsx.vim
+!/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
 !/.config/nvim/indent/
