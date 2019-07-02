@@ -48,6 +48,7 @@
 !/.config/nvim/indent/html.vim
 !/.config/nvim/indent/javascript.vim
 !/.config/nvim/indent/json.vim
+!/.config/nvim/indent/ledger.vim
 !/.config/nvim/indent/markdown.vim
 !/.config/nvim/indent/ruby.vim
 !/.config/nvim/indent/scss.vim
