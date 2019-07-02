@@ -14,6 +14,7 @@
 !/.config/nvim/after/ftplugin/html.vim
 !/.config/nvim/after/ftplugin/javascript.vim
 !/.config/nvim/after/ftplugin/json.vim
+!/.config/nvim/after/ftplugin/ledger.vim
 !/.config/nvim/after/ftplugin/markdown.vim
 !/.config/nvim/after/ftplugin/qf.vim
 !/.config/nvim/after/ftplugin/ruby.vim
