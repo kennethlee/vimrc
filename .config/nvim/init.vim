@@ -227,6 +227,7 @@ nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
 nnoremap <silent> <Space>bd     :Bdelete<CR>
 
 nnoremap          <Space>fc     :RemoveFancyCharacters<CR>
+nnoremap <silent> <Space>fp     :%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>
 nnoremap <silent> <Space>fr     :RenameFile<CR>
 nnoremap <silent> <Space>ft     :%s/\s\+$//e<CR>:let @/=''<CR>
 nnoremap <silent> <Space>fw     :set wrap!<CR>
