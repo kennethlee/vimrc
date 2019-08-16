@@ -16,6 +16,7 @@
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
 
+!/.config/nvim/after/plugin/settings_coc.vim
 !/.config/nvim/after/syntax/markdown.vim
 
 !/.config/nvim/autoload/file.vim
