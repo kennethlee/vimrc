@@ -18,6 +18,7 @@
 
 !/.config/nvim/after/plugin/settings_coc.vim
 !/.config/nvim/after/syntax/markdown.vim
+!/.config/nvim/coc-settings.json
 
 !/.config/nvim/autoload/file.vim
 !/.config/nvim/autoload/fold.vim
