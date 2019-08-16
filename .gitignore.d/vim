@@ -28,7 +28,6 @@
 !/.config/nvim/autoload/window.vim
 
 !/.config/nvim/ftdetect/eruby.vim
-!/.config/nvim/ftdetect/jsx.vim
 !/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
