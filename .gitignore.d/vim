@@ -1,7 +1,13 @@
 *
+!/.gitignore.d/
 !/.gitignore.d/vim
+!/.config/
+!/.config/nvim/
 !/.config/nvim/init.vim
+!/.config/nvim/coc-settings.json
 
+!/.config/nvim/after/
+!/.config/nvim/after/ftplugin/
 !/.config/nvim/after/ftplugin/c.vim
 !/.config/nvim/after/ftplugin/css.vim
 !/.config/nvim/after/ftplugin/elixir.vim
@@ -16,11 +22,14 @@
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
 
-!/.config/nvim/coc-settings.json
+!/.config/nvim/after/plugin/
 !/.config/nvim/after/plugin/settings_coc.vim
 !/.config/nvim/after/plugin/settings_jsx_pretty.vim
+
+!/.config/nvim/after/syntax
 !/.config/nvim/after/syntax/markdown.vim
 
+!/.config/nvim/autoload
 !/.config/nvim/autoload/file.vim
 !/.config/nvim/autoload/fold.vim
 !/.config/nvim/autoload/key.vim
@@ -29,10 +38,12 @@
 !/.config/nvim/autoload/textobject.vim
 !/.config/nvim/autoload/window.vim
 
+!/.config/nvim/ftdetect/
 !/.config/nvim/ftdetect/eruby.vim
 !/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
+!/.config/nvim/indent/
 !/.config/nvim/indent/c.vim
 !/.config/nvim/indent/css.vim
 !/.config/nvim/indent/elixir.vim
