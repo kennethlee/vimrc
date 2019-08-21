@@ -24,7 +24,6 @@
 
 !/.config/nvim/after/plugin/
 !/.config/nvim/after/plugin/settings_coc.vim
-!/.config/nvim/after/plugin/settings_jsx_pretty.vim
 
 !/.config/nvim/after/syntax
 !/.config/nvim/after/syntax/markdown.vim
