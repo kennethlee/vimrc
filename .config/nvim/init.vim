@@ -5,7 +5,8 @@ scriptencoding utf-8
 set fileencoding=utf-8
 set nomodeline
 set clipboard+=unnamedplus
-filetype plugin indent on
+filetype indent off
+filetype plugin on
 syntax on
 set runtimepath+=~/.fzf
 
