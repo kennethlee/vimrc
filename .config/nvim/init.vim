@@ -212,8 +212,6 @@ nnoremap <silent> <C-k>         :cprevious<CR>
 nnoremap <silent> <C-j>         :cnext<CR>
 nnoremap <silent> <M-k>         :lprevious<CR>
 nnoremap <silent> <M-j>         :lnext<CR>
-inoremap          <C-l>         ><Esc>F<lyiwf>a</<Esc>pa><Esc>F<i
-inoremap          <C-j>         ><Esc>F<lyiwo</<C-r>"><Esc>O
 nnoremap <silent> <Esc>         :nohlsearch<CR><Esc>
 inoremap <silent> <F8>          <C-r>=strftime("%FT%T%z, %a")<CR>
 inoremap <silent> <expr><Tab>   key#InsertTabWrapper()
