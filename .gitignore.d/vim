@@ -56,3 +56,6 @@
 !/.config/nvim/indent/scss.vim
 !/.config/nvim/indent/vim.vim
 
+!/.config/nvim/plugin/
+!/.config/nvim/plugin/settings_plugin.vim
+
