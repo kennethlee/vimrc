@@ -1,4 +1,4 @@
-" vim-closetag" {{{1
+" vim-closetag {{{1
 
 let g:closetag_filenames = '*.html,*.js,*.jsx'
 
