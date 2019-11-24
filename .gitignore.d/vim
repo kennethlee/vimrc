@@ -37,6 +37,9 @@
 !/.config/nvim/autoload/textobject.vim
 !/.config/nvim/autoload/window.vim
 
+!/.config/nvim/compiler/
+!/.config/nvim/compiler/eslint.vim
+
 !/.config/nvim/ftdetect/
 !/.config/nvim/ftdetect/eruby.vim
 !/.config/nvim/ftdetect/ledger.vim
