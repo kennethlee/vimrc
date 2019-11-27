@@ -24,7 +24,6 @@
 !/.config/nvim/after/ftplugin/ruby.vim
 !/.config/nvim/after/ftplugin/scss.vim
 !/.config/nvim/after/ftplugin/vim.vim
-!/.config/nvim/after/ftplugin/yaml.vim
 
 !/.config/nvim/after/plugin/
 !/.config/nvim/after/plugin/settings_coc.vim
