@@ -28,6 +28,7 @@ packadd cfilter
 " disable
 let g:loaded_netrwPlugin = 1
 
+set autoindent
 set autoread
 set backspace=indent,eol,start
 set breakindent

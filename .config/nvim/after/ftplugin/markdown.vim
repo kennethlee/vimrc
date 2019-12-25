@@ -12,5 +12,9 @@ if &filetype ==# 'markdown'
     \   setlocal foldcolumn=1
     \|  setlocal foldexpr=MarkdownLevel()
     \|  setlocal foldmethod=expr
+  setlocal expandtab
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+  setlocal tabstop=4
 endif
 

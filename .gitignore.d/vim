@@ -45,20 +45,6 @@
 !/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
-!/.config/nvim/indent/
-!/.config/nvim/indent/c.vim
-!/.config/nvim/indent/css.vim
-!/.config/nvim/indent/elixir.vim
-!/.config/nvim/indent/eruby.vim
-!/.config/nvim/indent/html.vim
-!/.config/nvim/indent/javascript.vim
-!/.config/nvim/indent/json.vim
-!/.config/nvim/indent/ledger.vim
-!/.config/nvim/indent/markdown.vim
-!/.config/nvim/indent/ruby.vim
-!/.config/nvim/indent/scss.vim
-!/.config/nvim/indent/vim.vim
-
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/settings_plugin.vim
 

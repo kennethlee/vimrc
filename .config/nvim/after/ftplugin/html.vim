@@ -3,7 +3,11 @@ if &filetype ==# 'html'
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=5
+  setlocal expandtab
   setlocal foldlevel=2
+  setlocal shiftwidth=2
+  setlocal softtabstop=2
+  setlocal tabstop=2
 
   if executable('prettier')
     setlocal formatprg=prettier\ --stdin-filepath\ %
