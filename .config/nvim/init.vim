@@ -238,7 +238,7 @@ nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
 nnoremap <silent> <Space>tr     :FZF<CR>
 nnoremap          <Space>te     :FZF ~/
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
-nnoremap <silent> <Space>tl     :edit ~/.ledger/current.journal<CR>G
+nnoremap <silent> <Space>tl     :edit ~/.ledger/current.journal<CR>zm
 nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
 nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 
