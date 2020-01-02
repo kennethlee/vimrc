@@ -1,8 +1,8 @@
 " options {{{1
 
+" encoding must be set before scriptencoding
 set encoding=utf-8
 scriptencoding utf-8
-set fileencoding=utf-8
 set nomodeline
 set clipboard+=unnamedplus
 filetype indent off
