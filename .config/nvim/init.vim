@@ -105,6 +105,11 @@ augroup user_lint
   autocmd!
 augroup END
 
+augroup user_misc
+  autocmd!
+  autocmd user_misc BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
+
 augroup user_quickfix
   autocmd!
   " automatically open loclist / quickfix window if there are valid errors
