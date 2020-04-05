@@ -6,6 +6,8 @@ function! file#RemoveFancyCharacters() abort
   let l:typo["”"] = '"'
   let l:typo["‘"] = "'"
   let l:typo["’"] = "'"
+  let l:typo["″"] = '"'
+  let l:typo["′"] = "'"
   let l:typo["–"] = '--'
   let l:typo["—"] = '---'
   let l:typo["…"] = '...'
