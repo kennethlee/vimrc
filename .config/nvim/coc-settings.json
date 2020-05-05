@@ -1,4 +1,5 @@
 {
+  "diagnostic.messageTarget": "echo",
   "suggest.autoTrigger": "none",
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 15,
