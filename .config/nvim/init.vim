@@ -68,7 +68,7 @@ set termguicolors
 set title t_ti= t_te=
 set wildignorecase
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=list:lastused
 set winwidth=90 winminwidth=40
 set wrap
 
