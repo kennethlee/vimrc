@@ -78,7 +78,7 @@ set wrap
 command! Bdelete                lexpr [] | lclose | bprevious | bdelete #
 command! Bnext                  lexpr [] | lclose | bnext
 command! Bprevious              lexpr [] | lclose | bprevious
-command! ChangeRegister         call macro#ChangeRegister()
+command! Chreg                  call macro#ChangeRegister()
 command! RemoveFancyCharacters  call file#RemoveFancyCharacters()
 command! RenameFile             call file#RenameFile()
 command! ToggleLocationList     call window#ToggleLocationList()
