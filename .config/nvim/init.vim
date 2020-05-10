@@ -192,7 +192,6 @@ set statusline+=%14.(%l,%c%V%)%4p                   " line,col percent
 set mousehide mouse=nicr
 
 nnoremap J  mzJ`z
-inoremap jk <Esc>
 nnoremap U  <C-r>
 noremap  x  "_x
 nnoremap Y  y$
@@ -204,17 +203,6 @@ vnoremap <silent> _             <Esc>:call textobject#NextIndent(0, 0, 0, 1)<CR>
 nnoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 vnoremap <silent> +             <Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''
-
-" change contents of a macro, ex: chq to edit register q
-nnoremap          ch            :ChangeRegister<CR>
-
-" turbo-charged dot: 'cN/cn' on current word, change, dot repeat, be amazed
-" on visually-selected text; N/n for prev/next occurrence per the usual.
-let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
-nnoremap          cN            #``cgN
-nnoremap          cn            *``cgn
-xnoremap <expr>   cN            g:mc . "``cgN"
-xnoremap <expr>   cn            g:mc . "``cgn"
 
 nnoremap          <BS>          <C-^>
 nnoremap <silent> <C-h>         :Bprevious<CR>
