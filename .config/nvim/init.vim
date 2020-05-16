@@ -160,6 +160,11 @@ autocmd user_highlight ColorScheme *
 
 colorscheme base16-eighties
 
+" show fzf in a floating window rather than a split.
+if executable('fzf')
+  let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.85 }}
+endif
+
 " statusline
 " left
 set statusline=
