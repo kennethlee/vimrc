@@ -83,7 +83,6 @@ command! RemoveFancyCharacters  call file#RemoveFancyCharacters()
 command! RenameFile             call file#RenameFile()
 command! ToggleLocationList     call window#ToggleLocationList()
 command! ToggleQuickfixList     call window#ToggleQuickfixList()
-command! ToggleTerminal         call window#ToggleTerminal()
 command! WipeMarks              delmarks! | delmarks A-Z0-9
 command! WipeRegisters
   \   for s:i in range(34,122)
@@ -129,17 +128,6 @@ augroup user_statusline
   " for `fxn#StatuslineWarningWhitespace()`
   autocmd user_statusline BufWritePost,CursorHold *
     \   unlet! b:statusline_warning_whitespace
-augroup END
-
-augroup user_terminal
-  autocmd!
-  autocmd user_terminal TermOpen *
-    \   setlocal nonumber
-    \|  setlocal norelativenumber
-
-  autocmd user_terminal TermOpen *
-    \   nnoremap <buffer> <C-h> <Nop>
-    \|  nnoremap <buffer> <C-l> <Nop>
 augroup END
 
 " ==============================================================================
@@ -247,8 +235,6 @@ nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 
 nnoremap <silent> <Space>q      :ToggleQuickfixList<CR>
 nnoremap <silent> <Space>l      :ToggleLocationList<CR>
-nnoremap <silent> <Space>w      :ToggleTerminal<CR>
-tnoremap <silent> <Space>w      <C-\><C-n>:ToggleTerminal<CR>
 
 " ==============================================================================
 " }}}1
