@@ -162,7 +162,7 @@ colorscheme base16-eighties
 
 " show fzf in a floating window rather than a split.
 if executable('fzf')
-  let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.85 }}
+  let g:fzf_layout = { 'window': { 'width': 0.80, 'height': 0.80 }}
 endif
 
 " statusline
