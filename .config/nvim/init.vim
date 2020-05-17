@@ -148,31 +148,7 @@ if executable('fzf')
   let g:fzf_layout = { 'window': { 'width': 0.80, 'height': 0.80 }}
 endif
 
-" statusline
-" left
-set statusline=
-set statusline+=%#error#
-set statusline+=%{statusline#BufModified()}
-set statusline+=%*
-set statusline+=%<                                  " truncation point
-set statusline+=%#question#
-set statusline+=%r                                  " read-only
-set statusline+=%w                                  " preview buf
-set statusline+=%*
-
-" center
-set statusline+=\ %-F\                              " absolute path
-
-" right
-set statusline+=%=
-set statusline+=%y                                  " filetype
-set statusline+=%#warningmsg#
-set statusline+=%{statusline#WarningWhitespace()}
-set statusline+=%{statusline#ExpandTab()}
-set statusline+=%{statusline#FileEncoding()}
-set statusline+=%{statusline#FileFormat()}
-set statusline+=%*
-set statusline+=%14.(%l,%c%V%)%4p                   " line,col percent
+set statusline=%m\ %<%f\ (%{&fileencoding},%{&filetype})\ %=%-19(%3l,%02c%03V%)
 
 " ==============================================================================
 " keymap: general {{{1
