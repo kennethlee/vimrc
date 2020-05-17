@@ -141,11 +141,6 @@ autocmd user_highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-autocmd user_highlight ColorScheme *
-  \   highlight Constant gui=italic
-  \|  highlight jsThis gui=italic
-  \|  highlight Type gui=italic
-
 colorscheme base16-eighties
 
 " show fzf in a floating window rather than a split.
