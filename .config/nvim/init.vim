@@ -190,6 +190,7 @@ nnoremap          <Space>bs     :ls<CR>:sbuffer<Space>*
 nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
 nnoremap <silent> <Space>bd     :Bdelete<CR>
 
+nnoremap <silent> <Space>ff     :set expandtab? fileencoding? fileformat? filetype?<CR>
 nnoremap          <Space>fc     :RemoveFancyCharacters<CR>
 nnoremap <silent> <Space>fp     :%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>
 nnoremap <silent> <Space>fr     :RenameFile<CR>
