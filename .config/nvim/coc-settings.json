@@ -4,7 +4,7 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 15,
   "suggest.minTriggerInputLength": 3,
-  "suggest.timeout": 300,
+  "suggest.timeout": 500,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
