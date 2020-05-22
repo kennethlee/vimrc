@@ -11,7 +11,7 @@ if &filetype ==# 'html'
   setlocal tabstop=2
 
   if executable('prettier')
-    setlocal formatprg=prettier\ --stdin-filepath\ %
+    setlocal formatprg=npx\ prettier\ --stdin-filepath\ %\ --trailing-comma\ all
     " autocmd user_lint BufWritePre <buffer> normal gggqG
   endif
 endif
