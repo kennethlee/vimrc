@@ -5,7 +5,7 @@ function! window#ToggleLocationList() abort
   execute len(filter(getwininfo(), l:callback)) ==# 1 ? "lclose" : "lwindow"
 endfunction
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ToggleQuickfixList {{{1
 
 function! window#ToggleQuickfixList() abort
@@ -14,6 +14,5 @@ function! window#ToggleQuickfixList() abort
   execute len(filter(getwininfo(), l:callback)) ==# 1 ? "cclose" : "botright cwindow"
 endfunction
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}1
-

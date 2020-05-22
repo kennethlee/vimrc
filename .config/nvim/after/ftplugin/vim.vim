@@ -7,4 +7,3 @@ if &filetype ==# 'vim'
   setlocal softtabstop=2
   setlocal tabstop=2
 endif
-

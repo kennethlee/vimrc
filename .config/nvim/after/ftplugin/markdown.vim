@@ -17,4 +17,3 @@ if &filetype ==# 'markdown'
   setlocal softtabstop=2
   setlocal tabstop=2
 endif
-

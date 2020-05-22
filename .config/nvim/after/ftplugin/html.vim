@@ -15,4 +15,3 @@ if &filetype ==# 'html'
     " autocmd user_lint BufWritePre <buffer> normal gggqG
   endif
 endif
-

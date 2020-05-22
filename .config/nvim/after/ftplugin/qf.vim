@@ -12,4 +12,3 @@ autocmd user_quickfix QuitPre *
   \   if &filetype !=# 'qf'
   \|    silent! lclose
   \|  endif
-

@@ -24,6 +24,5 @@ function! textobject#NextIndent(exclusive, fwd, lower_level, skip_blanks) abort
   endwhile
 endfunction
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}1
-

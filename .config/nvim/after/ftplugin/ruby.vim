@@ -5,4 +5,3 @@ if &filetype ==# 'ruby'
   setlocal softtabstop=2
   setlocal tabstop=2
 endif
-

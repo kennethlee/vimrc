@@ -27,4 +27,3 @@ if exists('g:did_coc_loaded')
   nmap     <silent> gi            <Plug>(coc-implementation)
   nmap     <silent> gr            <Plug>(coc-references)
 endif
-

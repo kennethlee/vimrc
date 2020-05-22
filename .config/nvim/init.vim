@@ -72,7 +72,7 @@ set wildmode=list:longest,full
 set winwidth=90 winminwidth=40
 set wrap
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " commands {{{1
 
 command! Bdelete                lexpr [] | lclose | bprevious | bdelete #
@@ -89,7 +89,7 @@ command! WipeRegisters
   \|    silent! call setreg(nr2char(s:i), [])
   \|  endfor
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " augroups {{{1
 
 augroup user_fold
@@ -123,7 +123,7 @@ augroup user_startup
   autocmd user_startup VimEnter * WipeRegisters
 augroup END
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " display {{{1
 
 " properly highlight tabs / trailing whitespace
@@ -143,7 +143,7 @@ endif
 
 set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: general {{{1
 
 set mousehide mouse=nicr
@@ -173,7 +173,7 @@ inoremap <silent> <expr><F8>    strftime("%FT%T%z, %a")
 inoremap <silent> <expr><Tab>   key#SmartTab()
 inoremap <silent> <S-Tab>       <C-n>
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: <Space> {{{1
 
 nnoremap          <Space>       <Nop>
@@ -201,6 +201,5 @@ nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 nnoremap <silent> <Space>q      :ToggleQuickfixList<CR>
 nnoremap <silent> <Space>l      :ToggleLocationList<CR>
 
-" ==============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}1
-
