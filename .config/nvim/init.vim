@@ -123,13 +123,6 @@ augroup user_startup
   autocmd user_startup VimEnter * WipeRegisters
 augroup END
 
-augroup user_statusline
-  autocmd!
-  " for `fxn#StatuslineWarningWhitespace()`
-  autocmd user_statusline BufWritePost,CursorHold *
-    \   unlet! b:statusline_warning_whitespace
-augroup END
-
 " ==============================================================================
 " display {{{1
 
