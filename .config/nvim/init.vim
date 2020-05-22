@@ -177,7 +177,7 @@ nnoremap <silent> <M-k>         :lprevious<CR>
 nnoremap <silent> <M-j>         :lnext<CR>
 nnoremap <silent> <Esc>         :nohlsearch<CR><Esc>
 inoremap <silent> <F8>          <C-r>=strftime("%FT%T%z, %a")<CR>
-inoremap <silent> <expr><Tab>   key#InsertTabWrapper()
+inoremap <silent> <expr><Tab>   key#SmartTab()
 inoremap <silent> <S-Tab>       <C-n>
 
 " ==============================================================================
