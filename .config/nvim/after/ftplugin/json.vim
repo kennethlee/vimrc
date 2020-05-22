@@ -5,6 +5,7 @@ if &filetype ==# 'json'
     \|  setlocal foldnestmax=4
   setlocal expandtab
   setlocal foldlevel=1
+  setlocal omnifunc=v:lua.vim.lsp.omnifunc
   setlocal shiftwidth=2
   setlocal softtabstop=2
   setlocal tabstop=2

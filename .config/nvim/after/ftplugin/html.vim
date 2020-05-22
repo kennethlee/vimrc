@@ -5,6 +5,7 @@ if &filetype ==# 'html'
     \|  setlocal foldnestmax=5
   setlocal expandtab
   setlocal foldlevel=2
+  setlocal omnifunc=v:lua.vim.lsp.omnifunc
   setlocal shiftwidth=2
   setlocal softtabstop=2
   setlocal tabstop=2
