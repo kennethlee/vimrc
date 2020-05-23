@@ -1,6 +1,6 @@
 if exists('g:did_coc_loaded')
   set signcolumn=yes:1
-  set updatetime=300
+  set updatetime=500
 
   " Use <Tab> to trigger completion + navigate to next item
   function! s:CheckBackspace() abort
@@ -16,11 +16,6 @@ if exists('g:did_coc_loaded')
     \ pumvisible() ?
     \ "\<C-p>" :
     \ "\<S-Tab>"
-
-  " for coc-pairs
-  inoremap <silent> <expr><CR>
-    \ pumvisible() ? coc#_select_confirm() :
-    \ "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
   " Remap keys for gotos
   nmap     <silent> gd            <Plug>(coc-definition)
