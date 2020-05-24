@@ -16,7 +16,7 @@ set runtimepath+=~/.fzf
 let g:sh_noisk = 1
 
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepprg=rg\ --vimgrep\ --no-heading\ --hidden\ --glob\ '!{.git,node_modules}/*'
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
