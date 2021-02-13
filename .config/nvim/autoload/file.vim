@@ -11,6 +11,11 @@ function! file#RemoveFancyCharacters() abort
   let l:typo["–"] = '--'
   let l:typo["—"] = '---'
   let l:typo["…"] = '...'
+  let l:typo["¼"] = '1/4'
+  let l:typo["⅓"] = '1/3'
+  let l:typo["½"] = '1/2'
+  let l:typo["⅔"] = '2/3'
+  let l:typo["¾"] = '3/4'
   execute ":%s/".join(keys(l:typo), '\|').'/\=l:typo[submatch(0)]/ge'
 endfunction
 
