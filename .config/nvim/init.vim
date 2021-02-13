@@ -191,12 +191,12 @@ nnoremap <silent> <Space>ft     :%s/\s\+$//e<CR>:let @/=''<CR>
 nnoremap <silent> <Space>fw     :set wrap!<CR>
 nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
 
+nnoremap <silent> <Space>o      :edit ~/Dropbox/Apps/todo/todo.txt<CR>
 nnoremap <silent> <Space>tr     :FZF<CR>
 nnoremap          <Space>te     :FZF ~/
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
 nnoremap <silent> <Space>tl     :edit ~/.ledger/current.journal<CR>zm
 nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
-nnoremap <silent> <Space>to     :FZF ~/Dropbox/Apps/todo<CR>
 
 nnoremap <silent> <Space>q      :ToggleQuickfixList<CR>
 nnoremap <silent> <Space>l      :ToggleLocationList<CR>
