@@ -6,7 +6,7 @@ if &filetype ==# 'javascript'
   setlocal softtabstop=2
   setlocal tabstop=2
 
-  if executable('eslint')
+  if executable('eslint_d')
     compiler eslint
   endif
 
