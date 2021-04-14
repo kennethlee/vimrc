@@ -41,6 +41,9 @@
 !/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
+!/.config/nvim/lua/
+!/.config/nvim/lua/config_lsp.lua
+
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/settings_plugin.vim
 
