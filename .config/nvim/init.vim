@@ -34,6 +34,7 @@ set backspace=indent,eol,start
 set breakindent
 set cmdheight=2
 set cmdwinheight=20
+set completeopt=noselect,menuone
 set cursorcolumn
 set expandtab
 set foldmethod=manual
