@@ -168,6 +168,7 @@ onoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 vnoremap <silent> +             <Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''
 
 nnoremap          <BS>          <C-^>
+tnoremap          <C-[>         <C-\><C-n>
 nnoremap <silent> <C-h>         :Bprevious<CR>
 nnoremap <silent> <C-l>         :Bnext<CR>
 nnoremap <silent> <C-k>         :cprevious<CR>
