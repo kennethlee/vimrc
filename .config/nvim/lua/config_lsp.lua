@@ -5,7 +5,6 @@ local mapper = function(mode, key, result)
 end
 
 local custom_attach = function()
-
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
       signs = true,
@@ -15,8 +14,7 @@ local custom_attach = function()
     }
   )
 
-  -- cleaner signcolumn: color line number instead of having signs in the signcolumn
-  -- https://www.reddit.com/r/neovim/comments/l00zzb/improve_style_of_builtin_lsp_diagnostic_messages/
+  -- cleaner signcolumn
   vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
   vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
   vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
