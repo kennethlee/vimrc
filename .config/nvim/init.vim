@@ -137,11 +137,6 @@ autocmd user_highlight BufEnter,WinEnter *
 
 colorscheme base16-eighties
 
-" show fzf in a floating window rather than a split.
-if executable('fzf')
-  let g:fzf_layout = { 'window': { 'width': 0.80, 'height': 0.80 }}
-endif
-
 set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
