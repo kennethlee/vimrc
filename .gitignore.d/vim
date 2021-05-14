@@ -43,6 +43,8 @@
 
 !/.config/nvim/lua/
 !/.config/nvim/lua/lsp.lua
+!/.config/nvim/lua/efm/
+!/.config/nvim/lua/efm/eslint.lua
 
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/settings_plugin.vim
