@@ -1,4 +1,5 @@
-local lsp = require("lspconfig")
+-- dependencies: nvim-lspconfig and efm-langserver.
+local lspconfig = require("lspconfig")
 
 local mapper = function(mode, key, result)
   vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua "..result.."<CR>", {noremap = true, silent = true})
@@ -31,6 +32,27 @@ local custom_attach = function()
   print("LSP initialized.")
 end
 
-lsp.tsserver.setup {
-  on_attach = custom_attach
+-- efm-langserver config.
+local eslint = {
+  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintStdin = true,
+  lintFormats = {"%f:%l:%c: %m"},
+  lintIgnoreExitCode = true,
+  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+  formatStdin = true
+}
+
+lspconfig.efm.setup {
+  on_attach = custom_attach,
+  init_options = {documentFormatting = true},
+  filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
+  settings = {
+    rootMarkers = {".eslintrc.js", ".git/"},
+    languages = {
+      javascript = {eslint},
+      javascriptreact = {eslint},
+      typescript = {eslint},
+      typescriptreact = {eslint},
+    }
+  }
 }
