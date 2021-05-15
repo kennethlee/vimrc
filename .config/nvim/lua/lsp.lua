@@ -37,14 +37,23 @@ end
 lspconfig.efm.setup {
   on_attach = custom_attach,
   init_options = {documentFormatting = true},
-  filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  },
   settings = {
     rootMarkers = {".eslintrc.js", ".git/"},
     languages = {
       javascript = {eslint},
       javascriptreact = {eslint},
+      ["javascript.jsx"] = {eslint},
       typescript = {eslint},
-      typescriptreact = {eslint},
+      ["typescript.tsx"] = {eslint},
+      typescriptreact = {eslint}
     }
   }
 }
