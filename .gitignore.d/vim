@@ -42,9 +42,9 @@
 !/.config/nvim/ftdetect/markdown.vim
 
 !/.config/nvim/lua/
+!/.config/nvim/lua/utils.lua
 !/.config/nvim/lua/lsp/
-!/.config/nvim/lua/lsp/custom_attach.lua
-!/.config/nvim/lua/lsp/custom_on_init.lua
+!/.config/nvim/lua/lsp/custom.lua
 !/.config/nvim/lua/lsp/init.lua
 !/.config/nvim/lua/lsp/ts.lua
 !/.config/nvim/lua/lsp/efm/

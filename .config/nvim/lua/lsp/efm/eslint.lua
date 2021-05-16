@@ -4,5 +4,5 @@ return {
   lintFormats = {"%f:%l:%c: %m"},
   lintIgnoreExitCode = true,
   formatCommand = "eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
-  formatStdin = true
+  formatStdin = true,
 }

@@ -1,2 +1,2 @@
-require("lsp/efm")
-require("lsp/ts")
+require "lsp/efm"
+require "lsp/ts"

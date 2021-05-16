@@ -1,10 +1,13 @@
-local custom_attach = require("lsp/custom_attach")
-local custom_on_init = require("lsp/custom_on_init")
-local lsp_config = require("lspconfig")
+local custom = require "lsp/custom"
+local lsp_config = require "lspconfig"
 
 lsp_config.tsserver.setup {
-  on_attach = custom_attach,
-  on_init = custom_on_init,
+  on_attach = function()
+    custom.lsp_keymap()
+  end,
+  on_init = function()
+    custom.on_init()
+  end,
   root_dir = vim.loop.cwd,
   init_options = {
     documentFormatting = false,
