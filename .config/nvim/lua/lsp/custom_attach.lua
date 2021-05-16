@@ -3,7 +3,6 @@ local mapper = function(mode, key, result)
 end
 
 local function custom_attach()
-  -- mappings
   mapper("n", "gn", "vim.lsp.diagnostic.goto_next({enable_popup = false})")
   mapper("n", "gp", "vim.lsp.diagnostic.goto_prev({enable_popup = false})")
   mapper("n", "<Space>gl", "vim.lsp.diagnostic.set_loclist({open_loclist = true})")

@@ -25,6 +25,6 @@ lsp_config.efm.setup {
       typescript = {eslint},
       ["typescript.tsx"] = {eslint},
       typescriptreact = {eslint}
-    }
-  }
+    },
+  },
 }
