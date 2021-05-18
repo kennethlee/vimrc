@@ -135,7 +135,10 @@ autocmd user_highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-colorscheme base16-eighties
+lua << EOF
+local base16 = require 'base16'
+base16(base16.themes.eighties, true)
+EOF
 
 set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 
