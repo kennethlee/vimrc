@@ -23,7 +23,7 @@ endif
 " enable
 " note for nvim: matchit is on by default
 runtime macros/matchit.vim
-packadd cfilter
+packadd! cfilter
 
 " disable
 let g:loaded_netrwPlugin = 1
@@ -135,10 +135,8 @@ autocmd user_highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-lua << EOF
-local base16 = require 'base16'
-base16(base16.themes.eighties, true)
-EOF
+packadd nvim-base16
+colorscheme base16-eighties
 
 set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 
