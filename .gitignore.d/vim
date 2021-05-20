@@ -42,6 +42,7 @@
 !/.config/nvim/ftdetect/markdown.vim
 
 !/.config/nvim/lua/
+!/.config/nvim/lua/treesitter.lua
 !/.config/nvim/lua/utils.lua
 !/.config/nvim/lua/lsp/
 !/.config/nvim/lua/lsp/custom.lua
