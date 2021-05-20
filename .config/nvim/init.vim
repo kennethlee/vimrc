@@ -144,6 +144,7 @@ set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 " lua {{{1
 
 lua require('lsp')
+lua require('plugin')
 lua require('treesitter')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
