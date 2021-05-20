@@ -8,7 +8,7 @@ function M.on_init()
       signs = true,
       underline = true,
       update_in_insert = false,
-      virtual_text = true,
+      virtual_text = false,
     }
   )
 
@@ -22,8 +22,8 @@ function M.on_init()
 end
 
 function M.lsp_keymap()
-  buf_map("n", "gn", "vim.lsp.diagnostic.goto_next({enable_popup = false})")
-  buf_map("n", "gp", "vim.lsp.diagnostic.goto_prev({enable_popup = false})")
+  buf_map("n", "gn", "vim.lsp.diagnostic.goto_next({enable_popup = true})")
+  buf_map("n", "gp", "vim.lsp.diagnostic.goto_prev({enable_popup = true})")
   buf_map("n", "<Space>gl", "vim.lsp.diagnostic.set_loclist({open_loclist = true})")
   buf_map("n", "<Space>gf", "vim.lsp.buf.formatting()")
   buf_map("n", "<Space>gd", "vim.lsp.buf.definition()")
