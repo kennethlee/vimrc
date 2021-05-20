@@ -135,8 +135,20 @@ autocmd user_highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-packadd nvim-base16
-colorscheme base16-eighties
+" packadd! nvim-base16
+" colorscheme base16-eighties
+
+" packadd! blue-moon
+" colorscheme blue-moon
+
+" packadd! kosmikoa.nvim
+" colorscheme kosmikoa
+
+packadd! melange
+colorscheme melange
+
+" packadd! monokai.nvim
+" colorscheme monokai
 
 set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 
