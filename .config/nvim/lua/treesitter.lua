@@ -1,8 +1,8 @@
 require "nvim-treesitter.configs".setup({
-  ensure_installed = {"css", "html", "javascript", "json", "ledger", "lua", "tsx", "typescript"},
-  ignore_install = {}, -- List of parsers to ignore installing
+  ensure_installed = {"css", "html", "javascript", "json", "lua", "tsx", "typescript"},
+  ignore_install = {},
   highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
+    enable = true,
+    disable = {},
   },
 })
