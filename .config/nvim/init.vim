@@ -144,6 +144,9 @@ autocmd user_highlight BufEnter,WinEnter *
 " packadd! kosmikoa.nvim
 " colorscheme kosmikoa
 
+" packadd! onedark.nvim
+" colorscheme onedark
+
 packadd! melange
 colorscheme melange
 
