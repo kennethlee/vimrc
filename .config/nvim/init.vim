@@ -7,7 +7,6 @@ set nomodeline
 set clipboard+=unnamedplus
 filetype indent off
 filetype plugin on
-syntax on
 set runtimepath+=~/.fzf
 
 " gb: normally, Vim messes with iskeyword when you open a shell file. This can
@@ -149,9 +148,9 @@ set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lua {{{1
 
-lua require('lsp')
-lua require('plugin')
-lua require('treesitter')
+lua require "lsp"
+lua require "plugin"
+lua require "treesitter"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: general {{{1
