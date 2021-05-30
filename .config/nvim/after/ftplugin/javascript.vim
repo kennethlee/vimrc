@@ -12,6 +12,6 @@ if &filetype ==# 'javascript'
 
   if executable('prettier')
     setlocal formatprg=npx\ prettier\ --stdin-filepath\ %\ --trailing-comma\ all
-    " autocmd user_lint BufWritePre <buffer> normal gggqG
+    " autocmd Lint BufWritePre <buffer> normal gggqG
   endif
 endif

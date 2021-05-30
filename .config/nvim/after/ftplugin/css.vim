@@ -1,5 +1,5 @@
 if &filetype ==# 'css'
-  autocmd user_fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd Fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=indent
     \|  setlocal foldnestmax=4
@@ -11,6 +11,6 @@ if &filetype ==# 'css'
 
   if executable('prettier')
     setlocal formatprg=npx\ prettier\ --stdin-filepath\ %\ --trailing-comma\ all
-    " autocmd user_lint BufWritePre <buffer> normal gggqG
+    " autocmd Lint BufWritePre <buffer> normal gggqG
   endif
 endif

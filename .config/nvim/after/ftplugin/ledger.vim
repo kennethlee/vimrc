@@ -1,5 +1,5 @@
 if &filetype ==# 'ledger'
-  autocmd user_fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd Fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldmethod=marker
   " commentstring for vim-commentary
   setlocal commentstring=;\ %s

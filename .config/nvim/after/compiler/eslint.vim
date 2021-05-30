@@ -5,5 +5,5 @@ endif
 CompilerSet errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
 CompilerSet makeprg=eslint_d\ --format\ compact
 
-" autocmd user_lint BufWritePost <buffer> silent lmake! <afile> | silent redraw!
-autocmd user_lint VimLeave * !eslint_d stop
+" autocmd Lint BufWritePost <buffer> silent lmake! <afile> | silent redraw!
+autocmd Lint VimLeave * !eslint_d stop
