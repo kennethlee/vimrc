@@ -73,6 +73,13 @@ set winwidth=90 winminwidth=40
 set wrap
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" require {{{1
+
+lua require "lsp"
+lua require "plugin"
+lua require "treesitter"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " commands {{{1
 
 command! Bdelete                lexpr [] | lclose | bprevious | bdelete #
@@ -134,23 +141,16 @@ autocmd Highlight BufEnter,WinEnter *
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)
 
-packadd! gruvbox-flat.nvim
-colorscheme gruvbox-flat
+" packadd! gruvbox-flat.nvim
+" colorscheme gruvbox-flat
 
-" packadd! melange
-" colorscheme melange
+packadd! melange
+colorscheme melange
 
 " packadd! nvim-base16
 " colorscheme base16-eighties
 
-set statusline=%#error#%m%*\ %<%f\ %=%-19(%3l,%02c%03V%)
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" lua {{{1
-
-lua require "lsp"
-lua require "plugin"
-lua require "treesitter"
+set statusline=%#error#%m%*%<%f%=%{v:register}%-18(%l,%c%V%)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: general {{{1
