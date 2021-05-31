@@ -3,6 +3,7 @@
 !/.gitignore.d/vim
 !/.config/
 !/.config/nvim/
+!/.config/nvim/++init.lua
 !/.config/nvim/init.vim
 !/.config/nvim/after/
 
