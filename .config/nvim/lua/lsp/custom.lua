@@ -1,5 +1,3 @@
-local buf_map = require "utils".buf_map
-
 local M = {}
 
 function M.on_init()
@@ -22,13 +20,13 @@ function M.on_init()
 end
 
 function M.lsp_keymap()
-  buf_map("n", "gn", "vim.lsp.diagnostic.goto_next({enable_popup = true})")
-  buf_map("n", "gp", "vim.lsp.diagnostic.goto_prev({enable_popup = true})")
-  buf_map("n", "<Space>gl", "vim.lsp.diagnostic.set_loclist({open_loclist = true})")
-  buf_map("n", "<Space>gf", "vim.lsp.buf.formatting()")
-  buf_map("n", "<Space>gd", "vim.lsp.buf.definition()")
-  buf_map("n", "<Space>gi", "vim.lsp.buf.implementation()")
-  buf_map("n", "<Space>gr", "vim.lsp.buf.references()")
+  vim.api.nvim_buf_set_keymap(0, "n", "gn", "<cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = true})<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "gp", "<cmd>lua vim.lsp.diagnostic.goto_prev({enable_popup = true})<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Space>gl", "<cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist = true})<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Space>gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Space>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Space>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Space>gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap = true, silent = true})
 end
 
 return M
