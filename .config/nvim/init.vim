@@ -9,11 +9,6 @@ filetype indent off
 filetype plugin on
 set runtimepath+=~/.fzf
 
-" gb: normally, Vim messes with iskeyword when you open a shell file. This can
-" leak out, polluting other file types even after a 'set ft=' change. This
-" variable prevents the iskeyword change so it can't hurt anyone
-let g:sh_noisk = 1
-
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --no-heading\ --hidden\ --glob\ '!{.git,node_modules}/*'
   set grepformat=%f:%l:%c:%m,%f:%l:%m
@@ -21,10 +16,11 @@ endif
 
 " enable
 " note for nvim: matchit is on by default
-runtime macros/matchit.vim
+packadd! matchit
 packadd! cfilter
 
 " disable
+let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 
 set autoindent
@@ -48,7 +44,7 @@ set incsearch
 set keywordprg=:DD
 set linebreak
 set list
-set listchars=tab:▸\ ,eol:¬,trail:@
+set listchars=eol:¬,tab:▸\ ,trail:@
 set nobackup
 set noequalalways
 set nofoldenable
@@ -170,8 +166,7 @@ nnoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 vnoremap <silent> +             <Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''
 
-nnoremap          <BS>          <C-^>
-tnoremap          <C-[>         <C-\><C-n>
+nnoremap <silent> <BS>          <C-^>
 nnoremap <silent> <C-h>         :Bprevious<CR>
 nnoremap <silent> <C-l>         :Bnext<CR>
 nnoremap <silent> <C-k>         :cprevious<CR>
@@ -188,9 +183,9 @@ inoremap <silent> <S-Tab>       <C-n>
 
 nnoremap          <Space>       <Nop>
 
-nnoremap          <Space>bb     :ls<CR>:buffer<Space>*
-nnoremap          <Space>bs     :ls<CR>:sbuffer<Space>*
-nnoremap          <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
+nnoremap <silent> <Space>bb     :ls<CR>:buffer<Space>*
+nnoremap <silent> <Space>bs     :ls<CR>:sbuffer<Space>*
+nnoremap <silent> <Space>bv     :ls<CR>:vertical<Space>sbuffer<Space>*
 nnoremap <silent> <Space>bd     :Bdelete<CR>
 
 nnoremap <silent> <Space>ff     :set expandtab? fileencoding? fileformat? filetype?<CR>
@@ -203,7 +198,7 @@ nnoremap <silent> <Space>vv     :edit $MYVIMRC<CR>
 
 nnoremap <silent> <Space>o      :edit ~/Dropbox/Apps/todo/todo.txt<CR>
 nnoremap <silent> <Space>tr     :FZF<CR>
-nnoremap          <Space>te     :FZF ~/
+nnoremap <silent> <Space>te     :FZF ~/
 nnoremap <silent> <Space>tj     :FZF ~/Dropbox/notes<CR>
 nnoremap <silent> <Space>tl     :edit ~/.ledger/current.journal<CR>zm
 nnoremap <silent> <Space>tn     :FZF ~/Documents/notes<CR>
