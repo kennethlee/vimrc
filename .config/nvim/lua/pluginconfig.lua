@@ -1,3 +1,9 @@
+-- terrortylor/nvim-comment
+require "nvim_comment".setup({
+  comment_empty = false,
+  marker_padding = false,
+})
+
 -- windwp/nvim-ts-autotag
 require "nvim-treesitter.configs".setup({
   autotag = {
