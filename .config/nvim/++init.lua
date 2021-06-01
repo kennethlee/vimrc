@@ -92,44 +92,45 @@ vim.cmd([[command! WipeRegisters          for i in range(34,122) | silent! call 
 -- augroups {{{1
 
 vim.cmd([[
-  augroup Fold
+  augroup User_Fold
     autocmd!
-  augroup end
-]], false)
+  augroup END
+]])
 
 vim.cmd([[
-  augroup Highlight
+  augroup User_Highlight
     autocmd!
-  augroup end
-]], false)
+  augroup END
+]])
 
 vim.cmd([[
-  augroup Lint
+  augroup User_Lint
     autocmd!
-  augroup end
-]], false)
+  augroup END
+]])
 
 vim.cmd([[
-  augroup Misc
+  augroup User_Misc
     autocmd!
-  augroup end
-]], false)
+    autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
+  augroup END
+]])
 
 vim.cmd([[
-  augroup Quickfix
+  augroup User_Quickfix
     autocmd!
-    autocmd Quickfix QuickFixCmdPost [^l]* botright cwindow
-    autocmd Quickfix QuickFixCmdPost l* lwindow
-  augroup end
-]], false)
+    autocmd User_Quickfix QuickFixCmdPost [^l]* botright cwindow
+    autocmd User_Quickfix QuickFixCmdPost l* lwindow
+  augroup END
+]])
 
 vim.cmd([[
-  augroup Startup
+  augroup User_Startup
     autocmd!
-    autocmd Startup VimEnter * WipeMarks
-    autocmd Startup VimEnter * WipeRegisters
-  augroup end
-]], false)
+    autocmd User_Startup VimEnter * WipeMarks
+    autocmd User_Startup VimEnter * WipeRegisters
+  augroup END
+]])
 
 --------------------------------------------------------------------------------
 -- display {{{1

@@ -8,7 +8,7 @@ if &filetype ==# 'markdown'
     return '='
   endfunction
 
-  autocmd Fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd User_Fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldexpr=MarkdownLevel()
     \|  setlocal foldmethod=expr

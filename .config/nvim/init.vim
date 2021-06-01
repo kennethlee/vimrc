@@ -95,36 +95,34 @@ command! WipeRegisters
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " augroups {{{1
 
-augroup Fold
+augroup User_Fold
   autocmd!
-augroup end
+augroup END
 
-augroup Highlight
+augroup User_Highlight
   autocmd!
-augroup end
+augroup END
 
-augroup Lint
+augroup User_Lint
   autocmd!
-augroup end
+augroup END
 
-augroup Misc
+augroup User_Misc
   autocmd!
-  autocmd Misc BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup end
+  autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
 
-augroup Quickfix
+augroup User_Quickfix
   autocmd!
-  " automatically open loclist / quickfix window if there are valid errors
-  " after executing quickfix commands
-  autocmd Quickfix QuickFixCmdPost [^l]* botright cwindow
-  autocmd Quickfix QuickFixCmdPost l* lwindow
-augroup end
+  autocmd User_Quickfix QuickFixCmdPost [^l]* botright cwindow
+  autocmd User_Quickfix QuickFixCmdPost l* lwindow
+augroup END
 
-augroup Startup
+augroup User_Startup
   autocmd!
-  autocmd Startup VimEnter * WipeMarks
-  autocmd Startup VimEnter * WipeRegisters
-augroup end
+  autocmd User_Startup VimEnter * WipeMarks
+  autocmd User_Startup VimEnter * WipeRegisters
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " display {{{1
@@ -132,7 +130,7 @@ augroup end
 " properly highlight tabs / trailing whitespace
 highlight link UnwantedWhitespace WarningMsg
 " this must be kept here, **above** the setting of colorscheme
-autocmd Highlight BufEnter,WinEnter *
+autocmd User_Highlight BufEnter,WinEnter *
   \   call clearmatches()
   \|  call matchadd('UnwantedWhitespace', '\s\+$', 100)
   \|  call matchadd('UnwantedWhitespace', '\t', 100)

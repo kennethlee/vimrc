@@ -1,5 +1,5 @@
 if &filetype ==# 'vim'
-  autocmd Fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd User_Fold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=marker
   setlocal expandtab

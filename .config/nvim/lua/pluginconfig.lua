@@ -1,7 +1,7 @@
 -- terrortylor/nvim-comment
 require "nvim_comment".setup({
   comment_empty = false,
-  marker_padding = false,
+  marker_padding = true,
 })
 
 -- windwp/nvim-ts-autotag
