@@ -71,9 +71,9 @@ set wrap
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " require {{{1
 
-lua require "lsp"
-lua require "pluginconfig"
-lua require "treesitter"
+lua require("lsp")
+lua require("pluginconfig")
+lua require("treesitter")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " commands {{{1

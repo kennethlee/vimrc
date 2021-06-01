@@ -1,18 +1,18 @@
 -- terrortylor/nvim-comment
-require "nvim_comment".setup({
+require("nvim_comment").setup({
   comment_empty = false,
   marker_padding = true,
 })
 
 -- windwp/nvim-ts-autotag
-require "nvim-treesitter.configs".setup({
+require("nvim-treesitter.configs").setup({
   autotag = {
     enable = true,
   }
 })
 
 -- JoosepAlviste/nvim-ts-context-commentstring
-require "nvim-treesitter.configs".setup({
+require("nvim-treesitter.configs").setup({
   context_commentstring = {
     enable = true,
     config = {
@@ -28,4 +28,4 @@ require "nvim-treesitter.configs".setup({
 })
 
 -- steelsojka/pears.nvim
-require "pears".setup()
+require("pears").setup()

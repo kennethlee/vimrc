@@ -70,9 +70,9 @@ vim.opt.wrap = true
 --------------------------------------------------------------------------------
 -- require {{{1
 
-require "lsp"
-require "pluginconfig"
-require "treesitter"
+require("lsp")
+require("pluginconfig")
+require("treesitter")
 
 --------------------------------------------------------------------------------
 -- commands {{{1

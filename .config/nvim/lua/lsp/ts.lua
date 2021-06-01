@@ -1,5 +1,5 @@
-local custom = require "lsp/custom"
-local lsp_config = require "lspconfig"
+local custom = require("lsp/custom")
+local lsp_config = require("lspconfig")
 
 lsp_config.tsserver.setup({
   on_attach = function()

@@ -1,6 +1,6 @@
-local custom = require "lsp/custom"
-local eslint = require "lsp/efm/eslint"
-local lsp_config = require "lspconfig"
+local custom = require("lsp/custom")
+local eslint = require("lsp/efm/eslint")
+local lsp_config = require("lspconfig")
 
 lsp_config.efm.setup {
   on_attach = function()
