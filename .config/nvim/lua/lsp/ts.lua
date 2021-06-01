@@ -1,7 +1,7 @@
 local custom = require "lsp/custom"
 local lsp_config = require "lspconfig"
 
-lsp_config.tsserver.setup {
+lsp_config.tsserver.setup({
   on_attach = function()
     custom.lsp_keymap()
   end,
@@ -20,4 +20,4 @@ lsp_config.tsserver.setup {
     "typescript.tsx",
     "typescriptreact",
   },
-}
+})

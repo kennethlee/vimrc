@@ -72,7 +72,7 @@ set wrap
 " require {{{1
 
 lua require "lsp"
-lua require "plugin"
+lua require "pluginconfig"
 lua require "treesitter"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
