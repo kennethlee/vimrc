@@ -172,9 +172,10 @@ nnoremap <silent> <C-j>         :cnext<CR>
 nnoremap <silent> <M-k>         :lprevious<CR>
 nnoremap <silent> <M-j>         :lnext<CR>
 nnoremap <silent> <Esc>         :nohlsearch<CR><Esc>
-inoremap <silent> <expr><F8>    strftime("%FT%T%z, %a")
 inoremap <silent> <expr><Tab>   key#InsertTabWrapper()
 inoremap <silent> <S-Tab>       <C-n>
+
+iabbrev <silent>  xdd           <C-r>=strftime("%FT%T%z, %a")<CR><BS>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: <Space> {{{1
