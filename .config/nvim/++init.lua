@@ -182,7 +182,7 @@ vim.api.nvim_set_keymap("n", "<C-j>", ":cnext<CR>", {noremap = true, silent = tr
 vim.api.nvim_set_keymap("n", "<M-k>", ":lprevious<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<M-j>", ":lnext<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR><Esc>", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("i", "<expr><Tab>", "key#InsertTabWrapper()", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("i", "<Tab>", "key#InsertTabWrapper()", {expr = true, noremap = true, silent = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "<C-n>", {noremap = true, silent = true})
 
 vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR><BS>]])
