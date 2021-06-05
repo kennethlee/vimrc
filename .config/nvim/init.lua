@@ -174,6 +174,9 @@ vim.api.nvim_set_keymap("n", "+", ":call textobject#NextIndent(0, 1, 0, 1)<CR>",
 vim.api.nvim_set_keymap("o", "+", ":call textobject#NextIndent(0, 1, 0, 1)<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "+", "<Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''", {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap("n", "9", ":vertical resize -10<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "0", ":vertical resize +10<CR>", {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap("n", "<BS>", "<C-^>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-h>", ":Bprevious<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-l>", ":Bnext<CR>", {noremap = true, silent = true})
