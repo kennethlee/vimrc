@@ -190,7 +190,7 @@ vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR><BS>]])
 --------------------------------------------------------------------------------
 -- keymap: <Space> {{{1
 
-vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Space>bb", ":ls<CR>:buffer<Space>*", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>bs", ":ls<CR>:sbuffer<Space>*", {noremap = true, silent = true})

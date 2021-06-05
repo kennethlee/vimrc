@@ -180,7 +180,7 @@ iabbrev <silent>  xdd           <C-r>=strftime("%FT%T%z, %a")<CR><BS>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap: <Space> {{{1
 
-nnoremap          <Space>       <Nop>
+noremap           <Space>       <Nop>
 
 nnoremap <silent> <Space>bb     :ls<CR>:buffer<Space>*
 nnoremap <silent> <Space>bs     :ls<CR>:sbuffer<Space>*
