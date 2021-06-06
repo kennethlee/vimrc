@@ -112,6 +112,8 @@ vim.cmd([[
 vim.cmd([[
   augroup User_Misc
     autocmd!
+    autocmd User_Misc BufWritePre * retab | %s/\s\+$//e
+    autocmd User_Misc BufWritePre * %s/\n\+\%$//e | execute "normal \<C-o>"
     autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
   augroup END
 ]])
@@ -204,8 +206,7 @@ vim.api.nvim_set_keymap("n", "<Space>ff", ":set expandtab? fileencoding? filefor
 vim.api.nvim_set_keymap("n", "<Space>fc", ":RemoveFancyCharacters<CR>", {noremap = true, silent = false})
 vim.api.nvim_set_keymap("n", "<Space>fp", ":%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>fr", ":RenameFile<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>aa", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>ft", ":%s/s+$//e<CR>:let @/=''<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>fw", ":set wrap!<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Space>vv", ":edit $MYVIMRC<CR>", {noremap = true, silent = true})

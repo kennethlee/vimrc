@@ -109,6 +109,10 @@ augroup END
 
 augroup User_Misc
   autocmd!
+  " retab and remove trailing whitespace
+  autocmd User_Misc BufWritePre * retab | %s/\s\+$//e
+  " remove trailing newlines
+  autocmd User_Misc BufWritePre * %s/\n\+\%$//e | execute "normal \<C-o>"
   autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
 augroup END
 
