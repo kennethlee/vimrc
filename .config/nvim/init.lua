@@ -167,7 +167,6 @@ vim.api.nvim_set_keymap("n", "J", "mzJ`z", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "U", "<C-r>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "x", '"_x', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "Y", "y$", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "zz", "za", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "_", ":call textobject#NextIndent(0, 0, 0, 1)<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("o", "_", ":call textobject#NextIndent(0, 0, 0, 1)<CR>", {noremap = true, silent = true})

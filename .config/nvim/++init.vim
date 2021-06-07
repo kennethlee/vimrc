@@ -159,7 +159,6 @@ nnoremap J  mzJ`z
 nnoremap U  <C-r>
 noremap  x  "_x
 nnoremap Y  y$
-nnoremap zz za
 
 nnoremap <silent> _             :call textobject#NextIndent(0, 0, 0, 1)<CR>
 onoremap <silent> _             :call textobject#NextIndent(0, 0, 0, 1)<CR>
