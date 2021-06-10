@@ -112,8 +112,7 @@ vim.cmd([[
 vim.cmd([[
   augroup User_Misc
     autocmd!
-    autocmd User_Misc BufWritePre * retab | %s/\s\+$//e
-    autocmd User_Misc BufWritePre * %s/\n\+\%$//e | execute "normal \<C-o>"
+    autocmd User_Misc BufWritePre * %s/\s\+$//e
     autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
   augroup END
 ]])
