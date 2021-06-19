@@ -165,8 +165,8 @@ nnoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> +             :call textobject#NextIndent(0, 1, 0, 1)<CR>
 vnoremap <silent> +             <Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''
 
-nnoremap <silent> 9             :vertical resize -10<CR>
-nnoremap <silent> 0             :vertical resize +10<CR>
+nnoremap <silent> <M-9>         :vertical resize -10<CR>
+nnoremap <silent> <M-0>         :vertical resize +10<CR>
 
 nnoremap <silent> <BS>          <C-^>
 nnoremap <silent> <C-h>         :Bprevious<CR>
