@@ -51,6 +51,7 @@ vim.opt.foldenable = false
 vim.opt.joinspaces = false
 vim.opt.swapfile = false
 vim.opt.number = true
+vim.opt.signcolumn = "number"
 vim.opt.shiftwidth = 2
 vim.opt.showmode = true
 vim.opt.smartcase = true
