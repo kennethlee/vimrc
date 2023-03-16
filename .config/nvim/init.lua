@@ -189,7 +189,7 @@ vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR><Esc>", {noremap = true, s
 vim.api.nvim_set_keymap("i", "<Tab>", "key#InsertTabWrapper()", {expr = true, noremap = true, silent = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "<C-n>", {noremap = true, silent = true})
 
-vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR><BS>]])
+vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR>]])
 
 --------------------------------------------------------------------------------
 -- keymap: <Space> {{{1
