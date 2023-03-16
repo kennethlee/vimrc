@@ -11,6 +11,7 @@ function! file#RemoveFancyCharacters() abort
   let l:typo["–"] = '--'
   let l:typo["—"] = '---'
   let l:typo["…"] = '...'
+  let l:typo["⅛"] = '1/8'
   let l:typo["¼"] = '1/4'
   let l:typo["⅓"] = '1/3'
   let l:typo["½"] = '1/2'
