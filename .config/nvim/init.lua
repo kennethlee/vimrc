@@ -210,7 +210,7 @@ vim.api.nvim_set_keymap("n", "<Space>fw", ":set wrap!<CR>", {noremap = true, sil
 
 vim.api.nvim_set_keymap("n", "<Space>vv", ":edit $MYVIMRC<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>o", ":edit ~/Dropbox/Apps/todo/todo.txt<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>tr", ":FZF<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Space>tt", ":FZF<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>te", ":FZF ~/", {noremap = true, silent = false})
 vim.api.nvim_set_keymap("n", "<Space>tj", ":FZF ~/Dropbox/notes<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>tl", ":edit ~/.ledger/current.journal<CR>zm", {noremap = true, silent = true})
