@@ -31,6 +31,3 @@ require("nvim-treesitter.configs").setup({
     },
   }
 })
-
--- steelsojka/pears.nvim
-require("pears").setup()
