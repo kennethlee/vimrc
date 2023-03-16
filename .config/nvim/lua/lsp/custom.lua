@@ -10,27 +10,20 @@ function M.on_init()
     }
   )
 
-  -- cleaner signcolumn
-  vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
-  vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
-  vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
-  vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
-
   print("LSP initialized.")
 end
 
 function M.lsp_keymap()
   virtual_text = {}
-  virtual_text.show = true
+  virtual_text.show = false
 
   virtual_text.toggle = function()
     virtual_text.show = not virtual_text.show
-    vim.lsp.diagnostic.display(
-      vim.lsp.diagnostic.get(0, 1),
-      0,
-      1,
-      {virtual_text = virtual_text.show}
-    )
+    if virtual_text.show == true then
+      vim.diagnostic.disable()
+    else
+      vim.diagnostic.enable()
+    end
   end
 
   vim.api.nvim_buf_set_keymap(0, "n", "gn", "<cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false})<CR>", {noremap = true, silent = true})
