@@ -4,6 +4,11 @@ require("nvim_comment").setup({
   marker_padding = true,
 })
 
+-- -- windwp/nvim-autopairs
+-- require("nvim-autopairs").setup({
+--   enable_check_bracket_line = false,
+-- })
+
 -- windwp/nvim-ts-autotag
 require("nvim-treesitter.configs").setup({
   autotag = {
