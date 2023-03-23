@@ -1,3 +1,6 @@
+-- williamboman/mason.nvim
+require("mason").setup()
+
 -- terrortylor/nvim-comment
 require("nvim_comment").setup({
   comment_empty = false,
