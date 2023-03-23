@@ -49,7 +49,4 @@
 !/.config/nvim/lua/lsp/custom.lua
 !/.config/nvim/lua/lsp/init.lua
 !/.config/nvim/lua/lsp/ts.lua
-!/.config/nvim/lua/lsp/efm/
-!/.config/nvim/lua/lsp/efm/eslint.lua
-!/.config/nvim/lua/lsp/efm/init.lua
 !/.config/nvim/lua/pluginconfig.lua
