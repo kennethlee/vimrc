@@ -143,6 +143,12 @@ vim.cmd([[
 vim.cmd([[packadd! melange]])
 vim.cmd([[colorscheme melange]])
 
+-- vim.cmd([[packadd! nofrils]])
+-- vim.cmd([[colorscheme nofrils-acme]])
+-- vim.cmd([[colorscheme nofrils-dark]])
+-- vim.cmd([[colorscheme nofrils-light]])
+-- vim.cmd([[colorscheme nofrils-sepia]])
+
 -- vim.cmd([[packadd! nvim-base16]])
 -- vim.cmd([[colorscheme base16-eighties]])
 
