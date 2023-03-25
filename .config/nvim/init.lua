@@ -27,7 +27,7 @@ vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.breakindent = true
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 0
 vim.opt.cmdwinheight = 20
 vim.opt.completeopt = "noselect,menuone"
 vim.opt.cursorcolumn = true
@@ -40,6 +40,9 @@ vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
+-- when incsearch is set, entering a search pattern for / or ? and the current
+-- match is displayed, CTRL-G will move to the next match, and CTRL-T will move
+-- to the previous match, without pressing ENTER.
 vim.opt.incsearch = true
 vim.opt.keywordprg = ":DD"
 vim.opt.linebreak = true
