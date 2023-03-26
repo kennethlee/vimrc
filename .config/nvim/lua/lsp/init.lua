@@ -1,4 +1,4 @@
-require("lsp/custom")
+require("lsp/lsp_keymap")
 
 -- servers: -------------------------------------------------------------------
 

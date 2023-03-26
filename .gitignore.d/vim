@@ -46,7 +46,7 @@
 !/.config/nvim/lua/
 !/.config/nvim/lua/treesitter.lua
 !/.config/nvim/lua/lsp/
-!/.config/nvim/lua/lsp/custom.lua
+!/.config/nvim/lua/lsp/lsp_keymap.lua
 !/.config/nvim/lua/lsp/init.lua
 !/.config/nvim/lua/lsp/ts.lua
 !/.config/nvim/lua/pluginconfig.lua
