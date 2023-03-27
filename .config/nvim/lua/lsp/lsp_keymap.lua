@@ -27,16 +27,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end
     end
 
-    -- enable LSP-specific keybindings.
-    vim.api.nvim_buf_set_keymap(0, "n", "gn", "<cmd>lua vim.diagnostic.goto_next({enable_popup = false})<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev({enable_popup = false})<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gj", "<cmd>lua virtual_text.toggle()<CR>", {silent = true, noremap = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gl", "<cmd>lua vim.diagnostic.setloclist({open_loclist = true})<CR>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(0, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap = true, silent = true})
+    local keymap = vim.api.nvim_buf_set_keymap
+    local key_opts = { noremap = true, silent = true }
 
-    print("LSP initialized.")
+    -- enable LSP-specific keybindings.
+    keymap(0, "n", "gn", "<cmd>lua vim.diagnostic.goto_next({enable_popup = false})<CR>", key_opts)
+    keymap(0, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev({enable_popup = false})<CR>", key_opts)
+    keymap(0, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", key_opts)
+    keymap(0, "n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", key_opts)
+    keymap(0, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
+    keymap(0, "n", "gj", "<cmd>lua virtual_text.toggle()<CR>", key_opts)
+    keymap(0, "n", "gl", "<cmd>lua vim.diagnostic.setloclist({open_loclist = true})<CR>", key_opts)
+    keymap(0, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", key_opts)
+
+    print("LSP server initialized.")
   end,
 })

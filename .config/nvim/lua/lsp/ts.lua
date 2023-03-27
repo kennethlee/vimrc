@@ -1,19 +1,25 @@
+local bin_name = "typescript-language-server"
+local cmd = { bin_name, "--stdio" }
+local filetypes = {
+  "javascript",
+  "javascriptreact",
+  "javascript.jsx",
+  "typescript",
+  "typescriptreact",
+  "typescript.tsx",
+},
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "javascript",
   callback = function()
     vim.lsp.start({
       name = "tsserver",
-      cmd = { "typescript-language-server", "--stdio" },
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-      },
+      cmd = cmd,
+      filetypes = filetypes,
       root_dir = vim.fn.getcwd(),
-      single_file_support = true,
+      settings = {
+        hostInfo = "neovim",
+      },
     })
   end,
 })
