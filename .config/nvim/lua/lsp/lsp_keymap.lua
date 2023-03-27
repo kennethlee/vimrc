@@ -27,18 +27,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end
     end
 
-    local keymap = vim.api.nvim_buf_set_keymap
-    local key_opts = { noremap = true, silent = true }
-
     -- enable LSP-specific keybindings.
-    keymap(0, "n", "gn", "<cmd>lua vim.diagnostic.goto_next({enable_popup = false})<CR>", key_opts)
-    keymap(0, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev({enable_popup = false})<CR>", key_opts)
-    keymap(0, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", key_opts)
-    keymap(0, "n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", key_opts)
-    keymap(0, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
-    keymap(0, "n", "gj", "<cmd>lua virtual_text.toggle()<CR>", key_opts)
-    keymap(0, "n", "gl", "<cmd>lua vim.diagnostic.setloclist({open_loclist = true})<CR>", key_opts)
-    keymap(0, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", key_opts)
+    local set = vim.keymap.set
+    local key_opts = { buffer = ev.buf, noremap = true, silent = true }
+
+    set("n", "gn", "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
+    set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
+    set("n", "gd", vim.lsp.buf.definition, key_opts)
+    set("n", "gf", vim.lsp.buf.format, key_opts)
+    set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
+    set("n", "gj", virtual_text.toggle, key_opts)
+    set("n", "gj", "<cmd>lua virtual_text.toggle()<CR>", key_opts)
+    set("n", "gl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>", key_opts)
+    set("n", "gr", vim.lsp.buf.references, key_opts)
 
     print("LSP server initialized.")
   end,
