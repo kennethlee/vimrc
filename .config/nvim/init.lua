@@ -10,7 +10,7 @@ opt.modeline = false
 opt.clipboard = "unnamedplus"
 cmd([[filetype indent off]])
 cmd([[filetype plugin on]])
-opt.runtimepath = vim.opt.runtimepath + {"~/.fzf"}
+opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
 
 if vim.fn.executable("rg") then
   opt.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
@@ -37,7 +37,7 @@ opt.cursorcolumn = true
 opt.expandtab = true
 opt.foldmethod = "manual"
 opt.foldnestmax = 5
-opt.foldopen = vim.opt.foldopen - {"block"}
+opt.foldopen = vim.opt.foldopen - { "block" }
 opt.foldtext = "fold#HeaderText()"
 opt.hidden = true
 opt.hlsearch = true
@@ -50,7 +50,7 @@ opt.incsearch = true
 opt.keywordprg = ":DD"
 opt.linebreak = true
 opt.list = true
-opt.listchars = {eol = "¬", tab = "▸ ", trail = "@"}
+opt.listchars = { eol = "¬", tab = "▸ ", trail = "@" }
 opt.backup = false
 opt.equalalways = false
 opt.foldenable = false
@@ -159,15 +159,15 @@ cmd([[colorscheme melange]])
 -- cmd([[colorscheme base16-eighties]])
 
 local stl = {
-  "%#error#", -- error highlight group begin
-  "%m", -- modified flag
-  "%*", -- error highlight group end
-  "%<", -- truncation point
-  "%f", -- filepath
-  "%=", -- separator
+  "%#error#",      -- error highlight group begin
+  "%m",            -- modified flag
+  "%*",            -- error highlight group end
+  "%<",            -- truncation point
+  "%f",            -- filepath
+  "%=",            -- separator
   "%{v:register}", -- display current register
-  "%-18", -- padding right, 18 char width
-  "(%l,%c%V%)", -- current {line #},{column #}-{virtual column #}
+  "%-18",          -- padding right, 18 char width
+  "(%l,%c%V%)",    -- current {line #},{column #}-{virtual column #}
 }
 
 opt.statusline = table.concat(stl)
