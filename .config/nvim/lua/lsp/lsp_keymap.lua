@@ -16,28 +16,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.bo[args.buf].formatexpr = "v:lua.vim.lsp.formatexpr()"
 
     -- toggle virtual_text for <Space>gj
-    virtual_text = {}
-    virtual_text.show = false
-    virtual_text.toggle = function()
-      virtual_text.show = not virtual_text.show
-      if virtual_text.show == true then
-        vim.diagnostic.disable()
+    local diagnostics_active = true
+    local toggle_diagnostics = function()
+      diagnostics_active = not diagnostics_active
+      if diagnostics_active then
+        vim.diagnostic.show()
       else
-        vim.diagnostic.enable()
+        vim.diagnostic.hide()
       end
     end
 
     -- enable LSP-specific keybindings.
     local set = vim.keymap.set
-    local key_opts = { buffer = ev.buf, noremap = true, silent = true }
+    local key_opts = { buffer = args.buf, noremap = true, silent = true }
 
     set("n", "gn", "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
     set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
     set("n", "gd", vim.lsp.buf.definition, key_opts)
     set("n", "gf", vim.lsp.buf.format, key_opts)
     set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
-    set("n", "gj", virtual_text.toggle, key_opts)
-    set("n", "gj", "<cmd>lua virtual_text.toggle()<CR>", key_opts)
+    set("n", "gj", toggle_diagnostics, key_opts)
     set("n", "gl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>", key_opts)
     set("n", "gr", vim.lsp.buf.references, key_opts)
 
