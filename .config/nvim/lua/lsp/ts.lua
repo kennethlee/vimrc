@@ -7,7 +7,7 @@ local filetypes = {
   "typescript",
   "typescriptreact",
   "typescript.tsx",
-},
+}
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "javascript",
