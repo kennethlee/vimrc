@@ -1,3 +1,4 @@
+-- individual server configs located in /after/ftplugin/*.lua
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     -- set initial state of virtual_text

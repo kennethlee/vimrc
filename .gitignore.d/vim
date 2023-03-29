@@ -16,9 +16,11 @@
 !/.config/nvim/after/ftplugin/elixir.vim
 !/.config/nvim/after/ftplugin/eruby.vim
 !/.config/nvim/after/ftplugin/html.vim
+!/.config/nvim/after/ftplugin/javascript.lua
 !/.config/nvim/after/ftplugin/javascript.vim
 !/.config/nvim/after/ftplugin/json.vim
 !/.config/nvim/after/ftplugin/ledger.vim
+!/.config/nvim/after/ftplugin/lua.lua
 !/.config/nvim/after/ftplugin/lua.vim
 !/.config/nvim/after/ftplugin/markdown.vim
 !/.config/nvim/after/ftplugin/qf.vim
@@ -44,10 +46,6 @@
 !/.config/nvim/ftdetect/markdown.vim
 
 !/.config/nvim/lua/
-!/.config/nvim/lua/treesitter.lua
-!/.config/nvim/lua/lsp/
-!/.config/nvim/lua/lsp/lsp_keymap.lua
-!/.config/nvim/lua/lsp/init.lua
-!/.config/nvim/lua/lsp/lua.lua
-!/.config/nvim/lua/lsp/ts.lua
+!/.config/nvim/lua/lsp.lua
 !/.config/nvim/lua/pluginconfig.lua
+!/.config/nvim/lua/treesitter.lua
