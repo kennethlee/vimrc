@@ -4,7 +4,6 @@
 !/.config/
 !/.config/nvim/
 !/.config/nvim/init.lua
-!/.config/nvim/++init.vim
 !/.config/nvim/after/
 
 !/.config/nvim/after/compiler/
