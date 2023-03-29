@@ -28,12 +28,10 @@
 !/.config/nvim/autoload/fold.vim
 !/.config/nvim/autoload/key.vim
 !/.config/nvim/autoload/macro.vim
-!/.config/nvim/autoload/statusline.vim
 !/.config/nvim/autoload/textobject.vim
 !/.config/nvim/autoload/window.vim
 
 !/.config/nvim/ftdetect/
-!/.config/nvim/ftdetect/eruby.vim
 !/.config/nvim/ftdetect/ledger.vim
 !/.config/nvim/ftdetect/markdown.vim
 
