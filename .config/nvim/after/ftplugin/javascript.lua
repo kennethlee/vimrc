@@ -1,8 +1,6 @@
-vim.opt_local.colorcolumn = "81"
-vim.opt_local.expandtab = true
-vim.opt_local.shiftwidth = 2
-vim.opt_local.softtabstop = 2
-vim.opt_local.tabstop = 2
+local opt_local = vim.opt_local
+
+opt_local.colorcolumn = "81"
 
 -- lsp -------------------------------------------------------------------------
 

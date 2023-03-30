@@ -8,8 +8,7 @@ opt.encoding = "utf-8"
 -- scriptencoding utf-8
 opt.modeline = false
 opt.clipboard = "unnamedplus"
-cmd([[filetype indent off]])
-cmd([[filetype plugin on]])
+cmd([[filetype plugin indent on]])
 opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
 
 if vim.fn.executable("rg") then

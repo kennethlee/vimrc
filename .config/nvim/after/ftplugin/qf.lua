@@ -11,5 +11,6 @@ vim.cmd([[
 
 -- disable mappings for :Bnext/:Bprev if window focus is accidentally on quickfix/loclist.
 local key_opts = { buffer = 0, noremap = true, silent = true }
-vim.keymap.set("", "<C-h>", "<Nop>", key_opts)
-vim.keymap.set("", "<C-l>", "<Nop>", key_opts)
+local set = vim.keymap.set
+set("", "<C-h>", "<Nop>", key_opts)
+set("", "<C-l>", "<Nop>", key_opts)
