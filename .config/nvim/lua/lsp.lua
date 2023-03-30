@@ -1,5 +1,6 @@
 -- individual server configs located in /after/ftplugin/*.lua
-vim.api.nvim_create_autocmd("LspAttach", {
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("LspAttach", {
   callback = function(args)
     -- set initial state of virtual_text
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

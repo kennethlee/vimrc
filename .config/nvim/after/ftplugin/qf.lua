@@ -1,5 +1,7 @@
-vim.opt_local.bufhidden = "wipe"
-vim.opt_local.buflisted = false
+local opt_local = vim.opt_local
+
+opt_local.bufhidden = "wipe"
+opt_local.buflisted = false
 
 vim.cmd([[
   " automatically close corresponding loclist when quitting its parent window

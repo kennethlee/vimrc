@@ -76,15 +76,9 @@ opt.wrap = true
 --------------------------------------------------------------------------------
 -- require {{{1
 
--- Make sure user modules can be reloaded when using :source
-local load = function(mod)
-  package.loaded[mod] = nil
-  require(mod)
-end
-
-load("lsp")
-load("pluginconfig")
-load("treesitter")
+require("lsp")
+require("pluginconfig")
+require("treesitter")
 
 --------------------------------------------------------------------------------
 -- commands {{{1
@@ -158,12 +152,6 @@ autocmd({ "BufWritePost" }, {
 
 cmd([[packadd! melange]])
 cmd([[colorscheme melange]])
-
--- cmd([[packadd! nofrils]])
--- cmd([[colorscheme nofrils-acme]])
--- cmd([[colorscheme nofrils-dark]])
--- cmd([[colorscheme nofrils-light]])
--- cmd([[colorscheme nofrils-sepia]])
 
 -- cmd([[packadd! nvim-base16]])
 -- cmd([[colorscheme base16-eighties]])

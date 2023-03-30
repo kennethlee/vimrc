@@ -1,5 +1,3 @@
--- local opt_local = vim.opt_local
-
 vim.cmd([[
   autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
