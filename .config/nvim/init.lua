@@ -98,47 +98,52 @@ cmd([[command! WipeRegisters          for i in range(34,122) | silent! call setr
 --------------------------------------------------------------------------------
 -- augroups {{{1
 
-cmd([[
-  augroup User_Fold
-    autocmd!
-  augroup END
-]])
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
-cmd([[
-  augroup User_Highlight
-    autocmd!
-  augroup END
-]])
+augroup("User_Fold", { clear = true })
+augroup("User_Highlight", { clear = true })
+augroup("User_Lint", { clear = true })
 
-cmd([[
-  augroup User_Lint
-    autocmd!
-  augroup END
-]])
+local user_quickfix = augroup("User_Quickfix", { clear = true })
+autocmd({ "QuickFixCmdPost" }, {
+  pattern = "[^l]*",
+  group = user_quickfix,
+  command = "botright cwindow",
+  desc = "Make quickfix window always occupy the full width.",
+})
+autocmd({ "QuickFixCmdPost" }, {
+  pattern = "l*",
+  group = user_quickfix,
+  command = "lwindow",
+  desc = "Automatically open location list if there are errors for the current window.",
+})
 
-cmd([[
-  augroup User_Misc
-    autocmd!
-    autocmd User_Misc BufWritePre * %s/\s\+$//e
-    autocmd User_Misc BufWritePost $MYVIMRC nested source $MYVIMRC
-  augroup END
-]])
+local user_startup = augroup("User_Startup", { clear = true })
+autocmd({ "VimEnter" }, {
+  pattern = "*",
+  group = user_startup,
+  command = "WipeMarks",
+})
+autocmd({ "VimEnter" }, {
+  pattern = "*",
+  group = user_startup,
+  command = "WipeRegisters",
+})
 
-cmd([[
-  augroup User_Quickfix
-    autocmd!
-    autocmd User_Quickfix QuickFixCmdPost [^l]* botright cwindow
-    autocmd User_Quickfix QuickFixCmdPost l* lwindow
-  augroup END
-]])
-
-cmd([[
-  augroup User_Startup
-    autocmd!
-    autocmd User_Startup VimEnter * WipeMarks
-    autocmd User_Startup VimEnter * WipeRegisters
-  augroup END
-]])
+local user_misc = augroup("User_Misc", { clear = true })
+autocmd({ "BufWritePre" }, {
+  pattern = "*",
+  group = user_misc,
+  command = "%s/\\s\\+$//e",
+  desc = "Remove trailing whitespace before save.",
+})
+autocmd({ "BufWritePost" }, {
+  pattern = vim.env.MYVIMRC,
+  group = user_misc,
+  command = "source $MYVIMRC",
+  desc = "Reload vimrc after save.",
+})
 
 --------------------------------------------------------------------------------
 -- display {{{1
