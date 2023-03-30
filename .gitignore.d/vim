@@ -21,7 +21,7 @@
 !/.config/nvim/after/ftplugin/vim.lua
 
 !/.config/nvim/after/syntax/
-!/.config/nvim/after/syntax/markdown.vim
+!/.config/nvim/after/syntax/markdown.lua
 
 !/.config/nvim/autoload/
 !/.config/nvim/autoload/file.vim
