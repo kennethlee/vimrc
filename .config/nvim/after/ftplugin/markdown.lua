@@ -10,7 +10,7 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-  autocmd User_Fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldexpr=MarkdownLevel()
     \|  setlocal foldmethod=expr

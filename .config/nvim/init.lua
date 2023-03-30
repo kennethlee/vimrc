@@ -107,11 +107,11 @@ cmd([[command! WipeRegisters          for i in range(34,122) | silent! call setr
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-augroup("User_Fold", { clear = true })
-augroup("User_Highlight", { clear = true })
-augroup("User_Lint", { clear = true })
+augroup("UserFold", { clear = true })
+-- augroup("UserHighlight", { clear = true })
+augroup("UserLint", { clear = true })
 
-local user_quickfix = augroup("User_Quickfix", { clear = true })
+local user_quickfix = augroup("UserQuickfix", { clear = true })
 autocmd({ "QuickFixCmdPost" }, {
   pattern = "[^l]*",
   group = user_quickfix,
@@ -125,7 +125,7 @@ autocmd({ "QuickFixCmdPost" }, {
   desc = "Automatically open location list if there are errors for the current window.",
 })
 
-local user_startup = augroup("User_Startup", { clear = true })
+local user_startup = augroup("UserStartup", { clear = true })
 autocmd({ "VimEnter" }, {
   pattern = "*",
   group = user_startup,
@@ -137,7 +137,7 @@ autocmd({ "VimEnter" }, {
   command = "WipeRegisters",
 })
 
-local user_misc = augroup("User_Misc", { clear = true })
+local user_misc = augroup("UserMisc", { clear = true })
 autocmd({ "BufWritePre" }, {
   pattern = "*",
   group = user_misc,

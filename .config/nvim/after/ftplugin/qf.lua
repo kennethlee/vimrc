@@ -3,7 +3,7 @@ vim.opt_local.buflisted = false
 
 vim.cmd([[
   " automatically close corresponding loclist when quitting its parent window
-  autocmd User_Quickfix QuitPre *
+  autocmd UserQuickfix QuitPre *
     \   if &filetype !=# 'qf'
     \|    silent! lclose
     \|  endif

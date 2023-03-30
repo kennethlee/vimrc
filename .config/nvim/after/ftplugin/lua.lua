@@ -1,6 +1,6 @@
 vim.opt_local.colorcolumn = "121"
 vim.opt_local.expandtab = true
-vim.cmd([[autocmd User_Fold BufNewFile,BufRead,BufWinEnter <buffer>
+vim.cmd([[autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldcolumn=1
     \|  setlocal foldmethod=marker
 ]])

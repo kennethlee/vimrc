@@ -1,5 +1,5 @@
 vim.cmd([[
-  autocmd User_Fold BufNewFile,BufRead,BufWinEnter <buffer>
+  autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
     \   setlocal foldmethod=marker
 ]])
 vim.opt_local.commentstring = ";%s"
