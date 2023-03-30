@@ -42,8 +42,8 @@
 !/.config/nvim/autoload/window.vim
 
 !/.config/nvim/ftdetect/
-!/.config/nvim/ftdetect/ledger.vim
-!/.config/nvim/ftdetect/markdown.vim
+!/.config/nvim/ftdetect/ledger.lua
+!/.config/nvim/ftdetect/markdown.lua
 
 !/.config/nvim/lua/
 !/.config/nvim/lua/lsp.lua
