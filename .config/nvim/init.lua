@@ -77,9 +77,15 @@ opt.wrap = true
 --------------------------------------------------------------------------------
 -- require {{{1
 
-require("lsp")
-require("pluginconfig")
-require("treesitter")
+-- Make sure user modules can be reloaded when using :source
+local load = function(mod)
+  package.loaded[mod] = nil
+  require(mod)
+end
+
+load("lsp")
+load("pluginconfig")
+load("treesitter")
 
 --------------------------------------------------------------------------------
 -- commands {{{1
