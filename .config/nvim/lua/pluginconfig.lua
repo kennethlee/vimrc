@@ -1,16 +1,15 @@
 -- williamboman/mason.nvim
 require("mason").setup()
 
+-- echasnovski/mini.nvim
+require("mini.completion").setup()
+require("mini.pairs").setup()
+
 -- terrortylor/nvim-comment
 require("nvim_comment").setup({
   comment_empty = false,
   marker_padding = true,
 })
-
--- -- windwp/nvim-autopairs
--- require("nvim-autopairs").setup({
---   enable_check_bracket_line = false,
--- })
 
 -- windwp/nvim-ts-autotag
 require("nvim-treesitter.configs").setup({

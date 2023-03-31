@@ -20,7 +20,6 @@ end
 
 local bin_name = "typescript-language-server"
 local cmd = { bin_name, "--stdio" }
-
 local filetypes = {
   "javascript",
   "javascriptreact",

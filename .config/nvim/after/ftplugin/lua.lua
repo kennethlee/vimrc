@@ -8,7 +8,6 @@ opt_local.foldmethod = "marker"
 
 local bin_name = "lua-language-server"
 local cmd = { bin_name, "--stdio" }
-
 local root_files = {
   ".luarc.json",
   ".luacheckrc",
