@@ -11,7 +11,7 @@ opt.clipboard = "unnamedplus"
 cmd([[filetype plugin indent on]])
 opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
 
-if vim.fn.executable("rg") then
+if vim.fn.executable("rg") == 1 then
   opt.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
   opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
@@ -101,7 +101,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 augroup("UserFold", { clear = true })
--- augroup("UserHighlight", { clear = true })
+augroup("UserHighlight", { clear = true })
 augroup("UserLint", { clear = true })
 
 local user_quickfix = augroup("UserQuickfix", { clear = true })
@@ -155,6 +155,20 @@ cmd([[colorscheme melange]])
 
 -- cmd([[packadd! nvim-base16]])
 -- cmd([[colorscheme base16-eighties]])
+
+-- link highlight of whitespace to WarningMsg (i.e. red)
+-- note: this must be set below colorscheme.
+vim.api.nvim_set_hl(0, "UnwantedWhitespace", { link = "WarningMsg" })
+autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = "*",
+  group = "UserHighlight",
+  command = [[
+    call clearmatches()
+    call matchadd('UnwantedWhitespace', '\t', 100)
+    call matchadd('UnwantedWhitespace', '\s\+$', 100)
+  ]],
+  desc = "highlight all tab chars and trailing spaces the red color set by your colorscheme",
+})
 
 local stl = {
   "%#error#",      -- error highlight group begin
