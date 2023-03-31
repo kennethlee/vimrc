@@ -8,7 +8,7 @@ opt.encoding = "utf-8"
 -- scriptencoding utf-8
 opt.modeline = false
 opt.clipboard = "unnamedplus"
-cmd([[filetype plugin indent on]])
+cmd("filetype plugin indent on")
 opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
 
 if vim.fn.executable("rg") == 1 then
@@ -18,8 +18,8 @@ end
 
 -- enable
 -- note for nvim: matchit is on by default
-cmd([[packadd! matchit]])
-cmd([[packadd! cfilter]])
+cmd("packadd! matchit")
+cmd("packadd! cfilter")
 
 -- disable
 vim.g.loaded_netrw = 1
@@ -81,16 +81,16 @@ require("treesitter")
 --------------------------------------------------------------------------------
 -- commands {{{1
 
-cmd([[command! Bdelete                lexpr [] | lclose | bprevious | bdelete #]])
-cmd([[command! Bnext                  lexpr [] | lclose | bnext]])
-cmd([[command! Bprevious              lexpr [] | lclose | bprevious]])
-cmd([[command! Chreg                  call macro#ChangeRegister()]])
-cmd([[command! RemoveFancyCharacters  call file#RemoveFancyCharacters()]])
-cmd([[command! RenameFile             call file#RenameFile()]])
-cmd([[command! ToggleLocationList     call window#ToggleLocationList()]])
-cmd([[command! ToggleQuickfixList     call window#ToggleQuickfixList()]])
-cmd([[command! WipeMarks              delmarks! | delmarks A-Z0-9]])
-cmd([[command! WipeRegisters          for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor]])
+cmd("command! Bdelete                lexpr [] | lclose | bprevious | bdelete #")
+cmd("command! Bnext                  lexpr [] | lclose | bnext")
+cmd("command! Bprevious              lexpr [] | lclose | bprevious")
+cmd("command! Chreg                  call macro#ChangeRegister()")
+cmd("command! RemoveFancyCharacters  call file#RemoveFancyCharacters()")
+cmd("command! RenameFile             call file#RenameFile()")
+cmd("command! ToggleLocationList     call window#ToggleLocationList()")
+cmd("command! ToggleQuickfixList     call window#ToggleQuickfixList()")
+cmd("command! WipeMarks              delmarks! | delmarks A-Z0-9")
+cmd("command! WipeRegisters          for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor")
 
 --------------------------------------------------------------------------------
 -- augroups {{{1
@@ -145,14 +145,14 @@ autocmd({ "BufWritePost" }, {
 --------------------------------------------------------------------------------
 -- display {{{1
 
--- cmd([[packadd! gruvbox-flat.nvim]])
--- cmd([[colorscheme gruvbox-flat]])
+-- cmd("packadd! gruvbox-flat.nvim")
+-- cmd("colorscheme gruvbox-flat")
 
-cmd([[packadd! melange]])
-cmd([[colorscheme melange]])
+cmd("packadd! melange")
+cmd("colorscheme melange")
 
--- cmd([[packadd! nvim-base16]])
--- cmd([[colorscheme base16-eighties]])
+-- cmd("packadd! nvim-base16")
+-- cmd("colorscheme base16-eighties")
 
 -- link highlight of whitespace to WarningMsg (i.e. red)
 -- note: this must be set below colorscheme.
