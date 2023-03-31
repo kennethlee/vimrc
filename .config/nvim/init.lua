@@ -72,13 +72,6 @@ opt.winminwidth = 40
 opt.wrap = true
 
 --------------------------------------------------------------------------------
--- require {{{1
-
-require("lsp")
-require("pluginconfig")
-require("treesitter")
-
---------------------------------------------------------------------------------
 -- commands {{{1
 
 cmd("command! Bdelete                lexpr [] | lclose | bprevious | bdelete #")

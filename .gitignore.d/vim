@@ -30,6 +30,11 @@
 !/.config/nvim/after/indent/markdown.lua
 !/.config/nvim/after/indent/vim.lua
 
+!/.config/nvim/after/plugin/
+!/.config/nvim/after/plugin/lsp.lua
+!/.config/nvim/after/plugin/pluginconfig.lua
+!/.config/nvim/after/plugin/treesitter.lua
+
 !/.config/nvim/after/syntax/
 !/.config/nvim/after/syntax/markdown.lua
 
@@ -44,8 +49,3 @@
 !/.config/nvim/ftdetect/
 !/.config/nvim/ftdetect/ledger.lua
 !/.config/nvim/ftdetect/markdown.lua
-
-!/.config/nvim/lua/
-!/.config/nvim/lua/lsp.lua
-!/.config/nvim/lua/pluginconfig.lua
-!/.config/nvim/lua/treesitter.lua
