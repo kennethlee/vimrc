@@ -1,3 +1,3 @@
 local opt_local = vim.opt_local
 
-opt_local.syntax = "on"
+opt_local.syntax = "off"

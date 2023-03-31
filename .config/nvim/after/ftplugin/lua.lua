@@ -1,15 +1,14 @@
 local opt_local = vim.opt_local
 
 opt_local.colorcolumn = "121"
-vim.cmd([[autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
-    \   setlocal foldcolumn=1
-    \|  setlocal foldmethod=marker
-]])
+opt_local.foldcolumn = "1"
+opt_local.foldmethod = "marker"
 
 -- lsp -------------------------------------------------------------------------
 
 local bin_name = "lua-language-server"
 local cmd = { bin_name, "--stdio" }
+
 local root_files = {
   ".luarc.json",
   ".luacheckrc",

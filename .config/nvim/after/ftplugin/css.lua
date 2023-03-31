@@ -1,17 +1,14 @@
-vim.cmd([[
-  autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
-    \   setlocal foldcolumn=1
-    \|  setlocal foldmethod=indent
-    \|  setlocal foldnestmax=4
-]])
+local opt_local = vim.opt_local
 
--- formatprg: prettier ---------------------------------------------------------
+opt_local.foldcolumn = "1"
+opt_local.foldmethod = "indent"
+opt_local.foldnestmax = 4
 
--- not currently in use, but left here for posterity.
-vim.cmd([[
-  " use `gq` operator.
-  if executable("prettier")
-    setlocal formatprg=npx\ prettier\ --stdin-filepath\ %\ --trailing-comma\ all
-    " autocmd User_Lint BufWritePre <buffer> normal gggqG
-  endif
-]])
+-- formatprg -------------------------------------------------------------------
+
+local executable = vim.fn.executable
+
+-- prettier: use `gq` operator.
+if executable("prettier") == 1 then
+  opt_local.formatprg = "npx prettier --stdin-filepath % --trailing-comma all"
+end

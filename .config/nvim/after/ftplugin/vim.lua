@@ -1,5 +1,4 @@
-vim.cmd([[
-  autocmd UserFold BufNewFile,BufRead,BufWinEnter <buffer>
-    \   setlocal foldcolumn=1
-    \|  setlocal foldmethod=marker
-]])
+local opt_local = vim.opt_local
+
+opt_local.foldcolumn = "1"
+opt_local.foldmethod = "marker"
