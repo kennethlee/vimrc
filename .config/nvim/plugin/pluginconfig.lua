@@ -1,5 +1,8 @@
 -- williamboman/mason.nvim
-require("mason").setup()
+require("mason").setup({})
+
+-- m4xshen/autoclose.nvim
+require("autoclose").setup({})
 
 -- mfussenegger/nvim-lsp-compl
 local autocmd = vim.api.nvim_create_autocmd
@@ -40,4 +43,5 @@ require("nvim-treesitter.configs").setup({
       },
     },
   },
+
 })
