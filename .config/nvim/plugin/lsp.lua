@@ -21,6 +21,9 @@ autocmd("LspAttach", {
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
     vim.bo[bufnr].formatexpr = "v:lua.vim.lsp.formatexpr()"
 
+    -- highlight active param in signature_help; link it to "Search" highlight group.
+    vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
+
     -- toggle virtual_text for <Space>gj
     local diagnostics_active = true
     local toggle_diagnostics = function()
