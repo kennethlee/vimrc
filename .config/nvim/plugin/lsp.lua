@@ -36,14 +36,15 @@ autocmd("LspAttach", {
     local set = vim.keymap.set
     local key_opts = { buffer = bufnr, noremap = true, silent = true }
 
-    set("n", "gn", "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
-    set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
-    set("n", "gd", vim.lsp.buf.definition, key_opts)
-    set("n", "gf", vim.lsp.buf.format, key_opts)
-    set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
-    set("n", "gj", toggle_diagnostics, key_opts)
-    set("n", "gl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>", key_opts)
-    set("n", "gr", vim.lsp.buf.references, key_opts)
+    set("n", "gn",    "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
+    set("n", "gp",    "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
+    set("n", "gd",    vim.lsp.buf.definition, key_opts)
+    set("n", "gf",    vim.lsp.buf.format, key_opts)
+    set("n", "gi",    "<cmd>lua vim.lsp.buf.implementation()<CR>", key_opts)
+    set("n", "gj",    toggle_diagnostics, key_opts)
+    set("n", "gl",    "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>", key_opts)
+    set("n", "gr",    vim.lsp.buf.references, key_opts)
+    set("i", "<C-l>", vim.lsp.buf.signature_help, key_opts)
 
     print("LSP server initialized.")
   end,
