@@ -3,6 +3,9 @@ local autocmd = vim.api.nvim_create_autocmd
 -- individual server configs located in /after/ftplugin/*.lua
 autocmd("LspAttach", {
   callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local bufnr = args.buf
+
     -- set initial state of virtual_text
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -14,9 +17,9 @@ autocmd("LspAttach", {
     )
 
     -- enable omnifunc, tagfunc, formatexrp once language server attaches to buffer.
-    vim.bo[args.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-    vim.bo[args.buf].tagfunc = "v:lua.vim.lsp.tagfunc"
-    vim.bo[args.buf].formatexpr = "v:lua.vim.lsp.formatexpr()"
+    vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+    vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
+    vim.bo[bufnr].formatexpr = "v:lua.vim.lsp.formatexpr()"
 
     -- toggle virtual_text for <Space>gj
     local diagnostics_active = true
@@ -31,7 +34,7 @@ autocmd("LspAttach", {
 
     -- enable LSP-specific keybindings.
     local set = vim.keymap.set
-    local key_opts = { buffer = args.buf, noremap = true, silent = true }
+    local key_opts = { buffer = bufnr, noremap = true, silent = true }
 
     set("n", "gn", "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
     set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
