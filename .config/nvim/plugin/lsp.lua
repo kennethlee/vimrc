@@ -1,48 +1,47 @@
-local autocmd = vim.api.nvim_create_autocmd
+-- opts / ui -------------------------------------------------------------------
 
--- individual server configs located in /after/ftplugin/*.lua
+local diagnostic_config = {
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  virtual_text = false,
+  float = {
+    border = "rounded",
+    focusable = false,
+  }
+}
+vim.diagnostic.config(diagnostic_config)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = "rounded",
+    focusable = false,
+  }
+)
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
+
+-- keymap ----------------------------------------------------------------------
+
+local diagnostics_active = true
+local toggle_diagnostics = function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+  else
+    vim.diagnostic.hide()
+  end
+end
+
+local autocmd = vim.api.nvim_create_autocmd
 autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     local bufnr = args.buf
 
-    -- set initial state of virtual_text
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        signs = true,
-        underline = true,
-        update_in_insert = false,
-        virtual_text = false,
-      }
-    )
-
-    -- enable omnifunc, tagfunc, formatexrp once language server attaches to buffer.
     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
     vim.bo[bufnr].formatexpr = "v:lua.vim.lsp.formatexpr()"
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help, {
-        border = "rounded",
-        focusable = false,
-      }
-    )
-
-    -- highlight active param in signature_help; link it to "Search" highlight group.
-    vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
-
-    -- toggle virtual_text for <Space>gj
-    local diagnostics_active = true
-    local toggle_diagnostics = function()
-      diagnostics_active = not diagnostics_active
-      if diagnostics_active then
-        vim.diagnostic.show()
-      else
-        vim.diagnostic.hide()
-      end
-    end
-
-    -- enable LSP-specific keybindings.
     local set = vim.keymap.set
     local key_opts = { buffer = bufnr, noremap = true, silent = true }
 
