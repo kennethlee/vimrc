@@ -24,7 +24,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     focusable = false,
   }
 )
-vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "WarningMsg" })
 
 -- keymap ----------------------------------------------------------------------
 
