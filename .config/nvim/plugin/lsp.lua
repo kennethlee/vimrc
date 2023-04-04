@@ -1,4 +1,4 @@
--- opts / ui -------------------------------------------------------------------
+-- opts / ui {{{1
 
 vim.opt.completeopt = { "menu", "menuone", "noinsert", }
 
@@ -18,6 +18,15 @@ local diagnostic_config = {
 }
 vim.diagnostic.config(diagnostic_config)
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = "rounded",
+    title = "hover",
+  }
+)
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
     border = "rounded",
@@ -26,7 +35,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "WarningMsg" })
 
--- keymap ----------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- keymap {{{1
 
 local diagnostics_active = true
 local toggle_diagnostics = function()
@@ -63,3 +73,6 @@ autocmd("LspAttach", {
     print("LSP server initialized.")
   end,
 })
+
+--------------------------------------------------------------------------------
+-- }}}1
