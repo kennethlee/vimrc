@@ -13,7 +13,7 @@ local diagnostic_config = {
   severity_sort = false,
   signs = true,
   underline = true,
-  update_in_insert = true,
+  update_in_insert = false,
   virtual_text = false,
 }
 vim.diagnostic.config(diagnostic_config)
