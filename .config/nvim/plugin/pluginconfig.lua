@@ -4,20 +4,6 @@ require("mason").setup({})
 -- m4xshen/autoclose.nvim
 require("autoclose").setup({})
 
--- -- mfussenegger/nvim-lsp-compl
--- local autocmd = vim.api.nvim_create_autocmd
--- local lsp_compl = require("lsp_compl")
--- autocmd("LspAttach", {
---   callback = function(args)
---     local client = vim.lsp.get_client_by_id(args.data.client_id)
---     local bufnr = args.buf
---     lsp_compl.attach(client, bufnr, { server_side_fuzzy_completion = true })
---   end,
--- })
-
--- -- ray-x/lsp_signature.nvim
--- require("lsp_signature").setup({})
-
 -- terrortylor/nvim-comment
 require("nvim_comment").setup({
   comment_empty = false,
@@ -29,7 +15,6 @@ require("nvim-treesitter.configs").setup({
   autotag = {
     enable = true,
   },
-
   -- JoosepAlviste/nvim-ts-context-commentstring
   context_commentstring = {
     enable = true,
@@ -43,5 +28,4 @@ require("nvim-treesitter.configs").setup({
       },
     },
   },
-
 })
