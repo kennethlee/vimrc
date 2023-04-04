@@ -1,14 +1,20 @@
 -- opts / ui -------------------------------------------------------------------
 
+vim.opt.completeopt = { "menu", "menuone", "noinsert", }
+
 local diagnostic_config = {
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  virtual_text = false,
   float = {
     border = "rounded",
     focusable = false,
-  }
+    style = "minimal",
+    header = "",
+    prefix = "",
+  },
+  severity_sort = false,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  virtual_text = false,
 }
 vim.diagnostic.config(diagnostic_config)
 
@@ -37,13 +43,12 @@ autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     local bufnr = args.buf
+    local set = vim.keymap.set
+    local key_opts = { buffer = bufnr, noremap = true, silent = true }
 
     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
     vim.bo[bufnr].formatexpr = "v:lua.vim.lsp.formatexpr()"
-
-    local set = vim.keymap.set
-    local key_opts = { buffer = bufnr, noremap = true, silent = true }
 
     set("n", "gn",    "<cmd>lua vim.diagnostic.goto_next({ enable_popup = false })<CR>", key_opts)
     set("n", "gp",    "<cmd>lua vim.diagnostic.goto_prev({ enable_popup = false })<CR>", key_opts)
