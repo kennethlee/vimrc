@@ -136,16 +136,10 @@ autocmd({ "BufWritePost" }, {
 })
 
 --------------------------------------------------------------------------------
--- display {{{1
+-- ui {{{1
 
--- cmd("packadd! gruvbox-flat.nvim")
--- cmd("colorscheme gruvbox-flat")
-
-cmd("packadd! melange")
-cmd("colorscheme melange")
-
--- cmd("packadd! nvim-base16")
--- cmd("colorscheme base16-eighties")
+cmd("packadd! nvim-base16")
+cmd("colorscheme base16-eighties")
 
 -- link highlight of whitespace to WarningMsg (i.e. red)
 -- note: this must be set below colorscheme.
