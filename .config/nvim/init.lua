@@ -24,7 +24,6 @@ cmd("packadd! cfilter")
 -- disable
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 o.autoindent = true
 o.autoread = true
 o.backspace = "indent,eol,start"

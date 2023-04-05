@@ -1,6 +1,12 @@
-local autocmd = vim.api.nvim_create_autocmd
+local add = vim.filetype.add
+local markdown = "markdown"
 
-autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.markdown", "*.md", "*.mdown", "*.mkd", "*.mkdn" },
-  command = "set filetype=markdown",
+add({
+  extension = {
+    markdown = markdown,
+    md = markdown,
+    mdown = markdown,
+    mkd = markdown,
+    mkdn = markdown,
+  }
 })

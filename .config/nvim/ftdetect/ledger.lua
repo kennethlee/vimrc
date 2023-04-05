@@ -1,6 +1,12 @@
-local autocmd = vim.api.nvim_create_autocmd
+local add = vim.filetype.add
+local ledger = "ledger"
 
-autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.dat", "*.hledger", "*.j", "*.journal", "*.ledger" },
-  command = "set filetype=ledger",
+add({
+  extension = {
+    dat = ledger,
+    hledger = ledger,
+    j = ledger,
+    journal = ledger,
+    ledger = ledger,
+  },
 })
