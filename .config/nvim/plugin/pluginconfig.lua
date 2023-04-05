@@ -1,8 +1,8 @@
 -- williamboman/mason.nvim
 require("mason").setup({})
 
--- m4xshen/autoclose.nvim
-require("autoclose").setup({})
+-- -- m4xshen/autoclose.nvim
+-- require("autoclose").setup({})
 
 -- terrortylor/nvim-comment
 require("nvim_comment").setup({
