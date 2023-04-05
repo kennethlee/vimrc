@@ -1,19 +1,19 @@
 -- options {{{1
 
 local cmd = vim.cmd
+local o = vim.o
 local opt = vim.opt
 
 -- encoding must be set before scriptencoding
-opt.encoding = "utf-8"
--- scriptencoding utf-8
-opt.modeline = false
-opt.clipboard = "unnamedplus"
+o.encoding = "utf-8"
+o.modeline = false
+o.clipboard = "unnamedplus"
 cmd("filetype plugin indent on")
 opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
 
 if vim.fn.executable("rg") == 1 then
-  opt.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
-  opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+  o.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
+  o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
 
 -- enable
@@ -25,51 +25,51 @@ cmd("packadd! cfilter")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-opt.autoindent = true
-opt.autoread = true
-opt.backspace = "indent,eol,start"
-opt.breakindent = true
-opt.cmdheight = 2
-opt.cmdwinheight = 20
-opt.completeopt = "noselect,menuone"
-opt.cursorcolumn = true
-opt.expandtab = true
+o.autoindent = true
+o.autoread = true
+o.backspace = "indent,eol,start"
+o.breakindent = true
+o.cmdheight = 2
+o.cmdwinheight = 20
+o.completeopt = "noselect,menuone"
+o.cursorcolumn = true
+o.expandtab = true
 opt.foldopen = vim.opt.foldopen - { "block" }
-opt.foldtext = "fold#HeaderText()"
-opt.hidden = true
-opt.hlsearch = true
-opt.ignorecase = true
-opt.inccommand = "nosplit"
+o.foldtext = "fold#HeaderText()"
+o.hidden = true
+o.hlsearch = true
+o.ignorecase = true
+o.inccommand = "nosplit"
 -- when incsearch is set, entering a search pattern for / or ? and the current
 -- match is displayed, CTRL-G will move to the next match, and CTRL-T will move
 -- to the previous match, without pressing ENTER.
-opt.incsearch = true
-opt.keywordprg = ":DD"
-opt.linebreak = true
-opt.list = true
+o.incsearch = true
+o.keywordprg = ":DD"
+o.linebreak = true
+o.list = true
 opt.listchars = { eol = "¬", tab = "▸ ", trail = "@" }
-opt.backup = false
-opt.equalalways = false
-opt.foldenable = false
-opt.joinspaces = false
-opt.swapfile = false
-opt.number = true
-opt.signcolumn = "number"
-opt.shiftwidth = 2
-opt.showmode = true
-opt.smartcase = true
-opt.softtabstop = 2
-opt.splitbelow = true
-opt.splitright = true
-opt.switchbuf = "useopen"
-opt.tabstop = 2
-opt.termguicolors = true
-opt.wildignorecase = true
-opt.wildmenu = true
-opt.wildmode = "list:longest,full"
-opt.winwidth = 90
-opt.winminwidth = 40
-opt.wrap = true
+o.backup = false
+o.equalalways = false
+o.foldenable = false
+o.joinspaces = false
+o.swapfile = false
+o.number = true
+o.signcolumn = "number"
+o.shiftwidth = 2
+o.showmode = true
+o.smartcase = true
+o.softtabstop = 2
+o.splitbelow = true
+o.splitright = true
+o.switchbuf = "useopen"
+o.tabstop = 2
+o.termguicolors = true
+o.wildignorecase = true
+o.wildmenu = true
+o.wildmode = "list:longest,full"
+o.winwidth = 90
+o.winminwidth = 40
+o.wrap = true
 
 --------------------------------------------------------------------------------
 -- commands {{{1
@@ -167,7 +167,7 @@ local stl = {
   "(%l,%c%V%)",    -- current {line #},{column #}-{virtual column #}
 }
 
-opt.statusline = table.concat(stl)
+o.statusline = table.concat(stl)
 
 --------------------------------------------------------------------------------
 -- keymap: general {{{1
