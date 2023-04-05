@@ -1,7 +1,5 @@
 -- opts / {{{1
 
-vim.opt.completeopt = { "menu", "menuone", "noinsert", }
-
 local diagnostic_config = {
   float = {
     border = "rounded",
@@ -21,14 +19,17 @@ vim.diagnostic.config(diagnostic_config)
 --------------------------------------------------------------------------------
 -- ui {{{1
 
+local set_hl = vim.api.nvim_set_hl
+local sign_define = vim.fn.sign_define
+
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
     border = "rounded",
     title = "hover",
   }
 )
-vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+set_hl(0, "NormalFloat", { link = "Normal" })
+set_hl(0, "FloatBorder", { link = "Normal" })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
@@ -37,22 +38,22 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
   }
 )
-vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "WarningMsg" })
+set_hl(0, "LspSignatureActiveParameter", { link = "WarningMsg" })
 
 -- gutter signs
-vim.fn.sign_define(
+sign_define(
   "DiagnosticSignError",
   { texthl = "DiagnosticSignError", text = "", numhl = "DiagnosticSignError" }
 )
-vim.fn.sign_define(
+sign_define(
   "DiagnosticSignHint",
   { texthl = "DiagnosticSignHint", text = "", numhl = "DiagnosticSignHint" }
 )
-vim.fn.sign_define(
+sign_define(
   "DiagnosticSignInfo",
   { texthl = "DiagnosticSignInfo", text = "", numhl = "DiagnosticSignInfo" }
 )
-vim.fn.sign_define(
+sign_define(
   "DiagnosticSignWarn",
   { texthl = "DiagnosticSignWarn", text = "", numhl = "DiagnosticSignWarn" }
 )
