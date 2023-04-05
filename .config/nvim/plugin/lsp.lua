@@ -34,9 +34,28 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
     border = "rounded",
     focusable = false,
+    close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
   }
 )
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "WarningMsg" })
+
+-- gutter signs
+vim.fn.sign_define(
+  "DiagnosticSignError",
+  { texthl = "DiagnosticSignError", text = "", numhl = "DiagnosticSignError" }
+)
+vim.fn.sign_define(
+  "DiagnosticSignHint",
+  { texthl = "DiagnosticSignHint", text = "", numhl = "DiagnosticSignHint" }
+)
+vim.fn.sign_define(
+  "DiagnosticSignInfo",
+  { texthl = "DiagnosticSignInfo", text = "", numhl = "DiagnosticSignInfo" }
+)
+vim.fn.sign_define(
+  "DiagnosticSignWarn",
+  { texthl = "DiagnosticSignWarn", text = "", numhl = "DiagnosticSignWarn" }
+)
 
 --------------------------------------------------------------------------------
 -- keymap {{{1
