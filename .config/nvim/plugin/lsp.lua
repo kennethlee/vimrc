@@ -1,4 +1,4 @@
--- opts / ui {{{1
+-- opts / {{{1
 
 vim.opt.completeopt = { "menu", "menuone", "noinsert", }
 
@@ -17,6 +17,9 @@ local diagnostic_config = {
   virtual_text = false,
 }
 vim.diagnostic.config(diagnostic_config)
+
+--------------------------------------------------------------------------------
+-- ui {{{1
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
