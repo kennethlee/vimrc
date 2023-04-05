@@ -1,8 +1,13 @@
 -- williamboman/mason.nvim
 require("mason").setup({})
 
--- -- m4xshen/autoclose.nvim
--- require("autoclose").setup({})
+-- windwp/nvim-autopairs
+require("nvim-autopairs").setup({
+  disable_filetype = {
+    "markdown",
+    "text",
+  },
+})
 
 -- terrortylor/nvim-comment
 require("nvim_comment").setup({
