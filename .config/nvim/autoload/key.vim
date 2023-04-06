@@ -1,22 +1,21 @@
 " Tab {{{1
 
 function! key#InsertTabWrapper() abort
-  if (&omnifunc != "v:lua.vim.lsp.omnifunc")
+  let line = getline(".")
+  let substr = strpart(line, -1, col("."))
+  let substr = matchstr(substr, "[^ \t]*$")
+  let lsp = "v:lua.vim.lsp.omnifunc"
+
+  if (strlen(substr) == 0)
     return "\<Tab>"
   endif
-  if pumvisible()
+
+  if pumvisible() || (&omnifunc != lsp)
     return "\<C-n>"
   endif
 
-  let line = getline(".")                         " current line
-  let substr = strpart(line, -1, col(".") + 1)    " from the start of the current
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr) == 0)                        " nothing to match on empty string
-    return "\<Tab>"
-  elseif exists("&omnifunc") && &omnifunc != ""
+  if (&omnifunc == lsp)
     return "\<C-x>\<C-o>"
-  else
-    return "\<C-n>"
   endif
 endfunction
 
