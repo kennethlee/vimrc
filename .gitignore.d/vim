@@ -65,7 +65,12 @@
 !/.config/nvim/ftdetect/markdown.lua
 
 !/.config/nvim/lua/config/
+!/.config/nvim/lua/config/augroup.lua
+!/.config/nvim/lua/config/autocmd.lua
+!/.config/nvim/lua/config/keymap.lua
 !/.config/nvim/lua/config/lazy.lua
+!/.config/nvim/lua/config/opt.lua
+!/.config/nvim/lua/config/ui.lua
 
 !/.config/nvim/lua/plugin/
 !/.config/nvim/lua/plugin/autopairs.lua
