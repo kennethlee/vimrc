@@ -1,3 +1,8 @@
+-- require {{{1
+
+require("config/lazy")
+
+--------------------------------------------------------------------------------
 -- options {{{1
 
 local cmd = vim.cmd
@@ -9,7 +14,8 @@ o.encoding = "utf-8"
 o.modeline = false
 o.clipboard = "unnamedplus"
 cmd("filetype plugin indent on")
-opt.runtimepath = vim.opt.runtimepath + { "~/.fzf" }
+-- note: fzf now installed via brew.
+opt.runtimepath:append("/usr/local/opt/fzf")
 
 if vim.fn.executable("rg") == 1 then
   o.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
@@ -137,8 +143,8 @@ autocmd({ "BufWritePost" }, {
 --------------------------------------------------------------------------------
 -- ui {{{1
 
-cmd("packadd! nvim-base16")
-cmd("colorscheme base16-eighties")
+-- cmd("packadd! nvim-base16")
+-- cmd("colorscheme base16-eighties")
 
 -- link highlight of whitespace to WarningMsg (i.e. red)
 -- note: this must be set below colorscheme.
