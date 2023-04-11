@@ -1,14 +1,19 @@
 return {
-  "terrortylor/nvim-comment",
+  "numToStr/Comment.nvim",
   enabled = true,
   lazy = true,
-  cmd = "CommentToggle",
-  keys = { "dic", "gc", },
-  opts = {
-    comment_empty = false,
-    marker_padding = true,
+  keys = {
+    {
+      "gb",
+      mode = { "n", "o", "x", },
+    },
+    {
+      "gc",
+      mode = { "n", "o", "x", },
+    },
   },
+  opts = {},
   config = function(_, opts)
-    require("nvim_comment").setup(opts)
+    require("Comment").setup(opts)
   end,
 }
