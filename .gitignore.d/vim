@@ -82,7 +82,4 @@
 !/.config/nvim/lua/plugin/treesitter.lua
 
 !/.config/nvim/plugin/
-!/.config/nvim/plugin/cmp.lua
 !/.config/nvim/plugin/lsp.lua
-!/.config/nvim/plugin/pluginconfig.lua
-!/.config/nvim/plugin/treesitter.lua
