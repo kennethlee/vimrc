@@ -2,7 +2,8 @@
 -- cmd("colorscheme base16-eighties")
 
 -- link highlight of whitespace to WarningMsg (i.e. red)
--- note: this must be set below colorscheme.
+-- note 1: this must be set below colorscheme.
+-- note 2: currently unused here because of lazy.nvim.
 vim.api.nvim_set_hl(0, "UnwantedWhitespace", { link = "WarningMsg" })
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   pattern = "*",
