@@ -38,7 +38,12 @@ require("lazy").setup("plugin", {
   performance = {
     rtp = {
       -- note: fzf installation now done via brew.
-      paths = { "/usr/local/opt/fzf", },
+      paths = {
+        -- old mbp
+        "/usr/local/opt/fzf",
+        -- m2 air
+        "/opt/homebrew/opt/fzf",
+      },
       disabled_plugins = disabled_plugins,
     },
   },
