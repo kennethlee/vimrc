@@ -1,5 +1,5 @@
 require("config/opt")
-require("config/autocmd")
+require("config/cmd")
 require("config/augroup")
 require("config/ui")
 require("config/keymap")

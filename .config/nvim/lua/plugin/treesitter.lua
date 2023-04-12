@@ -8,7 +8,6 @@ local parsers = {
   "html",
   "javascript",
   "json",
-  "ledger",
   "lua",
   "tsx",
   "typescript",
