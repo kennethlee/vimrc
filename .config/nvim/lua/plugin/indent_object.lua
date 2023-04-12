@@ -5,19 +5,19 @@ return {
   keys = {
     {
       "ai",
-     mode = { "n", "o", "x", },
+     mode = { "o", "x", },
     },
     {
       "aI",
-     mode = { "n", "o", "x", },
+     mode = { "o", "x", },
     },
     {
       "ii",
-     mode = { "n", "o", "x", },
+     mode = { "o", "x", },
     },
     {
       "iI",
-     mode = { "n", "o", "x", },
+     mode = { "o", "x", },
     },
   },
 }
