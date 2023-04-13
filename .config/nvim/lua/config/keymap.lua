@@ -50,6 +50,9 @@ set("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], key_opts)
 set("n", "<Space>fw", ":set wrap!<CR>", key_opts)
 
 set("n", "<Space>vv", ":edit $MYVIMRC<CR>", key_opts)
+set("n", "<Space>vc", ":Dirvish ~/.config/nvim/lua/config/<CR>", key_opts)
+set("n", "<Space>vp", ":Dirvish ~/.config/nvim/lua/plugin/<CR>", key_opts)
+
 set("n", "<Space>o", ":edit ~/Dropbox/Apps/todo/todo.txt<CR>", key_opts)
 set("n", "<Space>tt", ":FZF<CR>", key_opts)
 set("n", "<Space>te", ":FZF ~/", key_opts)
