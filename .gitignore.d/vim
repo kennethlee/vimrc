@@ -13,6 +13,7 @@
 !/.config/nvim/after/ftplugin/
 
 !/.config/nvim/after/ftplugin/css/
+!/.config/nvim/after/ftplugin/css/lsp.lua
 !/.config/nvim/after/ftplugin/css/opt.lua
 !/.config/nvim/after/ftplugin/css/prg.lua
 
