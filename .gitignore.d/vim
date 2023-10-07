@@ -74,13 +74,13 @@
 !/.config/nvim/lua/config/ui.lua
 
 !/.config/nvim/lua/plugin/
-!/.config/nvim/lua/plugin/autopairs.lua
 !/.config/nvim/lua/plugin/colorscheme.lua
 !/.config/nvim/lua/plugin/comment.lua
 !/.config/nvim/lua/plugin/dirvish.lua
 !/.config/nvim/lua/plugin/indent_object.lua
 !/.config/nvim/lua/plugin/mason.lua
 !/.config/nvim/lua/plugin/treesitter.lua
+!/.config/nvim/lua/plugin/ultimate-autopair.lua
 
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/lsp.lua
