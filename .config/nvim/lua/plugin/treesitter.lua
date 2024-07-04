@@ -1,6 +1,5 @@
 local dependencies = {
   "windwp/nvim-ts-autotag",
-  "JoosepAlviste/nvim-ts-context-commentstring",
 }
 
 local parsers = {
@@ -33,8 +32,6 @@ return {
     autopairs = { enable = true, },
     -- windwp/nvim-ts-autotag
     autotag = { enable = true, },
-    -- JoosepAlviste/nvim-ts-context-commentstring
-    context_commentstring = { enable = true, },
   },
   config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts)
