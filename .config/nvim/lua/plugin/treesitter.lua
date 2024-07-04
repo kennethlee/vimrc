@@ -3,6 +3,7 @@ local dependencies = {
 }
 
 local parsers = {
+  "cpp",
   "css",
   "html",
   "javascript",
