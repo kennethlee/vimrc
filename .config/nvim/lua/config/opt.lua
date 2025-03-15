@@ -11,8 +11,6 @@ if vim.fn.executable("rg") == 1 then
   vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
 
--- -- note for nvim: matchit is on by default
--- vim.cmd("packadd! matchit")
 -- -- note: using `packadd! cfilter` currently doesn't work because of lazy.nvim
 -- vim.cmd("packadd! cfilter")
 
