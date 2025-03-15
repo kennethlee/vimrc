@@ -74,7 +74,6 @@
 !/.config/nvim/lua/config/ui.lua
 
 !/.config/nvim/lua/plugin/
-!/.config/nvim/lua/plugin/cfilter.lua
 !/.config/nvim/lua/plugin/colorscheme.lua
 !/.config/nvim/lua/plugin/comment.lua
 !/.config/nvim/lua/plugin/dirvish.lua

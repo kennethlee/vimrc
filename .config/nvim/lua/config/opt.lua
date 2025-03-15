@@ -11,8 +11,7 @@ if vim.fn.executable("rg") == 1 then
   vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
 
--- -- note: using `packadd! cfilter` currently doesn't work because of lazy.nvim
--- vim.cmd("packadd! cfilter")
+vim.cmd("packadd cfilter")
 
 -- disable
 vim.g.loaded_netrw = 1
