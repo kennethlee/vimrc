@@ -16,7 +16,5 @@ vim.lsp.start({
   root_dir = vim.fn.getcwd(),
   init_options = {
     hostInfo = "neovim",
-    -- prevent insertion of redundant `.`
-    completionDisableFilterText = true,
   },
 })
