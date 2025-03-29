@@ -8,6 +8,12 @@
 -- CTRL-S    = Insert / Select modes. -> vim.lsp.buf.signature_help()
 -- [d and ]d = Move between diagnostics in the current buffer ([D jumps to the first diagnostic, ]D jumps to the last)
 
+vim.diagnostic.config({
+  virtual_lines = { current_line = true, },
+  -- virtual_text = true,
+  -- virtual_text = { current_line = true },
+})
+
 -- diagnostics toggle
 local diagnostics_active = true
 local toggle_diagnostics = function()
