@@ -10,10 +10,16 @@
 
 -- basic LSP-based auto-completion via gpanders
 vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+      vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
     end
+
+    -- set keymaps
+    vim.keymap.set("n", "grf",    vim.lsp.buf.format)
+    vim.keymap.set("n", "grl",    "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
+
+    print("Language server ready.")
   end,
 })
