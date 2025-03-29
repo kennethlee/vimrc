@@ -8,6 +8,17 @@
 -- CTRL-S    = Insert / Select modes. -> vim.lsp.buf.signature_help()
 -- [d and ]d = Move between diagnostics in the current buffer ([D jumps to the first diagnostic, ]D jumps to the last)
 
+-- diagnostics toggle
+local diagnostics_active = true
+local toggle_diagnostics = function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+  else
+    vim.diagnostic.hide()
+  end
+end
+
 -- basic LSP-based auto-completion via gpanders
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
@@ -18,6 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- set keymaps
     vim.keymap.set("n", "grf",    vim.lsp.buf.format)
+    vim.keymap.set("n", "grj",    toggle_diagnostics)
     vim.keymap.set("n", "grl",    "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
 
     print("Language server ready.")
