@@ -58,6 +58,7 @@ vim.o.termguicolors = true
 vim.o.wildignorecase = true
 vim.o.wildmenu = true
 vim.o.wildmode = "list:longest,full"
+vim.o.winborder = "rounded"
 vim.o.winwidth = 90
 vim.o.winminwidth = 40
 vim.o.wrap = true
