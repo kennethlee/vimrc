@@ -27,6 +27,9 @@ vim.lsp.start({
         -- Get the language server to recognize the `vim` global
         globals = { "vim" },
       },
+      hint = {
+        enable = true
+      },
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.env.RUNTIME,

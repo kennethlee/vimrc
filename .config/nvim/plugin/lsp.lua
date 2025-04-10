@@ -29,14 +29,22 @@ end
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client:supports_method('textDocument/completion') then
+    if client:supports_method("textDocument/completion") then
       vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
     end
 
+    vim.lsp.inlay_hint.enable(true)
+
     -- set keymaps
-    vim.keymap.set("n", "grf",    vim.lsp.buf.format)
-    vim.keymap.set("n", "grj",    toggle_diagnostics)
-    vim.keymap.set("n", "grl",    "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
+    vim.keymap.set("n", "grf", vim.lsp.buf.format)
+    vim.keymap.set("n", "grj", toggle_diagnostics)
+    vim.keymap.set("n", "grl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
+    -- toggle inlay hints
+    vim.keymap.set("n", "grh",
+      function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+      end
+    )
 
     print("Language server ready.")
   end,
