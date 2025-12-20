@@ -18,7 +18,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   enabled = true,
-  lazy = true,
+  lazy = false,
   event = "BufReadPost",
   dependencies = dependencies,
   opts = {
@@ -33,6 +33,6 @@ return {
     autotag = { enable = true, },
   },
   config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+    require("nvim-treesitter").setup(opts)
   end,
 }
