@@ -29,8 +29,6 @@ return {
       additional_vim_regex_highlighting = false,
     },
     indent = { enable = true, },
-    -- windwp/nvim-autopairs
-    autopairs = { enable = true, },
     -- windwp/nvim-ts-autotag
     autotag = { enable = true, },
   },
