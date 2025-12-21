@@ -65,14 +65,6 @@
 !/.config/nvim/ftdetect/ledger.lua
 !/.config/nvim/ftdetect/markdown.lua
 
-!/.config/nvim/lua/config/
-!/.config/nvim/lua/config/augroup.lua
-!/.config/nvim/lua/config/cmd.lua
-!/.config/nvim/lua/config/keymap.lua
-!/.config/nvim/lua/config/lazy.lua
-!/.config/nvim/lua/config/opt.lua
-!/.config/nvim/lua/config/ui.lua
-
 !/.config/nvim/lua/plugin/
 !/.config/nvim/lua/plugin/colorscheme.lua
 !/.config/nvim/lua/plugin/dirvish.lua
