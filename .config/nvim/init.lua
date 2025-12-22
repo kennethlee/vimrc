@@ -131,55 +131,19 @@ autocmd({ "BufWritePost" }, {
 })
 
 --------------------------------------------------------------------------------
--- lazy {{{1
+-- vim.pack {{{1
 
--- bootstrap lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-local disabled_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logiPat",
-  "matchparen",
-  "netrw",
-  "netrwFileHandlers",
-  "netrwPlugin",
-  "netrwSettings",
-  "rrhelper",
-  "tar",
-  "tarPlugin",
-  "tohtml",
-  "tutor",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-}
-
-require("lazy").setup("plugin", {
-  performance = {
-    rtp = {
-      -- note: fzf installation now done via brew.
-      paths = {
-        "/opt/homebrew/opt/fzf",
-      },
-      disabled_plugins = disabled_plugins,
-    },
-  },
+vim.pack.add({
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/RRethy/base16-nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/windwp/nvim-ts-autotag",
+  "https://github.com/altermo/ultimate-autopair.nvim",
+  "https://github.com/justinmk/vim-dirvish",
+  "https://github.com/michaeljsmith/vim-indent-object",
 })
+
+require("mason").setup()
 
 --------------------------------------------------------------------------------
 -- keymap: general {{{1
