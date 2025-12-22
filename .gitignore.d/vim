@@ -5,7 +5,6 @@
 !/.config/nvim/
 !/.config/nvim/init.lua
 !/.config/nvim/after/
-!/.config/nvim/lua/
 
 !/.config/nvim/after/compiler/
 !/.config/nvim/after/compiler/eslint.vim
@@ -64,14 +63,6 @@
 !/.config/nvim/ftdetect/
 !/.config/nvim/ftdetect/ledger.lua
 !/.config/nvim/ftdetect/markdown.lua
-
-!/.config/nvim/lua/plugin/
-!/.config/nvim/lua/plugin/colorscheme.lua
-!/.config/nvim/lua/plugin/dirvish.lua
-!/.config/nvim/lua/plugin/indent_object.lua
-!/.config/nvim/lua/plugin/mason.lua
-!/.config/nvim/lua/plugin/treesitter.lua
-!/.config/nvim/lua/plugin/ultimate-autopair.lua
 
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/lsp.lua

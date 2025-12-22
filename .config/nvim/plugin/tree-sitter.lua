@@ -1,3 +1,5 @@
+-- `tree-sitter-cli` is required to build parsers.
+
 local parsers = {
   "cpp",
   "css",
@@ -10,5 +12,4 @@ local parsers = {
   "vim",
 }
 
--- `tree-sitter-cli` is required to build parsers.
 require("nvim-treesitter").install(parsers)
