@@ -5,10 +5,9 @@ vim.o.encoding = "utf-8"
 vim.o.modeline = false
 vim.o.clipboard = "unnamedplus"
 vim.cmd("filetype plugin indent on")
--- note: fzf now installed via brew.
+
 local fzf_path = "/opt/homebrew/opt/fzf"
 vim.opt.rtp:append(fzf_path)
-
 if vim.fn.executable("rg") == 1 then
   vim.o.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
   vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
@@ -144,6 +143,7 @@ vim.pack.add({
 })
 
 require("mason").setup()
+require("ultimate-autopair").setup()
 
 --------------------------------------------------------------------------------
 -- keymap: general {{{1
