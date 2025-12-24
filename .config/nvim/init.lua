@@ -6,6 +6,28 @@ vim.o.modeline = false
 vim.o.clipboard = "unnamedplus"
 vim.cmd("filetype plugin indent on")
 
+-- disable
+vim.g.loaded_2html_plugin = 1
+vim.g.loaded_getscript = 1
+vim.g.loaded_getscriptPlugin = 1
+vim.g.loaded_gzip = 1
+vim.g.loaded_logiPat = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwFileHandlers = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwSettings = 1
+vim.g.loaded_rplugin = 1
+vim.g.loaded_rrhelper = 1
+vim.g.loaded_tar = 1
+vim.g.loaded_tarPlugin = 1
+vim.g.loaded_tohtml = 1
+vim.g.loaded_tutor = 1
+vim.g.loaded_tutor_mode_plugin = 1
+vim.g.loaded_vimball = 1
+vim.g.loaded_vimballPlugin = 1
+vim.g.loaded_zip = 1
+vim.g.loaded_zipPlugin = 1
+
 local fzf_path = "/opt/homebrew/opt/fzf"
 vim.opt.rtp:append(fzf_path)
 if vim.fn.executable("rg") == 1 then
@@ -15,9 +37,6 @@ end
 
 vim.cmd("packadd cfilter")
 
--- disable
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.backspace = "indent,eol,start"
@@ -239,7 +258,6 @@ local stl = {
   "%-18",          -- padding right, 18 char width
   "(%l,%c%V%)",    -- current {line #},{column #}-{virtual column #}
 }
-
 vim.o.statusline = table.concat(stl)
 
 local function link_whitespace_hl()
