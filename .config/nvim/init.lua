@@ -141,9 +141,22 @@ vim.pack.add({
   "https://github.com/justinmk/vim-dirvish",
   "https://github.com/michaeljsmith/vim-indent-object",
 })
-
 require("mason").setup()
 require("ultimate-autopair").setup()
+
+-- note: nvim-treesitter requires tree-sitter-cli to build parsers.
+local parsers = {
+  "cpp",
+  "css",
+  "html",
+  "javascript",
+  "json",
+  "lua",
+  "tsx",
+  "typescript",
+  "vim",
+}
+require("nvim-treesitter").install(parsers)
 
 --------------------------------------------------------------------------------
 -- keymap: general {{{1

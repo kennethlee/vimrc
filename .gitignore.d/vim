@@ -66,4 +66,3 @@
 
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/lsp.lua
-!/.config/nvim/plugin/tree-sitter.lua
