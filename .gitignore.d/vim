@@ -39,6 +39,10 @@
 !/.config/nvim/after/ftplugin/qf.lua
 !/.config/nvim/after/ftplugin/vim.lua
 
+!/.config/nvim/after/ftplugin/zig/
+!/.config/nvim/after/ftplugin/zig/lsp.lua
+!/.config/nvim/after/ftplugin/zig/opt.lua
+
 !/.config/nvim/after/indent/
 !/.config/nvim/after/indent/css.lua
 !/.config/nvim/after/indent/html.lua
@@ -48,6 +52,7 @@
 !/.config/nvim/after/indent/lua.lua
 !/.config/nvim/after/indent/markdown.lua
 !/.config/nvim/after/indent/vim.lua
+!/.config/nvim/after/indent/zig.lua
 
 !/.config/nvim/after/syntax/
 !/.config/nvim/after/syntax/markdown.lua

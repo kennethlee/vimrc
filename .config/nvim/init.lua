@@ -44,12 +44,15 @@ vim.cmd("packadd cfilter")
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.backspace = "indent,eol,start"
+vim.o.backup = false
 vim.o.breakindent = true
 vim.o.cmdheight = 2
 vim.o.cmdwinheight = 20
 vim.o.completeopt = "fuzzy,noselect,menuone"
 vim.o.cursorcolumn = true
+vim.o.equalalways = false
 vim.o.expandtab = true
+vim.o.foldenable = false
 vim.opt.foldopen = vim.opt.foldopen - { "block" }
 vim.o.foldtext = "fold#HeaderText()"
 vim.o.hidden = true
@@ -60,15 +63,11 @@ vim.o.inccommand = "nosplit"
 -- match is displayed, CTRL-G will move to the next match, and CTRL-T will move
 -- to the previous match, without pressing ENTER.
 vim.o.incsearch = true
+vim.o.joinspaces = false
 vim.o.keywordprg = ":DD"
 vim.o.linebreak = true
 vim.o.list = true
 vim.opt.listchars = { eol = "¬", tab = "▸ ", trail = "@" }
-vim.o.backup = false
-vim.o.equalalways = false
-vim.o.foldenable = false
-vim.o.joinspaces = false
-vim.o.swapfile = false
 vim.o.number = true
 vim.o.signcolumn = "number"
 vim.o.shiftwidth = 2
@@ -77,6 +76,7 @@ vim.o.smartcase = true
 vim.o.softtabstop = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.swapfile = false
 vim.o.switchbuf = "useopen"
 vim.o.tabstop = 2
 vim.o.termguicolors = true
@@ -178,6 +178,7 @@ local parsers = {
   "tsx",
   "typescript",
   "vim",
+  "zig",
 }
 require("nvim-treesitter").install(parsers)
 
