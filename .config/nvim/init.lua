@@ -153,36 +153,6 @@ autocmd({ "BufWritePost" }, {
 })
 
 --------------------------------------------------------------------------------
--- vim.pack {{{1
-
-vim.pack.add({
-  "https://github.com/mason-org/mason.nvim",
-  "https://github.com/RRethy/base16-nvim",
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/windwp/nvim-ts-autotag",
-  "https://github.com/altermo/ultimate-autopair.nvim",
-  "https://github.com/justinmk/vim-dirvish",
-  "https://github.com/michaeljsmith/vim-indent-object",
-})
-require("mason").setup()
-require("ultimate-autopair").setup()
-
--- note: nvim-treesitter requires tree-sitter-cli to build parsers.
-local parsers = {
-  "cpp",
-  "css",
-  "html",
-  "javascript",
-  "json",
-  "lua",
-  "tsx",
-  "typescript",
-  "vim",
-  "zig",
-}
-require("nvim-treesitter").install(parsers)
-
---------------------------------------------------------------------------------
 -- keymap: general {{{1
 
 local set = vim.keymap.set
@@ -279,7 +249,13 @@ local function link_whitespace_hl()
   })
 end
 
+vim.pack.add({
+  "https://github.com/RRethy/base16-nvim",
+  "https://github.com/savq/melange-nvim",
+})
 vim.cmd("colorscheme base16-eighties")
+-- vim.cmd("colorscheme melange")
+
 link_whitespace_hl() -- must be called *after* setting colorscheme
 
 --------------------------------------------------------------------------------

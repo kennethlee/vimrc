@@ -71,3 +71,4 @@
 
 !/.config/nvim/plugin/
 !/.config/nvim/plugin/lsp.lua
+!/.config/nvim/plugin/pack.lua
