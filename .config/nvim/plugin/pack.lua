@@ -2,12 +2,10 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/windwp/nvim-ts-autotag",
-  "https://github.com/altermo/ultimate-autopair.nvim",
   "https://github.com/justinmk/vim-dirvish",
   "https://github.com/michaeljsmith/vim-indent-object",
 })
 require("mason").setup()
-require("ultimate-autopair").setup()
 
 -- note: nvim-treesitter requires tree-sitter-cli to build parsers.
 local ts_parsers = {
