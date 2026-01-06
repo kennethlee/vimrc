@@ -5,6 +5,7 @@ local filetypes = {
 }
 local root_files = {
   "build.zig",
+  "build.zig.zon",
   ".git",
 }
 
@@ -13,7 +14,6 @@ vim.lsp.start({
   cmd = cmd,
   filetypes = filetypes,
   -- root_dir = vim.fn.getcwd(),
-  root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   root_markers = root_files,
   single_file_support = true,
 })

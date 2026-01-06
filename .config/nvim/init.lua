@@ -28,18 +28,22 @@ vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
--- prefer v0.7's new filetype detection scheme
+-- enable
+vim.cmd("packadd cfilter")
+
+-- prefer v0.7's new filetype detection scheme (now the default, but be explicit)
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
+-- fzf
 local fzf_path = "/opt/homebrew/opt/fzf"
 vim.opt.rtp:append(fzf_path)
+
+-- grep
 if vim.fn.executable("rg") == 1 then
   vim.o.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
   vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
-
-vim.cmd("packadd cfilter")
 
 vim.o.autoindent = true
 vim.o.autoread = true
@@ -111,6 +115,20 @@ local autocmd = vim.api.nvim_create_autocmd
 augroup("UserFold", { clear = true })
 augroup("UserHighlight", { clear = true })
 augroup("UserLint", { clear = true })
+
+local function link_whitespace_hl()
+  vim.api.nvim_set_hl(0, "UnwantedWhitespace", { link = "WarningMsg" })
+  autocmd({ "BufEnter", "WinEnter" }, {
+    pattern = "*",
+    group = "UserHighlight",
+    command = [[
+      call clearmatches()
+      call matchadd('UnwantedWhitespace', '\t', 100)
+      call matchadd('UnwantedWhitespace', '\s\+$', 100)
+    ]],
+    desc = "highlight all tab chars and trailing spaces the red color set by your colorscheme",
+  })
+end
 
 local user_quickfix = augroup("UserQuickfix", { clear = true })
 autocmd({ "QuickFixCmdPost" }, {
@@ -234,20 +252,6 @@ local stl = {
   "(%l,%c%V%)",    -- current {line #},{column #}-{virtual column #}
 }
 vim.o.statusline = table.concat(stl)
-
-local function link_whitespace_hl()
-  vim.api.nvim_set_hl(0, "UnwantedWhitespace", { link = "WarningMsg" })
-  vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
-    pattern = "*",
-    group = "UserHighlight",
-    command = [[
-      call clearmatches()
-      call matchadd('UnwantedWhitespace', '\t', 100)
-      call matchadd('UnwantedWhitespace', '\s\+$', 100)
-    ]],
-    desc = "highlight all tab chars and trailing spaces the red color set by your colorscheme",
-  })
-end
 
 vim.pack.add({
   "https://github.com/RRethy/base16-nvim",
