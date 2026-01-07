@@ -25,6 +25,40 @@ local toggle_diagnostics = function()
   end
 end
 
+-- Returns a string with a list of attached LSP clients
+local function attached_clients()
+  local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+  if #buf_clients == 0 then
+    return
+  end
+
+  local buf_client_names = {}
+
+  -- add client
+  for _, client in pairs(buf_clients) do
+    table.insert(buf_client_names, client.name)
+  end
+
+  -- This needs to be a string only table so we can use concat below
+  local unique_client_names = {}
+  for _, client_name_target in ipairs(buf_client_names) do
+    local is_duplicate = false
+    for _, client_name_compare in ipairs(unique_client_names) do
+      if client_name_target == client_name_compare then
+        is_duplicate = true
+      end
+    end
+    if not is_duplicate then
+      table.insert(unique_client_names, client_name_target)
+    end
+  end
+
+  local client_names_str = table.concat(unique_client_names, ", ")
+  local language_servers = string.format("[%s]", client_names_str)
+
+  return language_servers
+end
+
 -- basic LSP-based auto-completion via gpanders
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
@@ -66,6 +100,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end
     )
 
-    print("Language server ready.")
+    -- print(vim.lsp.get_clients({ bufnr = 0 })[1].name)
+    print(attached_clients())
   end,
 })
