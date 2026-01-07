@@ -234,8 +234,17 @@ set("n", "<Space>tn", ":FZF ~/Documents/notes<CR>", key_opts)
 set("n", "<Space>to", ":edit ~/Dropbox/todo.txt<CR>", key_opts)
 set("n", "<Space>tf", ":edit ~/Dropbox/notes/someday.markdown<CR>", key_opts)
 
-set("n", "<Space>q", ":ToggleQuickfixList<CR>", key_opts)
-set("n", "<Space>l", ":ToggleLocationList<CR>", key_opts)
+set("n", "<Space>l", function()
+  local win = vim.api.nvim_get_current_win()
+  local qf_winid = vim.fn.getloclist(win, { winid = 0 }).winid
+  local action = qf_winid > 0 and "silent! lclose" or "silent! lwindow"
+  vim.cmd(action)
+end, key_opts)
+set("n", "<Space>q", function()
+  local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
+  local action = qf_winid > 0 and "silent! cclose" or "silent! botright cwindow"
+  vim.cmd(action)
+end, key_opts)
 
 --------------------------------------------------------------------------------
 -- ui {{{1

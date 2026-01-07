@@ -63,7 +63,6 @@
 !/.config/nvim/autoload/key.vim
 !/.config/nvim/autoload/macro.vim
 !/.config/nvim/autoload/textobject.vim
-!/.config/nvim/autoload/window.vim
 
 !/.config/nvim/ftdetect/
 !/.config/nvim/ftdetect/ledger.lua
