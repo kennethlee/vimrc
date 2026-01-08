@@ -198,10 +198,7 @@ set("n", "<M-k>", ":cprevious<CR>", key_opts)
 set("n", "<M-j>", ":cnext<CR>", key_opts)
 set("n", "<C-k>", ":lprevious<CR>", key_opts)
 set("n", "<C-j>", ":lnext<CR>", key_opts)
-
 set("n", "<Esc>", ":nohlsearch<CR><Esc>", key_opts)
-set("i", "<Tab>", "key#InsertTabWrapper()", {expr = true, noremap = true, silent = true})
-set("i", "<S-Tab>", [[pumvisible()?"\<C-p>":"\<C-d>"]], {expr = true, noremap = true, silent = true})
 
 vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR>]])
 
