@@ -178,13 +178,6 @@ set("n", "U", "<C-r>", key_opts)
 set("n", "x", '"_x', key_opts)
 set("n", "Y", "y$", key_opts)
 
-set("n", "_", ":call textobject#NextIndent(0, 0, 0, 1)<CR>", key_opts)
-set("o", "_", ":call textobject#NextIndent(0, 0, 0, 1)<CR>", key_opts)
-set("v", "_", "<Esc>:call textobject#NextIndent(0, 0, 0, 1)<CR>m'gv''", key_opts)
-set("n", "+", ":call textobject#NextIndent(0, 1, 0, 1)<CR>", key_opts)
-set("o", "+", ":call textobject#NextIndent(0, 1, 0, 1)<CR>", key_opts)
-set("v", "+", "<Esc>:call textobject#NextIndent(0, 1, 0, 1)<CR>m'gv''", key_opts)
-
 set("n", "<M-9>", ":vertical resize -10<CR>", key_opts)
 set("n", "<M-0>", ":vertical resize +10<CR>", key_opts)
 
