@@ -35,7 +35,10 @@
 !/.config/nvim/after/ftplugin/lua/lsp.lua
 !/.config/nvim/after/ftplugin/lua/opt.lua
 
-!/.config/nvim/after/ftplugin/markdown.lua
+!/.config/nvim/after/ftplugin/markdown/
+!/.config/nvim/after/ftplugin/markdown/lsp.lua
+!/.config/nvim/after/ftplugin/markdown/opt.lua
+
 !/.config/nvim/after/ftplugin/qf.lua
 !/.config/nvim/after/ftplugin/vim.lua
 
