@@ -1,18 +1,18 @@
 local bin_name = "tsgo"
 local cmd = { bin_name, "--lsp", "--stdio" }
-local filetypes = {
-  "javascript",
-  "javascriptreact",
-  "javascript.jsx",
-  "typescript",
-  "typescriptreact",
-  "typescript.tsx",
-}
+-- local filetypes = {
+--   "javascript",
+--   "javascriptreact",
+--   "javascript.jsx",
+--   "typescript",
+--   "typescriptreact",
+--   "typescript.tsx",
+-- }
 
 vim.lsp.start({
-  name = "tsgo",
+  name = bin_name,
   cmd = cmd,
-  filetypes = filetypes,
+  -- filetypes = filetypes,
   -- settings = {
   --   javascript = {
   --     inlayHints = {

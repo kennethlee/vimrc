@@ -1,11 +1,11 @@
 local bin_name = "vscode-css-language-server"
 local cmd = { bin_name, "--stdio" }
-local filetypes = { "css" }
+-- local filetypes = { "css" }
 
 vim.lsp.start({
   name = bin_name,
   cmd = cmd,
-  filetypes = filetypes,
+  -- filetypes = filetypes,
   settings = {
     css = { validate = true },
     scss = { validate = true },

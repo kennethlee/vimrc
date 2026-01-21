@@ -8,14 +8,14 @@ local root_files = {
   "selene.toml",
   ".git",
 }
-local filetypes = {
-  "lua",
-}
+-- local filetypes = {
+--   "lua",
+-- }
 
 vim.lsp.start({
   name = "sumneko",
   cmd = cmd,
-  filetypes = filetypes,
+  -- filetypes = filetypes,
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   settings = {
     Lua = {
