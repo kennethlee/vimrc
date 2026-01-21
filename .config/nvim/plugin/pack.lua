@@ -24,6 +24,7 @@ vindent.setup({
   vindent.map.Object("ai", "ai", block_opts.loose),
   vindent.map.Object("aI", "aI", block_opts.loose),
 })
+vim.g.vindent_begin = false
 
 -- note: nvim-treesitter requires tree-sitter-cli to build parsers.
 local ts_parsers = {
