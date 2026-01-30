@@ -12,12 +12,17 @@ vim.lsp.start({
     [bin_name] = {
       isolateEnglish = true,
       linters = {
+        AvoidCurses = false,
+        Dashes = false,
+        LongSentences = false,
+        OrthographicConsistency = false,
         WrongQuotes = true,
       },
       markdown = {
         IgnoreLinkTitle = true,
       },
       maxFileLength = 1000000000,
+      userDictPath = vim.fn.stdpath("config") .. "/dict.txt",
     }
   },
   root_dir = vim.fn.getcwd(),

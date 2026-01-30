@@ -1,0 +1,11 @@
+DNF5
+fzf
+Ghostty
+glibc
+hledger
+Rofi
+runit
+systemd
+vcsh
+XBPS
+Xfce
