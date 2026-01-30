@@ -36,7 +36,10 @@ vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
 -- fzf
-local fzf_path = "/opt/homebrew/opt/fzf"
+local fzf_path
+if (vim.loop.os_uname().sysname == "Darwin") then
+  fzf_path = "/opt/homebrew/opt/fzf"
+end
 vim.opt.rtp:append(fzf_path)
 
 -- grep
