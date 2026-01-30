@@ -214,7 +214,7 @@ set("n", "<Space>vc", ":Dirvish ~/.config/nvim/lua/config/<CR>", key_opts)
 set("n", "<Space>vp", ":Dirvish ~/.config/nvim/lua/plugin/<CR>", key_opts)
 
 set("n", "<Space>tt", ":FZF<CR>", key_opts)
-set("n", "<Space>te", ":FZF ~/", key_opts)
+set("n", "<Space>te", ":FZF ~/", { noremap = true, silent = false })
 set("n", "<Space>tj", ":FZF ~/Dropbox/notes<CR>", key_opts)
 set("n", "<Space>tl", ":edit ~/.ledger/current.journal<CR>zm", key_opts)
 set("n", "<Space>tn", ":FZF ~/Documents/notes<CR>", key_opts)
