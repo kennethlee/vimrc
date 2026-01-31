@@ -28,6 +28,7 @@ vim.g.vindent_begin = false
 
 -- note: nvim-treesitter requires tree-sitter-cli to build parsers.
 local ts_parsers = {
+  "bash",
   "cpp",
   "css",
   "html",
@@ -38,5 +39,6 @@ local ts_parsers = {
   "typescript",
   "vim",
   "zig",
+  "zsh",
 }
 require("nvim-treesitter").install(ts_parsers)
