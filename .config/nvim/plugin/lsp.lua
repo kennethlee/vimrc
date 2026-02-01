@@ -9,8 +9,6 @@
 -- [d and ]d = Move between diagnostics in the current buffer ([D jumps to the first diagnostic, ]D jumps to the last)
 
 vim.diagnostic.config({
-  -- virtual_lines = { current_line = true, },
-  -- virtual_text = true,
   virtual_text = { current_line = true },
 })
 
@@ -100,7 +98,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end
     )
 
-    -- print(vim.lsp.get_clients({ bufnr = 0 })[1].name)
     print(attached_clients())
   end,
 })
