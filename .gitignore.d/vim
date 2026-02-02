@@ -8,7 +8,6 @@
 !/.config/nvim/after/
 
 !/.config/nvim/after/compiler/
-!/.config/nvim/after/compiler/eslint.vim
 !/.config/nvim/after/compiler/shellcheck.vim
 
 !/.config/nvim/after/ftplugin/
@@ -25,7 +24,6 @@
 !/.config/nvim/after/ftplugin/javascript/
 !/.config/nvim/after/ftplugin/javascript/lsp.lua
 !/.config/nvim/after/ftplugin/javascript/opt.lua
-!/.config/nvim/after/ftplugin/javascript/prg.lua
 
 !/.config/nvim/after/ftplugin/json/
 !/.config/nvim/after/ftplugin/json/opt.lua
