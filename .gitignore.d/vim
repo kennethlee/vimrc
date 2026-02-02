@@ -9,6 +9,7 @@
 
 !/.config/nvim/after/compiler/
 !/.config/nvim/after/compiler/eslint.vim
+!/.config/nvim/after/compiler/shellcheck.vim
 
 !/.config/nvim/after/ftplugin/
 
@@ -42,6 +43,8 @@
 
 !/.config/nvim/after/ftplugin/qf.lua
 !/.config/nvim/after/ftplugin/vim.lua
+
+!/.config/nvim/after/ftplugin/sh.lua
 
 !/.config/nvim/after/ftplugin/zig/
 !/.config/nvim/after/ftplugin/zig/lsp.lua
