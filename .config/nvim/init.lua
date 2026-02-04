@@ -109,128 +109,127 @@ vim.cmd("command! WipeRegisters          for i in range(34,122) | silent! call s
 --------------------------------------------------------------------------------
 -- augroup {{{1
 
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
+vim.api.nvim_create_augroup("UserFold", { clear = true })
+vim.api.nvim_create_augroup("UserHighlight", { clear = true })
+vim.api.nvim_create_augroup("UserLint", { clear = true })
+vim.api.nvim_create_augroup("UserMisc", { clear = true })
+vim.api.nvim_create_augroup("UserQuickfix", { clear = true })
+vim.api.nvim_create_augroup("UserStartup", { clear = true })
 
-augroup("UserFold", { clear = true })
-augroup("UserHighlight", { clear = true })
-augroup("UserLint", { clear = true })
-
+local user_highlight = vim.api.nvim_create_augroup("UserHighlight", { clear = true })
 local function link_whitespace_hl()
   vim.api.nvim_set_hl(0, "UnwantedWhitespace", { link = "WarningMsg" })
-  autocmd({ "BufEnter", "WinEnter" }, {
+  vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+    desc = "highlight all tab chars and trailing spaces the red color set by your colorscheme",
     pattern = "*",
-    group = "UserHighlight",
+    group = user_highlight,
     command = [[
       call clearmatches()
       call matchadd('UnwantedWhitespace', '\t', 100)
       call matchadd('UnwantedWhitespace', '\s\+$', 100)
     ]],
-    desc = "highlight all tab chars and trailing spaces the red color set by your colorscheme",
   })
 end
 
-local user_quickfix = augroup("UserQuickfix", { clear = true })
-autocmd({ "QuickFixCmdPost" }, {
+local user_quickfix = vim.api.nvim_create_augroup("UserQuickfix", { clear = true })
+vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
+  desc = "Make quickfix window always occupy the full width.",
   pattern = "[^l]*",
   group = user_quickfix,
   command = "botright cwindow",
-  desc = "Make quickfix window always occupy the full width.",
 })
-autocmd({ "QuickFixCmdPost" }, {
+vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
+  desc = "Automatically open location list if there are errors for the current window.",
   pattern = "l*",
   group = user_quickfix,
   command = "lwindow",
-  desc = "Automatically open location list if there are errors for the current window.",
 })
 
-local user_startup = augroup("UserStartup", { clear = true })
-autocmd({ "VimEnter" }, {
+local user_startup = vim.api.nvim_create_augroup("UserStartup", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
   pattern = "*",
   group = user_startup,
   command = "WipeMarks",
 })
-autocmd({ "VimEnter" }, {
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
   pattern = "*",
   group = user_startup,
   command = "WipeRegisters",
 })
 
-local user_misc = augroup("UserMisc", { clear = true })
-autocmd({ "BufWritePre" }, {
+local user_misc = vim.api.nvim_create_augroup("UserMisc", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  desc = "Remove trailing whitespace before save.",
   pattern = "*",
   group = user_misc,
   command = "%s/\\s\\+$//e",
-  desc = "Remove trailing whitespace before save.",
 })
-autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  desc = "Reload vimrc after save.",
   pattern = vim.env.MYVIMRC,
   group = user_misc,
   command = "source $MYVIMRC",
-  desc = "Reload vimrc after save.",
 })
 
 --------------------------------------------------------------------------------
--- keymap: general {{{1
+-- keymap {{{1
 
-local set = vim.keymap.set
 local key_opts = { noremap = true, silent = true }
 
-set("n", "J", "mzJ`z", key_opts)
-set("n", "U", "<C-r>", key_opts)
-set("n", "x", '"_x', key_opts)
-set("n", "Y", "y$", key_opts)
+vim.keymap.set("n", "J", "mzJ`z", key_opts)
+vim.keymap.set("n", "U", "<C-r>", key_opts)
+vim.keymap.set("n", "x", '"_x', key_opts)
+vim.keymap.set("n", "Y", "y$", key_opts)
 
-set("n", "<M-9>", ":vertical resize -10<CR>", key_opts)
-set("n", "<M-0>", ":vertical resize +10<CR>", key_opts)
+vim.keymap.set("n", "<M-9>", ":vertical resize -10<CR>", key_opts)
+vim.keymap.set("n", "<M-0>", ":vertical resize +10<CR>", key_opts)
 
-set("n", "<BS>", "<C-^>", key_opts)
-set("n", "<C-h>", ":Bprevious<CR>", key_opts)
-set("n", "<C-l>", ":Bnext<CR>", key_opts)
-set("n", "<M-k>", ":cprevious<CR>", key_opts)
-set("n", "<M-j>", ":cnext<CR>", key_opts)
-set("n", "<C-k>", ":lprevious<CR>", key_opts)
-set("n", "<C-j>", ":lnext<CR>", key_opts)
-set("n", "<Esc>", ":nohlsearch<CR><Esc>", key_opts)
+vim.keymap.set("n", "<BS>", "<C-^>", key_opts)
+vim.keymap.set("n", "<C-h>", ":Bprevious<CR>", key_opts)
+vim.keymap.set("n", "<C-l>", ":Bnext<CR>", key_opts)
+vim.keymap.set("n", "<M-k>", ":cprevious<CR>", key_opts)
+vim.keymap.set("n", "<M-j>", ":cnext<CR>", key_opts)
+vim.keymap.set("n", "<C-k>", ":lprevious<CR>", key_opts)
+vim.keymap.set("n", "<C-j>", ":lnext<CR>", key_opts)
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR><Esc>", key_opts)
 
 vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR>]])
 
---------------------------------------------------------------------------------
--- keymap: <Space> {{{1
+-- <Space> ---------------------------------------------------------------------
 
-set("", "<Space>", "<Nop>", key_opts)
+vim.keymap.set("", "<Space>", "<Nop>", key_opts)
 
-set("n", "<Space>bb", ":ls<CR>:buffer<Space>*", key_opts)
-set("n", "<Space>bs", ":ls<CR>:sbuffer<Space>*", key_opts)
-set("n", "<Space>bv", ":ls<CR>:vertical<Space>sbuffer<Space>*", key_opts)
-set("n", "<Space>bd", ":Bdelete<CR>", key_opts)
+vim.keymap.set("n", "<Space>bb", ":ls<CR>:buffer<Space>*", key_opts)
+vim.keymap.set("n", "<Space>bs", ":ls<CR>:sbuffer<Space>*", key_opts)
+vim.keymap.set("n", "<Space>bv", ":ls<CR>:vertical<Space>sbuffer<Space>*", key_opts)
+vim.keymap.set("n", "<Space>bd", ":Bdelete<CR>", key_opts)
 
-set("n", "<Space>ff", ":set expandtab? fileencoding? fileformat? filetype?<CR>", key_opts)
-set("n", "<Space>fc", ":RemoveFancyCharacters<CR>", key_opts)
-set("n", "<Space>fp", ":%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>", key_opts)
-set("n", "<Space>fr", ":RenameFile<CR>", key_opts)
-set("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], key_opts)
-set("n", "<Space>fw", ":set wrap!<CR>", key_opts)
+vim.keymap.set("n", "<Space>ff", ":set expandtab? fileencoding? fileformat? filetype?<CR>", key_opts)
+vim.keymap.set("n", "<Space>fc", ":RemoveFancyCharacters<CR>", key_opts)
+vim.keymap.set("n", "<Space>fp", ":%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>", key_opts)
+vim.keymap.set("n", "<Space>fr", ":RenameFile<CR>", key_opts)
+vim.keymap.set("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], key_opts)
+vim.keymap.set("n", "<Space>fw", ":set wrap!<CR>", key_opts)
 
-set("n", "<Space>vv", ":edit $MYVIMRC<CR>", key_opts)
-set("n", "<Space>vc", ":Dirvish ~/.config/nvim/lua/config/<CR>", key_opts)
-set("n", "<Space>vp", ":Dirvish ~/.config/nvim/lua/plugin/<CR>", key_opts)
+vim.keymap.set("n", "<Space>vv", ":edit $MYVIMRC<CR>", key_opts)
+vim.keymap.set("n", "<Space>vc", ":Dirvish ~/.config/nvim/lua/config/<CR>", key_opts)
+vim.keymap.set("n", "<Space>vp", ":Dirvish ~/.config/nvim/lua/plugin/<CR>", key_opts)
 
-set("n", "<Space>tt", ":FZF<CR>", key_opts)
-set("n", "<Space>te", ":FZF ~/", { noremap = true, silent = false })
-set("n", "<Space>tj", ":FZF ~/Dropbox/notes<CR>", key_opts)
-set("n", "<Space>tl", ":edit ~/.ledger/current.journal<CR>zm", key_opts)
-set("n", "<Space>tn", ":FZF ~/Documents/notes<CR>", key_opts)
-set("n", "<Space>to", ":edit ~/Dropbox/todo.txt<CR>", key_opts)
-set("n", "<Space>tf", ":edit ~/Dropbox/notes/someday.markdown<CR>", key_opts)
+vim.keymap.set("n", "<Space>tt", ":FZF<CR>", key_opts)
+vim.keymap.set("n", "<Space>te", ":FZF ~/", { noremap = true, silent = false })
+vim.keymap.set("n", "<Space>tj", ":FZF ~/Dropbox/notes<CR>", key_opts)
+vim.keymap.set("n", "<Space>tl", ":edit ~/.ledger/current.journal<CR>zm", key_opts)
+vim.keymap.set("n", "<Space>tn", ":FZF ~/Documents/notes<CR>", key_opts)
+vim.keymap.set("n", "<Space>to", ":edit ~/Dropbox/todo.txt<CR>", key_opts)
+vim.keymap.set("n", "<Space>tf", ":edit ~/Dropbox/notes/someday.markdown<CR>", key_opts)
 
-set("n", "<Space>l", function()
+vim.keymap.set("n", "<Space>l", function()
   local win = vim.api.nvim_get_current_win()
   local qf_winid = vim.fn.getloclist(win, { winid = 0 }).winid
   local action = qf_winid > 0 and "silent! lclose" or "silent! lwindow"
   vim.cmd(action)
 end, key_opts)
-set("n", "<Space>q", function()
+vim.keymap.set("n", "<Space>q", function()
   local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
   local action = qf_winid > 0 and "silent! cclose" or "silent! botright cwindow"
   vim.cmd(action)

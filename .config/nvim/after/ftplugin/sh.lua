@@ -11,11 +11,11 @@ end
 if vim.fn.executable("shfmt") == 1 then
   vim.opt_local.formatprg = "shfmt -i 2 -ci"
 
-  local user_lint = vim.api.nvim_create_augroup("UserLint", { clear = true })
-  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = "<buffer>",
-    group = user_lint,
-    command = "silent normal gggqG",
-    desc = "Run formatprg before save.",
-  })
+  -- local user_lint = vim.api.nvim_create_augroup("UserLint", { clear = true })
+  -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  --   desc = "Run formatprg before save.",
+  --   pattern = "<buffer>",
+  --   group = user_lint,
+  --   command = "silent normal gggqG",
+  -- })
 end

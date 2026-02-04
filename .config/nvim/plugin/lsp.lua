@@ -77,8 +77,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         if inlay_hint.is_enabled(filter) then
           inlay_hint.enable(false, filter)
           vim.api.nvim_create_autocmd("InsertLeave", {
-            once = true,
             desc = "Re-enable lsp.inlay_hint when leaving insert mode",
+            once = true,
             callback = function()
               inlay_hint.enable(true, filter)
             end,

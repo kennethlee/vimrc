@@ -1,5 +1,3 @@
-local opt_local = vim.opt_local
-
 vim.cmd([[
   function! MarkdownLevel() abort
     let l:currentline = getline(v:lnum)
@@ -11,7 +9,7 @@ vim.cmd([[
   endfunction
 ]])
 
-opt_local.foldcolumn = "1"
-opt_local.foldexpr = "MarkdownLevel()"
-opt_local.foldmethod = "expr"
-opt_local.foldnestmax = 6
+vim.opt_local.foldcolumn = "1"
+vim.opt_local.foldexpr = "MarkdownLevel()"
+vim.opt_local.foldmethod = "expr"
+vim.opt_local.foldnestmax = 6
