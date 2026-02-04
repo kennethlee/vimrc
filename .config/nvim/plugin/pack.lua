@@ -35,6 +35,8 @@ local ts_parsers = {
   "javascript",
   "json",
   "lua",
+  "markdown",
+  "markdown_inline",
   "tsx",
   "typescript",
   "vim",
