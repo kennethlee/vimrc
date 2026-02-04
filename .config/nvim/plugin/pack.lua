@@ -2,11 +2,24 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/windwp/nvim-ts-autotag",
-  "https://github.com/justinmk/vim-dirvish",
+  "https://github.com/stevearc/oil.nvim",
   "https://github.com/jessekelighine/vindent.nvim",
 })
 
 require("mason").setup()
+
+-- oil.nvim
+require("oil").setup({
+  default_file_explorer = true,
+  -- :h oil-trash
+  delete_to_trash = true,
+  watch_for_changes = true,
+  view_options = {
+    case_insensitive = true,
+    show_hidden = true,
+  },
+  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+})
 
 -- vindent.nvim
 local vindent = require("vindent")
