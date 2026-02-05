@@ -6,10 +6,7 @@
 !/.config/nvim/dict.txt
 !/.config/nvim/init.lua
 !/.config/nvim/after/
-
 !/.config/nvim/after/compiler/
-!/.config/nvim/after/compiler/shellcheck.vim
-
 !/.config/nvim/after/ftplugin/
 
 !/.config/nvim/after/ftplugin/css/
