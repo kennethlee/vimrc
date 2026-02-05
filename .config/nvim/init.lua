@@ -206,14 +206,11 @@ vim.keymap.set("n", "<Space>bd", ":Bdelete<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>ff", ":set expandtab? fileencoding? fileformat? filetype?<CR>", key_opts)
 vim.keymap.set("n", "<Space>fc", ":RemoveFancyCharacters<CR>", key_opts)
-vim.keymap.set("n", "<Space>fp", ":%!prettier --stdin --stdin-filepath % --trailing-comma all<CR>", key_opts)
 vim.keymap.set("n", "<Space>fr", ":RenameFile<CR>", key_opts)
 vim.keymap.set("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], key_opts)
 vim.keymap.set("n", "<Space>fw", ":set wrap!<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>vv", ":edit $MYVIMRC<CR>", key_opts)
-vim.keymap.set("n", "<Space>vc", ":Dirvish ~/.config/nvim/lua/config/<CR>", key_opts)
-vim.keymap.set("n", "<Space>vp", ":Dirvish ~/.config/nvim/lua/plugin/<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>tt", ":FZF<CR>", key_opts)
 vim.keymap.set("n", "<Space>te", ":FZF ~/", { noremap = true, silent = false })
