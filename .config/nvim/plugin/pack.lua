@@ -1,3 +1,5 @@
+-- vim.pack {{{1
+
 vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -6,9 +8,12 @@ vim.pack.add({
   "https://github.com/jessekelighine/vindent.nvim",
 })
 
+-- Plugins that don't really require further configuration.
 require("mason").setup()
 
--- oil.nvim
+--------------------------------------------------------------------------------
+-- oil.nvim {{{1
+
 require("oil").setup({
   default_file_explorer = true,
   -- :h oil-trash
@@ -21,7 +26,9 @@ require("oil").setup({
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 })
 
--- vindent.nvim
+--------------------------------------------------------------------------------
+-- vindent.nvim {{{1
+
 local vindent = require("vindent")
 local block_opts = {
   strict     = { skip_empty_lines = false, skip_more_indented_lines = false },
@@ -38,6 +45,9 @@ vindent.setup({
   vindent.map.Object("aI", "aI", block_opts.loose),
 })
 vim.g.vindent_begin = false
+
+--------------------------------------------------------------------------------
+-- nvim-treesitter {{{1
 
 -- note: nvim-treesitter requires tree-sitter-cli to build parsers.
 local ts_parsers = {
@@ -57,3 +67,6 @@ local ts_parsers = {
   "zsh",
 }
 require("nvim-treesitter").install(ts_parsers)
+
+--------------------------------------------------------------------------------
+-- }}}1
