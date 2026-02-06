@@ -3,13 +3,23 @@
 vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/jessekelighine/vindent.nvim",
+  "https://github.com/nvim-lualine/lualine.nvim",
 })
 
--- Plugins that don't really require further configuration.
+-- These don't require further configuration.
 require("mason").setup()
+
+--------------------------------------------------------------------------------
+-- lualine.nvim {{{1
+
+require("lualine").setup {
+  sections = {
+    -- set path = 3 to show tilde for home dir
+    lualine_c = { {"filename", path = 2 } },
+  },
+}
 
 --------------------------------------------------------------------------------
 -- oil.nvim {{{1
