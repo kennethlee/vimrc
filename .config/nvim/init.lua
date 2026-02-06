@@ -212,6 +212,9 @@ vim.keymap.set("n", "<Space>fw", ":set wrap!<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>vv", ":edit $MYVIMRC<CR>", key_opts)
 vim.keymap.set("n", "<Space>vb", ":edit ~/.bashrc<CR>", key_opts)
+vim.keymap.set("n", "<Space>vu", function() vim.pack.update() end, key_opts)
+vim.keymap.set("n", "<Space>vp", ":edit " .. vim.fn.stdpath("config") .. "/plugin/pack.lua<CR>", key_opts)
+vim.keymap.set("n", "<Space>vd", ":edit " .. vim.fn.stdpath("data") .. "/site/pack/core/opt/<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>tt", ":FZF<CR>", key_opts)
 vim.keymap.set("n", "<Space>te", ":FZF ~/", { noremap = true, silent = false }, key_opts)
@@ -220,10 +223,6 @@ vim.keymap.set("n", "<Space>tl", ":edit ~/.ledger/current.journal<CR>zm", key_op
 vim.keymap.set("n", "<Space>tn", ":FZF ~/Documents/notes<CR>", key_opts)
 vim.keymap.set("n", "<Space>to", ":edit ~/Dropbox/todo.txt<CR>", key_opts)
 vim.keymap.set("n", "<Space>tf", ":edit ~/Dropbox/notes/someday.markdown<CR>", key_opts)
-
-vim.keymap.set("n", "<Space>pu", function() vim.pack.update() end, key_opts)
-vim.keymap.set("n", "<Space>pp", ":edit " .. vim.fn.stdpath("config") .. "/plugin/pack.lua<CR>", key_opts)
-vim.keymap.set("n", "<Space>pd", ":edit " .. vim.fn.stdpath("data") .. "/site/pack/core/opt/<CR>", key_opts)
 
 vim.keymap.set("n", "<Space>l", function()
   local win = vim.api.nvim_get_current_win()
