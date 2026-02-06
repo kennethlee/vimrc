@@ -15,9 +15,15 @@ require("mason").setup()
 -- lualine.nvim {{{1
 
 require("lualine").setup {
+  options = {
+    refresh = {
+      statusline = 100,
+    }
+  },
   sections = {
-    -- set path = 3 to show tilde for home dir
-    lualine_c = { {"filename", path = 2 } },
+    lualine_a = {"branch"},
+    lualine_b = {"diff", "lsp_status", "diagnostics"},
+    lualine_c = { {"filename", path = 3 } },
   },
 }
 
