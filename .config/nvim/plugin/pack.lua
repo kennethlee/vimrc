@@ -2,7 +2,6 @@
 
 vim.pack.add({
   "https://github.com/stevearc/oil.nvim",
-  "https://github.com/nvim-lualine/lualine.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
   "https://github.com/jessekelighine/vindent.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -25,46 +24,6 @@ require("oil").setup({
     show_hidden = true,
   },
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-})
-
---------------------------------------------------------------------------------
--- lualine.nvim {{{1
-
-require("lualine").setup({
-  options = {
-    refresh = {
-      statusline = 100,
-    },
-    -- removing component_separators looks MUCH better.
-    component_separators = "",
-    -- section_separators = { left = "", right = "" },
-  },
-  sections = {
-    lualine_a = {
-    },
-    lualine_b = {
-      {"branch"},
-      {"diff"},
-      {"lsp_status"},
-      {"diagnostics"},
-    },
-    lualine_c = {{"filename", path = 3}},
-    lualine_x = {
-      {"encoding"},
-      {"fileformat"},
-      {"filetype"},
-    },
-    lualine_y = {"progress", "location"},
-    lualine_z = {},
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {{"filename", path = 3}},
-    lualine_x = {"location"},
-    lualine_y = {},
-    lualine_z = {},
-  },
 })
 
 --------------------------------------------------------------------------------
