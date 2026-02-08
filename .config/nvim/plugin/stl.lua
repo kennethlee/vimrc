@@ -1,77 +1,31 @@
-vim.pack.add({"https://github.com/nvim-lualine/lualine.nvim"})
+-- returns array of LSP clients (long names being truncated), else, empty string
+local function lsp_status()
+  local attached_clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #attached_clients == 0 then
+    return ""
+  end
+  local names = vim.iter(attached_clients)
+  :map(function(client)
+    local name = client.name:gsub("language.server", "ls")
+    return name
+  end)
+  :totable()
+  return "[" .. table.concat(names, ", ") .. "]"
+end
 
-require("lualine").setup({
-  options = {
-    refresh = {
-      statusline = 100,
-    },
-    component_separators = "",
-    section_separators = "",
-    -- section_separators = { left = "", right = "" },
-    always_show_tabline = false,
-  },
+function _G.statusline()
+  return table.concat({
+    "%<",
+    "%F",
+    "%h%w%m%r",
+    "%=",
+    "%{% &showcmdloc == 'statusline' ? '%-10.S ' : '' %}",
+    "%{% exists('b:keymap_name') ? '<'..b:keymap_name..'> ' : '' %}",
+    "%{% &busy > 0 ? '◐ ' : '' %}",
+    lsp_status(),
+    "%{% luaeval('(package.loaded[''vim.diagnostic''] and #vim.diagnostic.count() ~= 0 and vim.diagnostic.status() .. '' '') or '''' ') %}",
+    "%{% &ruler ? ( &rulerformat == '' ? '%-14.(%l,%c%V%) %P' : &rulerformat ) : '' %}",
+  }, " ")
+end
 
-  sections = {
-    lualine_a = {},
-    lualine_b = {
-      {
-        "branch",
-        icon = "",
-      },
-      {
-        "diff",
-        padding = {
-          left = 0,
-          right = 1,
-        },
-        -- separator = "|",
-        symbols = {
-          added = "",
-          modified = "",
-          removed = "",
-        },
-      },
-      {"lsp_status"},
-      {
-        "diagnostics",
-        padding = {
-          left = 0,
-          right = 1,
-        },
-        symbols = {
-          error = "",
-          warn = "",
-          info = "",
-          hint = "",
-        },
-      },
-    },
-    lualine_c = {
-      {"filename", path = 3},
-    },
-    lualine_x = {
-      {"encoding"},
-      {"fileformat"},
-      {"filetype"},
-    },
-    lualine_y = {
-      {"progress"},
-      {"location"},
-    },
-    lualine_z = {},
-  },
-
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {
-      {"filename", path = 3},
-    },
-    lualine_x = {"location"},
-    lualine_y = {},
-    lualine_z = {},
-  },
-
-  tabline = {},
-  extensions = {},
-})
+vim.o.statusline = "%{%v:lua._G.statusline()%}"
