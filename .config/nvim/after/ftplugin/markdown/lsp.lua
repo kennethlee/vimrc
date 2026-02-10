@@ -22,8 +22,9 @@ vim.lsp.start({
         IgnoreLinkTitle = true,
       },
       maxFileLength = 1000000000,
-      userDictPath = vim.fn.stdpath("config") .. "/dict.txt",
+      userDictPath = "~/.harper-dictionary.txt",
     }
   },
-  root_dir = vim.fn.getcwd(),
+  -- root_dir = vim.fn.getcwd(),
+  root_markers = { ".harper-dictionary.txt", ".git" },
 })
