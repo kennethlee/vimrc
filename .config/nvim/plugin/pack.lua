@@ -36,9 +36,9 @@ local block_opts = {
   loose      = { skip_empty_lines = true,  skip_more_indented_lines = true  },
 }
 vindent.setup({
-  vindent.map.BlockMotion({ prev = "[=", next = "]=" }, block_opts.strict),
-  vindent.map.Motion({ prev = "[-", next = "]-" }, "less"),
-  vindent.map.Motion({ prev = "[+", next = "]+" }, "more"),
+  vindent.map.BlockMotion({ prev = "[f", next = "]f" }, block_opts.strict),
+  vindent.map.Motion({ prev = "[a", next = "]a" }, "less"),
+  vindent.map.Motion({ prev = "[s", next = "]s" }, "more"),
   vindent.map.Object("iI", "ii", block_opts.loose),
   vindent.map.Object("ii", "ii", block_opts.strict),
   vindent.map.Object("ai", "ai", block_opts.loose),

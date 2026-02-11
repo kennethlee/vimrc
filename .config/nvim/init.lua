@@ -204,7 +204,7 @@ vim.keymap.set("n", "<Space>bs", ":ls<CR>:sbuffer<Space>*", key_opts)
 vim.keymap.set("n", "<Space>bv", ":ls<CR>:vertical<Space>sbuffer<Space>*", key_opts)
 vim.keymap.set("n", "<Space>bd", ":Bdelete<CR>", key_opts)
 
-vim.keymap.set("n", "<Space>ff", ":set filetype? fileformat? fileencoding? expandtab?<CR>", key_opts)
+vim.keymap.set("n", "<Space>ff", ":set filetype? fileformat? fileencoding?<CR>", key_opts)
 vim.keymap.set("n", "<Space>fc", ":RemoveFancyCharacters<CR>", key_opts)
 vim.keymap.set("n", "<Space>fr", ":RenameFile<CR>", key_opts)
 vim.keymap.set("n", "<Space>ft", [[:%s/\s\+$//e<CR>:let @/=''<CR>]], key_opts)
