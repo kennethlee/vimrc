@@ -13,6 +13,22 @@ local toggle_diagnostics = function()
   end
 end
 
+-- returns list of LSP clients (long names truncated); else, empty string
+---@return string
+local function lsp_status()
+  local attached_clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #attached_clients == 0 then
+    return ""
+  end
+  local names = vim.iter(attached_clients)
+  :map(function(client)
+    local name = client.name:gsub("language.server", "ls")
+    return name
+  end)
+  :totable()
+  return "Attached LSP clients: [" .. table.concat(names, ", ") .. "]"
+end
+
 -- New default mappings (LSP-related):
 -- grn       = Normal mode -> vim.lsp.buf.rename()
 -- grr       = Normal mode -> vim.lsp.buf.references()
@@ -64,5 +80,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}), {0})
       end
     )
+
+    print(lsp_status())
   end,
 })
