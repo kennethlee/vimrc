@@ -1,5 +1,6 @@
 vim.opt_local.bufhidden = "wipe"
 vim.opt_local.buflisted = false
+vim.opt_local.list = false
 
 vim.cmd([[
   " automatically close corresponding loclist when quitting its parent window
@@ -8,6 +9,9 @@ vim.cmd([[
     \|    silent! lclose
     \|  endif
 ]])
+
+-- enable
+vim.cmd("packadd cfilter")
 
 local key_opts = { buffer = 0, noremap = true, silent = true }
 -- disable mappings for :Bnext/:Bprev if window focus is accidentally on quickfix/loclist.

@@ -28,9 +28,6 @@ vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
--- enable
-vim.cmd("packadd cfilter")
-
 -- prefer v0.7's new filetype detection scheme (now the default, but be explicit)
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
