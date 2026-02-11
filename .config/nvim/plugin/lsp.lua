@@ -48,27 +48,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
     end
 
-    vim.lsp.inlay_hint.enable(true)
-
-    -- disable inlay hints in Insert Mode
-    -- and turn hints back on when leaving (IF hints are toggled on)
-    vim.api.nvim_create_autocmd("InsertEnter", {
-      desc = "Disable lsp.inlay_hint when in insert mode",
-      callback = function(args)
-        local filter = { bufnr = args.buf }
-        local inlay_hint = vim.lsp.inlay_hint
-        if inlay_hint.is_enabled(filter) then
-          inlay_hint.enable(false, filter)
-          vim.api.nvim_create_autocmd("InsertLeave", {
-            desc = "Re-enable lsp.inlay_hint when leaving insert mode",
-            once = true,
-            callback = function()
-              inlay_hint.enable(true, filter)
-            end,
-          })
-        end
-      end,
-    })
+    -- turn hints off to start; use `grh` to toggle on
+    vim.lsp.inlay_hint.enable(false)
 
     -- set keymaps
     vim.keymap.set("n", "grf", vim.lsp.buf.format)
