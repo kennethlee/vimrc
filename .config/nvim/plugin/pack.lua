@@ -2,14 +2,11 @@
 
 vim.pack.add({
   "https://github.com/stevearc/oil.nvim",
-  "https://github.com/nvim-tree/nvim-web-devicons",
   "https://github.com/jessekelighine/vindent.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/mason-org/mason.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
 })
-
--- These don't require further configuration.
-require("mason").setup()
 
 --------------------------------------------------------------------------------
 -- oil.nvim {{{1
@@ -67,6 +64,12 @@ local ts_parsers = {
   "zsh",
 }
 require("nvim-treesitter").install(ts_parsers)
+
+--------------------------------------------------------------------------------
+-- other {{{1
+
+-- These don't require further configuration.
+require("mason").setup()
 
 --------------------------------------------------------------------------------
 -- }}}1
