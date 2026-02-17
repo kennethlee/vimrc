@@ -52,7 +52,7 @@ vim.o.backup = false
 vim.o.breakindent = true
 vim.o.cmdheight = 2
 vim.o.cmdwinheight = 20
-vim.o.completeopt = "fuzzy,noselect,menuone"
+vim.o.completeopt = "fuzzy,menuone,noselect,preview"
 vim.o.cursorcolumn = true
 vim.o.equalalways = false
 vim.o.expandtab = true
@@ -73,6 +73,7 @@ vim.o.linebreak = true
 vim.o.list = true
 vim.opt.listchars = { eol = "¬", tab = "▸ ", trail = "@" }
 vim.o.number = true
+vim.o.pumborder = "rounded"
 vim.o.signcolumn = "number"
 vim.o.shiftwidth = 2
 vim.o.showmode = true

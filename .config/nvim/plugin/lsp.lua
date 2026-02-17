@@ -1,33 +1,25 @@
--- New default mappings (LSP-related):
--- grn       = Normal mode -> vim.lsp.buf.rename()
--- grr       = Normal mode -> vim.lsp.buf.references()
--- gri       = Normal mode -> vim.lsp.buf.implementation()
--- gO        = Normal mode -> vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a "table of contents")
--- gra       = Normal / Visual modes. -> vim.lsp.buf.code_action()
--- K         = Normal mode -> vim.lsp.buf.hover()
--- CTRL-S    = Insert / Select modes. -> vim.lsp.buf.signature_help()
--- [d and ]d = Move between diagnostics in the current buffer ([D jumps to the first diagnostic, ]D jumps to the last)
+-- [Default LSP-related mappings](https://neovim.io/doc/user/diagnostic.html#diagnostic-defaults)
+-- grn        = Normal mode -> vim.lsp.buf.rename()
+-- grr        = Normal mode -> vim.lsp.buf.references()
+-- gri        = Normal mode -> vim.lsp.buf.implementation()
+-- gO         = Normal mode -> vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a "table of contents")
+-- gra        = Normal / Visual modes. -> vim.lsp.buf.code_action()
+-- K          = Normal mode -> vim.lsp.buf.hover()
+-- CTRL-S     = Insert / Select modes. -> vim.lsp.buf.signature_help()
+-- [d , ]d    = Jumps between diagnostics in the current buffer
+-- [D , ]D    = Jumps to the first and last diagnostic of the current buffer
+-- <Ctrl-w>d  = Shows diagnostic at cursor in a floating window.
 
 vim.diagnostic.config({
   float = {
-    focus = false,
+    focusable = true,
+    -- scope: setting to value of `line` will display a numbered list of diagnostics for the current line.
     scope = "cursor",
+    source = true,
+    -- `minimal` is currently the only value supported. https://neovim.io/doc/user/api.html#api-win_config
+    style = "minimal",
   },
   jump = { on_jump = vim.diagnostic.open_float },
-  -- signs = {
-  --   numhl = {
-  --     [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-  --     [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-  --     [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-  --     [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-  --   },
-    -- text = {
-    --   [vim.diagnostic.severity.ERROR] = "",
-    --   [vim.diagnostic.severity.HINT] = "",
-    --   [vim.diagnostic.severity.INFO] = "",
-    --   [vim.diagnostic.severity.WARN] = "",
-    -- },
-  -- },
   update_in_insert = true,
   -- virtual_text = { current_line = true },
 })
@@ -73,7 +65,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- set keymaps
     vim.keymap.set("n", "grf", vim.lsp.buf.format)
     vim.keymap.set("n", "grj", toggle_diagnostics)
-    vim.keymap.set("n", "grl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
+    vim.keymap.set("n", "gro", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
     -- toggle inlay hints
     vim.keymap.set("n", "grh",
       function()
