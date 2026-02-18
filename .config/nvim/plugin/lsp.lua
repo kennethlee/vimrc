@@ -52,7 +52,9 @@ local function lsp_status()
 end
 
 -- basic LSP-based auto-completion via gpanders
+local user_lint = vim.api.nvim_create_augroup("UserLint", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
+  group = user_lint,
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client:supports_method("textDocument/completion") then
@@ -75,7 +77,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<Space>k", function()
       vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
       vim.api.nvim_create_autocmd("CursorMoved", {
-        group = vim.api.nvim_create_augroup("UserLint", { clear = true }),
+        group = user_lint,
         callback = function()
           vim.diagnostic.config({ virtual_lines = false, virtual_text = false })
           return true

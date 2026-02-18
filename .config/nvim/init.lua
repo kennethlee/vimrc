@@ -58,7 +58,6 @@ vim.o.equalalways = false
 vim.o.expandtab = true
 vim.o.foldenable = false
 vim.opt.foldopen = vim.opt.foldopen - { "block" }
--- vim.o.foldtext = "fold#HeaderText()"
 vim.o.hidden = true
 vim.o.hlsearch = true
 vim.o.ignorecase = true

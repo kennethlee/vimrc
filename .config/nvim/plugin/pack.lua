@@ -61,7 +61,6 @@ local ts_parsers = {
   "typescript",
   "vim",
   "zig",
-  "zsh",
 }
 require("nvim-treesitter").install(ts_parsers)
 
