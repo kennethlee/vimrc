@@ -40,8 +40,14 @@ end
 vim.opt.rtp:append(fzf_path)
 
 -- grep
-if vim.fn.executable("rg") == 1 then
-  vim.o.grepprg = "rg --vimgrep --no-heading --hidden --glob '!{.git,node_modules}/*'"
+if vim.fn.executable("ugrep") == 1 then
+  -- -R: --dereference-recursive
+  -- -I: --ignore-binary
+  -- -n: --line-number
+  -- -k: --column-number
+  -- -j: --smart-case
+  -- -u: --ungroup
+  vim.o.grepprg = "ugrep -RInk -j -u --tabs=1 --ignore-files"
   vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
 
