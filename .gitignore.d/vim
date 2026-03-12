@@ -51,6 +51,7 @@
 !/.config/nvim/after/indent/ledger.lua
 !/.config/nvim/after/indent/lua.lua
 !/.config/nvim/after/indent/markdown.lua
+!/.config/nvim/after/indent/sh.lua
 !/.config/nvim/after/indent/vim.lua
 !/.config/nvim/after/indent/zig.lua
 
