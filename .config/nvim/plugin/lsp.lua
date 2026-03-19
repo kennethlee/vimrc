@@ -1,11 +1,12 @@
 -- [Default LSP-related mappings](https://neovim.io/doc/user/diagnostic.html#diagnostic-defaults)
--- grn        = Normal mode -> vim.lsp.buf.rename()
--- grr        = Normal mode -> vim.lsp.buf.references()
--- gri        = Normal mode -> vim.lsp.buf.implementation()
--- gO         = Normal mode -> vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a "table of contents")
--- gra        = Normal / Visual modes. -> vim.lsp.buf.code_action()
--- K          = Normal mode -> vim.lsp.buf.hover()
--- CTRL-S     = Insert / Select modes. -> vim.lsp.buf.signature_help()
+-- gO         = Normal -> vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a "table of contents")
+-- gra        = Normal / Visual -> vim.lsp.buf.code_action()
+-- gri        = Normal -> vim.lsp.buf.implementation()
+-- grn        = Normal -> vim.lsp.buf.rename()
+-- grr        = Normal -> vim.lsp.buf.references()
+-- grx        = Normal -> vim.lsp.codelens.run() https://github.com/neovim/neovim/pull/37689
+-- K          = Normal -> vim.lsp.buf.hover()
+-- CTRL-S     = Insert / Select -> vim.lsp.buf.signature_help()
 -- [d , ]d    = Jumps between diagnostics in the current buffer
 -- [D , ]D    = Jumps to the first and last diagnostic of the current buffer
 -- <Ctrl-w>d  = Shows diagnostic at cursor in a floating window.
@@ -67,7 +68,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- set keymaps
     vim.keymap.set("n", "grf", vim.lsp.buf.format)
     vim.keymap.set("n", "grj", toggle_diagnostics)
-    vim.keymap.set("n", "gro", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
+    vim.keymap.set("n", "grl", "<cmd>lua vim.diagnostic.setloclist({ open_loclist = true })<CR>")
     -- toggle inlay hints
     vim.keymap.set("n", "grh",
       function()
