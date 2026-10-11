@@ -1,26 +1,10 @@
 -- vim.pack {{{1
 
 vim.pack.add({
-  "https://github.com/stevearc/oil.nvim",
   "https://github.com/jessekelighine/vindent.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
-})
-
---------------------------------------------------------------------------------
--- oil.nvim {{{1
-
-require("oil").setup({
-  default_file_explorer = true,
-  -- :h oil-trash
-  delete_to_trash = true,
-  watch_for_changes = true,
-  view_options = {
-    case_insensitive = true,
-    show_hidden = true,
-  },
-  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 })
 
 --------------------------------------------------------------------------------
