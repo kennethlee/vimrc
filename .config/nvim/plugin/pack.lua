@@ -4,7 +4,6 @@ vim.pack.add({
   "https://github.com/jessekelighine/vindent.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/mason-org/mason.nvim",
-  "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
 --------------------------------------------------------------------------------
