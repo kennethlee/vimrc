@@ -2,6 +2,7 @@
 -- gO         = Normal -> vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a "table of contents")
 -- gra        = Normal / Visual -> vim.lsp.buf.code_action()
 -- gri        = Normal -> vim.lsp.buf.implementation()
+-- grl        = Normal -> vim.diagnostic.setloclist()
 -- grn        = Normal -> vim.lsp.buf.rename()
 -- grr        = Normal -> vim.lsp.buf.references()
 -- grx        = Normal -> vim.lsp.codelens.run() https://github.com/neovim/neovim/pull/37689
