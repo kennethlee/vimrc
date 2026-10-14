@@ -189,12 +189,11 @@ vim.keymap.set("n", "<M-9>", ":vertical resize -10<CR>", key_opts)
 vim.keymap.set("n", "<M-0>", ":vertical resize +10<CR>", key_opts)
 
 vim.keymap.set("n", "<BS>", "<C-^>", key_opts)
-vim.keymap.set("n", "<C-h>", ":Bprevious<CR>", key_opts)
-vim.keymap.set("n", "<C-l>", ":Bnext<CR>", key_opts)
-vim.keymap.set("n", "<M-k>", ":cprevious<CR>", key_opts)
-vim.keymap.set("n", "<M-j>", ":cnext<CR>", key_opts)
-vim.keymap.set("n", "<C-k>", ":lprevious<CR>", key_opts)
-vim.keymap.set("n", "<C-j>", ":lnext<CR>", key_opts)
+-- use: [b, ]b, [B, ]B to navigate through the buffer list
+-- use: [q, ]q, [Q, ]Q, [CTRL-Q, ]CTRL-Q to navigate through the quickfix list
+-- use: [l, ]l, [L, ]L, [CTRL-L, ]CTRL-L to navigate through the location list
+vim.keymap.set("n", "<[-c>", ":lprevious<CR>", key_opts)
+vim.keymap.set("n", "<]-c>", ":lnext<CR>", key_opts)
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR><Esc>", key_opts)
 
 vim.cmd([[iabbrev <silent> xdd <C-r>=strftime("%FT%T%z, %a")<CR>]])
