@@ -14,7 +14,7 @@ vim.lsp.start({
   cmd = cmd,
   filetypes = filetypes,
   settings = {
-    typescript = {
+    ["js/ts"] = {
       inlayHints = {
         parameterNames = {
           enabled = "literals",
