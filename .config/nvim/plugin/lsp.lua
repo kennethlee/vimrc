@@ -66,6 +66,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- turn hints off to start; use `grh` to toggle on
     vim.lsp.inlay_hint.enable(false)
 
+    vim.lsp.codelens.enable(true)
+
     -- set keymaps
     vim.keymap.set("n", "grf", vim.lsp.buf.format)
     vim.keymap.set("n", "grj", toggle_diagnostics)
