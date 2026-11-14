@@ -174,11 +174,19 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   group = user_misc,
   command = "source $MYVIMRC",
 })
+vim.api.nvim_create_autocmd({ "Filetype" }, {
+  desc = "Delete directory buffers after use",
+  pattern = "directory",
+  group = user_misc,
+  command = "setlocal bufhidden=delete",
+})
 
 --------------------------------------------------------------------------------
 -- keymap {{{1
 
 local key_opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "-", "<Plug>(nvim-dir-up)")
 
 vim.keymap.set("n", "J", "mzJ`z", key_opts)
 vim.keymap.set("n", "U", "<C-r>", key_opts)
